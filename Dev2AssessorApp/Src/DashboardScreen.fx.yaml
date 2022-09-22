@@ -1782,6 +1782,18 @@ DashboardScreen As screen:
         Y: =444
         ZIndex: =7
 
+    tmr_logout As timer:
+        AutoStart: =true
+        Duration: =30000
+        OnTimerEnd: |-
+            =//Exit(true);
+            //Navigate(SafetyHeaderScreen)
+        OnTimerStart: =true
+        Visible: =false
+        X: =20
+        Y: =20
+        ZIndex: =14
+
     grPatchSuccessAS_2 As group:
         Height: =5
         Width: =5

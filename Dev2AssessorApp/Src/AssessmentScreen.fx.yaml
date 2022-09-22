@@ -1367,7 +1367,7 @@ AssessmentScreen As screen:
                         HoverFill: |-
                             =///ColorFade(RGBA(56, 96, 178, 1), -20%)
                             Self.Fill
-                        OnSelect: |
+                        OnSelect: |+
                             =//for reset ideal timer
                             Reset(tmr_logout);
                             Set(
@@ -1599,7 +1599,7 @@ AssessmentScreen As screen:
                                         {isCompleted: "Inprogress"}
                                     );
                                     
-                            //get specific assessor assignment data from dataverse and store into temporary collection 
+                            //updating patch status 2 to collection gcProjectAssignment
                             UpdateIf(
                                         gcProjectAssignment,
                                         Id = varAssignmentId,
@@ -1619,7 +1619,7 @@ AssessmentScreen As screen:
                                         {Assessment_Status: "Inprogress"}
                                     );
                                     
-                            //get specific assessor bank assessment data from dataverse and store it into temporary collection 
+                            //updating patch status 2 to collection GC_bankAssessment
                             UpdateIf(
                                         GC_bankAssessment,
                                         assignmentId.Id = varAssignmentId,
@@ -1640,18 +1640,18 @@ AssessmentScreen As screen:
                                         {Assessment_status: "Inprogress"}
                                     );
                                     
-                            //get specific assessor unit assessment data from dataverse and store it into temporary collection 
+                            //updating patch status 2 to collection GC_unitAssessment
                             UpdateIf(
                                         GC_unitAssessment,
                                         assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId,
                                         {UstatusUpdate: 2}
                                     );
                                     //saving to local cache
-                            SaveData(
+                                  SaveData(
                                         GC_unitAssessment,
                                         "localunitassessment"
                                     );
-                                    //patching section assessment data to dataverse
+                                    //patching status 1 section assessment data to dataverse table
                                          Patch(
                                             sectionAssessment,
                                             ShowColumns(
@@ -1676,6 +1676,7 @@ AssessmentScreen As screen:
                                             )
                                         );
                             
+                            //geting specific section assessment data from dataverse and store it into temporary collection
                             ClearCollect(
                                             TempSectionAssessment,
                                             Filter(
@@ -1683,7 +1684,8 @@ AssessmentScreen As screen:
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && 'sectionAssessment (quantum_sectionassessment)' = varSA
                                             )
                                         );
-                                        ForAll(
+                               //updating unique identifire ,comment ,assignment status and patch status to section collection from temporary collection         
+                                               ForAll(
                                             TempSectionAssessment As i,
                                             UpdateIf(
                                                 GcSectionAssessment,
@@ -1744,6 +1746,7 @@ AssessmentScreen As screen:
                                                 "cr28a_checkpointsequence"
                                             )
                                         );
+                                //geting specific checkpoint data from dataverse and store it into temporary collection 
                                         ClearCollect(
                                             TempCheckpointAssessment,
                                             Filter(
@@ -1751,6 +1754,7 @@ AssessmentScreen As screen:
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId  && checkpointAssessment_id = GuidId
                                             )
                                         );
+                                 //updating unique identifire ,comment ,assignment status and patch status to checkpoint collection from temporary collection  
                                         ForAll(
                                             TempCheckpointAssessment As i,
                                             UpdateIf(
@@ -1758,8 +1762,8 @@ AssessmentScreen As screen:
                                                 checkpointAssessment_id = i.checkpointAssessment_id && CstatusUpdate = 1,
                                                 {
                                                     checkpointAssessment: i.checkpointAssessment,
-                                                    AssessmentStatus: i.AssessmentStatus,
                                                     checkpointComment: i.checkpointComment,
+                                                    AssessmentStatus: i.AssessmentStatus,
                                                     CstatusUpdate: 2
                                                 }
                                             )
@@ -1818,6 +1822,7 @@ AssessmentScreen As screen:
                                                 "cr28a_checkpointitemsequence"
                                             )
                                         );
+                             //geting specific checkpoint data from dataverse and store it into temporary collection        
                                         ClearCollect(
                                             TempCheckpointItemAssessment,
                                             Filter(
@@ -1825,7 +1830,9 @@ AssessmentScreen As screen:
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_Id.checkpointAssessment_id = GuidId
                                             )
                                         );
-                                        ForAll(
+                            
+                                 //updating unique identifire ,comment ,assignment status and patch status to checkpoint item collection from temporary collection  
+                                         ForAll(
                                             TempCheckpointItemAssessment As i,
                                             UpdateIf(
                                                 GC_checkpointItemAssessment,
@@ -1911,6 +1918,8 @@ AssessmentScreen As screen:
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
+                            
+                             //updating unique identifire ,comment ,assignment status and patch status to Checkpoint action collection from temporary collection  
                                         ForAll(
                                             TempcheckpointItem_ActionItem As i,
                                             UpdateIf(
@@ -1928,6 +1937,7 @@ AssessmentScreen As screen:
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
                                         );
+                            
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             ForAll(
                                             TempSectionAssessment As i,
@@ -1982,7 +1992,7 @@ AssessmentScreen As screen:
                                             )
                                         );
                                         
-                            //get specific unit wise checkpoint images item data from dataverse to collection 
+                            //get specific checkpoint wise checkpoint images  data from dataverse to collection 
                             ClearCollect(
                                             TempCheckpointItem_Images,
                                             Filter(checkpointItem_Images,
@@ -1992,6 +2002,7 @@ AssessmentScreen As screen:
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
+                                 //updating unique identifire ,comment ,assignment status and patch status to checkpoint images collection from temporary collection  
                                         ForAll(
                                             TempCheckpointItem_Images As i,
                                             UpdateIf(
@@ -2009,10 +2020,10 @@ AssessmentScreen As screen:
                                             "localcheckpointitemimage"
                                         );
                                     
-                                );
+                                );//net connected if loop
                                 
                               );
-                                //net connected if loop
+                                
                             Set(
                                     popupsuccess,
                                     true
@@ -2021,11 +2032,8 @@ AssessmentScreen As screen:
                                     varSpinner,
                                     false
                                 );
-                                //for changing (tabs) depending on  assessment status upcomming to inprogress for first time
-                                //varNav is true then assignment statis is change then navigate to dashboard screen
+                               
                             
-                                
-                            //);Main if check all checkpoint item check
                         PaddingBottom: =2
                         PaddingTop: =2
                         PressedFill: =Self.Fill
@@ -2883,12 +2891,19 @@ AssessmentScreen As screen:
             Font: =AllScreensCSS.RFont
             HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
             OnSelect: |-
-                =Navigate(AssessmentScreen);
+                =
                 Concurrent(
-                Reset(TextInput2_2),
-                Set(varComment , false),
-                Set(varItemComment,false)
-                  )
+                    Reset(TextInput2_2),
+                    Set(
+                        varComment,
+                        false
+                    ),
+                    Set(
+                        varItemComment,
+                        false
+                    )
+                );
+                Navigate(AssessmentScreen);
             PressedColor: =Self.Color
             PressedFill: =Self.Fill
             Size: =AllScreensCSS.RLabelFontSize
@@ -2902,10 +2917,15 @@ AssessmentScreen As screen:
         TextInput2_2 As text:
             BorderThickness: =0
             Default: |-
-                =If(
+                =//here we check item comment is available or not . if available then show using lookup 
+                If(
                     varItemComment = true,
-                   LookUp(GC_checkpointItemAssessment,checkpointItemId.checkpointItemId=varCheckpointitemID && assignmentId.Id=varAssignmentId && bankUnitId.Id=varBankUnitId,checkpointItemComment
-                ))
+                    LookUp(
+                        GC_checkpointItemAssessment,
+                        checkpointItemId.checkpointItemId = varCheckpointitemID && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId,
+                        checkpointItemComment
+                    )
+                )
             DisplayMode: =DisplayMode.View
             FocusedBorderColor: =RGBA(179, 179, 179, 1)
             Font: =AllScreensCSS.RFont
@@ -2921,59 +2941,6 @@ AssessmentScreen As screen:
             X: =Rectangle6_1.X
             Y: =Rectangle6_1.Y
             ZIndex: =15
-
-    Button8 As button:
-        OnSelect: |-
-            =ClearCollect(
-                        colTest,
-                        ShowColumns(
-                            DropColumns(
-                                Filter(
-                                    GcSectionAssessment,
-                                    assignmentId.Id=varAssignmentId && bankUnitId.Id = varBankUnitId && SstatusUpdate = 0
-                                ),
-                                "SstatusUpdate"
-                            ),
-                            "quantum_sectionassessmentid",
-                            "shlaf_assignmentId",
-                            "shlaf_bankUnitId",
-                            "shlaf_product_id",
-                            "quantum_sectionassessment",
-                            "shlaf_sectionId",
-                            "quantum_sectionname",
-                            "shlaf_sectioncomment",
-                            "quantum_assessmentstatus",
-                            "cr28a_sectionsequence"
-                        )
-                    );
-            
-                    Patch(
-                        sectionAssessment,
-                        ShowColumns(
-                            DropColumns(
-                                Filter(
-                                    GcSectionAssessment,
-                                    assignmentId.Id=varAssignmentId && bankUnitId.Id = varBankUnitId && SstatusUpdate = 0
-                                ),
-                                "SstatusUpdate"
-                            ),
-                            "quantum_sectionassessmentid",
-                            "shlaf_assignmentId",
-                            "shlaf_bankUnitId",
-                            "shlaf_product_id",
-                            "quantum_sectionassessment",
-                            "shlaf_sectionId",
-                            "quantum_sectionname",
-                            "shlaf_sectioncomment",
-                            "quantum_assessmentstatus",
-                            "cr28a_sectionsequence"
-                        )
-                    );
-        Text: ="Button"
-        Visible: =false
-        X: =40
-        Y: =40
-        ZIndex: =22
 
     grPatchSuccessAS As group:
         Height: =5
@@ -3041,6 +3008,9 @@ AssessmentScreen As screen:
             HoverFill: =RGBA(75, 125, 6, 1)
             OnSelect: |-
                 =
+                 //for changing (tabs) depending on  assessment status upcomming to inprogress for first time
+                 //varNav is true then assignment status is change then navigate to dashboard screen And close popoup otherwise only close popup
+                
                 If(
                         VarNav = true,
                         Navigate(DashboardScreen);
@@ -3061,13 +3031,4 @@ AssessmentScreen As screen:
             X: =(Parent.Width-Self.Width)/2
             Y: =Label2_16.Y+ Self.Height+15
             ZIndex: =21
-
-    Label2 As label:
-        Height: =110
-        Text: =//$"rowcount {CountRows(ColTestData)}" 
-        Visible: =false
-        Width: =332
-        X: =565
-        Y: =141
-        ZIndex: =23
 
