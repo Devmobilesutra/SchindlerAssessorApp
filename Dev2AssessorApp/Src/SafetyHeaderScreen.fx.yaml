@@ -1,0 +1,510 @@
+SafetyHeaderScreen As screen:
+    Fill: =
+    OnVisible: |-
+        =/*Clear(colNumberedInvoices);
+        ForAll(product,Collect(colNumberedInvoices,Last(FirstN(AddColumns(product,"RowNumber",CountRows(colNumberedInvoices)+1),CountRows(colNumberedInvoices)+1))));*/
+        //ClearCollect(projectAggregationCollection,Filter(projectAggregations,assessorId.email=User().Email));
+        
+        //ClearCollect(LC_product,product);
+        //ClearCollect(LC_bank,bank);
+        //ClearCollect(LC_bankAssessment,bankAssessment);
+        //ClearCollect(LC_clientInstallation,clientInstallation)
+        
+        //ClearCollect(LC_bank,Filter(bank,clientId.client=Gallery2.Selected.clientId.client,Go_Number);
+        
+        
+        
+        //If(CountRows(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "start"))>0,UpdateContext({varCheckboxReset:false}),UpdateContext({varCheckboxReset:true}));
+        
+        
+        ClearCollect(lcSafetyCollect,
+         {data:"1.Make sure that there is enough light to work safely."},
+         {data:"2.Immediately replace damaged or lost safely equipment."},
+         {data:"3.If there is a fall hazard present,secure with a lifeline and fall protection."},
+         {data:"4.Keep all tools in good condition."},
+         {data:"5.Follow instructions when using tools."},
+         {data:"6.Every co-worker is responsible for her or his own safety and health.Alse,for personal safety and that of co-workers 'see something say something."},
+         {data:"7.The execution of maintenance work is restricted to competent person of the maintenance company . In addition to protective clothing,the following safely equipment must be used."})
+        
+        
+         
+
+    ctnSafetyHeader As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =2
+
+        ctnMiddleSafetyHeader As groupContainer.verticalAutoLayoutContainer:
+            Height: |
+                =//'ctnBack&onlinestatusPS_3'.Height+ctnBankGo_2.Height
+                Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutGap: =10
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+            Width: =Parent.Width
+            Y: =ctnHeaderSafetyHeader.Y +ctnHeaderSafetyHeader.Height
+            ZIndex: =3
+
+            ctnBackSafetyHeader As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =ctnHeaderSafetyHeader.Height
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =5
+                Width: =Parent.Width
+                Y: =ctnHeaderSafetyHeader.Height+ctnHeaderSafetyHeader.Y
+                ZIndex: =2
+
+                ctnBackButtonSH As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =80
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    PaddingLeft: =20
+                    Width: =Parent.Width
+                    Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
+                    ZIndex: =1
+
+                    btnBackSH As button:
+                        BorderColor: =AllScreensCSS.RActiveColor
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =ctnBackButtonSH.Height/1.5
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =
+                        OnSelect: |-
+                            =Back();
+                            
+                            //ForAll(Gallery6_1.AllItems,Reset(ThisRecord.Checkbox5));
+                        PaddingBottom: =10
+                        PaddingLeft: =20
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AllScreensCSS.RLabelFontSize-2
+                        Text: ="Back"
+                        Width: =ctnBackButtonSH.Width/6
+                        ZIndex: =1
+
+            ctnSafetyAdvice As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =ctnNotonemore.Height+ctnsMainafetyAdvice.Height+GlryInstructions.Height+ctnSafetyImages.Height+ctnSafetycheck.Height+20
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                Y: |-
+                    =//ctnClintName_2.Height
+                    'ctnBack&onlinestatusSS'.Y +'ctnBack&onlinestatusSS'.Height
+                ZIndex: =3
+
+                ctnNotonemore As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =150
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =40
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =5
+                    PaddingLeft: =20
+                    Width: =Parent.Width
+                    Y: =Parent.Y
+                    ZIndex: =1
+
+                    imgSafety As image:
+                        Height: =Parent.Height
+                        Image: =safety
+                        Width: =300
+                        ZIndex: =1
+
+                    lblNotoneMore As label:
+                        Align: =Align.Center
+                        Color: =RGBA(255, 0, 0, 1)
+                        FontWeight: =FontWeight.Bold
+                        Height: =60
+                        Size: =22
+                        Text: ="NOT ONE MORE"
+                        Width: =Parent.Width-550
+                        ZIndex: =3
+
+                ctnsMainafetyAdvice As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =120//lblAssStatusBS_21.Height +Label22_4.Height+10
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    PaddingBottom: =40
+                    PaddingLeft: =20
+                    Width: =1308
+                    Y: =ctnNotonemore.Y + ctnNotonemore.Height
+                    ZIndex: =2
+
+                    lblHeadingSafetyAdvice As label:
+                        Font: =AllScreensCSS.RFont
+                        FontWeight: =FontWeight.Bold
+                        PaddingLeft: =0
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: |-
+                            ="1. Safety Advice :" 
+                        Underline: =true
+                        Width: =220
+                        ZIndex: =3
+
+                    lblsafetyAdvice As label:
+                        AutoHeight: =true
+                        Font: =AllScreensCSS.RFont
+                        FontWeight: =FontWeight.Semibold
+                        Height: =70
+                        OnSelect: =//Select(Parent)
+                        PaddingBottom: =15
+                        PaddingLeft: =10
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: |-
+                            ="General safety requirements All persons involved must know and follow all company and local safety regulations with special attention to the following :"
+                        Width: =Parent.Width/1.08
+                        X: =40
+                        Y: =lblHeadingSafetyAdvice.Height+lblHeadingSafetyAdvice.Y
+                        ZIndex: =5
+
+                GlryInstructions As gallery.variableTemplateHeightGallery:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    BorderColor: =RGBA(179, 179, 179, 1)
+                    BorderThickness: =2
+                    Fill: =RGBA(247, 247, 247, 1)
+                    FillPortions: =0
+                    Height: =CountRows(GlryInstructions.AllItems)*GlryInstructions.TemplateHeight
+                    Items: |-
+                        =lcSafetyCollect
+                        /*["1.Make sure that there is enough light to work safely.",
+                         "2.Immediately replace damaged or lost safely equipment.",
+                         "3.If there is a fall hazard present,secure with a lifeline and fall protection.",
+                         "4.Keep all tools in good condition.",
+                         "5.Follow instructions when using tools.",
+                         "6.Every co-worker is responsible for her or his own safety and health.Alse,for personal safety and that of co-workers 'see something say something. '",
+                         "7.The execution of maintenance work is restricted to competent person of the maintenance company . In addition to protective clothing,the following safely equipment must be used."]*/
+                    Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
+                    LoadingSpinner: =LoadingSpinner.Controls
+                    ShowScrollbar: =false
+                    TemplatePadding: =6
+                    TemplateSize: =50
+                    Visible: |-
+                        =//true
+                        Q
+                    Width: =Parent.Width
+                    X: =40
+                    Y: =ctnsMainafetyAdvice.Y + ctnsMainafetyAdvice.Height+10
+                    ZIndex: =4
+
+                    lblInstructions As label:
+                        AutoHeight: =true
+                        Height: =50
+                        OnSelect: =Select(Parent)
+                        PaddingLeft: =20
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: =ThisItem.data
+                        Width: =Parent.Width
+                        X: =Parent.X
+                        Y: =
+                        ZIndex: =1
+
+                ctnSafetyImages As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =400
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =650
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    Y: =GlryInstructions.Y +GlryInstructions.Height
+                    ZIndex: =5
+
+                    ImgSafetyImages As image:
+                        Height: =Parent.Height
+                        Image: ='safety header'
+                        Width: =800
+                        ZIndex: =1
+
+                ctnSafetycheck As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =glrySafetyCheck.Height+lblSafetycheck.Height+lblsafetyChecknotice.Height+160
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =10
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =450
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    Y: =ctnSafetyImages.Y +ctnSafetyImages.Height
+                    ZIndex: =6
+
+                    lblSafetycheck As label:
+                        Color: =AllScreensCSS.RActiveColor
+                        FontWeight: =FontWeight.Semibold
+                        Height: =60
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: ="You must verify these checkpoint to move forward!"
+                        Underline: =true
+                        Width: =Parent.Width
+                        ZIndex: =1
+
+                    glrySafetyCheck As gallery.variableTemplateHeightGallery:
+                        AlignInContainer: =AlignInContainer.SetByContainer
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =2
+                        Fill: =RGBA(247, 247, 247, 1)
+                        FillPortions: =0
+                        Height: =CountRows(glrySafetyCheck.AllItems)*glrySafetyCheck.TemplateHeight
+                        Items: |-
+                            =["Notify all necessary parties you have arrived. (Local EI and Building Management)",
+                            "JHA Completed.",
+                            //"JHA Completed (Picture Required).",
+                            "Service Barricades Available.",
+                            "Door Wedge tools Available.",
+                            "LOTO Equipment Available.",
+                            //"It is understood that anytime you remove the cover from the TSU on a 5500,you must first LOTO. ",
+                            "Schindler high risk quick book available."]
+                        Layout: =Layout.Vertical
+                        LayoutMinHeight: =287
+                        LayoutMinWidth: =320
+                        TemplateSize: =60
+                        Visible: |-
+                            =//true
+                            Q
+                        Width: =Parent.Width
+                        Y: =lblSafetycheck.Y+lblSafetycheck.Height
+                        ZIndex: =2
+
+                        cboxSafetyCheck As checkbox:
+                            CheckboxBorderColor: =RGBA(0, 0, 0, 1)
+                            CheckboxSize: =30
+                            Default: |-
+                                =//for safety check to show default selected
+                                If(varSafety = true,true,false)
+                                
+                                
+                                /*If(CountRows(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "Inprogress"))>0,true,false)*/
+                            FocusedBorderThickness: =//2
+                            HoverBorderColor: |-
+                                =//ColorFade(Self.BorderColor, 30%)
+                                Self.Color
+                            HoverColor: |-
+                                =//RGBA(0, 18, 107, 1)
+                                Self.Color
+                            OnSelect: =Select(Parent)
+                            PressedBorderColor: =//ColorFade(Self.BorderColor, -30%)
+                            Reset: |-
+                                =////If(CountRows(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "start"))>0,false,true)
+                                //varCheckboxReset
+                                false
+                            Size: =AllScreensCSS.RfontsizeInput
+                            Text: =ThisItem.Value
+                            Width: =Parent.Width-100
+                            X: =40
+                            ZIndex: =1
+
+                        TimerGlrySafetycheck As timer:
+                            AutoStart: =true
+                            Duration: =100
+                            OnTimerEnd: =Reset(cboxSafetyCheck);
+                            Start: =true
+                            Visible: =false
+                            X: =200
+                            Y: =10
+                            ZIndex: =2
+
+                    lblsafetyChecknotice As label:
+                        Align: =Align.Center
+                        Color: =RGBA(9, 33, 98, 1)
+                        Fill: =RGBA(255, 255, 0, 1)
+                        Font: =AllScreensCSS.RFont
+                        FontWeight: =FontWeight.Semibold
+                        Height: =60
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: ="CHECK BOXES REQUIRED FOR EACH ITEM AND YOU CANNOT PROCEED WITHOUT CHECKING EACH BOX"
+                        Width: =Parent.Width
+                        ZIndex: =3
+
+                    btnsafetycheck As button:
+                        AlignInContainer: =AlignInContainer.Center
+                        BorderThickness: =0
+                        DisplayMode: |
+                            =If(CountRows(Filter(glrySafetyCheck.AllItems,ThisRecord.cboxSafetyCheck.Value = false))<1,DisplayMode.Edit,DisplayMode.Disabled)
+                            
+                            
+                            /*
+                            If(!IsBlank(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "start")),DisplayMode.Disabled
+                            ,
+                            If(CountRows(Filter(Gallery6_1.AllItems,ThisRecord.Checkbox5.Value = false))<1,DisplayMode.Edit,DisplayMode.Disabled)
+                            )*/
+                            
+                            /*If(!IsBlank(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "start")) && CountRows(Filter(Gallery6_1.AllItems,ThisRecord.Checkbox5.Value = false))>1,DisplayMode.Disabled
+                            ,
+                            DisplayMode.Edit
+                            )
+                            */
+                        Fill: =AllScreensCSS.RActiveColor
+                        FocusedBorderThickness: =//4
+                        HoverBorderColor: =//ColorFade(Self.BorderColor, 20%)
+                        HoverFill: |-
+                            =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                            Self.Fill
+                        OnSelect: |-
+                            =
+                            Clear(security);
+                            ForAll(
+                                glrySafetyCheck.AllItems,
+                                If(
+                                    ThisRecord.cboxSafetyCheck.Value = true,
+                                    Collect(
+                                        security,
+                                        {status: true}
+                                    ),
+                                    Collect(
+                                        security,
+                                        {status: false}
+                                    )
+                                )
+                            );
+                            If(
+                                CountRows(
+                                    Filter(
+                                        security,
+                                        status = false
+                                    )
+                                ) < 1,
+                                //for safety check to show default selected
+                                Set(varSafety,true);
+                            
+                                /*UpdateIf(
+                                    GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id,
+                                    {Assessment_status: "Inprogress"}
+                                );*/
+                                Navigate(SectionScreen),
+                                Notify(
+                                    "Check boxes required for each item and you cannot proceed without checking each box.",
+                                    NotificationType.Error
+                                )
+                            )
+                        PressedColor: =Self.Color
+                        PressedFill: =Self.Fill
+                        Text: ="Next"
+                        ZIndex: =4
+
+        ctnHeaderSafetyHeader As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            Height: =80
+            PaddingRight: =10
+            Width: =Parent.Width
+            ZIndex: =4
+
+            NetworkIconSafetyHeader As Component2:
+                X: =lblUsernameHeaderSH.Width+lblUsernameHeaderSH.X
+                Y: =(ctnHeaderDS.Height-Self.Height)/2
+                ZIndex: =9
+
+            GroupHeaderSafetyHeader As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =9
+
+                imgLogoSH As image:
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =80
+                    Image: ='schindler-logo'
+                    PaddingBottom: =5
+                    PaddingLeft: =2
+                    PaddingRight: =1
+                    PaddingTop: =5
+                    Width: =ctnHeaderSafetyHeader.Width/12
+                    ZIndex: =1
+
+                lblAssessmentSH As label:
+                    Align: =Align.Center
+                    Color: =Header.HeaderColor
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =80
+                    Size: =Header.HeaderFontSize
+                    Text: ="Safety Header for wellness"
+                    Width: =ctnHeaderSafetyHeader.Width/1.65
+                    X: =imgLogoSH.Width
+                    ZIndex: =2
+
+                imgUserHeaderSH As image:
+                    Height: =50
+                    Image: =userImg
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =ctnHeaderSafetyHeader.Height/0.10
+                    RadiusBottomRight: =ctnHeaderSafetyHeader.Height/0.10
+                    RadiusTopLeft: =ctnHeaderSafetyHeader.Height/0.10
+                    RadiusTopRight: =ctnHeaderSafetyHeader.Height/0.10
+                    Width: =50
+                    X: =lblAssessmentSH.Width+lblAssessmentSH.X
+                    Y: =(ctnHeaderSafetyHeader.Height-Self.Height)/2
+                    ZIndex: =4
+
+                lblUsernameHeaderSH As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =80
+                    PaddingLeft: =20
+                    Size: =Header.HeaderUserFontSize-2
+                    Text: =username
+                    Width: =ctnHeaderSafetyHeader.Width/6
+                    X: =imgUserHeaderSH.Width+imgUserHeaderSH.X
+                    ZIndex: =5
+
+                icoNotificationHeaderSH As icon.Bell:
+                    Color: =RGBA(255, 191, 0, 1)
+                    Height: =ctnHeaderSafetyHeader.Height/2.2
+                    Icon: =Icon.Bell
+                    Visible: =false
+                    Width: =ctnHeaderSafetyHeader.Width/30
+                    X: =lblUsernameHeaderSH.Width+lblUsernameHeaderSH.X
+                    Y: =ctnHeaderSafetyHeader.Height/4
+                    ZIndex: =7
+
+                iconSignoutHeaderSH As icon.Bell:
+                    Color: =Header.HeaderColor
+                    Height: =33
+                    Icon: =Icon.NextArrow
+                    PaddingBottom: =5
+                    Rotation: =90
+                    Visible: =false
+                    Width: =48
+                    X: =1318
+                    Y: =ctnHeaderSafetyHeader.Height/4
+                    ZIndex: =8
+

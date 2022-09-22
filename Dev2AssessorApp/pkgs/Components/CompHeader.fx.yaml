@@ -1,0 +1,91 @@
+CompHeader As CanvasComponent:
+    CustomProperty1: |-
+        =Table({SampleStringField: "SampleText", SampleNumberField: 10, SampleBooleanField: true})
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =90
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    HeaderContainer_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(220, 0, 0, 1)
+        Height: =90
+        PaddingRight: =15
+        Visible: |-
+            =//Screen2.Size>2
+            true
+        Width: =Parent.Width
+        ZIndex: =1
+
+        SchindlerLogo As image:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =HeaderContainer_1.Height
+            Image: ='schindler-logo'
+            PaddingBottom: =5
+            PaddingLeft: =2
+            PaddingRight: =1
+            PaddingTop: =5
+            Width: =HeaderContainer_1.Width/12
+            ZIndex: =1
+
+        Heading As label:
+            Align: =Align.Right
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =HeaderContainer_1.Height
+            PaddingLeft: =0
+            PaddingRight: =200
+            Size: =HeaderContainer_1.Width/40
+            Text: ="Dashboard"
+            Width: =HeaderContainer_1.Width/1.6
+            X: =53
+            ZIndex: =2
+
+        DisplayPicture As image:
+            Height: =43
+            Image: =User().Image
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =HeaderContainer_1.Height/0.10
+            RadiusBottomRight: =HeaderContainer_1.Height/0.10
+            RadiusTopLeft: =HeaderContainer_1.Height/0.10
+            RadiusTopRight: =HeaderContainer_1.Height/0.10
+            Width: =45
+            X: =Heading.X+Heading.Width
+            Y: =(HeaderContainer_1.Height-Self.Height)/2
+            ZIndex: =4
+
+        UserName As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Semibold
+            Height: =HeaderContainer_1.Height
+            PaddingLeft: =20
+            Size: =18
+            Text: |-
+                =//"Jacob Bernad"
+                //User().FullName
+                //LookUp(schindlerAssessorCollection,email=User().Email,name)
+                //LookUp(projectAggregationCollection,assessor_id=Assesso,assessor_name)
+                User().FullName
+            Width: =HeaderContainer_1.Width/6
+            X: =DisplayPicture.Width+DisplayPicture.X
+            Y: =HeaderContainer_1.Y
+            ZIndex: =5
+
+        Notification As icon.Bell:
+            Color: =RGBA(255, 191, 0, 1)
+            Height: =HeaderContainer_1.Height/2.2
+            Icon: =Icon.Bell
+            Width: =HeaderContainer_1.Width/30
+            X: =UserName.Width+UserName.X
+            Y: =HeaderContainer_1.Height/4
+            ZIndex: =7
+
+        SignOut As image:
+            Height: =HeaderContainer_1.Height/2.4
+            Image: =logout
+            Width: =HeaderContainer_1.Width-(SchindlerLogo.Width+Heading.Width+DisplayPicture.Width+UserName.Width+Notification.Width)
+            X: =Notification.X+Notification.Width
+            Y: =HeaderContainer_1.Height/4
+            ZIndex: =9
+

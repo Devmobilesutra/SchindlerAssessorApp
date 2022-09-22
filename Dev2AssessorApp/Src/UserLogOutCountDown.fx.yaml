@@ -1,0 +1,62 @@
+UserLogOutCountDown As screen:
+
+    tmr_logout As timer:
+        AutoStart: =true
+        Duration: =30000
+        OnTimerEnd: |-
+            =//Exit(true);
+            //Navigate(SafetyHeaderScreen)
+        OnTimerStart: =true
+        Visible: =false
+        ZIndex: =1
+
+    Rectangle1 As rectangle:
+        Fill: =RGBA(0, 0, 0, 0.29)
+        Height: =Parent.Height
+        Width: =Parent.Width
+        X: =(Parent.Width-Self.Width)/2
+        ZIndex: =2
+
+    Rectangle2 As rectangle:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =350
+        Width: =500
+        X: =(Parent.Width - Self.Width)/2
+        Y: =(Parent.Height -Self.Height)/2
+        ZIndex: =3
+
+    lblLogOutText As label:
+        Align: =Align.Center
+        FontWeight: =FontWeight.Semibold
+        Height: =120
+        Size: =AllScreensCSS.RfontsizeInput
+        Text: ="You are about to be automatically signed out in " & (30 - Round(tmr_logout.Value/1000,0)) & " seconds"
+        Width: =Rectangle2.Width
+        X: =Rectangle2.X
+        Y: =Rectangle2.Y +20
+        ZIndex: =4
+
+    btnSignOut As button:
+        Fill: =AllScreensCSS.RActiveColor
+        Height: =50
+        OnSelect: |
+            =Navigate(SafetyHeaderScreen)
+            //Exit(true);
+        Text: ="Safety Check"
+        Width: =150
+        X: =(Parent.Width - Self.Width)/2
+        Y: =btnStaySignedIn.Y + btnStaySignedIn.Height+20
+        ZIndex: =5
+
+    btnStaySignedIn As button:
+        Fill: =AllScreensCSS.RActiveColor
+        Height: =50
+        OnSelect: |
+            =UserLastNavigated = Now();
+            Back();
+        Text: ="Stay Sign In"
+        Width: =150
+        X: =(Parent.Width - Self.Width)/2
+        Y: =(lblLogOutText.Y +lblLogOutText.Height)+ 20
+        ZIndex: =6
+

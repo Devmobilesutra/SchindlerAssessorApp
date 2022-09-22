@@ -1,0 +1,147 @@
+[
+  {
+    "DisplayName": "projectAssignment (Views)",
+    "Name": "_quantum_projectassignment_views",
+    "RelatedEntityName": "projectAssignment",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "02dc2c2f-6d6c-438f-a86e-953bac2a4117": "Active projectAssignment",
+      "45b59e29-b732-4880-9a72-1d2d40283ad7": "projectAssignment Associated View",
+      "61ba8d10-f6fc-4cf6-8c11-4b7aee6ddb8d": "Inactive projectAssignment",
+      "9b29dbd5-bc9b-4429-b8c4-e0f9c849761c": "projectAssignment Lookup View",
+      "fd45002f-03c2-4dd2-b735-f5bbbae46181": "projectAssignment Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "A Yes or No boolean",
+    "Name": "field_security_permission_type",
+    "OptionSetInfoNameMapping": {
+      "0": "Not Allowed",
+      "4": "Allowed"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": true,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "quantum_iscompleted",
+        "OptionSetReferenceEntityName": "projectAssignment"
+      },
+      "OptionSetReferenceItem1": {
+        "OptionSetReferenceColumnName": "quantum_assessment_type",
+        "OptionSetReferenceEntityName": "projectAssignment"
+      }
+    },
+    "OptionSetTypeKey": "PicklistType",
+    "RelatedColumnInvariantName": "quantum_iscompleted",
+    "RelatedEntityName": "projectAssignment",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "quantum_projectassignments",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "quantum_projectassignment",
+    "MaxGetRowsCount": 2000,
+    "Name": "projectAssignment",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "quantum_assessment_type": "assessment_Type",
+      "quantum_assessment_type_1": "assessment_type_1",
+      "quantum_assessor_email": "assessor_email",
+      "quantum_assessor_Id": "assessor_Id",
+      "quantum_assigned_date": "Assigned_date ",
+      "quantum_bankAssessment_projectAssingment_": "bankAssessment",
+      "quantum_bankId": "bankId",
+      "quantum_BankTripReport_projectId_quantum_": "BankTripReport",
+      "quantum_checkpointAssessment_projectAssin": "checkpointAssessment",
+      "quantum_clientId": "clientId",
+      "quantum_due_date": "due_date",
+      "quantum_end_date": "completion_date",
+      "quantum_iscompleted": "IsCompleted",
+      "quantum_projectassignment": "projectAssignment (quantum_projectassignment)",
+      "quantum_projectassignment_AsyncOperations": "System Jobs",
+      "quantum_projectassignment_BulkDeleteFailures": "Bulk Delete Failures",
+      "quantum_projectassignment_DuplicateBaseRecord": "Duplicate Records (quantum_projectassignment_DuplicateBaseRecord)",
+      "quantum_projectassignment_DuplicateMatchingRecord": "Duplicate Records (quantum_projectassignment_DuplicateMatchingRecord)",
+      "quantum_projectassignment_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "quantum_projectassignment_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "quantum_projectassignment_ProcessSession": "Process Sessions",
+      "quantum_projectassignment_SyncErrors": "Sync Errors",
+      "quantum_projectassignmentid": "projectAssignment (quantum_projectassignmentid)",
+      "quantum_reviewer_email": "Reviewer_email",
+      "quantum_reviewer_Id": "reviewer_Id",
+      "quantum_sectionAssessment_projectAssingme": "sectionAssessment",
+      "quantum_start_date": "start_date",
+      "quantum_unitAssessment_projectAssingment_": "unitAssessment",
+      "shlaf_assessor_id": "assessor_id",
+      "shlaf_assessor_name": "assessor_name",
+      "shlaf_iscomplete": "IsComplete",
+      "shlaf_quantum_checkpointItem_ActionItems_projec": "checkpointItem_ActionItem",
+      "shlaf_quantum_checkpointItem_Images_projectAssi": "checkpointItem_Images",
+      "shlaf_quantum_checkpointItemAssessment_projectA": "checkpointItemAssessment",
+      "shlaf_reviewer_id": "reviewer_id",
+      "shlaf_reviewer_name": "reviewer_name",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "projectAssignment",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Status (projectAssignment)",
+    "Name": "quantum_projectassignment_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "projectAssignment"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "projectAssignment",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (projectAssignment)",
+    "Name": "quantum_projectassignment_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "projectAssignment"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "projectAssignment",
+    "Type": "OptionSetInfo"
+  }
+]

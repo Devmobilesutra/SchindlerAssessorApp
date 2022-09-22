@@ -1,0 +1,109 @@
+[
+  {
+    "CdsFCBContext": "{\"FileType\":true,\"ImageExternalStorage\":true}",
+    "EntitySetName": "quantum_clients",
+    "IsHidden": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "LogicalName": "quantum_client",
+    "MaxGetRowsCount": 2000,
+    "Name": "Client",
+    "NativeCDSDataSourceInfoNameMapping": {
+      "_ownerid_value": "Owner",
+      "createdby": "Created By",
+      "createdon": "Created On",
+      "createdonbehalfby": "Created By (Delegate)",
+      "importsequencenumber": "Import Sequence Number",
+      "modifiedby": "Modified By",
+      "modifiedon": "Modified On",
+      "modifiedonbehalfby": "Modified By (Delegate)",
+      "overriddencreatedon": "Record Created On",
+      "owningbusinessunit": "Owning Business Unit",
+      "owningteam": "Owning Team",
+      "owninguser": "Owning User",
+      "quantum_address1": "address1",
+      "quantum_address2": "address2",
+      "quantum_bank_clientId_quantum_Client": "bank",
+      "quantum_city": "city",
+      "quantum_client": "client",
+      "quantum_client_AsyncOperations": "System Jobs",
+      "quantum_client_BulkDeleteFailures": "Bulk Delete Failures",
+      "quantum_client_DuplicateBaseRecord": "Duplicate Records (quantum_client_DuplicateBaseRecord)",
+      "quantum_client_DuplicateMatchingRecord": "Duplicate Records (quantum_client_DuplicateMatchingRecord)",
+      "quantum_client_MailboxTrackingFolders": "Mailbox Auto Tracking Folders",
+      "quantum_client_name": "client_name",
+      "quantum_client_PrincipalObjectAttributeAccesses": "Field Sharing",
+      "quantum_client_ProcessSession": "Process Sessions",
+      "quantum_client_SyncErrors": "Sync Errors",
+      "quantum_clientid": "Client",
+      "quantum_clientLocation_client_Id_quantum_": "clientLocation",
+      "quantum_projectAssignment_clientId_quantu": "projectAssignment",
+      "quantum_state": "state",
+      "quantum_zip": "zip",
+      "shlaf_contact": "contact_number",
+      "shlaf_contact_name": "contact_name",
+      "shlaf_quantum_clientInstallation_client_id_quan": "clientInstallation",
+      "statecode": "Status",
+      "statuscode": "Status Reason",
+      "timezoneruleversionnumber": "Time Zone Rule Version Number",
+      "utcconversiontimezonecode": "UTC Conversion Time Zone Code",
+      "versionnumber": "Version Number"
+    },
+    "PreferredName": "Client",
+    "Type": "NativeCDSDataSourceInfo"
+  },
+  {
+    "DisplayName": "Client (Views)",
+    "Name": "_quantum_client_views",
+    "RelatedEntityName": "Client",
+    "TrimmedViewName": true,
+    "Type": "ViewInfo",
+    "ViewInfoNameMapping": {
+      "0f890033-3d5e-4d1d-b361-26c7507f70d6": "Inactive Client",
+      "3556ebb1-29d2-4a38-a9b8-da708c682988": "Client Associated View",
+      "5d7823c5-d1b9-4ea4-9308-b49bfa1fa7b1": "Client Lookup View",
+      "d7c4655f-403b-464e-a754-98b041d75314": "Active Client",
+      "dfd90337-f922-471e-bae3-5bb31f3ffd73": "Client Advanced Find View"
+    }
+  },
+  {
+    "DisplayName": "Status (Client)",
+    "Name": "quantum_client_statecode",
+    "OptionSetInfoNameMapping": {
+      "0": "Active",
+      "1": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statecode",
+        "OptionSetReferenceEntityName": "Client"
+      }
+    },
+    "OptionSetTypeKey": "StateType",
+    "RelatedColumnInvariantName": "statecode",
+    "RelatedEntityName": "Client",
+    "Type": "OptionSetInfo"
+  },
+  {
+    "DisplayName": "Status Reason (Client)",
+    "Name": "quantum_client_statuscode",
+    "OptionSetInfoNameMapping": {
+      "1": "Active",
+      "2": "Inactive"
+    },
+    "OptionSetIsBooleanValued": false,
+    "OptionSetIsGlobal": false,
+    "OptionSetReference": {
+      "OptionSetReferenceItem0": {
+        "OptionSetReferenceColumnName": "statuscode",
+        "OptionSetReferenceEntityName": "Client"
+      }
+    },
+    "OptionSetTypeKey": "StatusType",
+    "RelatedColumnInvariantName": "statuscode",
+    "RelatedEntityName": "Client",
+    "Type": "OptionSetInfo"
+  }
+]

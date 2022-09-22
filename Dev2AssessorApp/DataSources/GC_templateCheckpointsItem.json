@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "GC_templateCheckpointsItem",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

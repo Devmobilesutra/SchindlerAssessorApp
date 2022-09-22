@@ -1,0 +1,9 @@
+[
+  {
+    "IsComponentScoped": false,
+    "IsSampleData": false,
+    "IsWritable": true,
+    "Name": "GC_checkpointItem_ActionItemTemp",
+    "Type": "CollectionDataSourceInfo"
+  }
+]

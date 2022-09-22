@@ -1,0 +1,153 @@
+Screen1 As screen:
+
+    DataTable2 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        Items: =GcSectionAssessment
+        Width: =Parent.Width-100
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+        modifiedon_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="modifiedon"
+            FieldName: ="modifiedon"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.modifiedon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        quantum_sectionassessment_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_sectionassessment"
+            FieldName: ="quantum_sectionassessment"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =ThisItem.'sectionAssessment (quantum_sectionassessment)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        quantum_sectionname_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_sectionname"
+            FieldName: ="quantum_sectionname"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.quantum_sectionname
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        shlaf_assignmentId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_assignmentId"
+            FieldName: ="shlaf_assignmentId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.assignmentId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        shlaf_bankUnitId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_bankUnitId"
+            FieldName: ="shlaf_bankUnitId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.bankUnitId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        shlaf_product_id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_product_id"
+            FieldName: ="shlaf_product_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =ThisItem.product_id.product_Model
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        shlaf_sectioncomment_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_sectioncomment"
+            FieldName: ="shlaf_sectioncomment"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.shlaf_sectioncomment
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        shlaf_sectionId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_sectionId"
+            FieldName: ="shlaf_sectionId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.sectionId.sectionId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        SstatusUpdate_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="SstatusUpdate"
+            FieldName: ="SstatusUpdate"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.SstatusUpdate
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        quantum_sectionassessmentid_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_sectionassessmentid"
+            FieldName: ="quantum_sectionassessmentid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.quantum_sectionassessmentid
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+

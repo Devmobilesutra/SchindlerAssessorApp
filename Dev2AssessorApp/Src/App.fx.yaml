@@ -1,0 +1,632 @@
+App As appinfo:
+    BackEnabled: =false
+    OnStart: |+
+        =//Clear(gcProjectAssignment);
+        //Clear(GC_bankAssessment);
+        //Clear(GC_product);
+        //Clear(GC_templateSections);
+        //Clear(GcSectionAssessment);
+         
+        Set(
+            timerX,
+            0
+        );
+        Set(
+            timerStart,
+            false
+        );
+                //Set(varload,true);
+        Set(
+            Istimer,
+            false
+        );
+        // Global CSS
+        Set(
+        //for header
+            Header,
+            {
+                HeaderFont: "Roboto",
+                HeaderColor: RGBA(
+                    255,
+                    255,
+                    255,
+                    1
+                ),
+                HeaderFill: RGBA(
+                    220,
+                    0,
+                    0,
+                    1
+                ),
+                HeaderFontSize: 22,
+                FontWeight: "bold",
+                HeaderUserFontSize: 16
+            }
+        );
+        Set(
+        //for Dashbord Screen
+            Dashboard,
+            {
+                DFont: "Roboto",
+                DColor: RGBA(
+                    0,
+                    0,
+                    0,
+                    1
+                ),
+                DCountColor: RGBA(
+                    220,
+                    0,
+                    0,
+                    1
+                ),
+                DFontSize: "21",
+                DCountSize: "28"
+            }
+        );
+        Set(
+        //for all screens
+            AllScreensCSS,
+            {
+                RInActiveColor: RGBA(//black
+                    0,
+                    0,
+                    0,
+                    1
+                ),
+                RActiveColor: RGBA(//red
+                    220,
+                    0,
+                    0,
+                    1
+                ),
+                RColorWhite: RGBA(//white
+                    255,
+                    255,
+                    255,
+                    1
+                ),
+                RColorBlack: RGBA(//black
+                    0,
+                    0,
+                    0,
+                    1
+                ),
+                RFont: "Roboto",
+                RFontSize: "26",
+                RLabelFontSize: "16",
+                RFontWeight: "Bold",
+                RfontsizeInput: "14"
+            }
+        );
+        //**********************************************************************************************************
+        //Get LoggedAssessor Details from assessor AzueAAD group and store it into collection
+        //powerapp handles authentication of respective user and display apropriate message
+        //If(Connection.Connected,
+        //Notify("Onstart start",NotificationType.Information);
+            
+            Clear(LoggedAssessor);
+        If(
+            Connection.Connected,
+            ClearCollect(
+                LoggedAssessor,
+                LookUp(
+                    AzureAD.GetGroupMembers("9ae78503-6ff0-4f1a-b15f-9e0b76c01b44").value,
+                    userPrincipalName = User().Email
+                )
+            );
+            SaveData(
+                LoggedAssessor,
+                "LocalLoggedAssessor"
+            );
+            ,
+            LoadData(
+                LoggedAssessor,
+                "LocalLoggedAssessor"
+            );
+            
+        );
+        If(
+            !IsBlank(LoggedAssessor),
+                //Store Logged user image to Variable
+            Set(
+                userImg,
+                User().Image
+            );
+                //store Logged user name to Variable
+        Set(
+                username,
+                User().FullName
+            );
+                //Store Azure AssessorId to variable
+        Set(
+                varLoggedAssessor,
+                LookUp(
+                    LoggedAssessor,
+                    userPrincipalName = User().Email,
+                    id
+                )
+            );
+                //Notify("AAD not connect.");
+        );
+                //**********************************************************************************************************
+             
+           //load  deleted action and image data  from local cache
+               LoadData(
+                    gcActionItemDelete,
+                    "localgcActionItemDelete"
+                );
+                 LoadData(
+                    gcImageDelete,
+                    "localgcImageDelete"
+                );
+        
+        
+        //collections and offline collection
+        Concurrent(
+                //**********Here we load template master data from cache and store it into collection
+            LoadData(
+                GC_templateSections,
+                "localtemplatesections"
+            );
+            ,
+            LoadData(
+                GC_templateCheckpoints,
+                "localtemplateCheckpoints"
+            );
+            ,
+            LoadData(
+                GC_templateCheckpointsItem,
+                "localtemplatecheckpointitems"
+            );
+            ,
+            LoadData(
+                GC_product,
+                "localproduct"
+            );
+            ,
+            LoadData(
+                GC_actionItems,
+                "localactionitems"
+            );
+            
+        );
+                //*********Here we check template master collection is empty or not.If collection is empty then check network connection is available or not,if available then load data from dataverse to collection and save collection to cache otherwise display error message "Internet connectivity must be available when you start app first time." 
+        If(
+            IsEmpty(GC_templateSections) || IsEmpty(GC_templateCheckpoints) || IsEmpty(GC_templateCheckpointsItem) || IsEmpty(GC_product) || IsEmpty(GC_actionItems),
+            If(
+                Connection.Connected,
+                Concurrent(
+                    //template section
+                    ClearCollect(
+                        GC_templateSections,
+                        templateSections
+                    );
+                    SaveData(
+                        GC_templateSections,
+                        "localtemplatesections"
+                    );
+                    ,
+                    //template checkpoints
+                    ClearCollect(
+                        GC_templateCheckpoints,
+                        templateCheckpoints
+                    );
+                    SaveData(
+                        GC_templateCheckpoints,
+                        "localtemplateCheckpoints"
+                    );
+                    ,
+                    //template checkpoint Items
+                    ClearCollect(
+                        GC_templateCheckpointsItem,
+                        templateCheckpointsItems
+                    );
+                    SaveData(
+                        GC_templateCheckpointsItem,
+                        "localtemplatecheckpointitems"
+                    );
+                    ,
+                    //master products data
+                    ClearCollect(
+                        GC_product,
+                        product
+                    );
+                    SaveData(
+                        GC_product,
+                        "localproduct"
+                    );
+                    ,
+                    //master actions data
+                    ClearCollect(
+                        GC_actionItems,
+                        actionItems
+                    );
+                    SaveData(
+                        GC_actionItems,
+                        "localactionitems"
+                    )
+                );
+                ,
+                Notify("Internet connectivity must be available when you start app first time.");
+            );
+            
+        );
+                //);
+        Concurrent(
+                    //**********Here we load reference data from cache and store it into collection
+        
+            LoadData(
+                gcClient,
+                "localclient"
+            );
+            ,
+            LoadData(
+                gcBank,
+                "localbank"
+            );
+            ,
+            LoadData(
+                gcBankunit,
+                "localgcbankunit"
+            );
+            ,
+            LoadData(
+                gcProjectAssignment,
+                "localprojectassignment"
+            );
+            ,
+            LoadData(
+                gcAssignmentunit,
+                "localassignmentunits"
+            );
+            ,
+            LoadData(
+                GC_bankAssessment,
+                "localbankassessment"
+            );
+            ,
+            LoadData(
+                GC_unitAssessment,
+                "localunitassessment"
+            )
+            //Notify("transaction data loaded from cache",NotificationType.Information);
+            );
+                //check if any unsend findings are available in collection if so do not do anything else clear collect data of assignment related tables (except five transaction tables)
+        //If(
+           // IsEmpty(gcClient) || IsEmpty(gcBank) || IsEmpty(gcBankunit),
+        If(
+            Connection.Connected,
+             If(
+                IsBlank(LookUp(gcProjectAssignment,AstatusUpdate = 0 || AstatusUpdate = 1))            &&
+                IsBlank(LookUp(GC_bankAssessment,BstatusUpdate = 0 || BstatusUpdate = 1))              &&
+                IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
+            
+            Concurrent(
+                        //**************client master data
+                ClearCollect(
+                    gcClient,
+                    schindlerClients
+                );
+                SaveData(
+                    gcClient,
+                    "localclient"
+                );
+                ,
+                  //Banks master data
+                ClearCollect(
+                    gcBank,
+                    schindlerBanks
+                );
+                SaveData(
+                    gcBank,
+                    "localbank"
+                );
+                ,
+             //master units data
+                ClearCollect(
+                    gcBankunit,
+                    bankUnits
+                );
+                SaveData(
+                    gcBankunit,
+                    "localgcbankunit"
+                );
+                ,
+                  //assignment Assignment 
+                
+                ClearCollect(
+                        gcProjectAssignmentAdd,
+                        Filter(
+                            assignments,
+                            assessorId = varLoggedAssessor
+                        )
+                    );
+                    ClearCollect(
+                        gcProjectAssignment,
+                        AddColumns(
+                            gcProjectAssignmentAdd,
+                            "AstatusUpdate",
+                            2
+                        )
+                    );
+               
+                //If isemptyAss
+        SaveData(
+                    gcProjectAssignment,
+                    "localprojectassignment"
+                );
+                ,
+                //assignment unit
+                ClearCollect(
+                    gcAssignmentunit,
+                    Filter(
+                        assignmentUnits,
+                        assignmentId.assessorId = varLoggedAssessor
+                    )
+                );
+                SaveData(
+                    gcAssignmentunit,
+                    "localassignmentunits"
+                );
+                ,
+                //bank Assessment
+               
+                    ClearCollect(
+                        GC_bankAssessmentAdd,
+                        Filter(
+                            bankAssessment,
+                            assignmentId.assessorId = varLoggedAssessor
+                        )
+                    );
+                    ClearCollect(
+                        GC_bankAssessment,
+                        AddColumns(
+                            GC_bankAssessmentAdd,
+                            "BstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                    GC_bankAssessment,
+                    "localbankassessment"
+                );
+                ,
+                //unit assessment
+               
+                    ClearCollect(
+                        GC_unitAssessmentAdd,
+                        Filter(
+                            unitAssessment,
+                            assignmentId.assessorId = varLoggedAssessor
+                        )
+                    );
+                    ClearCollect(
+                        GC_unitAssessment,
+                        AddColumns(
+                            GC_unitAssessmentAdd,
+                            "UstatusUpdate",
+                            2
+                        )
+                    );
+                   
+                SaveData(
+                    GC_unitAssessment,
+                    "localunitassessment"
+                );
+            );//conccurent
+            );//0/1 If
+        );
+        //update Inprogress1 status to Inprogress to fix dashboard update issue
+          UpdateIf(
+                gcProjectAssignment,
+                isCompleted = "Inprogress1",
+                {isCompleted: "Inprogress"}
+            );
+            
+                //*********************************************************************************************************
+                 //here we load transaction data from localcache to collection
+        /*
+        Concurrent(
+            LoadData(
+                GcSectionAssessment,
+                "localsectionassessment"
+            );
+            ,
+            LoadData(
+                GcCheckpointAssessment,
+                "localcheckpointassessment"
+            );
+            ,
+            LoadData(
+                GC_checkpointItemAssessment,
+                "localcheckpointitemassessment"
+            );
+            ,
+            LoadData(
+                GC_checkpointItem_ActionItem,
+                "localcheckpointitemactionitem"
+            );
+            ,
+            LoadData(
+                GC_checkpointItem_Images,
+                "localcheckpointitemimage"
+            );
+            
+        );
+                //Here we check if network is available or not, if available then check collection is empty or not ,if collection is empty then get specific assessor data from dataverse and store it into collection and save collection to cache
+        If(
+            Connection.Connected,
+            Concurrent(
+                //Section assessment transaction data
+                If(
+                    IsEmpty(GcSectionAssessment),
+                    ClearCollect(
+                        GcSectionAssessmentAdd,
+                        Filter(
+                            sectionAssessment,
+                            assignmentId.assessorId = varLoggedAssessor
+                        )
+                    );
+                   //Adding column for status maintain
+        ClearCollect(
+                        GcSectionAssessment,
+                        AddColumns(
+                            GcSectionAssessmentAdd,
+                            "SstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                        GcSectionAssessment,
+                        "localsectionassessment"
+                    )
+                );
+                ,
+                //Checkpoint assessment transaction data
+                Clear(GcCheckpointAssessmentAdd);
+                If(
+                    IsEmpty(GcCheckpointAssessment),
+                    ForAll(
+                        assignmentUnits As i,
+                        Collect(
+                            GcCheckpointAssessmentAdd,
+                            Filter(
+                                checkpointAssessment,
+                                bankUnitId.Id = i.bankUnitId.Id
+                            )
+                        )
+                    );
+                        //Adding column for status maintain
+        ClearCollect(
+                        GcCheckpointAssessment,
+                        AddColumns(
+                            GcCheckpointAssessmentAdd,
+                            "CstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                        GcCheckpointAssessment,
+                        "localcheckpointassessment"
+                    )
+                );
+                ,
+                    //Item assessment transaction data
+                Clear(GC_checkpointItemAssessmentAdd);
+                If(
+                    IsEmpty(GC_checkpointItemAssessment),
+                    ForAll(
+                        assignmentUnits As i,
+                        Collect(
+                            GC_checkpointItemAssessmentAdd,
+                            Filter(
+                                checkpointItemAssessment,
+                                bankUnitId.Id = i.bankUnitId.Id
+                            )
+                        )
+                    );
+                    ClearCollect(
+                        GC_checkpointItemAssessment,
+                        AddColumns(
+                            GC_checkpointItemAssessmentAdd,
+                            "CIstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                        GC_checkpointItemAssessment,
+                        "localcheckpointitemassessment"
+                    );
+                );
+                ,
+               //checkpoint Action Items assessment transaction data
+                Clear(GC_checkpointItem_ActionItemAdd);
+                If(
+                    IsEmpty(GC_checkpointItem_ActionItem),
+                    ForAll(
+                        assignmentUnits As i,
+                        Collect(
+                            GC_checkpointItem_ActionItemAdd,
+                            Filter(
+                                checkpointItem_ActionItem,
+                                bankUnitId.Id = i.bankUnitId.Id
+                            )
+                        )
+                    );
+                    ClearCollect(
+                        GC_checkpointItem_ActionItem,
+                        AddColumns(
+                            GC_checkpointItem_ActionItemAdd,
+                            "CIAstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                        GC_checkpointItem_ActionItem,
+                        "localcheckpointitemactionitem"
+                    );
+                );
+                ,
+                //checkpoint Action Items assessment transaction data
+                Clear(GC_checkpointItem_ImagesAdd);
+                If(
+                    IsEmpty(GC_checkpointItem_Images),
+                    ForAll(
+                        assignmentUnits As i,
+                        Collect(
+                            GC_checkpointItem_ImagesAdd,
+                            Filter(
+                                checkpointItem_Images,
+                                bankUnitId.Id = i.bankUnitId.Id
+                            )
+                        )
+                    );
+                    ClearCollect(
+                        GC_checkpointItem_Images,
+                        AddColumns(
+                            GC_checkpointItem_ImagesAdd,
+                            "CIIstatusUpdate",
+                            2
+                        )
+                    );
+                    SaveData(
+                        GC_checkpointItem_Images,
+                        "localcheckpointitemimage"
+                    );
+                );*/
+                    /* If(
+                        IsEmpty(GC_checkpointItem_Images),
+                        ClearCollect(
+                            GC_checkpointItem_Images,checkpointItem_Images
+                        );
+                        SaveData(
+                            GC_checkpointItem_Images,
+                            "localcheckpointitemimage"
+                        );
+                     ); */
+          //  );
+                  // Set(varload,false );
+        //);
+        Set(
+            Istimer,
+            true
+        );
+        //Notify("Onstart end",NotificationType.Information);
+        //Extra collection for add column
+        Clear(gcProjectAssignmentAdd);
+        Clear(GC_bankAssessmentAdd);
+        Clear(GC_unitAssessmentAdd);
+        Clear(GcSectionAssessmentAdd);
+        Clear(GcCheckpointAssessmentAdd);
+        Clear(GC_checkpointItemAssessmentAdd);
+        Clear(GC_checkpointItem_ActionItemAdd);
+        Clear(GC_checkpointItem_ImagesAdd);
+        
+        //temporary collection for update/patch specific row
+        /*Clear(ProjectAssignmentTemp);
+        Clear(bankAssessmentTemp);
+        Clear(unitAssessmentTemp);*/
+        
+    SizeBreakpoints: =[600,700, 900, 1200,1500,1800]
+

@@ -1,0 +1,1992 @@
+BankScreen As screen:
+    Fill: =
+    OnVisible: |-
+        =Set(varComment,false);
+        /*Clear(colNumberedInvoices);
+        ForAll(product,Collect(colNumberedInvoices,Last(FirstN(AddColumns(product,"RowNumber",CountRows(colNumberedInvoices)+1),CountRows(colNumberedInvoices)+1))));*/
+        //ClearCollect(projectAggregationCollection,Filter(projectAggregations,assessorId.email=User().Email));
+        
+        //ClearCollect(LC_product,product);
+        //ClearCollect(LC_bank,bank);
+        //ClearCollect(LC_bankAssessment,bankAssessment);
+        //ClearCollect(LC_clientInstallation,clientInstallation)
+        
+        //ClearCollect(LC_bank,Filter(bank,clientId.client=Gallery2.Selected.clientId.client,Go_Number);
+        Trace(First(gcBank).productId.product_Model ,TraceSeverity.Information);
+         Set(popupSyncSuccess,false);
+
+    ctnMainBankBS As groupContainer.manualLayoutContainer:
+        Height: =Parent.Height
+        Width: =Parent.Width
+        ZIndex: =2
+
+        ctnMiddleBS As groupContainer.verticalAutoLayoutContainer:
+            Height: =Parent.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            PaddingLeft: =20
+            PaddingRight: =20
+            PaddingTop: =20
+            Width: =Parent.Width
+            Y: |+
+                =ctnHeaderBS.Height
+                //'ctnBack&onlinestatusBS1'.Height+'ctnBack&onlinestatusBS1'.Y
+                
+            ZIndex: =1
+
+            ctnBackBS As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =ctnHeaderBS.Height
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =5
+                Width: =Parent.Width
+                Y: =ctnHeaderBS.Height+ctnHeaderBS.Y
+                ZIndex: =1
+
+                ctnBackButtonBS As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =80
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    PaddingLeft: =40
+                    Width: =Parent.Width
+                    Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
+                    ZIndex: =1
+
+                    btnBackButtonBS As button:
+                        BorderColor: =AllScreensCSS.RActiveColor
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =ctnBackButtonBS.Height/1.5
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =
+                        OnSelect: =Navigate(ProjectScreen)
+                        PaddingBottom: =10
+                        PaddingLeft: =20
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AllScreensCSS.RLabelFontSize-2
+                        Text: ="Back"
+                        Width: =ctnBackButtonBS.Width/6
+                        ZIndex: =1
+
+                    TimerglryUnitBS As timer:
+                        AutoStart: =true
+                        Duration: =100
+                        OnTimerEnd: =Set(Q,true)
+                        Visible: =false
+                        ZIndex: =2
+
+            ctnClintNameBS As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =Parent.Height/6.5
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                Y: |-
+                    =ctnHeaderBS.Height
+                    //'ctnBack&onlinestatusBS1'.Height+'ctnBack&onlinestatusBS1'.Y
+                ZIndex: =2
+
+                ctnGonumberBS As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =Parent.Height/2.8
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    ZIndex: =1
+
+                    lblGonumber1BS As label:
+                        Font: =AllScreensCSS.RFont
+                        FontWeight: =FontWeight.Semibold
+                        Height: =ctnGonumberBS.Height
+                        PaddingLeft: =20
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: |-
+                            ="G.O./Commission number :   " & lblBankName.Text
+                        Width: |-
+                            =//ctnHeaderBS_1.Width/3.5
+                            Parent.Width/2
+                        X: |
+                            =lblAssessmentBS_2.X+lblAssessmentBS_2.Width
+                        ZIndex: =1
+
+                ctnbankBS As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =Parent.Height/1.8
+                    LayoutAlignItems: =LayoutAlignItems.Center
+                    LayoutGap: =10
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    Width: =Parent.Width
+                    ZIndex: =2
+
+                    lblAssStatusBS As label:
+                        Font: =AllScreensCSS.RFont
+                        FontWeight: =FontWeight.Bold
+                        Height: =Parent.Height
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: |-
+                            =If(comp=true,"Assessment by                     :   " & glryProject.Selected.assessorName ,"   "&LookUp(gcBank,Id=VarBankId,productId.product_Model)
+                             &" series"
+                            )
+                        Width: =If(Parent.Width>800,Parent.Width/1.9,Parent.Width/2.3)
+                        ZIndex: =3
+
+                    LblAssStatuscountBS As label:
+                        Color: =RGBA(54, 176, 75, 1)
+                        Font: =AllScreensCSS.RFont
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: =CountRows(Filter(GC_unitAssessment,clientBank_Id.Go_Number=lblGonumber1BS.Text && Assessment_status="inProgress"))& "/" &(CountRows(glryUnitBS.AllItems))
+                        Visible: =false
+                        ZIndex: =4
+
+                    btnProjecttypeBS As button:
+                        BorderColor: =(Self.Fill)
+                        BorderThickness: =0
+                        DisplayMode: =DisplayMode.View
+                        Fill: =RGBA(252, 165, 50, 1)
+                        Height: =50
+                        HoverFill: |-
+                            =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                            Self.Fill
+                        OnSelect: =//Select(Parent)
+                        Text: =btnprojecttype.Text
+                        Width: =260
+                        X: =
+                        Y: =
+                        ZIndex: =5
+
+                    btnTripReportBS As button:
+                        BorderColor: =Self.Fill
+                        DisplayMode: |-
+                            =//If(CountRows(Filter(GcCheckpointAssessment,assignmentId.Id=varAssignmentId && AssessmentStatus="Inprogress"))>0,DisplayMode.Edit,DisplayMode.Disabled)
+                            If(Connection.Connected,
+                            If(
+                                CountRows(
+                                    Filter(
+                                        unitAssessment,
+                                        assignmentId.Id = varAssignmentId
+                                    )
+                                ) = CountRows(
+                                    Filter(
+                                        unitAssessment,
+                                        (assignmentId.Id = varAssignmentId && Assessment_status = "Inprogress") ||
+                                        (assignmentId.Id = varAssignmentId && Assessment_status = "Completed")
+                                    )
+                                ),
+                                DisplayMode.Edit,
+                                DisplayMode.Disabled
+                            ),
+                            DisplayMode.Disabled
+                            )
+                        Fill: =AllScreensCSS.RActiveColor
+                        Font: =AllScreensCSS.RFont
+                        Height: =50
+                        HoverFill: =Self.Fill
+                        OnSelect: |+
+                            =Set(
+                                varReportPopup,
+                                false
+                            );
+                            Set(popupTripReportSuccess,false);
+                            
+                            Refresh(BankTripReport);
+                            
+                            //ClearCollect(gcBankunit,bankUnits);
+                            If(
+                                IsEmpty(GC_checkpointItem_ActionItem),
+                                LoadData(
+                                    GC_checkpointItem_ActionItem,
+                                    "localcheckpointitemactionitem",
+                                    true
+                                );
+                                
+                            );
+                            Clear(tempdata);
+                            ForAll(
+                                Filter(
+                                    gcAssignmentunit,
+                                    assignmentId.Id = varAssignmentId
+                                ) As i,
+                                If(
+                                    CountRows(
+                                        Filter(
+                                            GC_checkpointItem_ActionItem,
+                                            bankUnitId.Id = i.bankUnitId.Id
+                                        )
+                                    ) < 1,
+                                    Collect(
+                                        tempdata,
+                                        i.bankUnitId.Id
+                                    );
+                                )
+                            );
+                            If(
+                                CountRows(tempdata) < 1,
+                                If(
+                                    IsBlank(
+                                        LookUp(
+                                            BankTripReport,
+                                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id
+                                        )
+                                    ),
+                                    Set(
+                                        VarTripReportNotification,
+                                        "Trip report saved successfully."
+                                    ),
+                                    ClearCollect(localBanktripReport, LookUp(
+                                            BankTripReport,
+                                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id
+                                        ));
+                                    Set(
+                                        VarTripReportNotification,
+                                        "Trip report Update successfully."
+                                    )
+                                );
+                                ClearCollect(localCollectionAction,
+                                Sort(
+                                Sort(
+                                    GroupBy(
+                                        AddColumns(
+                                            Filter(
+                                                GC_checkpointItem_ActionItem,
+                                                (assignmentId.Id = glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = "High")
+                                            ),
+                                            "unit",
+                                            bankUnitId.Id,
+                                            "section",
+                                            section_id.sectionName,
+                                            "sectionSequence",
+                                            section_id.sectionSequence
+                                        ),
+                                        "unit",
+                                        "section",
+                                        "sectionSequence",
+                                        "data"
+                                    ),
+                                    sectionSequence,
+                                    Ascending
+                                ),
+                                LookUp(
+                                    gcBankunit,
+                                    Id = unit,
+                                    unitNumber
+                                ),
+                                Ascending
+                            ););
+                                Navigate(TripReportScreen);
+                                ,
+                                Set(VarPopupSyncText,"Assessment records are not found in your local device . please click each unit to get assessment records from server .");
+                                Set(popupTripReportSuccess,true);
+                            
+                            );
+                            
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PressedColor: =Self.Color
+                        PressedFill: =Self.Fill
+                        Size: |-
+                            =//btnTripReportBS.Width/13
+                            AllScreensCSS.RfontsizeInput
+                        Text: |-
+                            =If(Connection.Connected,
+                            If(comp=true,
+                            "View Report",
+                            If(IsBlank(LookUp(
+                                BankTripReport,
+                                assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id
+                            )),"Generate Report","Edit Report")),
+                            "Trip Report")
+                        Width: =Parent.Width/6.5
+                        ZIndex: =6
+
+            ctnunitAssessmentBS As groupContainer.verticalAutoLayoutContainer:
+                Height: =Parent.Height
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                Y: =ctnClintNameBS.Height
+                ZIndex: =3
+
+                glryUnitBS As gallery.variableTemplateHeightGallery:
+                    Fill: =RGBA(237, 237, 237, 1)
+                    Height: =CountRows(glryUnitBS.AllItems)*glryUnitBS.TemplateHeight
+                    Items: |
+                        =If(comp=true,Sort(Filter(assignmentUnits,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending),
+                        If(inpro=true || upcomp =true,Sort(Filter(gcAssignmentunit,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending)
+                        ))
+                        //Sort(Filter(gcAssignmentunit,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending)
+                    Layout: =Layout.Vertical
+                    LoadingSpinner: =LoadingSpinner.Controls
+                    ShowScrollbar: =false
+                    TemplateSize: =600
+                    Visible: =Q
+                    Width: =Parent.Width/1.05
+                    Y: =ctnHeaderBS.Height+300
+                    ZIndex: =1
+
+                    lblProductNameBS As label:
+                        AutoHeight: =true
+                        FontWeight: =FontWeight.Semibold
+                        OnSelect: =Select(Parent)
+                        Size: =16
+                        Text: ="Unit  " & ThisItem.bankUnitId.unitNumber  
+                        Width: =255
+                        X: =22
+                        Y: =27
+                        ZIndex: =1
+
+                    RectanglebroderBS As rectangle:
+                        BorderColor: =RGBA(179, 179, 179, 1)
+                        BorderThickness: =2
+                        Fill: =RGBA(179, 179, 179, 1)
+                        Height: =2
+                        Width: =glryUnitBS.Width/1.06
+                        X: =30
+                        Y: =86
+                        ZIndex: =2
+
+                    btnStartAssessmentBS As button:
+                        Fill: =AllScreensCSS.RActiveColor
+                        Font: =AllScreensCSS.RFont
+                        Height: =50
+                        HoverColor: |-
+                            =//RGBA(255, 255, 255, 1)
+                            Self.Color
+                        HoverFill: |-
+                            =//RGBA(255, 0, 0, 1)
+                            Self.Fill
+                        OnSelect: |
+                            =//for safety check to show default selected
+                            If(
+                                IsEmpty(GcSectionAssessment) && IsEmpty(GcCheckpointAssessment) && IsEmpty(GC_checkpointItemAssessment) && IsEmpty(GC_checkpointItem_ActionItem) && IsEmpty(GC_checkpointItem_Images),
+                               Concurrent(
+                                    LoadData(
+                                        GcSectionAssessment,
+                                        "localsectionassessment",true
+                                    );
+                                   ,
+                                    LoadData(
+                                        GcCheckpointAssessment,
+                                        "localcheckpointassessment",true
+                                    );
+                                    ,
+                                    LoadData(
+                                        GC_checkpointItemAssessment,
+                                        "localcheckpointitemassessment",true
+                                    );
+                                    ,
+                                    LoadData(
+                                        GC_checkpointItem_ActionItem,
+                                        "localcheckpointitemactionitem",true
+                                    );
+                                    ,
+                                    LoadData(
+                                        GC_checkpointItem_Images,
+                                        "localcheckpointitemimage",true
+                                    );
+                                   // Notify("if collection empty then data loaded from cache",NotificationType.Information);
+                                
+                            );
+                            );
+                                    //Here we check if network is available or not, if available then check collection is empty or not ,if collection is empty then get specific assessor data from dataverse and store it into collection and save collection to cache
+                            If(
+                                Connection.Connected,
+                                Concurrent(
+                                    //Section assessment transaction data
+                                    If(
+                                        IsEmpty(GcSectionAssessment),
+                                        ClearCollect(
+                                            GcSectionAssessmentAdd,
+                                            Filter(
+                                                sectionAssessment,
+                                                //assignmentId.assessorId = varLoggedAssessor
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id
+                                            )
+                                        );
+                                       //Adding column for status maintain
+                            ClearCollect(
+                                            GcSectionAssessment,
+                                            AddColumns(
+                                                GcSectionAssessmentAdd,
+                                                "SstatusUpdate",
+                                                2
+                                            )
+                                        );,
+                                        //Notify("section data  from dataverse",NotificationType.Information);
+                                             
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GcSectionAssessment,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            )<1,
+                                            ClearCollect(
+                                                GcSectionAssessmentTemp,
+                                                Filter(
+                                                    sectionAssessment,
+                                                //assignmentId.assessorId = varLoggedAssessor
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            );
+                                        //    Notify("Unit data of section inserted from dataverse",NotificationType.Information);
+                                            ForAll(
+                                                GcSectionAssessmentTemp As i,
+                                                Patch(
+                                                    GcSectionAssessment,
+                                                    Defaults(GcSectionAssessment),
+                                                    {
+                                                        'sectionAssessment (quantum_sectionassessmentid)': i.'sectionAssessment (quantum_sectionassessmentid)',
+                                                        'sectionAssessment (quantum_sectionassessment)': i.'sectionAssessment (quantum_sectionassessment)',
+                                                        assignmentId: i.assignmentId,
+                                                        bankUnitId: i.bankUnitId,
+                                                        product_id: i.product_id,
+                                                        sectionId: i.sectionId,
+                                                        sectionName: i.sectionName,
+                                                        AssessmentStatus: i.AssessmentStatus,
+                                                        SstatusUpdate: 2,
+                                                        sectionSequence: i.sectionSequence,
+                                                        sectionComment: i.sectionComment
+                                                    }
+                                                )
+                                            );
+                                             
+                                               /* ,
+                                                ForAll(
+                                                    GcSectionAssessmentTemp As i,
+                                                    UpdateIf(
+                                                        GcSectionAssessment,
+                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
+                                                        {
+                                                            'sectionAssessment (quantum_sectionassessmentid)': i.'sectionAssessment (quantum_sectionassessmentid)',
+                                                            'sectionAssessment (quantum_sectionassessment)': i.'sectionAssessment (quantum_sectionassessment)',
+                                                            AssessmentStatus: i.AssessmentStatus,
+                                                            SstatusUpdate: 2
+                                                        }
+                                                    )
+                                                );*/
+                                           );
+                                    );
+                                    ,
+                                    //Checkpoint assessment transaction data
+                                    If(
+                                        IsEmpty(GcCheckpointAssessment),
+                                        ClearCollect(
+                                            GcCheckpointAssessmentAdd,
+                                            Filter(
+                                                checkpointAssessment,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id
+                                            )
+                                        );
+                                            //Adding column for status maintain
+                            ClearCollect(
+                                            GcCheckpointAssessment,
+                                            AddColumns(
+                                                GcCheckpointAssessmentAdd,
+                                                "CstatusUpdate",
+                                                2
+                                            )
+                                        );,
+                                       // Notify("checkpoint data  from dataverse",NotificationType.Information);
+                                        If(
+                                            CountRows(
+                                                 Filter(
+                                                    GcCheckpointAssessment,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            )<1,
+                                            ClearCollect(
+                                                GcCheckpointAssessmentTemp,
+                                                Filter(
+                                                    checkpointAssessment,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            );
+                                        //    Notify("Unit data of checkpoint inserted from dataverse",NotificationType.Information);
+                                            ForAll(
+                                                GcCheckpointAssessmentTemp As i,
+                                                Patch(
+                                                    GcCheckpointAssessment,
+                                                    Defaults(GcCheckpointAssessment),
+                                                    {
+                                                        checkpointAssessment: i.checkpointAssessment,
+                                                        checkpointAssessment_id: i.checkpointAssessment_id,
+                                                        assignmentId: i.assignmentId,
+                                                        bankUnitId: i.bankUnitId,
+                                                        product_id: i.product_id,
+                                                        sectionId: i.sectionId,
+                                                        checkpointId: i.checkpointId,
+                                                        checkpointName: i.checkpointName,
+                                                        AssessmentStatus: i.AssessmentStatus,
+                                                        CstatusUpdate: 2,
+                                                        CheckpointSequence: i.CheckpointSequence,
+                                                        checkpointComment: i.checkpointComment
+                                                    }
+                                                );
+                                            );
+                                        );
+                                    );
+                                    ,
+                                        //Item assessment transaction data
+                                    If(
+                                        IsEmpty(GC_checkpointItemAssessment),
+                                        ClearCollect(
+                                            GC_checkpointItemAssessmentAdd,
+                                            Filter(
+                                                checkpointItemAssessment,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id
+                                            )
+                                        );
+                                        ClearCollect(
+                                            GC_checkpointItemAssessment,
+                                            AddColumns(
+                                                GC_checkpointItemAssessmentAdd,
+                                                "CIstatusUpdate",
+                                                2
+                                            )
+                                        );,
+                                       // Notify("checkpoint item data  from dataverse",NotificationType.Information);
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GC_checkpointItemAssessment,
+                                                      bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            )<1,
+                                            ClearCollect(
+                                                GC_checkpointItemAssessmentTemp,
+                                                Filter(
+                                                    checkpointItemAssessment,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            );
+                                       //     Notify("Unit data of checkpoint item inserted from dataverse",NotificationType.Information);
+                                            ForAll(
+                                                GC_checkpointItemAssessmentTemp As i,
+                                                Patch(
+                                                    GC_checkpointItemAssessment,
+                                                    Defaults(GC_checkpointItemAssessment),
+                                                    {
+                                                          'checkpointItemAssessment (quantum_checkpointitemassessmentid)':i.'checkpointItemAssessment (quantum_checkpointitemassessmentid)',
+                                                        'checkpointItemAssessment (quantum_checkpointitemassessment)': i.'checkpointItemAssessment (quantum_checkpointitemassessment)',
+                                                        checkpointAssessment_Id: i.checkpointAssessment_Id,
+                                                        assignmentId: i.assignmentId,
+                                                        bankUnitId: i.bankUnitId,
+                                                        product_id: i.product_id,
+                                                        section_Id: i.section_Id,
+                                                        checkpointItem_annotation: i.checkpointItem_annotation,
+                                                        checkpointItemId: i.checkpointItemId,
+                                                        checkpointItemName: i.checkpointItemName,
+                                                        assessmentStatus: i.assessmentStatus,
+                                                        CIstatusUpdate: 2,
+                                                        checkpointitemSequence: i.checkpointitemSequence,
+                                                        checkpointItemComment: i.checkpointItemComment
+                                                     
+                                                       
+                                                           }
+                                                )
+                                            )
+                                        );
+                                    );
+                                    ,
+                                   //checkpoint Action Items assessment transaction data
+                                    If(
+                                        IsEmpty(GC_checkpointItem_ActionItem),
+                                        ClearCollect(
+                                            GC_checkpointItem_ActionItemAdd,
+                                            Filter(
+                                                checkpointItem_ActionItem,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id
+                                            )
+                                        );
+                                        ClearCollect(
+                                            GC_checkpointItem_ActionItem,
+                                            AddColumns(
+                                                GC_checkpointItem_ActionItemAdd,
+                                                "CIAstatusUpdate",
+                                                2
+                                            )
+                                        );,
+                                        //  Notify("checkpoint action data  from dataverse",NotificationType.Information);
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GC_checkpointItem_ActionItem,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            )<1,
+                                            ClearCollect(
+                                                GC_checkpointItem_ActionItemTemp,
+                                                Filter(
+                                                    checkpointItem_ActionItem,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            );
+                                          //  Notify("Unit data of checkpoint action item inserted from dataverse",NotificationType.Information);
+                                            ForAll(
+                                                GC_checkpointItem_ActionItemTemp As i,
+                                                Patch(
+                                                    GC_checkpointItem_ActionItem,
+                                                    Defaults(GC_checkpointItem_ActionItem),
+                                                    {
+                                                        checkpointItem_ActionItems: i.checkpointItem_ActionItems,
+                                                        checkpointItemActionItemsId: i.checkpointItemActionItemsId,
+                                                        ActionItem_Name: i.ActionItem_Name,
+                                                        assignmentId: i.assignmentId,
+                                                        bankId: i.bankId,
+                                                        bankUnitId: i.bankUnitId,
+                                                        section_id: i.section_id,
+                                                        checkpoint_id: i.checkpoint_id,
+                                                        checkpointItem_Id: i.checkpointItem_Id,
+                                                        product_id: i.product_id,
+                                                        priority: i.priority,
+                                                        OwnerId: i.OwnerId,
+                                                        TimeEstimate: i.TimeEstimate,
+                                                        MaterialEstimate: i.MaterialEstimate,
+                                                        CIAstatusUpdate: 2,
+                                                        Action_status:i.Action_status
+                                                    }
+                                                );
+                                            );
+                                        );
+                                    );
+                                    ,
+                                    //checkpoint Action Items assessment transaction data
+                                    If(
+                                        IsEmpty(GC_checkpointItem_Images),
+                                        ClearCollect(
+                                            GC_checkpointItem_ImagesAdd,
+                                            Filter(
+                                                checkpointItem_Images,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id
+                                            )
+                                        );
+                                        ClearCollect(
+                                            GC_checkpointItem_Images,
+                                            AddColumns(
+                                                GC_checkpointItem_ImagesAdd,
+                                                "CIIstatusUpdate",
+                                                2
+                                            )
+                                        );,
+                                          //Notify("checkpoint images data  from dataverse",NotificationType.Information);
+                                        If(
+                                            CountRows(
+                                                Filter(
+                                                    GC_checkpointItem_Images,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            )<1,
+                                            ClearCollect(
+                                                GC_checkpointItem_ImagesTemp,
+                                                Filter(
+                                                    checkpointItem_Images,
+                                                    bankUnitId.Id = ThisItem.bankUnitId.Id
+                                                )
+                                            );
+                                  //    Notify("Unit data of checkpoint images inserted from dataverse",NotificationType.Information);
+                                            ForAll(
+                                                GC_checkpointItem_ImagesTemp As i,
+                                                Patch(
+                                                    GC_checkpointItem_Images,
+                                                    Defaults(GC_checkpointItem_Images),
+                                                    {
+                                                        checkpointItem_Images: i.checkpointItem_Images,
+                                                        checkpointItemImagesId: i.checkpointItemImagesId,
+                                                        assignmentId: i.assignmentId,
+                                                        bankUnitId: i.bankUnitId,
+                                                        section_id: i.section_id,
+                                                        checkpoint_id: i.checkpoint_id,
+                                                        checkpointItem_Id: i.checkpointItem_Id,
+                                                        product_id: i.product_id,
+                                                       // Image:Image14_2.Image,
+                                                        Image:i.Image,
+                                                        image_annotation: i.image_annotation,
+                                                        CIIstatusUpdate: 2
+                                                    }
+                                                );
+                                            );
+                                        );
+                                    );
+                                );
+                                /*
+                                SaveData(
+                                    GcSectionAssessment,
+                                    "localsectionassessment"
+                                );
+                                SaveData(
+                                    GcCheckpointAssessment,
+                                    "localcheckpointassessment"
+                                );
+                                SaveData(
+                                    GC_checkpointItemAssessment,
+                                    "localcheckpointitemassessment"
+                                );
+                                SaveData(
+                                    GC_checkpointItem_ActionItem,
+                                    "localcheckpointitemactionitem"
+                                );
+                                SaveData(
+                                    GC_checkpointItem_Images,
+                                    "localcheckpointitemimage"
+                                );*/
+                                        /*
+                                         If(
+                                            IsEmpty(GC_checkpointItem_Images),
+                                            ClearCollect(
+                                                GC_checkpointItem_Images,checkpointItem_Images
+                                            );
+                                            SaveData(
+                                                GC_checkpointItem_Images,
+                                                "localcheckpointitemimage"
+                                            );
+                                         ); */
+                            );
+                            If(
+                                comp = true,
+                                Navigate(ViewAssessmentScreen),
+                                Set(
+                                    varSafety,
+                                    false
+                                );
+                                
+                            //here set variable for selected product model.
+                            Set(
+                                    CId,
+                                    ThisItem.productModel
+                                );
+                                
+                            //set variable for selected bankunitId.
+                            Set(
+                                    varBankUnitId,
+                                    ThisItem.bankUnitId.Id
+                                );
+                                
+                                      // Set(varload,false );
+                            Navigate(SectionScreen);
+                                
+                            );
+                        PressedColor: |
+                            =//RGBA(255, 255, 255, 1)
+                            Self.Color
+                        PressedFill: |-
+                            =//RGBA(255, 0, 0, 1)
+                            Self.Fill
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: |-
+                            =//"Start assessment"
+                            If(
+                                comp = true,
+                                "View Assessment",
+                                If(
+                                    (LookUp(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id,
+                                        Assessment_status
+                                        ) = "Inprogress"
+                                    ),
+                                    "Resume Assessment",
+                                    "Start Assessment"
+                                )
+                            )
+                        Width: =ctnunitAssessmentBS.Width/4
+                        X: =(Parent.Width-Self.Width)-40
+                        Y: =30
+                        ZIndex: =3
+
+                    btnCommentBS As button:
+                        DisplayMode: |
+                            =If(CountRows(Filter(GcSectionAssessment,assignmentId.Id=varAssignmentId  && bankUnitId.Id=ThisItem.bankUnitId.Id && sectionComment<>Blank()))=0 && CountRows(Filter(GcCheckpointAssessment,assignmentId.Id=varAssignmentId &&    bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointComment<>Blank()))=0 && CountRows(Filter(GC_checkpointItemAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointItemComment<>Blank()))=0,
+                            DisplayMode.Disabled,DisplayMode.Edit)
+                        Fill: =AllScreensCSS.RActiveColor
+                        Font: =AllScreensCSS.RFont
+                        Height: =50
+                        HoverFill: |-
+                            =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                            Self.Fill
+                        OnSelect: |-
+                            =Set(varComment,true);
+                            Set(varUnitId,ThisItem.bankUnitId);
+                            Set(varSectionComment,true);
+                            Set(varCheckpointComment,true);
+                            Set(varCheckpoinitemComment,true);
+                            //Navigate(Screen10)
+                        Size: =AllScreensCSS.RfontsizeInput
+                        Text: ="Comment"
+                        Visible: |-
+                            =//If(IsBlank(Filter(GcSectionAssessment,bankUnitId.Id=glryBankGo_1.Selected.Id,sectionComment)),
+                            
+                            //|| IsBlank(LookUp(GcCheckpointAssessment,bankUnitId.Id=glryBankGo_1.Selected.Id,checkpointComment)),
+                            
+                            //false,true)
+                            If(comp= true , false , true )
+                        Width: =120
+                        X: |-
+                            =//lblProductName_1.X+lblProductName_1.Width
+                            (Parent.Width-Self.Width-btnStartAssessmentBS.Width)-60
+                        Y: =30
+                        ZIndex: =4
+
+                    Image1_3 As image:
+                        Height: =30
+                        Image: |-
+                            =//ForAll(chglryCheckpointsSS_2.AllItems  As i,If(  i.Image1.Image=sentdata,sentdata,'Unsentdata (2)'))
+                            If(
+                                CountRows(
+                                    Filter(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 2
+                                    )
+                                ) > 0,
+                                uploaded,
+                                CountRows(
+                                    Filter(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 1
+                                    )
+                                ) > 0 
+                                /*|| CountRows(
+                                    Filter(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 0
+                                    )
+                                ) > 0*/
+                                ,
+                                'not-uploaded'
+                            )
+                        OnSelect: =Select(Parent)
+                        Visible: |-
+                            =/*If(
+                                CountRows(
+                                    Filter(
+                                        GC_unitAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 2 || UstatusUpdate = 1 || UstatusUpdate = 0
+                                    )
+                                ) > 0,
+                                true,
+                                false
+                            )*/
+                            
+                            If(
+                                CountRows(
+                                    Filter(
+                                        GC_unitAssessment,
+                                        (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 2)  || 
+                                        (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 1) 
+                                        // ||(assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" &&  UstatusUpdate = 0)
+                                    )
+                                ) > 0,
+                                true,
+                                false
+                            )
+                        Width: =30
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-Image2.Width)-100
+                        Y: =38
+                        ZIndex: =5
+
+                    Image2 As image:
+                        Height: =45
+                        HoverBorderColor: =//ColorFade(Self.BorderColor, 20%)
+                        HoverFill: =//ColorFade(Self.Fill, 20%)
+                        Image: =If(Connection.Connected=true,SYNC,'SYNC Copy')
+                        ImagePosition: =ImagePosition.Fill
+                        OnSelect: =true
+                        RadiusBottomLeft: =90
+                        RadiusBottomRight: =90
+                        RadiusTopLeft: =90
+                        RadiusTopRight: =90
+                        Visible: =If(comp= true , false , true )
+                        Width: =45
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width)-80
+                        Y: =30
+                        ZIndex: =6
+
+                    Button5 As button:
+                        BorderThickness: =0
+                        DisabledColor: |-
+                            =//RGBA(166, 166, 166, 1)
+                            AllScreensCSS.RActiveColor
+                        DisabledFill: |-
+                            =//RGBA(244, 244, 244, 1)
+                            AllScreensCSS.RActiveColor
+                        Fill: =If(Connection.Connected, RGBA(0, 0, 0, 0),RGBA(204, 204, 204, 0.40))
+                        Height: =45
+                        HoverColor: =RGBA(0, 0, 0, 0)
+                        HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        OnSelect: |
+                            =//if network available then patch 1 status data to dataverse
+                            
+                            If(
+                                Connection.Connected,
+                                If(
+                                    CountRows(
+                                        Filter(
+                                            GC_unitAssessment,
+                                             assignmentId.Id = varAssignmentId && 
+                                             bankUnitId.Id = ThisItem.bankUnitId.Id &&
+                                             UstatusUpdate = 1
+                                        )
+                                    ) > 0,
+                                    Set(
+                                        VarPopupSyncText,
+                                        "Syncing Assessment findings and getting reviewer's comments. It may take sometime."
+                                    );
+                            
+                                    Set(popupSyncSuccess,true);
+                                    //update dataverse table instead using patch
+                                    UpdateIf(
+                                        assignments,
+                                        Id = varAssignmentId && isCompleted = "Upcomming",
+                                        {isCompleted: "Inprogress"}
+                                    );
+                                    UpdateIf(
+                                        gcProjectAssignment,
+                                        Id = varAssignmentId,
+                                        {AstatusUpdate: 2}
+                                    );
+                                    SaveData(
+                                        gcProjectAssignment,
+                                        "localprojectassignment"
+                                    );
+                            
+                                //update dataverse table instead using patch
+                                    UpdateIf(
+                                        bankAssessment,
+                                        assignmentId.Id = varAssignmentId && 
+                                        bankId.Id = VarBankId && 
+                                        Assessment_Status = "Upcomming",
+                                        {Assessment_Status: "Inprogress"}
+                                    );
+                                    UpdateIf(
+                                        GC_bankAssessment,
+                                        assignmentId.Id = varAssignmentId,
+                                          {BstatusUpdate: 2}
+                                    );
+                                
+                                  //saving to local cache
+                                    SaveData(
+                                        GC_bankAssessment,
+                                        "localbankassessment"
+                                    );
+                            
+                                    //update dataverse table instead using patch
+                                    UpdateIf(
+                                        unitAssessment,
+                                        assignmentId.Id = varAssignmentId &&
+                                        bankUnitId.Id = varBankUnitId && 
+                                        Assessment_status = "Upcomming",
+                            
+                                        {Assessment_status: "Inprogress"}
+                                    );
+                                    UpdateIf(
+                                        GC_unitAssessment,
+                               
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id  ,
+                                        {UstatusUpdate: 2}
+                                    );
+                                    //saving to local cache
+                                    SaveData(
+                                        GC_unitAssessment,
+                                        "localunitassessment"
+                                    );
+                                    ,
+                                    CountRows(
+                                        Filter(
+                                            GC_unitAssessment,
+                                            (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 2)
+                                        )
+                                    ) > 0,
+                                    Set(
+                                        VarPopupSyncText,
+                                        "No new assessment records found for submission. Getting reviewer’s comments for submitted Assessment findings."
+                                    );
+                                 Set(popupSyncSuccess,true);
+                                    
+                                );
+                                
+                                //to delete deleted actions from dataverse
+                            ForAll(
+                                    gcActionItemDelete As i,
+                                    RemoveIf(
+                                        checkpointItem_ActionItem,
+                                        checkpointItemActionItemsId = i.id
+                                    )
+                                );
+                                Clear(gcActionItemDelete);
+                                SaveData(
+                                    gcActionItemDelete,
+                                    "localgcActionItemDelete"
+                                );
+                                //to delete deleted images from dataverse
+                            ForAll(
+                                    gcImageDelete As i,
+                                    RemoveIf(
+                                        checkpointItem_Images,
+                                        checkpointItemImagesId = i.id
+                                    )
+                                );
+                                Clear(gcImageDelete);
+                                SaveData(
+                                    gcImageDelete,
+                                    "localgcImageDelete"
+                                );
+                            
+                              
+                            // inside section assessment collection => rows contain status 1 => patch that rows to dataverse
+                            Patch(
+                                    sectionAssessment,
+                                    ShowColumns(
+                                        DropColumns(
+                                            Filter(
+                                                GcSectionAssessment,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id && SstatusUpdate = 1 && AssessmentStatus = "Inprogress"
+                                            ),
+                                            "SstatusUpdate"
+                                        ),
+                                        "quantum_sectionassessmentid",
+                                        "shlaf_assignmentId",
+                                        "shlaf_bankUnitId",
+                                        "shlaf_product_id",
+                                        "quantum_sectionassessment",
+                                        "shlaf_sectionId",
+                                        "quantum_sectionname",
+                                        "shlaf_sectioncomment",
+                                        "quantum_assessmentstatus",
+                                        "cr28a_sectionsequence"
+                                    )
+                                );
+                                ClearCollect(
+                                    TempSectionAssessment,
+                                    Filter(
+                                        sectionAssessment,
+                                        assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id
+                                    )
+                                );
+                                ForAll(
+                                    TempSectionAssessment As i,
+                                    UpdateIf(
+                                        GcSectionAssessment,
+                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'//&& SstatusUpdate = 1
+                            ,
+                                        {
+                                            'sectionAssessment (quantum_sectionassessmentid)': i.'sectionAssessment (quantum_sectionassessmentid)',
+                                            sectionComment: i.sectionComment,
+                                            AssessmentStatus: i.AssessmentStatus,
+                                            SstatusUpdate: 2
+                                        }
+                                    )
+                                );
+                                //saving data to local cache
+                            SaveData(
+                                    GcSectionAssessment,
+                                    "localsectionassessment"
+                                );
+                                //updating sectionid lookup for checkpoint assessment collection to get updated unique key from dataverse using temporary collection
+                            ForAll(
+                                    TempSectionAssessment As i,
+                                    UpdateIf(
+                                        GcCheckpointAssessment,
+                                        sectionId.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
+                                        {
+                                            sectionId: LookUp(
+                                                TempSectionAssessment,
+                                                'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                            )
+                                        }
+                                    );
+                                );
+                                
+                            // inside checkpoint assessment collection => rows contain status 1 => patch that rows to dataverse
+                            Patch(
+                                    checkpointAssessment,
+                                    ShowColumns(
+                                        DropColumns(
+                                            Filter(
+                                                GcCheckpointAssessment,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id && CstatusUpdate = 1 && AssessmentStatus = "Inprogress"
+                                            ),
+                                            "CstatusUpdate"
+                                        ),
+                                        "quantum_checkpointassessmentid",
+                                        "shlaf_assignmentId",
+                                        "shlaf_bankUnitId",
+                                        "shlaf_product_id",
+                                        "quantum_sectionId",
+                                        "quantum_checkpointassessment",
+                                        "shlaf_checkpointId",
+                                        "quantum_checkpointname",
+                                        "quantum_checkpoint_annotation",
+                                        "shlaf_checkpointcomment",
+                                        "quantum_assessmentstatus",
+                                        "cr28a_checkpointsequence"
+                                    )
+                                );
+                                ClearCollect(
+                                    TempCheckpointAssessment,
+                                    Filter(
+                                        checkpointAssessment,
+                                        assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id
+                                    )
+                                );
+                                ForAll(
+                                    TempCheckpointAssessment As i,
+                                    UpdateIf(
+                                        GcCheckpointAssessment,
+                                        checkpointAssessment_id = i.checkpointAssessment_id//&& CstatusUpdate = 1
+                            ,
+                                        {
+                                            checkpointAssessment: i.checkpointAssessment,
+                                            AssessmentStatus: i.AssessmentStatus,
+                                            checkpointComment: i.checkpointComment,
+                                            CstatusUpdate: 2
+                                        }
+                                    )
+                                );
+                              //saving data to local cache
+                            SaveData(
+                                    GcCheckpointAssessment,
+                                    "localcheckpointassessment"
+                                );
+                                
+                            //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
+                            ForAll(
+                                    TempSectionAssessment As i,
+                                    ForAll(
+                                        TempCheckpointAssessment As a,
+                                        UpdateIf(
+                                            GC_checkpointItemAssessment,
+                                            section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpointAssessment_Id.checkpointAssessment_id = a.checkpointAssessment_id,
+                                            {
+                                                section_Id: LookUp(
+                                                    TempSectionAssessment,
+                                                    'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                                ),
+                                                checkpointAssessment_Id: LookUp(
+                                                    TempCheckpointAssessment,
+                                                    checkpointAssessment_id = a.checkpointAssessment_id
+                                                )
+                                            }
+                                        );
+                                    );
+                                );
+                                // inside checkpoint item assessment collection => rows contain status 1 => patch that rows to dataverse
+                            Patch(
+                                    checkpointItemAssessment,
+                                    ShowColumns(
+                                        DropColumns(
+                                            Filter(
+                                                GC_checkpointItemAssessment,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id && CIstatusUpdate = 1
+                                            ),
+                                            "CIstatusUpdate"
+                                        ),
+                                        "quantum_checkpointitemassessmentid",
+                                        "shlaf_assignmentId",
+                                        "shlaf_bankUnitId",
+                                        "shlaf_product_id",
+                                        "shlaf_section_Id",
+                                        "quantum_checkpointAssessment_Id",
+                                        "quantum_checkpointitemassessment",
+                                        "shlaf_checkpointItemId",
+                                        "quantum_checkpointitemname",
+                                        "quantum_checkpointitem_annotation",
+                                        "shlaf_checkpointitemcomment",
+                                        "quantum_assessmentstatus",
+                                        "cr28a_checkpointitemsequence"
+                                    )
+                                );
+                                ClearCollect(
+                                    TempCheckpointItemAssessment,
+                                    Filter(
+                                        checkpointItemAssessment,
+                                        assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id
+                                    )
+                                );
+                                ForAll(
+                                    TempCheckpointItemAssessment As i,
+                                    UpdateIf(
+                                        GC_checkpointItemAssessment,
+                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)'//&& CIstatusUpdate = 1
+                            ,
+                                        {
+                                            'checkpointItemAssessment (quantum_checkpointitemassessmentid)': i.'checkpointItemAssessment (quantum_checkpointitemassessmentid)',
+                                            assessmentStatus: i.assessmentStatus,
+                                            checkpointItemComment: i.checkpointItemComment,
+                                            CIstatusUpdate: 2
+                                        }
+                                    )
+                                );
+                                //saving data to local cache
+                            SaveData(
+                                    GC_checkpointItemAssessment,
+                                    "localcheckpointitemassessment"
+                                );
+                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
+                            ForAll(
+                                    TempSectionAssessment As i,
+                                    ForAll(
+                                        TempCheckpointAssessment As j,
+                                        ForAll(
+                                            TempCheckpointItemAssessment As k,
+                                            UpdateIf(
+                                                GC_checkpointItem_ActionItem,
+                                                section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
+                                                {
+                                                    section_id: LookUp(
+                                                        TempSectionAssessment,
+                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                                    ),
+                                                    checkpoint_id: LookUp(
+                                                        TempCheckpointAssessment,
+                                                        checkpointAssessment_id = j.checkpointAssessment_id
+                                                    ),
+                                                    checkpointItem_Id: LookUp(
+                                                        TempCheckpointItemAssessment,
+                                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                                    )
+                                                }
+                                            );
+                                        );
+                                    );
+                                );
+                                
+                            // inside checkpoint Action item collection => rows contain status 1 => patch that rows to dataverse
+                            Patch(
+                                    checkpointItem_ActionItem,
+                                    ShowColumns(
+                                        DropColumns(
+                                            Filter(
+                                                GC_checkpointItem_ActionItem,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id && CIAstatusUpdate = 1
+                                            ),
+                                            "CIAstatusUpdate"
+                                        ),
+                                        "quantum_checkpointitem_actionitemsid",
+                                        "shlaf_assignmentId",
+                                        "shlaf_bankId",
+                                        "shlaf_bankUnitId",
+                                        "shlaf_product_id",
+                                        "shlaf_section_id",
+                                        "shlaf_checkpoint_id",
+                                        "quantum_checkpointItem_Id",
+                                        "quantum_checkpointitemactionitemsid",
+                                        "shlaf_actionitem_name",
+                                        "quantum_priority",
+                                        "quantum_materialestimate",
+                                        "quantum_timeestimate",
+                                        "quantum_duedate",
+                                        "quantum_ownerid",
+                                        "cr28a_action_status"
+                                    )
+                                );
+                                
+                            //get specific unit wise checkpoint Action item data from dataverse to collection 
+                            ClearCollect(
+                                    TempcheckpointItem_ActionItem,
+                                    Filter(
+                                        checkpointItem_ActionItem,
+                                        assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id
+                                    )
+                                );
+                                ForAll(
+                                    TempcheckpointItem_ActionItem As i,
+                                    UpdateIf(
+                                        GC_checkpointItem_ActionItem,
+                                        checkpointItemActionItemsId = i.checkpointItemActionItemsId && CIAstatusUpdate = 1,
+                                        {
+                                            checkpointItem_ActionItems: i.checkpointItem_ActionItems,
+                                            Action_status: i.Action_status,
+                                            CIAstatusUpdate: 2
+                                        }
+                                    )
+                                );
+                                    //saving data to local cache
+                            SaveData(
+                                    GC_checkpointItem_ActionItem,
+                                    "localcheckpointitemactionitem"
+                                );
+                                //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
+                            ForAll(
+                                    TempSectionAssessment As i,
+                                    ForAll(
+                                        TempCheckpointAssessment As j,
+                                        ForAll(
+                                            TempCheckpointItemAssessment As k,
+                                            UpdateIf(
+                                                GC_checkpointItem_Images,
+                                                section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
+                                                {
+                                                    section_id: LookUp(
+                                                        TempSectionAssessment,
+                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                                    ),
+                                                    checkpoint_id: LookUp(
+                                                        TempCheckpointAssessment,
+                                                        checkpointAssessment_id = j.checkpointAssessment_id
+                                                    ),
+                                                    checkpointItem_Id: LookUp(
+                                                        TempCheckpointItemAssessment,
+                                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                                                    )
+                                                }
+                                            );
+                                        );
+                                    );
+                                );
+                                    // inside checkpoint images collection => rows contain status 1 => patch that rows to dataverse
+                            Patch(
+                                    checkpointItem_Images,
+                                    ShowColumns(
+                                        DropColumns(
+                                            Filter(
+                                                GC_checkpointItem_Images,
+                                                bankUnitId.Id = ThisItem.bankUnitId.Id && CIIstatusUpdate = 1
+                                            ),
+                                            "CIIstatusUpdate"
+                                        ),
+                                        "quantum_checkpointitem_imagesid",
+                                        "shlaf_assignmentId",
+                                        "shlaf_bankUnitId",
+                                        "shlaf_product_id",
+                                        "shlaf_section_id",
+                                        "shlaf_checkpoint_id",
+                                        "quantum_checkpointItem_Id",
+                                        "quantum_checkpointitemimagesid",
+                                        "shlaf_image_annotation",
+                                        "quantum_image"
+                                    )
+                                );
+                                
+                            //get specific unit wise checkpoint images item data from dataverse to collection 
+                            ClearCollect(
+                                    TempCheckpointItem_Images,
+                                    Filter(
+                                        checkpointItem_Images,
+                                        assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId
+                                    )
+                                );
+                                ForAll(
+                                    TempCheckpointItem_Images As i,
+                                    UpdateIf(
+                                        GC_checkpointItem_Images,
+                                        checkpointItemImagesId = i.checkpointItemImagesId && CIIstatusUpdate = 1,
+                                        {
+                                            checkpointItem_Images: i.checkpointItem_Images,
+                                            CIIstatusUpdate: 2
+                                        }
+                                    )
+                                );
+                                    //saving data to local cache
+                            SaveData(
+                                    GC_checkpointItem_Images,
+                                    "localcheckpointitemimage"
+                                );
+                                 Set(popupSyncSuccess,false);
+                                ,
+                                Set(
+                                    popupSyncSuccess,
+                                    true
+                                );
+                                Set(
+                                    VarPopupSyncText,
+                                    " Network is not available , please try after sometime"
+                                );
+                                 Set(popupSyncSuccess,false);
+                            );
+                        PressedFill: =AllScreensCSS.RActiveColor
+                        RadiusBottomLeft: =95
+                        RadiusBottomRight: =95
+                        RadiusTopLeft: =95
+                        RadiusTopRight: =95
+                        Text: =""
+                        Width: =45
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width)-80
+                        Y: =30
+                        ZIndex: =7
+
+        ctnHeaderBS As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            Height: =80
+            PaddingRight: =10
+            Width: =Parent.Width
+            ZIndex: =2
+
+            NetworkIconBS As Component2:
+                X: =lblUsernameHeaderBS_2.Width+lblUsernameHeaderBS_2.X
+                Y: =(ctnHeaderDS.Height-Self.Height)/2
+                ZIndex: =9
+
+            GroupHeaderBS As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =9
+
+                imgLogo_1 As image:
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =80
+                    Image: ='schindler-logo'
+                    PaddingBottom: =5
+                    PaddingLeft: =2
+                    PaddingRight: =1
+                    PaddingTop: =5
+                    Width: =ctnHeaderBS.Width/12
+                    ZIndex: =1
+
+                lblAssessmentBS_2 As label:
+                    Align: =Align.Center
+                    Color: =Header.HeaderColor
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =80
+                    Size: =Header.HeaderFontSize
+                    Text: |
+                        =lblProjectName.Text
+                    Width: =ctnHeaderBS.Width/1.65
+                    X: =imgLogo_1.Width
+                    ZIndex: =2
+
+                imgUserHeaderBS_2 As image:
+                    Height: =50
+                    Image: =userImg
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =ctnHeaderBS.Height/0.10
+                    RadiusBottomRight: =ctnHeaderBS.Height/0.10
+                    RadiusTopLeft: =ctnHeaderBS.Height/0.10
+                    RadiusTopRight: =ctnHeaderBS.Height/0.10
+                    Width: =50
+                    X: =lblAssessmentBS_2.Width+lblAssessmentBS_2.X
+                    Y: =(ctnHeaderBS.Height-Self.Height)/2
+                    ZIndex: =4
+
+                lblUsernameHeaderBS_2 As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =80
+                    PaddingLeft: =20
+                    Size: =Header.HeaderUserFontSize-2
+                    Text: =username
+                    Width: =ctnHeaderBS.Width/6
+                    X: =imgUserHeaderBS_2.Width+imgUserHeaderBS_2.X
+                    ZIndex: =5
+
+                icoNotificationHeaderBS_2 As icon.Bell:
+                    Color: =RGBA(255, 191, 0, 1)
+                    Height: =ctnHeaderBS.Height/2.2
+                    Icon: =Icon.Bell
+                    Visible: =false
+                    Width: =ctnHeaderBS.Width/30
+                    X: =lblUsernameHeaderBS_2.Width+lblUsernameHeaderBS_2.X
+                    Y: =ctnHeaderBS.Height/4
+                    ZIndex: =7
+
+                iconSignoutHeaderBS_2 As icon.Bell:
+                    Color: =Header.HeaderColor
+                    Height: =33
+                    Icon: =Icon.NextArrow
+                    PaddingBottom: =5
+                    Rotation: =90
+                    Visible: =false
+                    Width: =48
+                    X: =1318
+                    Y: =ctnHeaderBS.Height/4
+                    ZIndex: =8
+
+        CommentPopupBS As group:
+            Height: =5
+            Width: =5
+            X: =40
+            Y: =40
+            ZIndex: =17
+
+            Rectangle1_3 As rectangle:
+                Fill: =RGBA(0, 0, 0, 0.29)
+                Height: =Parent.Height
+                Visible: |
+                    =varComment
+                Width: =Parent.Width
+                ZIndex: =4
+
+            Rectangle5_2 As rectangle:
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =405
+                Visible: |
+                    =varComment
+                Width: =700
+                X: =(Parent.Width -Self.Width)/2
+                Y: =(Parent.Height - Self.Height)/2
+                ZIndex: =5
+
+            Container38_2 As groupContainer.horizontalAutoLayoutContainer:
+                Height: =40
+                LayoutMode: =LayoutMode.Auto
+                Visible: |
+                    =varComment
+                Width: =Rectangle5_2.Width
+                X: =Rectangle5_2.X
+                Y: =Rectangle5_2.Y+10
+                ZIndex: =6
+
+                Label41_2 As label:
+                    Font: =AllScreensCSS.RFont
+                    FontWeight: =FontWeight.Semibold
+                    PaddingLeft: =40
+                    Text: =" Reviewer Comments"
+                    Width: =Parent.Width-70
+                    ZIndex: =1
+
+                Icon2_4 As icon.Cancel:
+                    Color: =RGBA(153, 153, 153, 1)
+                    Height: =35
+                    Icon: =Icon.Cancel
+                    OnSelect: =Set(varComment,false)
+                    Width: =30
+                    ZIndex: =2
+
+            Rectangle6_2 As rectangle:
+                BorderColor: =RGBA(179, 179, 179, 1)
+                BorderThickness: =2
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =250
+                Visible: |
+                    =varComment
+                Width: =656
+                X: =Rectangle5_2.X+20
+                Y: |-
+                    =//Container38_2.Y+Container38_2.Height +10
+                    Label41_3.Height+Label41_3.Y
+                ZIndex: =7
+
+            Icon4_6 As icon.Add:
+                Color: =RGBA(179, 179, 179, 1)
+                Fill: =RGBA(179, 179, 179, 1)
+                Height: =2
+                Icon: =Icon.HorizontalLine
+                Visible: |
+                    =varComment
+                Width: =Rectangle6_2.Width
+                X: =Rectangle6_2.X
+                Y: =Rectangle6_2.Y +Rectangle6_2.Height+10
+                ZIndex: =8
+
+            Button11_3 As button:
+                BorderThickness: =0
+                Fill: =AllScreensCSS.RActiveColor
+                FocusedBorderThickness: =
+                Font: =AllScreensCSS.RFont
+                HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                OnSelect: |-
+                    =Navigate(BankScreen);
+                    Concurrent(
+                    Set(varComment , false),
+                    Set(varSectionComment,false),
+                    Set(varCheckpointComment,false),
+                    Set(varItemComment,false)
+                      )
+                PressedColor: =Self.Color
+                PressedFill: =Self.Fill
+                Size: =AllScreensCSS.RLabelFontSize
+                Text: ="Close"
+                Visible: |
+                    =varComment
+                X: =(Parent.Width-Self.Width)/2
+                Y: =Icon4_6.Y+5
+                ZIndex: =9
+
+            TextInput2_3 As text:
+                BorderThickness: =0
+                Default: ="No Comments"
+                DisplayMode: =DisplayMode.View
+                FocusedBorderColor: =RGBA(179, 179, 179, 1)
+                Font: =AllScreensCSS.RFont
+                Height: =Rectangle6_2.Height
+                HoverBorderColor: =RGBA(179, 179, 179, 1)
+                HoverFill: =RGBA(0, 0, 0, 0)
+                Mode: =TextMode.MultiLine
+                PressedBorderColor: =RGBA(179, 179, 179, 1)
+                Size: =AllScreensCSS.RfontsizeInput
+                Visible: =If(varComment = true && IsBlank(GlrycmntsBS),true,false)
+                Width: =Rectangle6_2.Width
+                X: =Rectangle6_2.X
+                Y: =Rectangle6_2.Y
+                ZIndex: =10
+
+            Label41_3 As label:
+                Font: =AllScreensCSS.RFont
+                FontWeight: =FontWeight.Semibold
+                PaddingLeft: =42
+                Text: ="Unit " & varUnitId.unitNumber
+                Visible: =varComment
+                Width: =Parent.Width/4
+                X: =Rectangle5_2.X
+                Y: =Container38_2.Y+Container38_2.Height
+                ZIndex: =12
+
+            Label41_4 As label:
+                Font: =AllScreensCSS.RFont
+                FontWeight: =FontWeight.Semibold
+                Text: |-
+                    ="Reviewer: " & glryProject.Selected.reviewerName
+                Visible: =varComment
+                Width: =300
+                X: =Label41_3.Width+Label41_3.X
+                Y: =Container38_2.Y+Container38_2.Height
+                ZIndex: =13
+
+            "GlrycmntsBS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                Height: =Rectangle6_2.Height
+                Items: =If(varComment= true,Filter(GC_unitAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=varUnitId.Id))
+                Layout: =Layout.Vertical
+                TemplatePadding: =0
+                TemplateSize: =glrySectioncomment.Height+glryCheckpointcomment.Height+Gallery2_1.Height
+                Visible: =varComment
+                Width: =TextInput2_3.Width
+                X: |-
+                    =//If(App.Width>1024,Parent.Width/3.8,App.Width>830,Parent.Width/5.8,Parent.Width/9.8)
+                    (Parent.Width -Self.Width)/2
+                Y: =Rectangle6_2.Y
+                ZIndex: =16
+
+                "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =CountRows(Gallery2_1.AllItems)*(Gallery2_1.TemplateHeight+Gallery2_1.TemplatePadding)
+                    Items: =Filter(GC_checkpointItemAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointItemComment<>Blank())
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =1
+                    TemplateSize: =100
+                    Width: =TextInput2_3.Width
+                    X: =10
+                    Y: =glryCheckpointcomment.Height+glryCheckpointcomment.Y
+                    ZIndex: =6
+
+                    Title4_1 As label:
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.checkpointItemName
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =false
+                        Width: =Parent.TemplateWidth - 104
+                        X: =25
+                        Y: =20
+                        ZIndex: =2
+
+                    Subtitle2_1 As label:
+                        AutoHeight: =true
+                        Font: =AllScreensCSS.RFont
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: =ThisItem.checkpointItemComment
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =Title4_1.Width
+                        X: =Title4_1.X
+                        Y: =10
+                        ZIndex: =3
+
+                    Separator3_1 As rectangle:
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Visible: =false
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =5
+
+                "glryCheckpointcomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =CountRows(glryCheckpointcomment.AllItems)*(glryCheckpointcomment.TemplateHeight+glryCheckpointcomment.TemplatePadding)
+                    Items: =Filter(GcCheckpointAssessment,assignmentId.Id = varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointComment<>Blank())
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =1
+                    TemplateSize: =80
+                    Width: =TextInput2_3.Width
+                    X: =10
+                    Y: =glrySectioncomment.Height+glrySectioncomment.Y
+                    ZIndex: =7
+
+                    lblcheckpointname As label:
+                        Height: =30
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Text: =ThisItem.checkpointName
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =false
+                        Width: =Parent.TemplateWidth - 104
+                        X: =25
+                        Y: =10
+                        ZIndex: =2
+
+                    lblcheckpointcomment As label:
+                        AutoHeight: =true
+                        Font: =AllScreensCSS.RFont
+                        Height: =30
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: =ThisItem.checkpointComment
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =lblcheckpointname.Width
+                        X: =lblcheckpointname.X
+                        Y: =10
+                        ZIndex: =3
+
+                    iconLineCheckpointcomment As rectangle:
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Visible: =false
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =5
+
+                "glrySectioncomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =CountRows(glrySectioncomment.AllItems)*(glrySectioncomment.TemplateHeight+glrySectioncomment.TemplatePadding)
+                    Items: =Filter(GcSectionAssessment,assignmentId.Id =varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && sectionComment<>Blank())
+                    Layout: =Layout.Vertical
+                    ShowScrollbar: =false
+                    TemplatePadding: =1
+                    TemplateSize: =80
+                    Width: =TextInput2_3.Width
+                    X: =10
+                    ZIndex: =8
+
+                    lblsectionname As label:
+                        AutoHeight: =true
+                        Font: =AllScreensCSS.RFont
+                        Height: =30
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: =ThisItem.sectionName
+                        VerticalAlign: =VerticalAlign.Top
+                        Visible: =false
+                        Width: =Parent.TemplateWidth - 104
+                        X: =25
+                        ZIndex: =2
+
+                    lblsectioncomment As label:
+                        AutoHeight: =true
+                        Font: =AllScreensCSS.RFont
+                        Height: =30
+                        OnSelect: =Select(Parent)
+                        PaddingBottom: =0
+                        PaddingLeft: =0
+                        PaddingRight: =0
+                        PaddingTop: =0
+                        Size: =AllScreensCSS.RLabelFontSize
+                        Text: =ThisItem.sectionComment
+                        VerticalAlign: =VerticalAlign.Top
+                        Width: =lblsectionname.Width
+                        X: =lblsectionname.X
+                        Y: =10
+                        ZIndex: =3
+
+                    iconLineSectioncomment As rectangle:
+                        Height: =1
+                        OnSelect: =Select(Parent)
+                        Visible: =false
+                        Width: =Parent.TemplateWidth
+                        Y: =Parent.TemplateHeight - 1
+                        ZIndex: =5
+
+    grPatchSuccessAS_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =9
+
+        Rectangle1_16 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =popupSyncSuccess =true
+            Width: =Parent.Width
+            ZIndex: =3
+
+        Rectangle2_15 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =popupSyncSuccess =true
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =4
+
+        Image2_27 As image:
+            Height: =52
+            Image: ='ajax-loader 2'
+            Visible: =popupSyncSuccess =true
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Rectangle2_15.Y+20
+            ZIndex: =5
+
+        Label1_24 As label:
+            Align: =Align.Center
+            Color: =RGBA(14, 161, 26, 1)
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Bold
+            Height: =0
+            PaddingBottom: =0
+            Size: =18
+            Text: ="Success"
+            Visible: =popupSyncSuccess =true
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Image2_27.Y+Image2_27.Height
+            ZIndex: =6
+
+        Label2_17 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: |-
+                =
+                    VarPopupSyncText 
+            Visible: =popupSyncSuccess =true
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Label1_24.Y+Label1_24.Height+20
+            ZIndex: =7
+
+        btnSuccess_10 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |
+                =Set(popupSyncSuccess,false);
+                //Navigate(AssessmentScreen);
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: |-
+                =//popupSyncSuccess =true
+                false
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Label2_17.Y+ Label2_17.Height+5
+            ZIndex: =8
+
+    grPatchSuccessAS_3 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =15
+
+        Rectangle1_18 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =popupTripReportSuccess
+            Width: =Parent.Width
+            ZIndex: =9
+
+        Rectangle2_17 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =popupTripReportSuccess
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =10
+
+        Image2_30 As image:
+            Height: =52
+            Image: =info
+            Visible: =popupTripReportSuccess
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Rectangle2_17.Y+20
+            ZIndex: =11
+
+        Label1_25 As label:
+            Align: =Align.Center
+            Color: =RGBA(14, 161, 26, 1)
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Bold
+            Height: =0
+            PaddingBottom: =0
+            Size: =18
+            Text: ="Success"
+            Visible: =popupTripReportSuccess
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Image2_30.Y+Image2_30.Height
+            ZIndex: =12
+
+        Label2_19 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: |-
+                =
+                    VarPopupSyncText 
+            Visible: =popupTripReportSuccess
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Label1_25.Y+Label1_25.Height+20
+            ZIndex: =13
+
+        btnSuccess_12 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |
+                =Set(popupTripReportSuccess,false);
+                //Navigate(AssessmentScreen);
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =popupTripReportSuccess
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Label2_19.Y+ Label2_19.Height+5
+            ZIndex: =14
+

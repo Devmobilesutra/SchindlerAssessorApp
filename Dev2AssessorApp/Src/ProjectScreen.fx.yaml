@@ -1,0 +1,548 @@
+ProjectScreen As screen:
+    OnVisible: |-
+        =Set(Q,false);
+        Trace(First(gcProjectAssignment).clientId.name &First(gcProjectAssignment).dueDate,TraceSeverity.Information)
+        //Reset(tmr_logout);
+        //Set(UserLastNavigated, Now());
+
+    ctnMainPS As groupContainer.verticalAutoLayoutContainer:
+        Height: =Parent.Height
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =20
+        LayoutMode: =LayoutMode.Auto
+        Width: =Parent.Width
+        ZIndex: =1
+
+        ctnHeaderPS As groupContainer.manualLayoutContainer:
+            Fill: =Header.HeaderFill
+            FillPortions: =0
+            Height: =80
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            PaddingRight: =10
+            Width: =Parent.Width
+            ZIndex: =1
+
+            NetworkIconPS As Component2:
+                X: =lblUsernameHeaderPS.Width+lblUsernameHeaderPS.X
+                Y: =(ctnHeaderDS.Height-Self.Height)/2
+                ZIndex: =9
+
+            GroupHeaderPS As group:
+                Height: =5
+                Width: =5
+                X: =40
+                Y: =40
+                ZIndex: =9
+
+                imgLogoPS As image:
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(255, 255, 255, 1)
+                    Height: =ctnHeaderPS.Height
+                    Image: ='schindler-logo'
+                    PaddingBottom: =5
+                    PaddingLeft: =2
+                    PaddingRight: =1
+                    PaddingTop: =5
+                    Width: =ctnHeaderPS.Width/12
+                    ZIndex: =1
+
+                lblAssessmentPS As label:
+                    Align: =Align.Center
+                    Color: =Header.HeaderColor
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =ctnHeaderPS.Height
+                    Size: =Header.HeaderFontSize
+                    Text: ="Assignments"
+                    Width: =ctnHeaderDS.Width/1.65
+                    X: =imgLogoPS.Width
+                    ZIndex: =2
+
+                imgUserHeaderPS As image:
+                    Height: =50
+                    Image: =userImg
+                    ImagePosition: =ImagePosition.Fill
+                    RadiusBottomLeft: =ctnHeaderPS.Height/0.10
+                    RadiusBottomRight: =ctnHeaderPS.Height/0.10
+                    RadiusTopLeft: =ctnHeaderPS.Height/0.10
+                    RadiusTopRight: =ctnHeaderPS.Height/0.10
+                    Width: =50
+                    X: =lblAssessmentPS.X+lblAssessmentPS.Width
+                    Y: =(ctnHeaderPS.Height-Self.Height)/2
+                    ZIndex: =4
+
+                lblUsernameHeaderPS As label:
+                    Color: =RGBA(255, 255, 255, 1)
+                    Font: =Header.HeaderFont
+                    FontWeight: =FontWeight.Bold
+                    Height: =ctnHeaderPS.Height
+                    PaddingLeft: =20
+                    Size: =Header.HeaderUserFontSize-2
+                    Text: =username
+                    Width: =ctnHeaderDS.Width/6
+                    X: =imgUserHeaderPS.Width+imgUserHeaderPS.X
+                    ZIndex: =5
+
+                icoNotificationHeaderPS As icon.Bell:
+                    Color: =RGBA(255, 191, 0, 1)
+                    Height: =ctnHeaderPS.Height/2.2
+                    Icon: =Icon.Bell
+                    Visible: =false
+                    Width: =ctnHeaderPS.Width/30
+                    X: =lblUsernameHeaderPS.Width+lblUsernameHeaderPS.X
+                    Y: =ctnHeaderPS.Height/4
+                    ZIndex: =7
+
+                iconSignoutHeaderPS As icon.Bell:
+                    Color: =Header.HeaderColor
+                    Height: =ctnHeaderPS.Height/2.4
+                    Icon: =Icon.NextArrow
+                    PaddingBottom: =5
+                    Rotation: =90
+                    Visible: =false
+                    Width: =ctnHeaderPS.Width-(imgLogoPS.Width+lblAssessmentPS.Width+imgUserHeaderPS.Width+lblUsernameHeaderPS.Width+icoNotificationHeaderPS.Width)
+                    X: =icoNotificationHeaderPS.X+icoNotificationHeaderPS.Width
+                    Y: =ctnHeaderPS.Height/4
+                    ZIndex: =8
+
+        ctnMiddlePS As groupContainer.verticalAutoLayoutContainer:
+            Height: |-
+                =//Parent.Height
+                glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
+            LayoutDirection: =LayoutDirection.Vertical
+            LayoutMinHeight: =100
+            LayoutMinWidth: =250
+            LayoutMode: =LayoutMode.Auto
+            LayoutOverflowY: =LayoutOverflow.Scroll
+            Width: =Parent.Width
+            Y: =ctnHeaderPS.Height+ctnHeaderPS.Y
+            ZIndex: =2
+
+            "'ctnBack&onlinestatusPS' As groupContainer.verticalAutoLayoutContainer":
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
+                Height: =ctnHeaderBS.Height
+                LayoutMinHeight: =80
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                PaddingBottom: =5
+                Width: =1309
+                Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
+                ZIndex: =1
+
+                ctnBackPS As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
+                    Height: =ctnHeaderBS.Height
+                    LayoutDirection: =LayoutDirection.Vertical
+                    LayoutGap: =10
+                    LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
+                    LayoutMode: =LayoutMode.Auto
+                    LayoutWrap: =true
+                    PaddingLeft: =60
+                    Width: =Parent.Width
+                    Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
+                    ZIndex: =1
+
+                    btnBackPS As button:
+                        BorderColor: =AllScreensCSS.RActiveColor
+                        Color: =RGBA(0, 0, 0, 1)
+                        DisabledColor: =RGBA(0, 0, 0, 1)
+                        DisabledFill: =RGBA(0, 0, 0, 0)
+                        Fill: =RGBA(0, 0, 0, 0)
+                        Height: =ctnBackPS.Height/1.6
+                        HoverColor: =RGBA(0, 0, 0, 1)
+                        HoverFill: =
+                        OnSelect: =Navigate(DashboardScreen)
+                        PaddingBottom: =10
+                        PaddingLeft: =20
+                        PaddingRight: =10
+                        PaddingTop: =10
+                        PressedFill: =
+                        RadiusBottomLeft: =0
+                        RadiusBottomRight: =0
+                        RadiusTopLeft: =0
+                        RadiusTopRight: =0
+                        Size: =AllScreensCSS.RLabelFontSize-2
+                        Text: ="Back"
+                        Width: =ctnBackPS.Width/6
+                        ZIndex: =1
+
+                    TimerglryProject As timer:
+                        AutoStart: =true
+                        Duration: =100
+                        OnTimerEnd: =Set(Q,true)
+                        Visible: =false
+                        ZIndex: =2
+
+            "glryProject As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
+                FillPortions: =0
+                Height: |-
+                    =//ctnMiddlePS.Height
+                    CountRows(glryProject.AllItems)*glryProject.TemplateHeight+glryProject.TemplatePadding+50
+                Items: |
+                    =//Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming"),startDate,Ascending)
+                    If(comp=true,Sort(Filter(assignments,assessorId=varLoggedAssessor && isCompleted="Completed"),startDate,Ascending),
+                    If(inpro=true,Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Inprogress"),startDate,Ascending),
+                    If(upcomp=true,Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming" 
+                    || isCompleted="Inprogress1"
+                    ),startDate,Ascending))))
+                Layout: =Layout.Vertical
+                LayoutMinHeight: =287
+                LayoutMinWidth: =320
+                ShowScrollbar: =false
+                TemplatePadding: =10
+                TemplateSize: =425
+                Visible: =Q
+                Width: =Parent.Width
+                Y: ='ctnBack&onlinestatusPS'.Height+'ctnBack&onlinestatusPS'.Y
+                ZIndex: =2
+
+                lblProjectName As label:
+                    AutoHeight: =true
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingBottom: =0
+                    PaddingLeft: =0
+                    PaddingRight: =0
+                    PaddingTop: =0
+                    Size: =If(App.Width<700,AllScreensCSS.RFontSize,20)
+                    Text: |+
+                        =LookUp(gcClient,Id=ThisItem.clientId.Id,name)
+                        //ThisItem.clientId.name
+                        
+                    VerticalAlign: =VerticalAlign.Top
+                    Width: =Parent.Width/1.8
+                    X: =glryProject.Width/22
+                    Y: =50
+                    ZIndex: =1
+
+                lblContact As label:
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblContactNumber.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: |
+                        =LookUp(gcClient,Id=ThisItem.clientId.Id,contactNumber)
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: |
+                        =//lblAddressdetails.Height+lblAddressdetails.Y
+                        If(lblAddressdetails.Height<40,lblAddress.Height+lblAddress.Y,lblAddressdetails.Height+lblAddressdetails.Y)
+                    ZIndex: =3
+
+                SepGlryProject As rectangle:
+                    BorderColor: =RGBA(0, 0, 0, 0)
+                    BorderThickness: =5
+                    Fill: =RGBA(0, 0, 0, 0)
+                    Height: =glryProject.TemplateHeight
+                    OnSelect: =Select(Parent)
+                    Width: =Parent.Width/1.04
+                    X: =18
+                    Y: =22
+                    ZIndex: =4
+
+                lblSDate As label:
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblStartDate.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: =Text(ThisItem.startDate,"mm-dd-yyyy")
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblAssignedDate.Height+lblAssignedDate.Y
+                    ZIndex: =6
+
+                lblADate As label:
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblAssignedDate.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: =Text(ThisItem.assignedDate,"mm-dd-yyyy")
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblBank.Height+lblBank.Y+7
+                    ZIndex: =7
+
+                lblBank As label:
+                    AutoHeight: =true
+                    Font: =AllScreensCSS.RFont
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="G.O./Commission number"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =lblContactNumber.Y+lblContactNumber.Height
+                    ZIndex: =8
+
+                lblAssignedDate As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Assigned date"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =lblBank.Height+lblBank.Y+6
+                    ZIndex: =10
+
+                lblStartDate As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Start date"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =(lblAssignedDate.Height+lblAssignedDate.Y)
+                    ZIndex: =12
+
+                lblDueDate As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Due date"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =lblStartDate.Y+lblStartDate.Height
+                    ZIndex: =14
+
+                lblCompletedDate As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Completed date"
+                    Visible: |-
+                        =//true
+                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =lblDueDate.Y+lblDueDate.Height
+                    ZIndex: =16
+
+                lblAddress As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Address"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: =lblProjectName.Y+lblProjectName.Height
+                    ZIndex: =18
+
+                lblContactNumber As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Contact number"
+                    Width: =300
+                    X: =Parent.Width/13
+                    Y: |-
+                        =If(lblAddressdetails.Height<40,lblAddress.Height+lblAddress.Y,lblAddressdetails.Height+lblAddressdetails.Y)
+                        //(lblAddressdetails.Height+lblAddressdetails.Y)
+                    ZIndex: =20
+
+                lblDDate As label:
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblDueDate.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: =Text(ThisItem.dueDate,"mm-dd-yyyy")
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblStartDate.Y+lblStartDate.Height
+                    ZIndex: =21
+
+                lblCDate As label:
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblCompletedDate.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: =Text(ThisItem.completionDate,"mm-dd-yyyy")
+                    Visible: |-
+                        =//true
+                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblDueDate.Y+lblDueDate.Height
+                    ZIndex: =22
+
+                btnprojecttype As button:
+                    BorderColor: =(Self.Fill)
+                    BorderThickness: =0
+                    DisplayMode: =DisplayMode.View
+                    Fill: =RGBA(252, 165, 50, 1)
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    Size: =If(App.Width<770,AllScreensCSS.RLabelFontSize-4,AllScreensCSS.RLabelFontSize-2)
+                    Text: =ThisItem.assessmentType
+                    Width: =If(App.Width<770,200,260)
+                    X: |-
+                        =//lblADate.Width+lblADate.X
+                        If(ProjectScreen.Width<850,Parent.Width-Self.Width*1.35,Parent.Width-Self.Width*2)
+                    Y: =lblProjectName.Y
+                    ZIndex: =23
+
+                imglogo As image:
+                    Image: =completed
+                    OnSelect: =Select(Parent)
+                    X: |-
+                        =//glryProject.Width/1.
+                        Parent.Width-Self.Width*2
+                    Y: =glryProject.TemplateHeight/1.5
+                    ZIndex: =24
+
+                lblAddressdetails As label:
+                    AutoHeight: =true
+                    Font: =AllScreensCSS.RFont
+                    Height: =lblAddress.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: |
+                        =LookUp(gcClient,Id=ThisItem.clientId.Id,address1)
+                    Width: =Parent.Width/2.5
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblProjectName.Y+lblProjectName.Height
+                    ZIndex: =25
+
+                btnProjectClick As button:
+                    BorderColor: =RGBA(230, 230, 230, 1)
+                    BorderThickness: =8
+                    Color: =RGBA(0, 0, 0, 0)
+                    DisabledBorderColor: =RGBA(230, 230, 230, 1)
+                    Fill: =RGBA(0, 0, 0, 0)
+                    FocusedBorderThickness: =10
+                    Height: =391
+                    HoverBorderColor: =RGBA(230, 230, 230, 1)
+                    HoverColor: =RGBA(0, 0, 0, 1)
+                    HoverFill: =
+                    OnSelect: |
+                        =//for updating status of selected bank
+                        
+                        Set(VarBankId,ThisItem.bankId.Id);
+                        //Set(VarproductId,ThisItem.bankId.productId);
+                        // set variable for selected assignmentId
+                        Set(varAssignmentId,ThisItem.Id);
+                        /*
+                        UpdateIf(
+                            GC_bankAssessment,
+                                bankId.Id=VarBankId && assignmentId.Id=glryProject.Selected.Id,
+                            {Assessment_Status: "Inprogress"}
+                        );*/
+                        Navigate(BankScreen);
+                    PressedBorderColor: =RGBA(230, 230, 230, 1)
+                    Text: =""
+                    Width: =If(ProjectScreen.Width<850,Parent.Width/1.12,Parent.Width/1.08)
+                    X: =Parent.Width/35
+                    Y: =30
+                    ZIndex: =26
+
+                imgAssignedDate As image:
+                    Height: =20
+                    Image: =calendar
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: =lblBank.Height+lblBank.Y+15
+                    ZIndex: =27
+
+                imgStartDate As image:
+                    Height: =20
+                    Image: =calendar
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: =lblAssignedDate.Height+lblAssignedDate.Y+10
+                    ZIndex: =28
+
+                imgDueDate As image:
+                    Height: =20
+                    Image: =calendar
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: =lblStartDate.Y+lblStartDate.Height+10
+                    ZIndex: =29
+
+                imgCompletedDate As image:
+                    Height: =20
+                    Image: =calendar
+                    OnSelect: =Select(Parent)
+                    Visible: |-
+                        =//true
+                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: =lblDueDate.Y+lblDueDate.Height+10
+                    ZIndex: =30
+
+                imgAddress As image:
+                    Height: =20
+                    Image: =location
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: |-
+                        =//lblProjectName.X
+                        glryProject.Width/20
+                    Y: |
+                        =(lblProjectName.Y+lblProjectName.Height)+10
+                    ZIndex: =31
+
+                imgContact As image:
+                    Height: =20
+                    Image: =call
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: |
+                        =//lblAddressdetails.Y+lblAddressdetails.Height
+                        lblContact.Y+10
+                        //If(lblAddressdetails.Height<40,lblContact.Y+10,lblAddressdetails.Height+lblAddressdetails.Y)
+                    ZIndex: =32
+
+                lblBankName As label:
+                    Font: =AllScreensCSS.RFont
+                    FontWeight: =FontWeight.Bold
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: =ThisItem.bankId.goNumber
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblContactNumber.Y+lblContactNumber.Height
+                    ZIndex: =33
+
+                imgBank As image:
+                    Height: =20
+                    Image: ='549-5498573_office-building-white-building-icon-png-clipart'
+                    OnSelect: =Select(Parent)
+                    Width: =20
+                    X: =glryProject.Width/20
+                    Y: =lblContactNumber.Y+lblContactNumber.Height+5
+                    ZIndex: =34
+
+    TimerPS As timer:
+        AutoStart: =true
+        Duration: =1000
+        OnTimerEnd: =//If(UserLastNavigated < DateAdd(Now(), LogOutTimer, Seconds), Navigate(SafetyHeader))
+        Repeat: =true
+        Visible: =false
+        X: =40
+        Y: =40
+        ZIndex: =2
+

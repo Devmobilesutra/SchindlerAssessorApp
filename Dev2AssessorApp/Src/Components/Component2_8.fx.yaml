@@ -1,0 +1,25 @@
+Component2_8 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =50
+    Width: =50
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Image6_1 As image:
+        Height: =50
+        Image: ='wifi logo'
+        ImagePosition: =ImagePosition.Stretch
+        Visible: =Connection.Connected=true
+        Width: =50
+        ZIndex: =1
+
+    Image7_1 As image:
+        Fill: =RGBA(255, 255, 255, 1)
+        Height: =50
+        Image: ='wifi logo black'
+        ImagePosition: =ImagePosition.Stretch
+        Visible: =Connection.Connected=false
+        Width: =50
+        ZIndex: =2
+

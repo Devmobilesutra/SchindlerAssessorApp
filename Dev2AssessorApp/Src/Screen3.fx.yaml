@@ -1,0 +1,209 @@
+Screen3 As screen:
+
+    DataTable4 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =Parent.Height
+        Items: =GC_checkpointItemAssessment
+        Width: =Parent.Width -100
+        X: =0
+        Y: =0
+        ZIndex: =1
+
+        checkpointItemAssessment_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItemAssessment"
+            FieldName: ="quantum_checkpointitemassessment"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'Created On_Column2' As dataTableColumn.dateTimeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Created On"
+            FieldName: ="createdon"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        bank_id_Column1 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="bank_id"
+            FieldName: ="shlaf_bank_id"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessmentid)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        checkpointItem_annotation_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItem_annotation"
+            FieldName: ="quantum_checkpointitem_annotation"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =7
+            Text: =ThisItem.checkpointItem_annotation
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        checkpointItemName_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItemName"
+            FieldName: ="quantum_checkpointitemname"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.checkpointItemName
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        product_id_Column2 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="product_id"
+            FieldName: ="shlaf_product_id"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.product_id.'product (quantum_productid)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        assignmentId_Column2 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="assignmentId"
+            FieldName: ="shlaf_assignmentId"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.assignmentId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =7
+
+        bankUnitId_Column2 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="bankUnitId"
+            FieldName: ="shlaf_bankUnitId"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.bankUnitId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        checkpointAssessment_Id_Column1 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointAssessment_Id"
+            FieldName: ="quantum_checkpointAssessment_Id"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.checkpointAssessment_Id.checkpointAssessment_id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        checkpointItemComment_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItemComment"
+            FieldName: ="shlaf_checkpointitemcomment"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =13
+            Text: =ThisItem.checkpointItemComment
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+        checkpointItemId_Column1 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItemId"
+            FieldName: ="shlaf_checkpointItemId"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =14
+            Text: =ThisItem.checkpointItemId.templateCheckpointsItem
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+        section_Id_Column1 As dataTableColumn.complexTypeColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="section_Id"
+            FieldName: ="shlaf_section_Id"
+            FieldVariantName: ="complexTypeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =15
+            Text: =ThisItem.section_Id.'sectionAssessment (quantum_sectionassessment)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =12
+
+        CIstatusUpdate_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="CIstatusUpdate"
+            FieldName: ="CIstatusUpdate"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =16
+            Text: =ThisItem.CIstatusUpdate
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+        quantum_assessmentstatus_Column2 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_assessmentstatus"
+            FieldName: ="quantum_assessmentstatus"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =17
+            Text: =ThisItem.quantum_assessmentstatus
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =14
+

@@ -1,0 +1,83 @@
+Component1 As CanvasComponent:
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =90
+    Width: =1366
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    ctnHeaderAS_1 As groupContainer.manualLayoutContainer:
+        Fill: =RGBA(220, 0, 0, 1)
+        Height: =90
+        PaddingRight: =10
+        Width: =Parent.Width
+        ZIndex: =1
+
+        imgLogoAS_1 As image:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =ctnHeaderAS_1.Height
+            Image: ='schindler-logo'
+            PaddingBottom: =5
+            PaddingLeft: =2
+            PaddingRight: =1
+            PaddingTop: =5
+            Width: =ctnHeaderAS_1.Width/12
+            ZIndex: =1
+
+        lblAssessmentAS_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =ctnHeaderAS_1.Height
+            Size: =ctnHeaderAS_1.Width/50
+            Text: =""
+            Width: =ctnHeaderAS_1.Width/1.5
+            X: =imgLogoAS_1.Width
+            Y: =ctnHeaderAS_1.Y
+            ZIndex: =2
+
+        imgUserHeaderAS_1 As image:
+            Height: =43
+            Image: =User().Image
+            ImagePosition: =ImagePosition.Fill
+            RadiusBottomLeft: =ctnHeaderAS_1.Height/0.10
+            RadiusBottomRight: =ctnHeaderAS_1.Height/0.10
+            RadiusTopLeft: =ctnHeaderAS_1.Height/0.10
+            RadiusTopRight: =ctnHeaderAS_1.Height/0.10
+            Width: =45
+            X: =lblAssessmentAS_1.X+lblAssessmentAS_1.Width
+            Y: =(ctnHeaderAS_1.Height-Self.Height)/2
+            ZIndex: =4
+
+        lblUsernameHeaderAS_1 As label:
+            Color: =RGBA(255, 255, 255, 1)
+            FontWeight: =FontWeight.Bold
+            Height: =ctnHeaderAS_1.Height/2
+            PaddingLeft: =20
+            Size: =ctnHeaderAS_1.Width/85
+            Text: =User().FullName
+            Width: =ctnHeaderAS_1.Width/8
+            X: =imgUserHeaderAS_1.Width+imgUserHeaderAS_1.X
+            Y: =20
+            ZIndex: =5
+
+        icoNotificationHeaderAS_1 As icon.Bell:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =ctnHeaderAS_1.Height/2.2
+            Icon: =Icon.Bell
+            Width: =ctnHeaderAS_1.Width/30
+            X: =lblUsernameHeaderAS_1.Width+lblUsernameHeaderAS_1.X
+            Y: =ctnHeaderAS_1.Height/4
+            ZIndex: =7
+
+        iconSignoutHeaderAS_1 As icon.Bell:
+            Color: =RGBA(255, 255, 255, 1)
+            Height: =ctnHeaderAS_1.Height/2.4
+            Icon: =Icon.NextArrow
+            PaddingBottom: =5
+            Rotation: =90
+            Width: =ctnHeaderAS_1.Width-(imgLogoAS_1.Width+lblAssessmentAS_1.Width+imgUserHeaderAS_1.Width+lblUsernameHeaderAS_1.Width+icoNotificationHeaderAS_1.Width)
+            X: =icoNotificationHeaderAS_1.X+icoNotificationHeaderAS_1.Width
+            Y: =ctnHeaderAS_1.Height/4
+            ZIndex: =8
+

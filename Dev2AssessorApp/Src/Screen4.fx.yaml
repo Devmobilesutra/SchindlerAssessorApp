@@ -1,0 +1,249 @@
+Screen4 As screen:
+
+    Button2 As button:
+        OnSelect: |-
+            =Clear(GcSectionAssessment);
+            Clear(GcCheckpointAssessment);
+            Clear(GC_checkpointItemAssessment);
+            Clear(GC_checkpointItem_ActionItem);
+            Clear(GC_checkpointItem_Images);
+             SaveData(
+                    GcCheckpointAssessment,
+                    "localcheckpointassessment"
+                );
+             SaveData(
+                    GcSectionAssessment,
+                    "localsectionassessment"
+                );
+                
+                SaveData(
+                    GC_checkpointItemAssessment,
+                    "localcheckpointitemassessment"
+                );
+                SaveData(
+                    GC_checkpointItem_ActionItem,
+                    "localcheckpointitemactionitem"
+                );
+                SaveData(
+                    GC_checkpointItem_Images,
+                    "localcheckpointitemimage"
+                );
+            
+            
+            /*
+            //Patch(checkpointItem_Images,image1);
+            Collect(gcClient,
+            {
+            Id:Text(GUID()),
+            name:"Demo client for kishan",
+            city:"Jalgaon",
+            contactName:"kishan"
+            },
+            {
+            Id:Text(GUID()),
+            name:"Demo client for Pratiksha",
+            city:"Jalgaon",
+            contactName:"pk"
+            });
+            */
+            /*
+            UpdateIf(
+                gcClient,
+                contactName="pratiksha",
+                {
+                    city:"rashin ki rani"
+                }
+            );*/
+        Text: ="Button"
+        X: =36
+        Y: =657
+        ZIndex: =1
+
+    DataTable1 As dataTable.datatable:
+        BorderStyle: =BorderStyle.Solid
+        DisplayMode: =DisplayMode.Edit
+        Fill: =RGBA(0, 0, 0, 0)
+        Height: =500
+        Items: =GC_checkpointItem_Images
+        Width: =1276
+        X: =40
+        Y: =40
+        ZIndex: =2
+
+        checkpointItemImagesId_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="checkpointItemImagesId"
+            FieldName: ="quantum_checkpointitemimagesid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =1
+            Text: =ThisItem.checkpointItemImagesId
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =1
+
+        "'Created On_Column1' As dataTableColumn.dateTimeColumn":
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="Created On"
+            FieldName: ="createdon"
+            FieldVariantName: ="dateTimeColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =2
+            Text: =Text(ThisItem.'Created On',DateTimeFormat.LongDateTime)
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =2
+
+        CIIstatusUpdate_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="CIIstatusUpdate"
+            FieldName: ="CIIstatusUpdate"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =3
+            Text: =ThisItem.CIIstatusUpdate
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =3
+
+        modifiedon_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="modifiedon"
+            FieldName: ="modifiedon"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =4
+            Text: =ThisItem.modifiedon
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =4
+
+        quantum_checkpointItem_Id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_checkpointItem_Id"
+            FieldName: ="quantum_checkpointItem_Id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =5
+            Text: =ThisItem.checkpoint_id.checkpointAssessment_id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =5
+
+        quantum_checkpointitem_imagesid_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="quantum_checkpointitem_imagesid"
+            FieldName: ="quantum_checkpointitem_imagesid"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =6
+            Text: =ThisItem.checkpointItem_Images
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =6
+
+        shlaf_assignmentId_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_assignmentId"
+            FieldName: ="shlaf_assignmentId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =8
+            Text: =ThisItem.assignmentId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =8
+
+        shlaf_bankUnitId_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_bankUnitId"
+            FieldName: ="shlaf_bankUnitId"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =9
+            Text: =ThisItem.bankUnitId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =9
+
+        shlaf_checkpoint_id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_checkpoint_id"
+            FieldName: ="shlaf_checkpoint_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =10
+            Text: =ThisItem.bankUnitId.Id
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =10
+
+        shlaf_image_annotation_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_image_annotation"
+            FieldName: ="shlaf_image_annotation"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =11
+            Text: =ThisItem.shlaf_image_annotation
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =11
+
+        shlaf_product_id_Column3 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_product_id"
+            FieldName: ="shlaf_product_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =12
+            Text: =ThisItem.product_id.'product (quantum_productid)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =12
+
+        shlaf_section_id_Column1 As dataTableColumn.textualColumn:
+            DisplayMode: =DisplayMode.Edit
+            FieldDisplayName: ="shlaf_section_id"
+            FieldName: ="shlaf_section_id"
+            FieldVariantName: ="textualColumn"
+            Height: =Parent.Height
+            LayoutHeight: =Parent.Height
+            Order: =13
+            Text: =ThisItem.section_id.'sectionAssessment (quantum_sectionassessment)'
+            Width: =100
+            X: =0
+            Y: =0
+            ZIndex: =13
+
+    Button3 As button:
+        OnSelect: |-
+            =
+            Patch(schindlerClients,Filter(gcClient,contactName= "pk"));
+        Text: ="Button"
+        X: =598
+        Y: =657
+        ZIndex: =4
+
