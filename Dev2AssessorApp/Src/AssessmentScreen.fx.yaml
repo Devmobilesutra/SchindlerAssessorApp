@@ -1374,16 +1374,7 @@ AssessmentScreen As screen:
                                 UserLastNavigated,
                                 Now()
                             );
-                            //If allcheckpointitems's items value is true , then submit & update data to dataverse . 
-                            /*If(
-                                CountRows(
-                                    Filter(
-                                        glryItmesAS.AllItems,
-                                        cboxItemsAS.Value = false
-                                    )
-                                ) < 0,
-                                Notify("Assessment for all checkpointItems are not yet completed"),*/
-                                Set(     varSpinner, true );
+                                Set(varSpinner, true );
                                 //for changing (tabs) depending on  assessment status upcomming to inprogress for first time
                                 //if collection contain assessment status upcomming or inprogress1 then we set variable to navigate dashboard screen 
                             If(
@@ -1512,19 +1503,9 @@ AssessmentScreen As screen:
                                     "localcheckpointitemimage"
                                 );
                                 
-                            If( /* CountRows(
-                                            Filter(
-                                                GcSectionAssessment,
-                                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && SstatusUpdate = 1
-                                            )
-                                        ) < 1 && CountRows(
-                                            Filter(
-                                                GcCheckpointAssessment,
-                                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CstatusUpdate = 1
-                                                    // && AssessmentStatus="Inprogress"
-                                            )
-                                        ) < 1 &&*/ 
-                                        CountRows(
+                            //here we check new records are available(checkpointItemAssessment ,checkpointAction And checkpointImages) for patch or not .If not available then set message "No new assessment records found for submission." otherwise we check status 2 record is  available in unit ,section and checkpoint table if available then update status 2 to status 1 (for show green and gray tick)
+                            If( 
+                                 CountRows(
                                             Filter(
                                                 GC_checkpointItemAssessment,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIstatusUpdate = 1
@@ -1546,17 +1527,17 @@ AssessmentScreen As screen:
                                           "No new assessment records found for submission. "
                                        );,
                             
-                                       //if we update existing unit then do status 2 to 1 for green and grey tick
-                                       UpdateIf(
+                                    //if we update existing unit then do status 2 to 1 for green and grey tick
+                                    UpdateIf(
                                     GC_unitAssessment,
                                     assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && UstatusUpdate = 2
                                     ,
                                     {
                                         UstatusUpdate: 1
                                     }
-                                );
+                                    );
                                     //if we update existing section then do status 2 to 1 for green and grey tick
-                            UpdateIf(
+                                    UpdateIf(
                                     GcSectionAssessment,
                                     'sectionAssessment (quantum_sectionassessment)' = varSA && SstatusUpdate = 2
                                     ,
@@ -1578,15 +1559,13 @@ AssessmentScreen As screen:
                             //if network available then patch 1 status data to dataverse
                             If(
                                     Connection.Connected,
-                                   
-                                       
-                                        Set(
-                                VarPopupText,
+                                Set(
+                                     VarPopupText,
                                     "Assessment records submitted successfully."
                                 );
                             
-                                      //to delete deleted actions from dataverse
-                            ForAll(
+                                //to delete deleted actions from dataverse
+                                    ForAll(
                                         gcActionItemDelete As i,
                                         RemoveIf(
                                             checkpointItem_ActionItem,
@@ -1599,7 +1578,7 @@ AssessmentScreen As screen:
                                         "localgcActionItemDelete"
                                     );
                                     //to delete deleted images from dataverse
-                            ForAll(
+                                    ForAll(
                                         gcImageDelete As i,
                                         RemoveIf(
                                             checkpointItem_Images,
@@ -1613,6 +1592,7 @@ AssessmentScreen As screen:
                                     );
                                     
                                     //update dataverse table instead using patch
+                                    //updating isCompleted status of assignment into assigment table only for the first time when submit button is clicked
                             UpdateIf(
                                         assignments,
                                         Id = varAssignmentId && isCompleted = "Upcomming",
@@ -1625,13 +1605,15 @@ AssessmentScreen As screen:
                                         Id = varAssignmentId,
                                         {AstatusUpdate: 2}
                                     );
+                                    //saving assignment data into local cache
                                     SaveData(
                                         gcProjectAssignment,
                                         "localprojectassignment"
                                     );
                                     
                               //update dataverse table instead using patch
-                            UpdateIf(
+                              //updating Assessment_Status of assignment and bank into bank Assessment table only for the first time when submit button is clicked
+                                 UpdateIf(
                                         bankAssessment,
                                         assignmentId.Id = varAssignmentId && bankId.Id = VarBankId && Assessment_Status = "Upcomming",
                                         {Assessment_Status: "Inprogress"}
@@ -1651,6 +1633,7 @@ AssessmentScreen As screen:
                                     );
                                     
                                 //update dataverse table instead using patch
+                                //updating Assessment_Status of assignment unit into unit Assessment table only for the first time when submit button is clicked
                             UpdateIf(
                                         unitAssessment,
                                         assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && Assessment_status = "Upcomming",

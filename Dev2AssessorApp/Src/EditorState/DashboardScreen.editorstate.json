@@ -1557,7 +1557,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Button1",
-      "ParentIndex": 5,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4402,7 +4402,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "icoNotificationHeaderDS",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4641,7 +4641,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconSignoutHeaderDS",
-      "ParentIndex": 5,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5292,7 +5292,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Image2_2",
-      "ParentIndex": 3,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -5520,7 +5520,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Image2_29",
-      "ParentIndex": 4,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -7348,7 +7348,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "imgUserHeaderDS",
-      "ParentIndex": 6,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -10632,7 +10632,7 @@
       },
       "MetaDataIDKey": "",
       "Name": "NetworkIconDS",
-      "ParentIndex": 7,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11161,7 +11161,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "Rectangle2_16",
-      "ParentIndex": 3,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -11400,7 +11400,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "syncButton",
-      "ParentIndex": 8,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
