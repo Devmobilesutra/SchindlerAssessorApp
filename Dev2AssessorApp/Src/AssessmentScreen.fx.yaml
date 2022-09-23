@@ -81,29 +81,6 @@ AssessmentScreen As screen:
                         Width: =ctnBack.Width/6
                         ZIndex: =1
 
-                ctnOnlineStatus As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =0
-                    Height: =80
-                    LayoutAlignItems: =LayoutAlignItems.End
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =10
-                    LayoutJustifyContent: =LayoutJustifyContent.Center
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutWrap: =true
-                    PaddingLeft: =40
-                    PaddingRight: =40
-                    Width: =Parent.Width/2
-                    Y: =ctnHeaderSS_1.Y+ctnHeaderSS_1.Height
-                    ZIndex: =2
-
-                    "'CmpOnline/offlineStatus' As Component1_7":
-                        LayoutMinHeight: =640
-                        LayoutMinWidth: =640
-                        Visible: =false
-
             Container3_2 As groupContainer.verticalAutoLayoutContainer:
                 FillPortions: =0
                 Height: |-
@@ -287,40 +264,6 @@ AssessmentScreen As screen:
                         X: =lblAssessmentDateAS_3.X+lblAssessmentDateAS_3.Width
                         ZIndex: =2
 
-            ctnViewbuttonAS As groupContainer.verticalAutoLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
-                FillPortions: =0
-                Height: =65
-                LayoutAlignItems: =LayoutAlignItems.End
-                LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: =60
-                LayoutMinWidth: =250
-                LayoutMode: =LayoutMode.Auto
-                LayoutWrap: =true
-                PaddingRight: =20
-                Visible: =false
-                Width: =ctnMiddleAS.Width
-                ZIndex: =3
-
-                btnViewAssessmeASnt As button:
-                    DisabledBorderColor: =RGBA(184, 0, 0, 1)
-                    DisabledColor: =RGBA(255, 255, 255, 1)
-                    DisabledFill: =RGBA(184, 0, 0, 1)
-                    Fill: =RGBA(184, 0, 0, 1)
-                    FocusedBorderThickness: =2
-                    Height: =50
-                    HoverFill: =RGBA(184, 0, 0, 1)
-                    PressedColor: =RGBA(255, 255, 255, 1)
-                    PressedFill: =RGBA(184, 0, 0, 1)
-                    RadiusBottomLeft: =1
-                    RadiusBottomRight: =1
-                    RadiusTopLeft: =1
-                    RadiusTopRight: =1
-                    Text: ="View Assessment"
-                    Visible: =false
-                    Width: =Parent.Width/4.15
-                    ZIndex: =1
-
             ctnSectionAS As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =0
@@ -332,19 +275,6 @@ AssessmentScreen As screen:
                 Width: =ctnMiddleAS.Width
                 Y: =Container3_2.Height+Container3_2.Y
                 ZIndex: =4
-
-                lblSectionAS As label:
-                    Color: =RGBA(209, 19, 19, 1)
-                    FontWeight: =FontWeight.Bold
-                    Height: =ctnSectionAS.Height
-                    PaddingLeft: =40
-                    Size: =22
-                    Text: |-
-                        ="Section :"
-                    Visible: =false
-                    Width: =ctnSectionAS.Width/6
-                    X: =60
-                    ZIndex: =1
 
                 lblSectionname As label:
                     Color: =RGBA(209, 19, 19, 1)
@@ -1184,7 +1114,8 @@ AssessmentScreen As screen:
                         Width: |-
                             =//Parent.TemplateWidth - 104
                             //Parent.Width/1.4
-                            If(App.Width<830,Parent.Width/1.7,App.Width<770,Parent.Width/1.6,Parent.Width/1.4)
+                            //If(App.Width<830,Parent.Width/1.75,App.Width<770,Parent.Width/1.65,Parent.Width/1.45)
+                            Parent.Width-(Button18_2.Width+Image1_1.Width+Circle1.Width+imgTickactive.Width+150)
                         Y: =2
                         ZIndex: =7
 
@@ -1207,7 +1138,7 @@ AssessmentScreen As screen:
                             ="Comment"
                             //cboxItemsAS.Value
                         Width: =If(App.Width<830,Parent.Width/5.8,App.Width<770,Parent.Width/6.2,Parent.Width/9.2)
-                        X: =cboxItemsAS.X+cboxItemsAS.Width+20
+                        X: =cboxItemsAS.X+cboxItemsAS.Width+30
                         Y: =40
                         ZIndex: =8
 
@@ -1277,82 +1208,6 @@ AssessmentScreen As screen:
                     Width: =Parent.Width
                     Y: =glryItmesAS.Y+glryItmesAS.Height
                     ZIndex: =2
-
-                    Button15 As button:
-                        OnSelect: |+
-                            =/*RemoveIf(checkpointItem_Images,bankUnitId.Id=varBankUnitId && 
-                                         assignmentId.Id=glryProject.Selected.Id
-                                      && checkpoint_id.checkpointAssessment_id=GuidId);
-                                     
-                            ForAll(GC_checkpointItem_Images As i,
-                            Patch(
-                                  checkpointItem_Images,Defaults(checkpointItem_Images),
-                                        {
-                                         checkpointItemImagesId:i.checkpointItemImagesId,
-                                         assignmentId: LookUp(
-                                                 assignments,
-                                                 Id = i.assignmentId.Id
-                                             ),
-                                         bankUnitId: LookUp(
-                                              bankUnits,
-                                                Id = i.bankUnitId.Id),
-                                        section_id:LookUp(sectionAssessment,'sectionAssessment (quantum_sectionassessment)'= i.section_id.'sectionAssessment (quantum_sectionassessment)'),
-                                        checkpoint_id: LookUp(checkpointAssessment,checkpointAssessment_id=i.checkpoint_id.checkpointAssessment_id),
-                                        checkpointItem_Id: LookUp(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'=i.checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'),
-                                        product_id: LookUp(product,'product (quantum_product)'=i.product_id.'product (quantum_product)'
-                                            ),
-                                        Image:i.Image,
-                                        image_annotation:i.image_annotation
-                                      }
-                                )
-                                ); */
-                            
-                            
-                            
-                            
-                            
-                            
-                                     
-                                     
-                                     /* Patch(
-                                  checkpointItem_Images,
-                                  Defaults(checkpointItem_Images),
-                                          {
-                                         assignmentId: LookUp(
-                                                 gcProjectAssignment,
-                                                 Id = glryProject.Selected.Id
-                                             ),
-                                             bankUnitId: LookUp(
-                                              gcBankunit,
-                                                Id = glryBankGo_1.Selected.bankUnitId.Id),
-                                                
-                                            section_id: LookUp(
-                                                GcSectionAssessment,
-                                                 sectionId.sectionId = glrySectionSS_2.Selected.sectionId
-                                            ),
-                                            checkpoint_id: LookUp(
-                                               GcCheckpointAssessment, 
-                                               checkpointId.checkpointId = chglryCheckpointsSS_2.Selected.checkpointId
-                                            ),
-                                             checkpointItem_Id: LookUp(
-                                                 GC_checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'=Text(varCItemA)
-                                            ),
-                                             product_id: LookUp(GC_product,product_Model=glryBankGo_1.Selected.productModel
-                                            ),
-                                            checkpointItemImagesId:GUID()
-                                                ,
-                                             Image: Image14_2.Image,
-                                            image_annotation: TextInput6_2.Text
-                                    }
-                                );*/
-                                /*Set(varpatch,
-                                Patch(checkpointItemAssessment,GC_checkpointItemAssessment););
-                                If(IsBlank(varpatch),Notify("Error"),
-                                Notify("collection patch SuccessFully!"));*/
-                            
-                        Text: ="Add Image"
-                        Visible: =false
-                        ZIndex: =1
 
                     btnSubmit As button:
                         AlignInContainer: =AlignInContainer.Center
@@ -2042,588 +1897,6 @@ AssessmentScreen As screen:
                         Y: =25
                         ZIndex: =2
 
-                    Button4 As button:
-                        Fill: =AllScreensCSS.RActiveColor
-                        FontWeight: =FontWeight.Bold
-                        HoverFill: =AllScreensCSS.RActiveColor
-                        OnSelect: |
-                            =/*
-                            //for reset ideal timer
-                            Reset(tmr_logout);
-                            Set(
-                                UserLastNavigated,
-                                Now()
-                            );
-                            //////////////////If allcheckpointitems's items value is true , then submit & update data to dataverse . 
-                            If(
-                                CountRows(
-                                    Filter(
-                                        glryItmesAS.AllItems,
-                                        cboxItemsAS.Value = false
-                                    )
-                                ) < 0,
-                                Notify("Assessment for all checkpointItems are not yet completed"),
-                              
-                                Set(
-                                    varSpinner,
-                                    true
-                                );
-                                If(
-                                    IsBlank(
-                                        LookUp(
-                                            gcProjectAssignment,
-                                            Id = varAssignmentId && isCompleted = "Inprogress1" || isCompleted = "Upcomming"
-                                        )
-                                    ),
-                                    Set(
-                                        VarNav,
-                                        false
-                                    ),
-                                    Set(
-                                        VarNav,
-                                        true
-                                    );
-                                    UpdateIf(
-                                        gcProjectAssignment,
-                                        Id = varAssignmentId && bankId.Id = VarBankId && isCompleted = "Inprogress1",
-                                        {
-                                            isCompleted: "Inprogress",
-                                            AstatusUpdate: 1
-                                        }
-                                    );
-                                );
-                                
-                            
-                            
-                            
-                            //for bank assessment status
-                            UpdateIf(
-                                GC_bankAssessment,
-                                 assignmentId.Id = varAssignmentId && bankId.Id = VarBankId && BstatusUpdate = 0,
-                                {// Assessment_Status: "Inprogress",
-                                    BstatusUpdate: 1
-                                }
-                            );
-                                    
-                            //for unit assessment status
-                            UpdateIf(
-                                GC_unitAssessment,
-                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId &&  UstatusUpdate = 0,
-                                {// Assessment_status: "Inprogress",
-                                    UstatusUpdate: 1
-                                }
-                            );
-                                    
-                            // Take each row of the collection GcSectionAssessment and check if this is the current section . If so check if the row representing  status of that section is present in the  dataverse table SectionAssessment. Insert if not found else next statement.
-                            UpdateIf(
-                                GcSectionAssessment,
-                                'sectionAssessment (quantum_sectionassessment)' = varSA && SstatusUpdate = 0,
-                                {
-                                    SstatusUpdate: 1
-                                }
-                            );
-                            // For each row in collection GcCheckpointAssessment check if this row is the current checkpoint and insert a row in dataverse table CheckpointAssessment representing status of that checkpoint.Insert if not found else next statement.
-                            UpdateIf(
-                                GcCheckpointAssessment,
-                                checkpointAssessment_id = GuidId && CstatusUpdate = 0,
-                                {
-                                    CstatusUpdate: 1
-                                }
-                            );
-                                    
-                            // For each row in collection GcCheckpointItemAssessment check if this rows are the current checkpointItems of current checkpoint  and insert a row in dataverse table CheckpointItemAssessment representing status of that checkpointItem.Insert if not found else update that rows.
-                            UpdateIf(
-                                GC_checkpointItemAssessment,
-                                checkpointAssessment_Id.checkpointAssessment_id = GuidId && CIstatusUpdate = 0,
-                                {
-                                    CIstatusUpdate: 1
-                                }
-                            );
-                                    
-                            // For each row in collection GcCheckpointItem_ActionItem check if this rows are the current checkpointItem of current checkpoint and insert a row in dataverse table CheckpointItemAssessment representing status of that checkpointItem.Insert if not found else update that rows.
-                            UpdateIf(
-                                GC_checkpointItem_ActionItem,
-                                checkpoint_id.checkpointAssessment_id = GuidId && CIAstatusUpdate = 0,
-                                {
-                                    CIAstatusUpdate: 1
-                                }
-                            );
-                                    
-                            //for checkpoint images
-                            UpdateIf(
-                                GC_checkpointItem_Images,
-                                checkpoint_id.checkpointAssessment_id = GuidId && CIIstatusUpdate = 0,
-                                {
-                                    CIIstatusUpdate: 1
-                                }
-                            );
-                            
-                            
-                            
-                            
-                            If(
-                              Connection.Connected,
-                              Notify("patching data");
-                            
-                            //assignment upadate
-                            Patch(
-                                    assignments,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(gcProjectAssignment,AstatusUpdate = 1),
-                                            "AstatusUpdate"
-                                        ),
-                                        "shlaf_assignmentsid",
-                                        "shlaf_iscompleted"
-                                    )
-                                );
-                                
-                            //Assigmnent collect 
-                            ClearCollect(
-                                    gcProjectAssignmentAdd,
-                                    Filter(
-                                        assignments,
-                                        assessorId = varLoggedAssessor
-                                    )
-                                );
-                                ClearCollect(
-                                    gcProjectAssignment,
-                                    AddColumns(
-                                        gcProjectAssignmentAdd,
-                                        "AstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    gcProjectAssignment,
-                                    "localprojectassignment"
-                                );
-                                
-                            //assignment unit collect
-                            ClearCollect(
-                                    gcAssignmentunit,
-                                    Filter(
-                                        assignmentUnits,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                SaveData(
-                                    gcAssignmentunit,
-                                    "localassignmentunits"
-                                );
-                                
-                            //bank assessment patch
-                            Patch(
-                                    bankAssessment,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(GC_bankAssessment,BstatusUpdate = 1),
-                                            "BstatusUpdate"
-                                        ),
-                                        "quantum_bankassessmentid",
-                                        "quantum_assessment_status"
-                                    )
-                                );
-                                
-                            //bank collect
-                            ClearCollect(
-                                    GC_bankAssessmentAdd,
-                                    Filter(
-                                        bankAssessment,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_bankAssessment,
-                                    AddColumns(
-                                        GC_bankAssessmentAdd,
-                                        "BstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GC_bankAssessment,
-                                    "localbankassessment"
-                                );
-                                
-                            //unit assessment patch
-                            Patch(
-                                    unitAssessment,
-                                    ShowColumns(
-                                        DropColumns(
-                                           Filter(GC_unitAssessment,UstatusUpdate = 1),
-                                            "UstatusUpdate"
-                                        ),
-                                        "quantum_unitassessmentid",
-                                        "quantum_assessment_status"
-                                    )
-                                );
-                                
-                            //unit collect
-                            ClearCollect(
-                                    GC_unitAssessmentAdd,
-                                    Filter(
-                                        unitAssessment,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_unitAssessment,
-                                    AddColumns(
-                                        GC_unitAssessmentAdd,
-                                        "UstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GC_unitAssessment,
-                                    "localunitassessment"
-                                );
-                                
-                            //section Patch
-                            Patch(
-                                    sectionAssessment,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(
-                                            GcSectionAssessment,SstatusUpdate = 1),
-                                            "SstatusUpdate"
-                                        ),
-                                        "quantum_sectionassessmentid",
-                                        "shlaf_assignmentId",
-                                        "shlaf_bankUnitId",
-                                        "shlaf_product_id",
-                                        "quantum_sectionassessment",
-                                        "shlaf_sectionId",
-                                        "quantum_sectionname",
-                                        "shlaf_sectioncomment",
-                                        "quantum_assessmentstatus"
-                                    )
-                                );
-                                
-                            //section clearCollect
-                            ClearCollect(
-                                    GcSectionAssessmentAdd,
-                                    Filter(
-                                        sectionAssessment,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                
-                            //Adding column for status maintain
-                            ClearCollect(
-                                    GcSectionAssessment,
-                                    AddColumns(
-                                        GcSectionAssessmentAdd,
-                                        "SstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GcSectionAssessment,
-                                    "localsectionassessment"
-                                );
-                                ForAll(
-                                    GcSectionAssessment As i,
-                                    UpdateIf(
-                                        GcCheckpointAssessment,
-                                        sectionId.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
-                                        {
-                                            sectionId: LookUp(
-                                                GcSectionAssessment,
-                                                'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                            )
-                                        }
-                                    );
-                                );
-                                
-                            //checkpoint patch
-                            Patch(
-                                    checkpointAssessment,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(
-                                            GcCheckpointAssessment,CstatusUpdate =1),
-                                            "CstatusUpdate"
-                                        ),
-                                        "quantum_checkpointassessmentid",
-                                        "shlaf_assignmentId",
-                                        "shlaf_bankUnitId",
-                                        "shlaf_product_id",
-                                        "quantum_sectionId",
-                                        "quantum_checkpointassessment",
-                                        "shlaf_checkpointId",
-                                        "quantum_checkpointname",
-                                        "quantum_checkpoint_annotation",
-                                        "shlaf_checkpointcomment",
-                                        "quantum_assessmentstatus"
-                                  // "shlaf_quantum_sectionassessmentid"
-                                    )
-                                );
-                                
-                                Clear(GcCheckpointAssessmentAdd);
-                            //checkpoint clearCollect
-                            ForAll(
-                                    assignmentUnits As i,
-                                    Collect(
-                                        GcCheckpointAssessmentAdd,
-                                        Filter(
-                                            checkpointAssessment,
-                                            bankUnitId.Id = i.bankUnitId.Id
-                                        )
-                                    )
-                                );
-                                
-                            //Adding column for status maintain
-                            ClearCollect(
-                                    GcCheckpointAssessment,
-                                    AddColumns(
-                                        GcCheckpointAssessmentAdd,
-                                        "CstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GcCheckpointAssessment,
-                                    "localcheckpointassessment"
-                                );
-                                ForAll(
-                                    GcSectionAssessment As i,
-                                    ForAll(
-                                        GcCheckpointAssessment As a,
-                                        UpdateIf(
-                                            GC_checkpointItemAssessment,
-                                            section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpointAssessment_Id.checkpointAssessment_id = a.checkpointAssessment_id,
-                                            {
-                                                section_Id: LookUp(
-                                                    GcSectionAssessment,
-                                                    'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                                ),
-                                                checkpointAssessment_Id: LookUp(
-                                                    GcCheckpointAssessment,
-                                                    checkpointAssessment_id = a.checkpointAssessment_id
-                                                )
-                                            }
-                                        );
-                                    );
-                                );
-                                
-                                
-                            //Checkpoint Item Assessment Patch
-                            Patch(
-                                    checkpointItemAssessment,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(
-                                            GC_checkpointItemAssessment,CIstatusUpdate =1),
-                                            "CIstatusUpdate"
-                                        ),
-                                        "quantum_checkpointitemassessmentid",
-                                        "shlaf_assignmentId",
-                                        "shlaf_bankUnitId",
-                                        "shlaf_product_id",
-                                        "shlaf_section_Id",
-                                        "quantum_checkpointAssessment_Id",
-                                        "quantum_checkpointitemassessment",
-                                        "shlaf_checkpointItemId",
-                                        "quantum_checkpointitemname",
-                                        "quantum_checkpointitem_annotation",
-                                        "shlaf_checkpointitemcomment",
-                                        "quantum_assessmentstatus"
-                                    )
-                                );
-                                Clear(GC_checkpointItemAssessmentAdd);
-                            //Checkpoint Item Assessment clearCollect
-                            ForAll(
-                                    assignmentUnits As i,
-                                    Collect(
-                                        GC_checkpointItemAssessmentAdd,
-                                        Filter(
-                                            checkpointItemAssessment,
-                                            bankUnitId.Id = i.bankUnitId.Id
-                                        )
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_checkpointItemAssessment,
-                                    AddColumns(
-                                        GC_checkpointItemAssessmentAdd,
-                                        "CIstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GC_checkpointItemAssessment,
-                                    "localcheckpointitemassessment"
-                                );
-                                ForAll(
-                                    GcSectionAssessment As i,
-                                    ForAll(
-                                        GcCheckpointAssessment As j,
-                                        ForAll(
-                                            GC_checkpointItemAssessment As k,
-                                            UpdateIf(
-                                                GC_checkpointItem_ActionItem,
-                                                section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                                                {
-                                                    section_id: LookUp(
-                                                        GcSectionAssessment,
-                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                                    ),
-                                                    checkpoint_id: LookUp(
-                                                        GcCheckpointAssessment,
-                                                        checkpointAssessment_id = j.checkpointAssessment_id
-                                                    ),
-                                                    checkpointItem_Id: LookUp(
-                                                        GC_checkpointItemAssessment,
-                                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                                    )
-                                                }
-                                            );
-                                        );
-                                    );
-                                );
-                                
-                            //checkpoint Action Item Patch
-                            Patch(
-                                    checkpointItem_ActionItem,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(
-                                            GC_checkpointItem_ActionItem,CIAstatusUpdate =1),
-                                            "CIAstatusUpdate"
-                                        ),
-                                        "quantum_checkpointitem_actionitemsid",
-                                        "shlaf_assignmentId",
-                                        "shlaf_bankId",
-                                        "shlaf_bankUnitId",
-                                        "shlaf_product_id",
-                                        "shlaf_section_id",
-                                        "shlaf_checkpoint_id",
-                                        "quantum_checkpointItem_Id",
-                                        "quantum_checkpointitemactionitemsid",
-                                        "shlaf_actionitem_name",
-                                        "quantum_priority",
-                                        "quantum_materialestimate",
-                                        "quantum_timeestimate",
-                                        "quantum_duedate",
-                                        "quantum_ownerid",
-                                        "cr28a_action_status"
-                                    )
-                                );
-                                Clear(GC_checkpointItem_ActionItemAdd);
-                            //checkpoint Item Action Item clearCollect
-                            ForAll(
-                                    assignmentUnits As i,
-                                    Collect(
-                                        GC_checkpointItem_ActionItemAdd,
-                                        Filter(
-                                            checkpointItem_ActionItem,
-                                            bankUnitId.Id = i.bankUnitId.Id
-                                        )
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_checkpointItem_ActionItem,
-                                    AddColumns(
-                                        GC_checkpointItem_ActionItemAdd,
-                                        "CIAstatusUpdate",
-                                        2
-                                    )
-                                );
-                                SaveData(
-                                    GC_checkpointItem_ActionItem,
-                                    "localcheckpointitemactionitem"
-                                );
-                                ForAll(
-                                    GcSectionAssessment As i,
-                                    ForAll(
-                                        GcCheckpointAssessment As j,
-                                        ForAll(
-                                            GC_checkpointItemAssessment As k,
-                                            UpdateIf(
-                                                GC_checkpointItem_Images,
-                                                section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                                                {
-                                                    section_id: LookUp(
-                                                        GcSectionAssessment,
-                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                                    ),
-                                                    checkpoint_id: LookUp(
-                                                        GcCheckpointAssessment,
-                                                        checkpointAssessment_id = j.checkpointAssessment_id
-                                                    ),
-                                                    checkpointItem_Id: LookUp(
-                                                        GC_checkpointItemAssessment,
-                                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                                    )
-                                                }
-                                            );
-                                        );
-                                    );
-                                );
-                                
-                            //checkpoint Item Images
-                            Patch(
-                                    checkpointItem_Images,
-                                    ShowColumns(
-                                        DropColumns(
-                                            Filter(
-                                            GC_checkpointItem_Images,CIIstatusUpdate = 1),
-                                            "CIIstatusUpdate"
-                                        ),
-                                        "quantum_checkpointitem_imagesid",
-                                        "shlaf_assignmentId",
-                                        "shlaf_bankUnitId",
-                                        "shlaf_product_id",
-                                        "shlaf_section_id",
-                                        "shlaf_checkpoint_id",
-                                        "quantum_checkpointItem_Id",
-                                        "quantum_checkpointitemimagesid",
-                                        "shlaf_image_annotation",
-                                        "quantum_image"
-                                    )
-                                );
-                             
-                                ForAll(checkpointItem_Images As i,
-                                UpdateIf(GC_checkpointItem_Images,
-                                checkpointItemImagesId=i.checkpointItemImagesId &&
-                                CIIstatusUpdate=1,
-                                {
-                                    checkpointItem_Images:i.checkpointItem_Images,
-                                    CIIstatusUpdate:2
-                                });
-                                );
-                                SaveData(
-                                    GC_checkpointItem_Images,
-                                    "localcheckpointitemimage"
-                                );
-                            );
-                                Set(
-                                    popupsuccess,
-                                    true
-                                );
-                                Set(
-                                    varSpinner,
-                                    false
-                                );
-                                If(
-                                    VarNav = true,
-                                    Navigate(DashboardScreen);
-                                    Set(
-                                        popupsuccess,
-                                        false
-                                    );
-                                );
-                                
-                            );
-                            */
-                        Text: ="Patch"
-                        Visible: =false
-                        X: =Parent.Width-200
-                        Y: =60
-                        ZIndex: =3
-
         ctnHeaderSS_1 As groupContainer.manualLayoutContainer:
             Fill: =Header.HeaderFill
             Height: =80
@@ -2631,17 +1904,12 @@ AssessmentScreen As screen:
             Width: =Parent.Width
             ZIndex: =3
 
-            Component2_5 As Component2:
-                X: =lblUsernameHeaderBS_3.Width+lblUsernameHeaderBS_3.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderBS_2 As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogoSS_1 As image:
                     DisplayMode: =DisplayMode.View
@@ -2693,27 +1961,10 @@ AssessmentScreen As screen:
                     X: =imgUserHeaderBS_3.Width+imgUserHeaderBS_3.X
                     ZIndex: =5
 
-                icoNotificationHeaderBS_3 As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderSS_1.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderSS_1.Width/30
+                Component2_5 As Component2:
                     X: =lblUsernameHeaderBS_3.Width+lblUsernameHeaderBS_3.X
-                    Y: =ctnHeaderSS_1.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderBS_3 As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =ctnHeaderSS_1.Height/2.4
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =ctnHeaderSS_1.Width-(imgLogoSS_1.Width+lblAssessmentBS_3.Width+imgUserHeaderBS_3.Width+lblUsernameHeaderBS_3.Width+icoNotificationHeaderBS_3.Width)
-                    X: =icoNotificationHeaderBS_3.X+icoNotificationHeaderBS_3.Width
-                    Y: =ctnHeaderSS_1.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
     Timer2_3 As timer:
         AutoStart: =If(varSafety=true,true,false)
@@ -2845,9 +2096,11 @@ AssessmentScreen As screen:
                 Font: =AllScreensCSS.RFont
                 FontWeight: =FontWeight.Semibold
                 PaddingLeft: =40
-                Text: |
-                    =If(varItemComment = true,"Checkpoint item "
-                       ) & " comment"
+                Text: |-
+                    =If(
+                        varItemComment = true,
+                        "Checkpoint item "
+                    ) & " comment"
                 Width: =Parent.Width-70
                 ZIndex: =1
 

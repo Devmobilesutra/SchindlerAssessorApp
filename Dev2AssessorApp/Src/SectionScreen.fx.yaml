@@ -27,17 +27,12 @@ SectionScreen As screen:
             Width: =Parent.Width
             ZIndex: =9
 
-            ComponentNetworkicon As Component2:
-                X: =lblUsernameHeaderBS_1.Width+lblUsernameHeaderBS_1.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderBS_1 As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogoSS As image:
                     DisplayMode: =DisplayMode.View
@@ -90,27 +85,10 @@ SectionScreen As screen:
                     X: =imgUserHeaderBS_1.Width+imgUserHeaderBS_1.X
                     ZIndex: =5
 
-                icoNotificationHeaderBS_1 As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderSS.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderSS.Width/30
+                ComponentNetworkicon As Component2:
                     X: =lblUsernameHeaderBS_1.Width+lblUsernameHeaderBS_1.X
-                    Y: =ctnHeaderSS.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderBS_1 As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =ctnHeaderSS.Height/2.4
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =ctnHeaderSS.Width-(imgLogoSS.Width+lblAssessmentBS_1.Width+imgUserHeaderBS_1.Width+lblUsernameHeaderBS_1.Width+icoNotificationHeaderBS_1.Width)
-                    X: =icoNotificationHeaderBS_1.X+icoNotificationHeaderBS_1.Width
-                    Y: =ctnHeaderSS.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
         ctnSectionSS As groupContainer.verticalAutoLayoutContainer:
             Height: |-
@@ -122,7 +100,9 @@ SectionScreen As screen:
             LayoutOverflowY: =LayoutOverflow.Scroll
             PaddingRight: =10
             Width: =Parent.Width
-            Y: ='ctnBack&onlinestatus_2'.Height+'ctnBack&onlinestatus_2'.Y
+            Y: |-
+                =//'ctnBack&onlinestatus_2'.Height+'ctnBack&onlinestatus_2'.Y
+                ctnHeaderSS.Y+ctnHeaderSS.Height
             ZIndex: =11
 
             "'ctnBack&onlinestatusSS' As groupContainer.verticalAutoLayoutContainer":
@@ -820,14 +800,6 @@ SectionScreen As screen:
                         X: =lblSectionSS_2.Width+lblSectionSS_2.X+10
                         Y: =30
                         ZIndex: =8
-
-        "'ctnBack&onlinestatus_2' As groupContainer.verticalAutoLayoutContainer":
-            Height: =//80
-            LayoutMode: =LayoutMode.Auto
-            PaddingBottom: =5
-            Width: =Parent.Width
-            Y: =ctnHeaderSS.Y+ctnHeaderSS.Height
-            ZIndex: =12
 
     TimerSS As timer:
         AutoStart: =If(varSafety =true,true,false)
