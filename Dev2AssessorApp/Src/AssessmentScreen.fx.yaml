@@ -1,6 +1,6 @@
 AssessmentScreen As screen:
     OnHidden: =Set(IsResetCboxItemsAS, false);Set(IsResetCboxItemsAS, true) ;
-    OnVisible: |-
+    OnVisible: |
         =//for reset ideal timer
         Reset(tmr_logout);
         Set(UserLastNavigated, Now());
@@ -8,7 +8,6 @@ AssessmentScreen As screen:
         Set(safetyPopup,false);
         Set(varSpinner,false);
         Set(popupsuccess,false );
-        //Set(IsResetCboxItemsAS, false);Set(IsResetCboxItemsAS, true) ;
 
     ctnMainAS As groupContainer.manualLayoutContainer:
         Height: =Max(App.Height, App.MinScreenHeight)

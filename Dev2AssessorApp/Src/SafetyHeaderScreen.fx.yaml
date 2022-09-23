@@ -1,23 +1,7 @@
 SafetyHeaderScreen As screen:
     Fill: =
     OnVisible: |-
-        =/*Clear(colNumberedInvoices);
-        ForAll(product,Collect(colNumberedInvoices,Last(FirstN(AddColumns(product,"RowNumber",CountRows(colNumberedInvoices)+1),CountRows(colNumberedInvoices)+1))));*/
-        //ClearCollect(projectAggregationCollection,Filter(projectAggregations,assessorId.email=User().Email));
-        
-        //ClearCollect(LC_product,product);
-        //ClearCollect(LC_bank,bank);
-        //ClearCollect(LC_bankAssessment,bankAssessment);
-        //ClearCollect(LC_clientInstallation,clientInstallation)
-        
-        //ClearCollect(LC_bank,Filter(bank,clientId.client=Gallery2.Selected.clientId.client,Go_Number);
-        
-        
-        
-        //If(CountRows(Filter(GC_unitAssessment,bankUnitId.Id=varBankUnitId && assignmentId.Id=glryProject.Selected.Id &&Assessment_status= "start"))>0,UpdateContext({varCheckboxReset:false}),UpdateContext({varCheckboxReset:true}));
-        
-        
-        ClearCollect(lcSafetyCollect,
+        =ClearCollect(lcSafetyCollect,
          {data:"1.Make sure that there is enough light to work safely."},
          {data:"2.Immediately replace damaged or lost safely equipment."},
          {data:"3.If there is a fall hazard present,secure with a lifeline and fall protection."},
@@ -197,15 +181,8 @@ SafetyHeaderScreen As screen:
                     Fill: =RGBA(247, 247, 247, 1)
                     FillPortions: =0
                     Height: =CountRows(GlryInstructions.AllItems)*GlryInstructions.TemplateHeight
-                    Items: |-
+                    Items: |
                         =lcSafetyCollect
-                        /*["1.Make sure that there is enough light to work safely.",
-                         "2.Immediately replace damaged or lost safely equipment.",
-                         "3.If there is a fall hazard present,secure with a lifeline and fall protection.",
-                         "4.Keep all tools in good condition.",
-                         "5.Follow instructions when using tools.",
-                         "6.Every co-worker is responsible for her or his own safety and health.Alse,for personal safety and that of co-workers 'see something say something. '",
-                         "7.The execution of maintenance work is restricted to competent person of the maintenance company . In addition to protective clothing,the following safely equipment must be used."]*/
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
                     LayoutMinWidth: =320
@@ -425,17 +402,12 @@ SafetyHeaderScreen As screen:
             Width: =Parent.Width
             ZIndex: =4
 
-            NetworkIconSafetyHeader As Component2:
-                X: =lblUsernameHeaderSH.Width+lblUsernameHeaderSH.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderSafetyHeader As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogoSH As image:
                     DisplayMode: =DisplayMode.View
@@ -486,25 +458,8 @@ SafetyHeaderScreen As screen:
                     X: =imgUserHeaderSH.Width+imgUserHeaderSH.X
                     ZIndex: =5
 
-                icoNotificationHeaderSH As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderSafetyHeader.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderSafetyHeader.Width/30
+                NetworkIconSafetyHeader As Component2:
                     X: =lblUsernameHeaderSH.Width+lblUsernameHeaderSH.X
-                    Y: =ctnHeaderSafetyHeader.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderSH As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =33
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =48
-                    X: =1318
-                    Y: =ctnHeaderSafetyHeader.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 

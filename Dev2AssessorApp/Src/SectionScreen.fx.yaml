@@ -12,23 +12,6 @@ SectionScreen As screen:
         Trace(First(GC_product).product_Name,TraceSeverity.Information)
         
         
-        /*Clear(colNumberedInvoices);
-        ForAll(product,Collect(colNumberedInvoices,Last(FirstN(AddColumns(product,"RowNumber",CountRows(colNumberedInvoices)+1),CountRows(colNumberedInvoices)+1))));*/
-        
-        //ClearCollect(projectAggregationCollection,Filter(projectAggregations,assessorId.email=User().Email));
-        
-        //ClearCollect(LC_product,product);
-        //ClearCollect(LC_bank,bank);
-        //ClearCollect(LC_bankAssessment,bankAssessment);
-        //ClearCollect(LC_templateSections,templateSections);
-        //ClearCollect(LC_templateCheckpoints,templateCheckpoints);
-        
-        //ClearCollect(LC_bank,Filter(bank,clientId.client=Gallery2.Selected.clientId.client,Go_Number);
-        //Set(A,true);Set(B,false);
-        //Filter(gcPrevcheckpointItemAssessment,checkpointItemId.checkpointItemId=varCheckpointitemID
-        //&& bankUnitId.Id=varBankUnitId)
-        
-        
 
     ctnMainSection As groupContainer.manualLayoutContainer:
         Height: |-
@@ -190,7 +173,7 @@ SectionScreen As screen:
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
                         Size: =AllScreensCSS.RLabelFontSize-2
-                        Text: ="Back"
+                        Text: ="Back123456"
                         Width: =ctnBackSS.Width/6
                         ZIndex: =1
 
@@ -846,65 +829,6 @@ SectionScreen As screen:
             Y: =ctnHeaderSS.Y+ctnHeaderSS.Height
             ZIndex: =12
 
-            ctnBack_4 As groupContainer.verticalAutoLayoutContainer:
-                Height: =80
-                LayoutDirection: =LayoutDirection.Vertical
-                LayoutGap: =10
-                LayoutJustifyContent: =LayoutJustifyContent.Center
-                LayoutMinHeight: =100
-                LayoutMinWidth: =250
-                LayoutMode: =LayoutMode.Auto
-                LayoutWrap: =true
-                PaddingLeft: =40
-                Width: =Parent.Width
-                Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
-                ZIndex: =1
-
-                btnBack_4 As button:
-                    BorderColor: =AllScreensCSS.RActiveColor
-                    Color: =RGBA(0, 0, 0, 1)
-                    DisabledColor: =RGBA(0, 0, 0, 1)
-                    DisabledFill: =RGBA(0, 0, 0, 0)
-                    Fill: =RGBA(0, 0, 0, 0)
-                    Height: =ctnBack_4.Height/1.6
-                    HoverColor: =RGBA(0, 0, 0, 1)
-                    HoverFill: =
-                    OnSelect: =Navigate(BankScreen)
-                    PaddingBottom: =10
-                    PaddingLeft: =20
-                    PaddingRight: =10
-                    PaddingTop: =10
-                    PressedFill: =
-                    RadiusBottomLeft: =0
-                    RadiusBottomRight: =0
-                    RadiusTopLeft: =0
-                    RadiusTopRight: =0
-                    Size: =AllScreensCSS.RLabelFontSize-2
-                    Text: ="Back"
-                    Width: =ctnBack_4.Width/6
-                    ZIndex: =1
-
-            ctnOnlineStatus_4 As groupContainer.verticalAutoLayoutContainer:
-                Height: =80
-                LayoutAlignItems: =LayoutAlignItems.End
-                LayoutDirection: =LayoutDirection.Vertical
-                LayoutGap: =10
-                LayoutJustifyContent: =LayoutJustifyContent.Center
-                LayoutMinHeight: =100
-                LayoutMinWidth: =250
-                LayoutMode: =LayoutMode.Auto
-                LayoutWrap: =true
-                PaddingLeft: =40
-                PaddingRight: =40
-                Visible: =false
-                Width: =Parent.Width/2
-                Y: =ctnHeaderPS.Y+ctnHeaderPS.Height
-                ZIndex: =2
-
-                "'CmpOnline/offlineStatus_4' As Component1_8":
-                    LayoutMinHeight: =640
-                    LayoutMinWidth: =640
-
     TimerSS As timer:
         AutoStart: =If(varSafety =true,true,false)
         Duration: =30000
@@ -916,7 +840,7 @@ SectionScreen As screen:
                     Seconds
                 ),
                 Set(safetyPopup,true);
-               // Set(varSafety,false);
+               
             )
         Repeat: =true
         Visible: =false
@@ -1025,10 +949,13 @@ SectionScreen As screen:
                 Font: =AllScreensCSS.RFont
                 FontWeight: =FontWeight.Semibold
                 PaddingLeft: =40
-                Text: |
-                    =If(varSectionComment = true,"Section",
-                       varCheckpointComment = true,"Checkpoint "
-                       ) & " Comment"
+                Text: |-
+                    =If(
+                        varSectionComment = true,
+                        "Section",
+                        varCheckpointComment = true,
+                        "Checkpoint "
+                    ) & " Comment"
                 Width: =Parent.Width-70
                 ZIndex: =1
 
@@ -1071,14 +998,27 @@ SectionScreen As screen:
             Font: =AllScreensCSS.RFont
             HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
             OnSelect: |-
-                =Navigate(SectionScreen);
+                =
                 Concurrent(
-                Reset(txtSectionCommentSS),
-                Set(varComment , false),
-                Set(varSectionComment,false),
-                Set(varCheckpointComment,false),
-                Set(varItemComment,false)
-                  )
+                    Reset(txtSectionCommentSS),
+                    Set(
+                        varComment,
+                        false
+                    ),
+                    Set(
+                        varSectionComment,
+                        false
+                    ),
+                    Set(
+                        varCheckpointComment,
+                        false
+                    ),
+                    Set(
+                        varItemComment,
+                        false
+                    )
+                );
+                Navigate(SectionScreen);
             PressedColor: =Self.Color
             PressedFill: =Self.Fill
             Size: =AllScreensCSS.RLabelFontSize
@@ -1094,9 +1034,17 @@ SectionScreen As screen:
             Default: |-
                 =If(
                     varSectionComment = true,
-                   LookUp(GcSectionAssessment,sectionId.sectionId=VarSectionId && assignmentId.Id=varAssignmentId && bankUnitId.Id=varBankUnitId,sectionComment),
-                   varCheckpointComment =true,
-                   LookUp(GcCheckpointAssessment,checkpointId.checkpointId=ChId && bankUnitId.Id=varBankUnitId && assignmentId.Id=varAssignmentId,checkpointComment)
+                    LookUp(
+                        GcSectionAssessment,
+                        sectionId.sectionId = VarSectionId && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId,
+                        sectionComment
+                    ),
+                    varCheckpointComment = true,
+                    LookUp(
+                        GcCheckpointAssessment,
+                        checkpointId.checkpointId = ChId && bankUnitId.Id = varBankUnitId && assignmentId.Id = varAssignmentId,
+                        checkpointComment
+                    )
                 )
             DisplayMode: =DisplayMode.View
             FocusedBorderColor: =RGBA(179, 179, 179, 1)

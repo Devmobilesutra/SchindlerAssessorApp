@@ -14543,66 +14543,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnBack_4.Y"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnBack_4.Y",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Y",
-                "module": "SectionScreen",
-                "type": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnBack_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnOnlineStatus_4.Y"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnOnlineStatus_4.Y",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Y",
-                "module": "SectionScreen",
-                "type": "SectionScreen.ctnMainSection.'ctnBack&onlinestatus_2'.ctnOnlineStatus_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 10
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ProjectScreen.ctnMainPS.ctnHeaderPS.lblAssessmentPS.Width"
                 }
               ],
