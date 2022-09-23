@@ -16,10 +16,7 @@ App As appinfo:
             false
         );
                 //Set(varload,true);
-        Set(
-            Istimer,
-            false
-        );
+        
         // Global CSS
         Set(
         //for header
@@ -608,10 +605,6 @@ App As appinfo:
           //  );
                   // Set(varload,false );
         //);
-        Set(
-            Istimer,
-            true
-        );
         //Notify("Onstart end",NotificationType.Information);
         //Extra collection for add column
         Clear(gcProjectAssignmentAdd);

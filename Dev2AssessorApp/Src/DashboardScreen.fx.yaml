@@ -34,17 +34,12 @@ DashboardScreen As screen:
             Y: =10
             ZIndex: =1
 
-            NetworkIconDS As Component2:
-                X: =lblUsernameHeaderDS.Width+lblUsernameHeaderDS.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderDS As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =11
 
                 imgLogoDS As image:
                     DisplayMode: =DisplayMode.View
@@ -97,663 +92,218 @@ DashboardScreen As screen:
                     X: =imgUserHeaderDS.Width+imgUserHeaderDS.X
                     ZIndex: =5
 
-                icoNotificationHeaderDS As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderDS.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderDS.Width/30
+                NetworkIconDS As Component2:
                     X: =lblUsernameHeaderDS.Width+lblUsernameHeaderDS.X
-                    Y: =ctnHeaderDS.Height/4
-                    ZIndex: =7
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
-                iconSignoutHeaderDS As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =ctnHeaderDS.Height/2.4
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =ctnHeaderDS.Width-(imgLogoDS.Width+lblAssessmentDS.Width+imgUserHeaderDS.Width+lblUsernameHeaderDS.Width+icoNotificationHeaderDS.Width)
-                    X: =icoNotificationHeaderDS.X+icoNotificationHeaderDS.Width
-                    Y: =ctnHeaderDS.Height/4
-                    ZIndex: =8
-
-            syncButton As icon.Reload:
-                Color: =RGBA(255, 255, 255, 1)
-                DisabledColor: =RGBA(230, 230, 230, 1)
-                Height: =40
-                Icon: =Icon.Sync
-                OnSelect: |-
-                    =//get new assignment and completed assignment updates
-                    If(
-                        Connection.Connected,
+                syncButton As icon.Reload:
+                    Color: =RGBA(255, 255, 255, 1)
+                    DisabledColor: =RGBA(230, 230, 230, 1)
+                    Height: =40
+                    Icon: =Icon.Sync
+                    OnSelect: |-
+                        =//get new assignment and completed assignment updates
                         If(
-                            IsBlank(LookUp(gcProjectAssignment,AstatusUpdate = 0 || AstatusUpdate = 1))            &&
-                            IsBlank(LookUp(GC_bankAssessment,BstatusUpdate = 0 || BstatusUpdate = 1))              &&
-                            IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
-                       
-                         
-                         Set(popupDashSyncText,"Getting new assignment assigned to you. ");
-                         Set(popupDashSyncSuccess,true);
-                        Concurrent(
-                    //**************client master data
-                            ClearCollect(
-                                gcClient,
-                                schindlerClients
-                            );
-                            SaveData(
-                                gcClient,
-                                "localclient"
-                        );
-                            ,
-                       //Banks master data
-                            ClearCollect(
-                                gcBank,
-                                schindlerBanks
-                            );
-                            SaveData(
-                                gcBank,
-                                "localbank"
-                            );
-                            ,
-                        //master units data
-                            ClearCollect(
-                                gcBankunit,
-                                bankUnits
-                            );
-                            SaveData(
-                                gcBankunit,
-                                "localgcbankunit"
-                            );
-                            ,
-                        //assignment Assignment 
-                            
-                            ClearCollect(
-                                    gcProjectAssignmentAdd,
-                                    Filter(
-                                        assignments,
-                                        assessorId = varLoggedAssessor
-                                    )
-                                );
+                            Connection.Connected,
+                            If(
+                                IsBlank(LookUp(gcProjectAssignment,AstatusUpdate = 0 || AstatusUpdate = 1))            &&
+                                IsBlank(LookUp(GC_bankAssessment,BstatusUpdate = 0 || BstatusUpdate = 1))              &&
+                                IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
+                           
+                             
+                             Set(popupDashSyncText,"Getting new assignment assigned to you. ");
+                             Set(popupDashSyncSuccess,true);
+                            Concurrent(
+                        //**************client master data
                                 ClearCollect(
-                                    gcProjectAssignment,
-                                    AddColumns(
+                                    gcClient,
+                                    schindlerClients
+                                );
+                                SaveData(
+                                    gcClient,
+                                    "localclient"
+                            );
+                                ,
+                           //Banks master data
+                                ClearCollect(
+                                    gcBank,
+                                    schindlerBanks
+                                );
+                                SaveData(
+                                    gcBank,
+                                    "localbank"
+                                );
+                                ,
+                            //master units data
+                                ClearCollect(
+                                    gcBankunit,
+                                    bankUnits
+                                );
+                                SaveData(
+                                    gcBankunit,
+                                    "localgcbankunit"
+                                );
+                                ,
+                            //assignment Assignment 
+                                
+                                ClearCollect(
                                         gcProjectAssignmentAdd,
-                                        "AstatusUpdate",
-                                        2
+                                        Filter(
+                                            assignments,
+                                            assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        gcProjectAssignment,
+                                        AddColumns(
+                                            gcProjectAssignmentAdd,
+                                            "AstatusUpdate",
+                                            2
+                                        )
+                                    );
+                                    ,
+                                
+                                //assignment unit
+                                ClearCollect(
+                                    gcAssignmentunit,
+                                    Filter(
+                                        assignmentUnits,
+                                        assignmentId.assessorId = varLoggedAssessor
                                     )
                                 );
+                                SaveData(
+                                    gcAssignmentunit,
+                                    "localassignmentunits"
+                                );
                                 ,
+                                //bank Assessment
+                                ClearCollect(
+                                        GC_bankAssessmentAdd,
+                                        Filter(
+                                            bankAssessment,
+                                            assignmentId.assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        GC_bankAssessment,
+                                        AddColumns(
+                                            GC_bankAssessmentAdd,
+                                            "BstatusUpdate",
+                                            2
+                                        )
+                                    );
+                                ,
+                                //unit assessment
+                                ClearCollect(
+                                        GC_unitAssessmentAdd,
+                                        Filter(
+                                            unitAssessment,
+                                            assignmentId.assessorId = varLoggedAssessor
+                                        )
+                                    );
+                                    ClearCollect(
+                                        GC_unitAssessment,
+                                        AddColumns(
+                                            GC_unitAssessmentAdd,
+                                            "UstatusUpdate",
+                                            2
+                                        )
+                                    );
+                                );//concurrent close
                             
-                            //assignment unit
-                            ClearCollect(
-                                gcAssignmentunit,
+                        
+                        ForAll(
                                 Filter(
-                                    assignmentUnits,
-                                    assignmentId.assessorId = varLoggedAssessor
-                                )
+                                    gcProjectAssignment,
+                                    isCompleted = "Completed"
+                                ) As i,
+                                RemoveIf(
+                                    GC_bankAssessment,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GC_unitAssessment,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GcSectionAssessment,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GcCheckpointAssessment,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GC_checkpointItemAssessment,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GC_checkpointItem_ActionItem,
+                                    assignmentId.Id = i.Id
+                                );
+                                RemoveIf(
+                                    GC_checkpointItem_Images,
+                                    assignmentId.Id = i.Id
+                                );
+                            );
+                        
+                            SaveData(
+                                    gcProjectAssignment,
+                                    "localprojectassignment"
+                                );
+                            SaveData(
+                                    GC_bankAssessment,
+                                    "localbankassessment"
+                                );
+                            SaveData(
+                                    GC_unitAssessment,
+                                    "localunitassessment"
+                                );
+                            SaveData(
+                                GcSectionAssessment,
+                                "localsectionassessment"
                             );
                             SaveData(
-                                gcAssignmentunit,
-                                "localassignmentunits"
+                                GcCheckpointAssessment,
+                                "localcheckpointassessment"
                             );
+                            SaveData(
+                                GC_checkpointItemAssessment,
+                                "localcheckpointitemassessment"
+                            );
+                            SaveData(
+                                GC_checkpointItem_ActionItem,
+                                "localcheckpointitemactionitem"
+                            );
+                            SaveData(
+                                GC_checkpointItem_Images,
+                                "localcheckpointitemimage"
+                            );
+                        
+                            Trace(First(gcAssignmentunit).bankUnitId.unitNumber,TraceSeverity.Information);
                             ,
-                            //bank Assessment
-                            ClearCollect(
-                                    GC_bankAssessmentAdd,
-                                    Filter(
-                                        bankAssessment,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_bankAssessment,
-                                    AddColumns(
-                                        GC_bankAssessmentAdd,
-                                        "BstatusUpdate",
-                                        2
-                                    )
-                                );
+                             
+                             Set(popupDashSyncText,"Assessement records saved in your device has not yet submitted to server .Please submit and try again.");
+                             Set(popupDashSyncSuccess,true);
+                           // Notify("Your Local Data has not Synced yet",NotificationType.Information);    
+                            );  
                             ,
-                            //unit assessment
-                            ClearCollect(
-                                    GC_unitAssessmentAdd,
-                                    Filter(
-                                        unitAssessment,
-                                        assignmentId.assessorId = varLoggedAssessor
-                                    )
-                                );
-                                ClearCollect(
-                                    GC_unitAssessment,
-                                    AddColumns(
-                                        GC_unitAssessmentAdd,
-                                        "UstatusUpdate",
-                                        2
-                                    )
-                                );
-                            );//concurrent close
-                        
-                    
-                    ForAll(
-                            Filter(
-                                gcProjectAssignment,
-                                isCompleted = "Completed"
-                            ) As i,
-                            RemoveIf(
-                                GC_bankAssessment,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GC_unitAssessment,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GcSectionAssessment,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GcCheckpointAssessment,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GC_checkpointItemAssessment,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GC_checkpointItem_ActionItem,
-                                assignmentId.Id = i.Id
-                            );
-                            RemoveIf(
-                                GC_checkpointItem_Images,
-                                assignmentId.Id = i.Id
-                            );
+                           
+                             Set(popupDashSyncText,"Network not available,Please check your network connection.");
+                               Set(popupDashSyncSuccess,true);
+                            //Notify("Network not available,Please check your network connection.")
                         );
-                    
-                        SaveData(
-                                gcProjectAssignment,
-                                "localprojectassignment"
-                            );
-                        SaveData(
-                                GC_bankAssessment,
-                                "localbankassessment"
-                            );
-                        SaveData(
-                                GC_unitAssessment,
-                                "localunitassessment"
-                            );
-                        SaveData(
-                            GcSectionAssessment,
-                            "localsectionassessment"
+                        UpdateIf(
+                            gcProjectAssignment,
+                            isCompleted = "Inprogress1",
+                            {isCompleted: "Inprogress"}
                         );
-                        SaveData(
-                            GcCheckpointAssessment,
-                            "localcheckpointassessment"
-                        );
-                        SaveData(
-                            GC_checkpointItemAssessment,
-                            "localcheckpointitemassessment"
-                        );
-                        SaveData(
-                            GC_checkpointItem_ActionItem,
-                            "localcheckpointitemactionitem"
-                        );
-                        SaveData(
-                            GC_checkpointItem_Images,
-                            "localcheckpointitemimage"
-                        );
-                    
-                        Trace(First(gcAssignmentunit).bankUnitId.unitNumber,TraceSeverity.Information);
-                        ,
-                         
-                         Set(popupDashSyncText,"Assessement records saved in your device has not yet submitted to server .Please submit and try again.");
-                         Set(popupDashSyncSuccess,true);
-                       // Notify("Your Local Data has not Synced yet",NotificationType.Information);    
-                        );  
-                        ,
-                       
-                         Set(popupDashSyncText,"Network not available,Please check your network connection.");
-                           Set(popupDashSyncSuccess,true);
-                        //Notify("Network not available,Please check your network connection.")
-                    );
-                    UpdateIf(
-                        gcProjectAssignment,
-                        isCompleted = "Inprogress1",
-                        {isCompleted: "Inprogress"}
-                    );
-                    //Set(popupDashSyncSuccess,false);
-                Width: =40
-                X: =NetworkIconDS.X+NetworkIconDS.Width+50
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =10
-
-            patchButton As icon.Reload:
-                Color: =RGBA(255, 255, 255, 1)
-                DisabledColor: =RGBA(47, 107, 7, 1)
-                Height: =40
-                Icon: =Icon.Download
-                OnSelect: |-
-                    =/*If(
-                        Connection.Connected ,
-                        Notify("Network Connected...",NotificationType.Error);
-                        If(
-                            !IsBlank(LookUp(gcProjectAssignment,AstatusUpdate = 0))            ||
-                            !IsBlank(LookUp(GC_bankAssessment,BstatusUpdate = 0))              ||
-                            !IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0))              ||
-                            !IsBlank(LookUp(GcSectionAssessment,SstatusUpdate = 0))            ||
-                            !IsBlank(LookUp(GcCheckpointAssessment,CstatusUpdate = 0))         ||
-                            !IsBlank(LookUp(GC_checkpointItemAssessment,CIstatusUpdate = 0))   ||
-                            !IsBlank(LookUp(GC_checkpointItem_ActionItem,CIAstatusUpdate = 0)) ||
-                            !IsBlank(LookUp(GC_checkpointItem_Images,CIIstatusUpdate = 0)) ,  
-                            
-                            Notify("Sending assessment to back end");
-                        
-                    // for updating status of Assignments in collection
-                    // When first time status of assessment becomes inprogress then set a flag and update the status of dataverse tables - bank,section,checkpoint and assignment to inprogress . The flag is used to nevigate to dashboard when status of assignment changes so that the count for upcoming and inprogress assessment is correctly updated.  Otherwise it is crashing. 
-                    //for project assessment status 
-                    Concurrent(
-                    
-                    ForAll(
-                            Filter(
-                                gcProjectAssignment,
-                                AstatusUpdate = 0
-                            ) As i,
-                            UpdateIf(
-                                assignments,
-                                Id = i.Id,
-                                {isCompleted: "Inprogress"}
-                            );
-                    //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                gcProjectAssignment,
-                                Id = i.Id && AstatusUpdate = 0,
-                                {AstatusUpdate: 1}
-                            );
-                        );,
-                        
-                    //for bank assessment status
-                    ForAll(
-                            Filter(
-                                GC_bankAssessment,
-                                BstatusUpdate = 0
-                            ) As i,
-                            UpdateIf(
-                                bankAssessment,
-                                'bankAssessment (quantum_bankassessment)' = i.'bankAssessment (quantum_bankassessment)',
-                                {Assessment_Status: i.Assessment_Status}
-                            );
-                                    //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GC_bankAssessment,
-                                'bankAssessment (quantum_bankassessment)' = i.'bankAssessment (quantum_bankassessment)' && BstatusUpdate = 0,
-                                {BstatusUpdate: 1}
-                            );
-                        ),
-                    
-                         
-                    //for unit assessment status
-                    ForAll(
-                            Filter(
-                                GC_unitAssessment,
-                                UstatusUpdate = 0
-                            ) As i,
-                            UpdateIf(
-                                unitAssessment,
-                                'unitAssessment (quantum_unitassessment)' = i.'unitAssessment (quantum_unitassessment)',
-                                {Assessment_status: i.Assessment_status}
-                            );
-                                        //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GC_unitAssessment,
-                                'unitAssessment (quantum_unitassessment)' = i.'unitAssessment (quantum_unitassessment)' && UstatusUpdate = 0,
-                                {UstatusUpdate: 1}
-                            );
-                        ) );
-                        
-                    // Take each row of the collection GcSectionAssessment and check if this is the current section . If so check if the row representing  status of that section is present in the  dataverse table SectionAssessment. Insert if not found else next statement.
-                    //Concurrent(
-                    ForAll(
-                            Filter(
-                                GcSectionAssessment,
-                                SstatusUpdate = 0
-                            ) As i,
-                            If(
-                                IsBlank(
-                                    LookUp(
-                                        sectionAssessment,
-                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                    )
-                                ) ,
-                                Patch(
-                                    sectionAssessment,
-                                    Defaults(sectionAssessment),
-                                    {
-                                        'sectionAssessment (quantum_sectionassessment)': i.'sectionAssessment (quantum_sectionassessment)',
-                                        assignmentId: LookUp(
-                                            assignments,
-                                            Id = i.assignmentId.Id
-                                        ),
-                                        bankUnitId: LookUp(
-                                            bankUnits,
-                                            Id = i.bankUnitId.Id
-                                        ),
-                                        product_id: LookUp(
-                                            product,
-                                            'product (quantum_product)' = i.product_id.'product (quantum_product)'
-                                        ),
-                                        sectionId: LookUp(
-                                            templateSections,
-                                            sectionId = i.sectionId.sectionId
-                                        ),
-                                        sectionName: i.sectionName,
-                                        AssessmentStatus: i.AssessmentStatus
-                                    }
-                                )
-                            );
-                                //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GcSectionAssessment,
-                                'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && SstatusUpdate = 0,
-                                {SstatusUpdate: 1}
-                            );
-                        );
-                       
-                        
-                    // For each row in collection GcCheckpointAssessment check if this row is the current checkpoint and insert a row in dataverse table CheckpointAssessment representing status of that checkpoint.Insert if not found else next statement.
-                    ForAll(
-                            Filter(
-                                GcCheckpointAssessment,
-                                CstatusUpdate = 0
-                            ) As a,
-                            If(
-                                IsBlank(
-                                    LookUp(
-                                        checkpointAssessment,
-                                        checkpointAssessment_id = a.checkpointAssessment_id
-                                    )
-                                ) ,
-                                Patch(
-                                    checkpointAssessment,
-                                    Defaults(checkpointAssessment),
-                                    {
-                                        checkpointAssessment_id: a.checkpointAssessment_id,
-                                        assignmentId: LookUp(
-                                            assignments,
-                                            Id = a.assignmentId.Id
-                                        ),
-                                        bankUnitId: LookUp(
-                                            bankUnits,
-                                            Id = a.bankUnitId.Id
-                                        ),
-                                        product_id: LookUp(
-                                            product,
-                                            'product (quantum_product)' = a.product_id.'product (quantum_product)'
-                                        ),
-                                        sectionId://a.sectionId
-                                        LookUp(
-                                            sectionAssessment,
-                                            'sectionAssessment (quantum_sectionassessment)' = a.sectionId.'sectionAssessment (quantum_sectionassessment)'
-                                        ),
-                                        checkpointId: LookUp(
-                                            templateCheckpoints,
-                                            checkpointId = a.checkpointId.checkpointId
-                                        ),
-                                        checkpointName: a.checkpointName,
-                                        AssessmentStatus: a.AssessmentStatus
-                                    }
-                                );
-                            );
-                    
-                     //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GcCheckpointAssessment,
-                                checkpointAssessment_id = a.checkpointAssessment_id && CstatusUpdate = 0,
-                                {CstatusUpdate: 1}
-                            );
-                        );
-                        
-                    // For each row in collection GcCheckpointItemAssessment check if this rows are the current checkpointItems of current checkpoint  and insert a row in dataverse table CheckpointItemAssessment representing status of that checkpointItem.Insert if not found else update that rows.
-                    ForAll(
-                            Filter(
-                                GC_checkpointItemAssessment,
-                                CIstatusUpdate = 0
-                            ) As a,
-                            If(
-                                !IsBlank(
-                                    LookUp(
-                                        checkpointItemAssessment,
-                                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = a.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                    )
-                                ),
-                                UpdateIf(
-                                    checkpointItemAssessment,
-                                    'checkpointItemAssessment (quantum_checkpointitemassessment)' = a.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                                    {
-                                        
-                                        checkpointItem_annotation: a.checkpointItem_annotation,
-                                        assessmentStatus: a.assessmentStatus
-                                    }
-                                );
-                                ,
-                                Patch(
-                                    checkpointItemAssessment,
-                                    Defaults(checkpointItemAssessment),
-                                    {
-                                        'checkpointItemAssessment (quantum_checkpointitemassessment)': a.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                                        checkpointAssessment_Id://a.checkpointAssessment_Id
-                                         LookUp(
-                                            checkpointAssessment,
-                                            checkpointAssessment_id = a.checkpointAssessment_Id.checkpointAssessment_id
-                                        ),
-                                        assignmentId: LookUp(
-                                            assignments,
-                                            Id = a.assignmentId.Id
-                                        ),
-                                        bankUnitId: LookUp(
-                                            bankUnits,
-                                            Id = a.bankUnitId.Id
-                                        ),
-                                        product_id: LookUp(
-                                            product,
-                                            'product (quantum_product)' = a.product_id.'product (quantum_product)'
-                                        ),
-                                        section_Id://a.section_Id
-                                         LookUp(
-                                            sectionAssessment,
-                                            'sectionAssessment (quantum_sectionassessment)' = a.section_Id.'sectionAssessment (quantum_sectionassessment)'
-                                        ),
-                                        checkpointItem_annotation: a.checkpointItem_annotation,
-                                        checkpointItemId: LookUp(
-                                            templateCheckpointsItems,
-                                            checkpointItemId = a.checkpointItemId.checkpointItemId
-                                        ),
-                                        checkpointItemName: a.checkpointItemName,
-                                        assessmentStatus: a.assessmentStatus
-                                    }
-                                );
-                            );
-                            //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GC_checkpointItemAssessment,
-                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = a.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIstatusUpdate = 0,
-                                {CIstatusUpdate: 1}
-                            );
-                        );
-                        //);
-                        
-                    // For each row in collection GcCheckpointItem_ActionItem check if this rows are the current checkpointItem of current checkpoint and insert a row in dataverse table CheckpointItemAssessment representing status of that checkpointItem.Insert if not found else update that rows.
-                    //Concurrent(
-                    ForAll(
-                            Filter(
-                                GC_checkpointItem_ActionItem,
-                                CIAstatusUpdate = 0
-                            ) As i,
-                            If(
-                                !IsBlank(
-                                    LookUp(
-                                        checkpointItem_ActionItem,
-                                        checkpointItemActionItemsId = i.checkpointItemActionItemsId
-                                    )
-                                ) ,
-                                UpdateIf(
-                                    checkpointItem_ActionItem,
-                                    checkpointItemActionItemsId = i.checkpointItemActionItemsId,
-                                    {
-                                        ActionItem_Name: i.ActionItem_Name,
-                                        priority: i.priority,
-                                        OwnerId: i.OwnerId,
-                                        TimeEstimate: i.TimeEstimate,
-                                        MaterialEstimate: i.MaterialEstimate,
-                                        Action_status: i.Action_status
-                                      
-                                    }
-                                );
-                                ,
-                                Patch(
-                                    checkpointItem_ActionItem,
-                                    Defaults(checkpointItem_ActionItem),
-                                    {
-                                        checkpointItemActionItemsId: i.checkpointItemActionItemsId,
-                                        ActionItem_Name: i.ActionItem_Name,
-                                        assignmentId: LookUp(
-                                            assignments,
-                                            Id = i.assignmentId.Id
-                                        ),
-                                        bankId: LookUp(
-                                            schindlerBanks,
-                                            Id = i.bankId.Id
-                                        ),
-                                        bankUnitId: LookUp(
-                                            bankUnits,
-                                            Id = i.bankUnitId.Id
-                                        ),
-                                        section_id: LookUp(
-                                            sectionAssessment,
-                                            'sectionAssessment (quantum_sectionassessment)' = i.section_id.'sectionAssessment (quantum_sectionassessment)'
-                                        ),
-                                        checkpoint_id: LookUp(
-                                            checkpointAssessment,
-                                            checkpointAssessment_id = i.checkpoint_id.checkpointAssessment_id
-                                        ),
-                                        checkpointItem_Id: LookUp(
-                                            checkpointItemAssessment,
-                                            'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                        ),
-                                        product_id: LookUp(
-                                            product,
-                                            'product (quantum_product)' = i.product_id.'product (quantum_product)'
-                                        ),
-                                        priority: i.priority,
-                                        OwnerId: i.OwnerId,
-                                        TimeEstimate: i.TimeEstimate,
-                                        MaterialEstimate: i.MaterialEstimate,
-                                        Action_status: i.Action_status
-                                    }
-                                )
-                            );
-                            //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GC_checkpointItem_ActionItem,
-                                checkpointItemActionItemsId = i.checkpointItemActionItemsId && CIAstatusUpdate = 0,
-                                {CIAstatusUpdate: 1}
-                            );
-                        );
-                        //,
-                        
-                    //for checkpoint images
-                    ForAll(
-                            Filter(
-                                GC_checkpointItem_Images,
-                                CIIstatusUpdate = 0
-                            ) As i,
-                            If(
-                                !IsBlank(
-                                    LookUp(
-                                        checkpointItem_Images,
-                                        checkpointItemImagesId = i.checkpointItemImagesId
-                                    )
-                                ),
-                                UpdateIf(
-                                    checkpointItem_Images,
-                                    checkpointItemImagesId = i.checkpointItemImagesId,
-                                    {
-                                        Image: i.Image,
-                                        image_annotation: i.image_annotation
-                                      //  CIIstatusUpdate:1
-                                    }
-                                );
-                                ,
-                                Patch(
-                                    checkpointItem_Images,
-                                    Defaults(checkpointItem_Images),
-                                    {
-                                        checkpointItemImagesId: i.checkpointItemImagesId,
-                                        assignmentId: LookUp(
-                                            assignments,
-                                            Id = i.assignmentId.Id
-                                        ),
-                                        bankUnitId: LookUp(
-                                            bankUnits,
-                                            Id = i.bankUnitId.Id
-                                        ),
-                                        section_id: LookUp(
-                                            sectionAssessment,
-                                            'sectionAssessment (quantum_sectionassessment)' = i.section_id.'sectionAssessment (quantum_sectionassessment)'
-                                        ),
-                                        checkpoint_id: LookUp(
-                                            checkpointAssessment,
-                                            checkpointAssessment_id = i.checkpoint_id.checkpointAssessment_id
-                                        ),
-                                        checkpointItem_Id: LookUp(
-                                            checkpointItemAssessment,
-                                            'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                        ),
-                                        product_id: LookUp(
-                                            product,
-                                            'product (quantum_product)' = i.product_id.'product (quantum_product)'
-                                        ),
-                                        Image: i.Image,
-                                        image_annotation: i.image_annotation
-                                     //   CIIstatusUpdate:1
-                                    }
-                                )
-                            );
-                            //status 2(patch to dataverse) update to collection
-                    UpdateIf(
-                                GC_checkpointItem_Images,
-                                checkpointItemImagesId = i.checkpointItemImagesId && CIIstatusUpdate = 0,
-                                {CIIstatusUpdate: 1}
-                            );
-                        );
-                    //    );
-                    
-                        Notify(" Data sent successfully");
-                        
-                        );,
-                        Notify("network not connected",NotificationType.Warning)
-                    );
-                    */
-                Rotation: =180
-                Visible: =false
-                Width: =40
-                X: =syncButton.X+syncButton.Width+10
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =11
-
-            Image2_2 As image:
-                Height: =60
-                Image: =SYNC
-                ImagePosition: =ImagePosition.Fill
-                OnSelect: =true
-                RadiusBottomLeft: =90
-                RadiusBottomRight: =90
-                RadiusTopLeft: =90
-                RadiusTopRight: =90
-                Visible: =false
-                Width: =60
-                X: =NetworkIconDS.X+NetworkIconDS.Width+50
-                Y: =20
-                ZIndex: =12
+                        //Set(popupDashSyncSuccess,false);
+                    Width: =40
+                    X: =NetworkIconDS.X+NetworkIconDS.Width+50
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =10
 
         ctnMiddleDS As groupContainer.horizontalAutoLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
@@ -1012,13 +562,14 @@ DashboardScreen As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =88
                     Size: =If(App.Height<800,Dashboard.DCountSize,32)
-                    Text: |
-                        =//"2"
-                        //LookUp(projectAggregationCollection,assessorId.email=User().Email,upcomingProjects)
-                        //LookUp(GC_projectAggregation,assessor_id=LoggedAssessor,upcoming_Projects)
-                        CountRows((Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming" 
-                        || isCompleted="Inprogress1"
-                        )))
+                    Text: |-
+                        =
+                        CountRows(
+                            (Filter(
+                                gcProjectAssignment,
+                                assessorId = varLoggedAssessor && isCompleted = "Upcomming" || isCompleted = "Inprogress1"
+                            ))
+                        )
                     X: =Parent.Width/21
                     Y: =lblUpcomingProjects.Y+lblUpcomingProjects.Height+10
                     ZIndex: =2
@@ -1070,7 +621,6 @@ DashboardScreen As screen:
                         =Set(comp,false);
                         Set(inpro,false);
                         Set(upcomp,true);
-                        //Set(varPatchTimer,true);
                         Navigate(ProjectScreen);
                     PressedBorderColor: |-
                         =//Self.Fill
@@ -1134,653 +684,16 @@ DashboardScreen As screen:
                 Width: =Parent.Width
                 ZIndex: =1
 
-    Button1 As button:
-        OnSelect: |-
-            =/*If(
-                Connection.Connected,
-                Notify("Network Connected...");
-            
-                If(  
-                    CountRows(Filter(gcProjectAssignment,AstatusUpdate = 0)) < 1   &&
-                    CountRows(Filter(GC_bankAssessment,BstatusUpdate = 0)) < 1     &&
-                    CountRows(Filter(GC_unitAssessment,UstatusUpdate = 0)) < 1     &&
-                    CountRows(Filter(GcSectionAssessment,SstatusUpdate = 0)) < 1       &&
-                    CountRows(Filter(GcCheckpointAssessment,CstatusUpdate = 0)) < 1    &&
-                    CountRows(Filter(GC_checkpointItemAssessment, CIstatusUpdate = 0)) < 1    &&
-                    CountRows(Filter(GC_checkpointItem_ActionItem, CIAstatusUpdate = 0)) < 1  &&
-                    CountRows(Filter(GC_checkpointItem_Images, CIIstatusUpdate = 0)) < 1
-                     ,
-            
-                //client 
-                ClearCollect(
-                    gcClient,
-                    schindlerClients
-                );
-                SaveData(
-                    gcClient,
-                    "localclient"
-                );
-            
-                //bank
-                ClearCollect(
-                    gcBank,
-                    schindlerBanks
-                );
-                SaveData(
-                    gcBank,
-                    "localbank"
-                );
-                //bankunits
-                 ClearCollect(
-                    gcBankunit,
-                    bankUnits
-                );
-                SaveData(
-                    gcBankunit,
-                    "localgcbankunit"
-                );
-            
-                //Assignment 
-                ClearCollect(
-                    gcProjectAssignmentAdd,
-                    Filter(
-                        assignments,
-                        assessorId = varLoggedAssessor
-                    )
-                );
-                ClearCollect(
-                    gcProjectAssignment,
-                    AddColumns(
-                        gcProjectAssignmentAdd,
-                        "AstatusUpdate",
-                        1
-                    )
-                );
-                //assignment units
-                 ClearCollect(
-                    gcAssignmentunit,
-                    Filter(
-                        assignmentUnits,
-                        assignmentId.assessorId = varLoggedAssessor
-                    )
-                );
-                SaveData(
-                    gcAssignmentunit,
-                    "localassignmentunits"
-                );
-                //Bank assessment
-                 ClearCollect(
-                    GC_bankAssessmentAdd,
-                    Filter(
-                        bankAssessment,
-                        assignmentId.assessorId = varLoggedAssessor
-                    )
-                );
-               
-                ClearCollect(
-                    GC_bankAssessment,
-                    AddColumns(
-                        GC_bankAssessmentAdd,
-                        "BstatusUpdate",
-                        1
-                    )
-                );
-            
-                //unit assessment
-                ClearCollect(
-                    GC_unitAssessmentAdd,
-                    unitAssessment
-                );
-                
-                ClearCollect(
-                    GC_unitAssessment,
-                    AddColumns(
-                        GC_unitAssessmentAdd,
-                        "UstatusUpdate",
-                        1
-                    )
-                );
-            
-                //section
-                ClearCollect(
-                    GcSectionAssessmentAdd,
-                    sectionAssessment
-                );
-                
-                ClearCollect(
-                    GcSectionAssessment,
-                    AddColumns(
-                        GcSectionAssessmentAdd,
-                        "SstatusUpdate",
-                        1
-                    )
-                );
-            
-                //checkpoint
-                 ClearCollect(
-                    GcCheckpointAssessmentAdd,
-                    checkpointAssessment
-                );
-                
-                 ClearCollect(
-                    GcCheckpointAssessment,
-                    AddColumns(
-                        GcCheckpointAssessmentAdd,
-                        "CstatusUpdate",
-                        1
-                    )
-                );
-            
-                //chekpointItem
-                 ClearCollect(
-                    GC_checkpointItemAssessmentAdd,
-                    checkpointItemAssessment
-                );
-                ClearCollect(
-                    GC_checkpointItemAssessment,
-                    AddColumns(
-                        GC_checkpointItemAssessmentAdd,
-                        "CIstatusUpdate",
-                        1
-                    )
-                );
-            
-                //checkpoint item action item
-                 ClearCollect(
-                    GC_checkpointItem_ActionItemAdd,
-                    checkpointItem_ActionItem
-                );
-                ClearCollect(
-                    GC_checkpointItem_ActionItem,
-                    AddColumns(
-                        GC_checkpointItem_ActionItemAdd,
-                        "CIAstatusUpdate",
-                        1
-                    )
-                );
-            
-              //checkpointitem images
-               ClearCollect(
-                    GC_checkpointItem_ImagesAdd,
-                    checkpointItem_Images
-                );
-                ClearCollect(
-                    GC_checkpointItem_Images,
-                    AddColumns(
-                        GC_checkpointItem_ImagesAdd,
-                        "CIIstatusUpdate",
-                        1
-                    )
-                );
-                ,
-                Notify("Your LocalData has not sync yet.")
-                );
-                ,
-                Notify("Network not available,Please check your network connection.")
-            );*/
-        Text: ="Refresh"
-        Visible: =false
-        X: =40
-        Y: =40
-        ZIndex: =4
-
     Image13_1 As image:
         Fill: =RGBA(0, 0, 0, 0.29)
         Height: =Parent.Height
-        Image: =circularanimation
+        Image: ='ajax-loader 2'
         ImagePosition: =ImagePosition.Center
         Visible: =//varload = true
         Width: =Parent.Width
         X: =(Parent.Width-Self.Width)/2
         Y: =(Parent.Height-Self.Height)/2
         ZIndex: =5
-
-    Button6 As button:
-        OnSelect: |-
-            =/*
-            //assignment upadate
-            Patch(
-                assignments,
-                ShowColumns(
-                    DropColumns(
-                        gcProjectAssignment,
-                        "AstatusUpdate"
-                    ),
-                    "shlaf_assignmentsid",
-                    "shlaf_iscompleted"
-                )
-            );
-            //Assigmnent collect 
-            ClearCollect(
-                gcProjectAssignmentAdd,
-                Filter(
-                    assignments,
-                    assessorId = varLoggedAssessor
-                )
-            );
-            ClearCollect(
-                gcProjectAssignment,
-                AddColumns(
-                    gcProjectAssignmentAdd,
-                    "AstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                gcProjectAssignment,
-                "localprojectassignment"
-            );
-            //assignment unit collect
-            ClearCollect(
-                gcAssignmentunit,
-                Filter(
-                    assignmentUnits,
-                    assignmentId.assessorId = varLoggedAssessor
-                )
-            );
-            SaveData(
-                gcAssignmentunit,
-                "localassignmentunits"
-            );
-            //bank assessment patch
-            Patch(
-                bankAssessment,
-                ShowColumns(
-                    DropColumns(
-                        GC_bankAssessment,
-                        "BstatusUpdate"
-                    ),
-                    "quantum_bankassessmentid",
-                    "quantum_assessment_status"
-                )
-            );
-            //bank collect
-            ClearCollect(
-                GC_bankAssessmentAdd,
-                Filter(
-                    bankAssessment,
-                    assignmentId.assessorId = varLoggedAssessor
-                )
-            );
-            ClearCollect(
-                GC_bankAssessment,
-                AddColumns(
-                    GC_bankAssessmentAdd,
-                    "BstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GC_bankAssessment,
-                "localbankassessment"
-            );
-            //unit assessment patch
-            Patch(
-                unitAssessment,
-                ShowColumns(
-                    DropColumns(
-                        GC_unitAssessment,
-                        "UstatusUpdate"
-                    ),
-                    "quantum_unitassessmentid",
-                    "quantum_assessment_status"
-                )
-            );
-            //unit collect
-            ClearCollect(
-                GC_unitAssessmentAdd,
-                Filter(
-                    unitAssessment,
-                    assignmentId.assessorId = varLoggedAssessor
-                )
-            );
-            ClearCollect(
-                GC_unitAssessment,
-                AddColumns(
-                    GC_unitAssessmentAdd,
-                    "UstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GC_unitAssessment,
-                "localunitassessment"
-            );
-            //section Patch
-            Patch(
-                sectionAssessment,
-                ShowColumns(
-                    DropColumns(
-                        GcSectionAssessment,
-                        "SstatusUpdate"
-                    ),
-                    "quantum_sectionassessmentid",
-                    "shlaf_assignmentId",
-                    "shlaf_bankUnitId",
-                    "shlaf_product_id",
-                    "quantum_sectionassessment",
-                    "shlaf_sectionId",
-                    "quantum_sectionname",
-                    "shlaf_sectioncomment",
-                    "quantum_assessmentstatus"
-                )
-            );
-            //section clearCollect
-            ClearCollect(
-                GcSectionAssessmentAdd,
-                Filter(
-                    sectionAssessment,
-                    assignmentId.assessorId = varLoggedAssessor
-                )
-            );
-            //Adding column for status maintain
-            ClearCollect(
-                GcSectionAssessment,
-                AddColumns(
-                    GcSectionAssessmentAdd,
-                    "SstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GcSectionAssessment,
-                "localsectionassessment"
-            );
-            ForAll(
-                GcSectionAssessment As i,
-                UpdateIf(
-                    GcCheckpointAssessment,
-                    sectionId.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
-                    {
-                        sectionId: LookUp(
-                            GcSectionAssessment,
-                            'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                        )
-                    }
-                );
-                
-            );
-            //checkpoint patch
-            Patch(
-                checkpointAssessment,
-                ShowColumns(
-                    DropColumns(
-                        GcCheckpointAssessment,
-                        "CstatusUpdate"
-                    ),
-                    "quantum_checkpointassessmentid",
-                    "shlaf_assignmentId",
-                    "shlaf_bankUnitId",
-                    "shlaf_product_id",
-                    "quantum_sectionId",
-                    "quantum_checkpointassessment",
-                    "shlaf_checkpointId",
-                    "quantum_checkpointname",
-                    "quantum_checkpoint_annotation",
-                    "shlaf_checkpointcomment",
-                    "quantum_assessmentstatus"
-                  // "shlaf_quantum_sectionassessmentid"
-                )
-            );
-            //checkpoint clearCollect
-            ForAll(
-                assignmentUnits As i,
-                Collect(
-                    GcCheckpointAssessmentAdd,
-                    Filter(
-                        checkpointAssessment,
-                        bankUnitId.Id = i.bankUnitId.Id
-                    )
-                )
-            );
-            //Adding column for status maintain
-            ClearCollect(
-                GcCheckpointAssessment,
-                AddColumns(
-                    GcCheckpointAssessmentAdd,
-                    "CstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GcCheckpointAssessment,
-                "localcheckpointassessment"
-            );
-            ForAll(
-                GcSectionAssessment As i,
-                ForAll(
-                    GcCheckpointAssessment As a,
-                    UpdateIf(
-                        GC_checkpointItemAssessment,
-                        section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpointAssessment_Id.checkpointAssessment_id = a.checkpointAssessment_id,
-                        {
-                            section_Id: LookUp(
-                                GcSectionAssessment,
-                                'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                            ),
-                            checkpointAssessment_Id: LookUp(
-                                GcCheckpointAssessment,
-                                checkpointAssessment_id = a.checkpointAssessment_id
-                            )
-                        }
-                    );
-                );
-                
-            );
-            //Checkpoint Item Assessment Patch
-            Patch(
-                checkpointItemAssessment,
-                ShowColumns(
-                    DropColumns(
-                        GC_checkpointItemAssessment,
-                        "CIstatusUpdate"
-                    ),
-                    "quantum_checkpointitemassessmentid",
-                    "shlaf_assignmentId",
-                    "shlaf_bankUnitId",
-                    "shlaf_product_id",
-                    "shlaf_section_Id",
-                    "quantum_checkpointAssessment_Id",
-                    "quantum_checkpointitemassessment",
-                    "shlaf_checkpointItemId",
-                    "quantum_checkpointitemname",
-                    "quantum_checkpointitem_annotation",
-                    "shlaf_checkpointitemcomment",
-                    "quantum_assessmentstatus"
-                )
-            );
-            //Checkpoint Item Assessment clearCollect
-            ForAll(
-                assignmentUnits As i,
-                Collect(
-                    GC_checkpointItemAssessmentAdd,
-                    Filter(
-                        checkpointItemAssessment,
-                        bankUnitId.Id = i.bankUnitId.Id
-                    )
-                )
-            );
-            ClearCollect(
-                GC_checkpointItemAssessment,
-                AddColumns(
-                    GC_checkpointItemAssessmentAdd,
-                    "CIstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GC_checkpointItemAssessment,
-                "localcheckpointitemassessment"
-            );
-            ForAll(
-                GcSectionAssessment As i,
-                ForAll(
-                    GcCheckpointAssessment As j,
-                    ForAll(
-                        GC_checkpointItemAssessment As k,
-                        UpdateIf(
-                            GC_checkpointItem_ActionItem,
-                            section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                            {
-                                section_id: LookUp(
-                                    GcSectionAssessment,
-                                    'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                ),
-                                checkpoint_id: LookUp(
-                                    GcCheckpointAssessment,
-                                    checkpointAssessment_id = j.checkpointAssessment_id
-                                ),
-                                checkpointItem_Id: LookUp(
-                                    GC_checkpointItemAssessment,
-                                    'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                )
-                            }
-                        );
-                    );
-                );
-                
-            );
-            //checkpoint Action Item Patch
-            Patch(
-                checkpointItem_ActionItem,
-                ShowColumns(
-                    DropColumns(
-                        GC_checkpointItem_ActionItem,
-                        "CIAstatusUpdate"
-                    ),
-                    "quantum_checkpointitem_actionitemsid",
-                    "shlaf_assignmentId",
-                    "shlaf_bankId",
-                    "shlaf_bankUnitId",
-                    "shlaf_product_id",
-                    "shlaf_section_id",
-                    "shlaf_checkpoint_id",
-                    "quantum_checkpointItem_Id",
-                    "quantum_checkpointitemactionitemsid",
-                    "shlaf_actionitem_name",
-                    "quantum_priority",
-                    "quantum_materialestimate",
-                    "quantum_timeestimate",
-                    "quantum_duedate",
-                    "quantum_ownerid",
-                    "cr28a_action_status"
-                )
-            );
-            //checkpoint Item Action Item clearCollect
-            ForAll(
-                assignmentUnits As i,
-                Collect(
-                    GC_checkpointItem_ActionItemAdd,
-                    Filter(
-                        checkpointItem_ActionItem,
-                        bankUnitId.Id = i.bankUnitId.Id
-                    )
-                )
-            );
-            ClearCollect(
-                GC_checkpointItem_ActionItem,
-                AddColumns(
-                    GC_checkpointItem_ActionItemAdd,
-                    "CIAstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GC_checkpointItem_ActionItem,
-                "localcheckpointitemactionitem"
-            );
-            ForAll(
-                GcSectionAssessment As i,
-                ForAll(
-                    GcCheckpointAssessment As j,
-                    ForAll(
-                        GC_checkpointItemAssessment As k,
-                        UpdateIf(
-                            GC_checkpointItem_Images,
-                            section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
-                            {
-                                section_id: LookUp(
-                                    GcSectionAssessment,
-                                    'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                ),
-                                checkpoint_id: LookUp(
-                                    GcCheckpointAssessment,
-                                    checkpointAssessment_id = j.checkpointAssessment_id
-                                ),
-                                checkpointItem_Id: LookUp(
-                                    GC_checkpointItemAssessment,
-                                    'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                )
-                            }
-                        );
-                    );
-                );
-                
-            );
-            //checkpoint Item Images
-            Patch(
-                checkpointItem_Images,
-                ShowColumns(
-                    DropColumns(
-                        GC_checkpointItem_Images,
-                        "CIIstatusUpdate"
-                    ),
-                    "quantum_checkpointitem_imagesid",
-                    "shlaf_assignmentId",
-                    "shlaf_bankUnitId",
-                    "shlaf_product_id",
-                    "shlaf_section_id",
-                    "shlaf_checkpoint_id",
-                    "quantum_checkpointItem_Id",
-                    "quantum_checkpointitemimagesid",
-                    "shlaf_image_annotation",
-                    "quantum_image"
-                )
-            );
-            //checkpoint Item Images clearCollect
-            ForAll(
-                assignmentUnits As i,
-                Collect(
-                    GC_checkpointItem_ImagesAdd,
-                    Filter(
-                        checkpointItem_Images,
-                        bankUnitId.Id = i.bankUnitId.Id
-                    )
-                )
-            );
-            ClearCollect(
-                GC_checkpointItem_Images,
-                AddColumns(
-                    GC_checkpointItem_ImagesAdd,
-                    "CIIstatusUpdate",
-                    1
-                )
-            );
-            SaveData(
-                GC_checkpointItem_Images,
-                "localcheckpointitemimage"
-            );
-            */
-        Text: ="Patch/Update"
-        Visible: =false
-        X: =525
-        Y: =444
-        ZIndex: =6
-
-    Button9 As button:
-        OnSelect: |
-            =/*ClearData("localtemplatesections");
-            ClearData("localtemplateCheckpoints");
-            ClearData("localtemplatecheckpointitems");
-            ClearData("localproduct");
-            ClearData("localactionitems");*/
-            
-            ClearData();
-        Text: ="clearcache"
-        Visible: =false
-        X: =552
-        Y: =444
-        ZIndex: =7
 
     tmr_logout As timer:
         AutoStart: =true
@@ -1843,12 +756,12 @@ DashboardScreen As screen:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: |
+            OnSelect: |+
                 =Set(
                     popupDashSyncSuccess,
                     false
                 );
-                //Navigate(AssessmentScreen);
+                
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
