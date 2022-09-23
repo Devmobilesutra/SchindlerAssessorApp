@@ -573,19 +573,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1"
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment"
               }
             }
           ],
@@ -603,19 +603,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1.TabIndex"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1.TabIndex",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.Gallery2_1"
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment"
               }
             }
           ],
@@ -15017,7 +15017,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"BankScreen\" is 412, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"BankScreen\" is 409, which exceeds the maximum threshold recommended (300)."
               }
             },
             {

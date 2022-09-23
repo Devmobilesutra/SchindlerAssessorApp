@@ -158,14 +158,6 @@ BankScreen As screen:
                         Width: =If(Parent.Width>800,Parent.Width/1.9,Parent.Width/2.3)
                         ZIndex: =3
 
-                    LblAssStatuscountBS As label:
-                        Color: =RGBA(54, 176, 75, 1)
-                        Font: =AllScreensCSS.RFont
-                        Size: =AllScreensCSS.RLabelFontSize
-                        Text: =CountRows(Filter(GC_unitAssessment,clientBank_Id.Go_Number=lblGonumber1BS.Text && Assessment_status="inProgress"))& "/" &(CountRows(glryUnitBS.AllItems))
-                        Visible: =false
-                        ZIndex: =4
-
                     btnProjecttypeBS As button:
                         BorderColor: =(Self.Fill)
                         BorderThickness: =0
@@ -341,7 +333,6 @@ BankScreen As screen:
                         =If(comp=true,Sort(Filter(assignmentUnits,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending),
                         If(inpro=true || upcomp =true,Sort(Filter(gcAssignmentunit,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending)
                         ))
-                        //Sort(Filter(gcAssignmentunit,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending)
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Controls
                     ShowScrollbar: =false
@@ -411,11 +402,10 @@ BankScreen As screen:
                                         GC_checkpointItem_Images,
                                         "localcheckpointitemimage",true
                                     );
-                                   // Notify("if collection empty then data loaded from cache",NotificationType.Information);
                                 
                             );
                             );
-                                    //Here we check if network is available or not, if available then check collection is empty or not ,if collection is empty then get specific assessor data from dataverse and store it into collection and save collection to cache
+                            //Here we check if network is available or not, if available then check collection is empty or not ,if collection is empty then get specific assessor data from dataverse and store it into collection and save collection to cache
                             If(
                                 Connection.Connected,
                                 Concurrent(
@@ -822,30 +812,43 @@ BankScreen As screen:
                         ZIndex: =3
 
                     btnCommentBS As button:
-                        DisplayMode: |
-                            =If(CountRows(Filter(GcSectionAssessment,assignmentId.Id=varAssignmentId  && bankUnitId.Id=ThisItem.bankUnitId.Id && sectionComment<>Blank()))=0 && CountRows(Filter(GcCheckpointAssessment,assignmentId.Id=varAssignmentId &&    bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointComment<>Blank()))=0 && CountRows(Filter(GC_checkpointItemAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointItemComment<>Blank()))=0,
-                            DisplayMode.Disabled,DisplayMode.Edit)
+                        DisplayMode: |-
+                            =If(
+                                CountRows(
+                                    Filter(
+                                        GcSectionAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && sectionComment <> Blank()
+                                    )
+                                ) = 0 && CountRows(
+                                    Filter(
+                                        GcCheckpointAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointComment <> Blank()
+                                    )
+                                ) = 0 && CountRows(
+                                    Filter(
+                                        GC_checkpointItemAssessment,
+                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointItemComment <> Blank()
+                                    )
+                                ) = 0,
+                                DisplayMode.Disabled,
+                                DisplayMode.Edit
+                            )
                         Fill: =AllScreensCSS.RActiveColor
                         Font: =AllScreensCSS.RFont
                         Height: =50
                         HoverFill: |-
                             =//ColorFade(RGBA(56, 96, 178, 1), -20%)
                             Self.Fill
-                        OnSelect: |-
+                        OnSelect: |
                             =Set(varComment,true);
                             Set(varUnitId,ThisItem.bankUnitId);
                             Set(varSectionComment,true);
                             Set(varCheckpointComment,true);
                             Set(varCheckpoinitemComment,true);
-                            //Navigate(Screen10)
                         Size: =AllScreensCSS.RfontsizeInput
                         Text: ="Comment"
                         Visible: |-
-                            =//If(IsBlank(Filter(GcSectionAssessment,bankUnitId.Id=glryBankGo_1.Selected.Id,sectionComment)),
-                            
-                            //|| IsBlank(LookUp(GcCheckpointAssessment,bankUnitId.Id=glryBankGo_1.Selected.Id,checkpointComment)),
-                            
-                            //false,true)
+                            =
                             If(comp= true , false , true )
                         Width: =120
                         X: |-
@@ -857,7 +860,7 @@ BankScreen As screen:
                     Image1_3 As image:
                         Height: =30
                         Image: |-
-                            =//ForAll(chglryCheckpointsSS_2.AllItems  As i,If(  i.Image1.Image=sentdata,sentdata,'Unsentdata (2)'))
+                            =
                             If(
                                 CountRows(
                                     Filter(
@@ -872,12 +875,6 @@ BankScreen As screen:
                                         assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 1
                                     )
                                 ) > 0 
-                                /*|| CountRows(
-                                    Filter(
-                                        GC_unitAssessment,
-                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 0
-                                    )
-                                ) > 0*/
                                 ,
                                 'not-uploaded'
                             )
@@ -1438,17 +1435,12 @@ BankScreen As screen:
             Width: =Parent.Width
             ZIndex: =2
 
-            NetworkIconBS As Component2:
-                X: =lblUsernameHeaderBS_2.Width+lblUsernameHeaderBS_2.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderBS As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogo_1 As image:
                     DisplayMode: =DisplayMode.View
@@ -1500,27 +1492,10 @@ BankScreen As screen:
                     X: =imgUserHeaderBS_2.Width+imgUserHeaderBS_2.X
                     ZIndex: =5
 
-                icoNotificationHeaderBS_2 As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderBS.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderBS.Width/30
+                NetworkIconBS As Component2:
                     X: =lblUsernameHeaderBS_2.Width+lblUsernameHeaderBS_2.X
-                    Y: =ctnHeaderBS.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderBS_2 As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =33
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =48
-                    X: =1318
-                    Y: =ctnHeaderBS.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
         CommentPopupBS As group:
             Height: =5
@@ -1605,14 +1580,26 @@ BankScreen As screen:
                 FocusedBorderThickness: =
                 Font: =AllScreensCSS.RFont
                 HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                OnSelect: |-
-                    =Navigate(BankScreen);
-                    Concurrent(
-                    Set(varComment , false),
-                    Set(varSectionComment,false),
-                    Set(varCheckpointComment,false),
-                    Set(varItemComment,false)
-                      )
+                OnSelect: |
+                    =Concurrent(
+                        Set(
+                            varComment,
+                            false
+                        ),
+                        Set(
+                            varSectionComment,
+                            false
+                        ),
+                        Set(
+                            varCheckpointComment,
+                            false
+                        ),
+                        Set(
+                            varItemComment,
+                            false
+                        )
+                    );
+                    Navigate(BankScreen);
                 PressedColor: =Self.Color
                 PressedFill: =Self.Fill
                 Size: =AllScreensCSS.RLabelFontSize
@@ -1665,10 +1652,17 @@ BankScreen As screen:
 
             "GlrycmntsBS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                 Height: =Rectangle6_2.Height
-                Items: =If(varComment= true,Filter(GC_unitAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=varUnitId.Id))
+                Items: |-
+                    =If(
+                        varComment = true,
+                        Filter(
+                            GC_unitAssessment,
+                            assignmentId.Id = varAssignmentId && bankUnitId.Id = varUnitId.Id
+                        )
+                    )
                 Layout: =Layout.Vertical
                 TemplatePadding: =0
-                TemplateSize: =glrySectioncomment.Height+glryCheckpointcomment.Height+Gallery2_1.Height
+                TemplateSize: =glrySectioncomment.Height+glryCheckpointcomment.Height+glryCheckpointItemComment.Height
                 Visible: =varComment
                 Width: =TextInput2_3.Width
                 X: |-
@@ -1677,9 +1671,13 @@ BankScreen As screen:
                 Y: =Rectangle6_2.Y
                 ZIndex: =16
 
-                "Gallery2_1 As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
-                    Height: =CountRows(Gallery2_1.AllItems)*(Gallery2_1.TemplateHeight+Gallery2_1.TemplatePadding)
-                    Items: =Filter(GC_checkpointItemAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointItemComment<>Blank())
+                "glryCheckpointItemComment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
+                    Height: =CountRows(glryCheckpointItemComment.AllItems)*(glryCheckpointItemComment.TemplateHeight+glryCheckpointItemComment.TemplatePadding)
+                    Items: |-
+                        =Filter(
+                            GC_checkpointItemAssessment,
+                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointItemComment <> Blank()
+                        )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
                     TemplatePadding: =1
@@ -1689,7 +1687,7 @@ BankScreen As screen:
                     Y: =glryCheckpointcomment.Height+glryCheckpointcomment.Y
                     ZIndex: =6
 
-                    Title4_1 As label:
+                    lblcheckpointItemcomment As label:
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -1703,7 +1701,7 @@ BankScreen As screen:
                         Y: =20
                         ZIndex: =2
 
-                    Subtitle2_1 As label:
+                    lblcheckpointItemname As label:
                         AutoHeight: =true
                         Font: =AllScreensCSS.RFont
                         OnSelect: =Select(Parent)
@@ -1714,12 +1712,12 @@ BankScreen As screen:
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: =ThisItem.checkpointItemComment
                         VerticalAlign: =VerticalAlign.Top
-                        Width: =Title4_1.Width
-                        X: =Title4_1.X
+                        Width: =lblcheckpointItemcomment.Width
+                        X: =lblcheckpointItemcomment.X
                         Y: =10
                         ZIndex: =3
 
-                    Separator3_1 As rectangle:
+                    iconLineCheckpointItemcomment As rectangle:
                         Height: =1
                         OnSelect: =Select(Parent)
                         Visible: =false
@@ -1729,7 +1727,11 @@ BankScreen As screen:
 
                 "glryCheckpointcomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =CountRows(glryCheckpointcomment.AllItems)*(glryCheckpointcomment.TemplateHeight+glryCheckpointcomment.TemplatePadding)
-                    Items: =Filter(GcCheckpointAssessment,assignmentId.Id = varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && checkpointComment<>Blank())
+                    Items: |-
+                        =Filter(
+                            GcCheckpointAssessment,
+                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointComment <> Blank()
+                        )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
                     TemplatePadding: =1
@@ -1781,7 +1783,11 @@ BankScreen As screen:
 
                 "glrySectioncomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =CountRows(glrySectioncomment.AllItems)*(glrySectioncomment.TemplateHeight+glrySectioncomment.TemplatePadding)
-                    Items: =Filter(GcSectionAssessment,assignmentId.Id =varAssignmentId && bankUnitId.Id=ThisItem.bankUnitId.Id && sectionComment<>Blank())
+                    Items: |-
+                        =Filter(
+                            GcSectionAssessment,
+                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && sectionComment <> Blank()
+                        )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
                     TemplatePadding: =1
@@ -1898,9 +1904,9 @@ BankScreen As screen:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: |
+            OnSelect: |+
                 =Set(popupSyncSuccess,false);
-                //Navigate(AssessmentScreen);
+                
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
@@ -1980,7 +1986,6 @@ BankScreen As screen:
             HoverFill: =RGBA(75, 125, 6, 1)
             OnSelect: |
                 =Set(popupTripReportSuccess,false);
-                //Navigate(AssessmentScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
