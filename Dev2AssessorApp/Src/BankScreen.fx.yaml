@@ -467,21 +467,6 @@ BankScreen As screen:
                                                     }
                                                 )
                                             );
-                                             
-                                               /* ,
-                                                ForAll(
-                                                    GcSectionAssessmentTemp As i,
-                                                    UpdateIf(
-                                                        GcSectionAssessment,
-                                                        'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
-                                                        {
-                                                            'sectionAssessment (quantum_sectionassessmentid)': i.'sectionAssessment (quantum_sectionassessmentid)',
-                                                            'sectionAssessment (quantum_sectionassessment)': i.'sectionAssessment (quantum_sectionassessment)',
-                                                            AssessmentStatus: i.AssessmentStatus,
-                                                            SstatusUpdate: 2
-                                                        }
-                                                    )
-                                                );*/
                                            );
                                     );
                                     ,
@@ -504,7 +489,6 @@ BankScreen As screen:
                                                 2
                                             )
                                         );,
-                                       // Notify("checkpoint data  from dataverse",NotificationType.Information);
                                         If(
                                             CountRows(
                                                  Filter(
@@ -519,7 +503,6 @@ BankScreen As screen:
                                                     bankUnitId.Id = ThisItem.bankUnitId.Id
                                                 )
                                             );
-                                        //    Notify("Unit data of checkpoint inserted from dataverse",NotificationType.Information);
                                             ForAll(
                                                 GcCheckpointAssessmentTemp As i,
                                                 Patch(
@@ -562,7 +545,6 @@ BankScreen As screen:
                                                 2
                                             )
                                         );,
-                                       // Notify("checkpoint item data  from dataverse",NotificationType.Information);
                                         If(
                                             CountRows(
                                                 Filter(
@@ -577,7 +559,6 @@ BankScreen As screen:
                                                     bankUnitId.Id = ThisItem.bankUnitId.Id
                                                 )
                                             );
-                                       //     Notify("Unit data of checkpoint item inserted from dataverse",NotificationType.Information);
                                             ForAll(
                                                 GC_checkpointItemAssessmentTemp As i,
                                                 Patch(
@@ -624,7 +605,6 @@ BankScreen As screen:
                                                 2
                                             )
                                         );,
-                                        //  Notify("checkpoint action data  from dataverse",NotificationType.Information);
                                         If(
                                             CountRows(
                                                 Filter(
@@ -639,7 +619,6 @@ BankScreen As screen:
                                                     bankUnitId.Id = ThisItem.bankUnitId.Id
                                                 )
                                             );
-                                          //  Notify("Unit data of checkpoint action item inserted from dataverse",NotificationType.Information);
                                             ForAll(
                                                 GC_checkpointItem_ActionItemTemp As i,
                                                 Patch(
@@ -686,7 +665,6 @@ BankScreen As screen:
                                                 2
                                             )
                                         );,
-                                          //Notify("checkpoint images data  from dataverse",NotificationType.Information);
                                         If(
                                             CountRows(
                                                 Filter(
@@ -701,7 +679,6 @@ BankScreen As screen:
                                                     bankUnitId.Id = ThisItem.bankUnitId.Id
                                                 )
                                             );
-                                  //    Notify("Unit data of checkpoint images inserted from dataverse",NotificationType.Information);
                                             ForAll(
                                                 GC_checkpointItem_ImagesTemp As i,
                                                 Patch(
@@ -726,39 +703,7 @@ BankScreen As screen:
                                         );
                                     );
                                 );
-                                /*
-                                SaveData(
-                                    GcSectionAssessment,
-                                    "localsectionassessment"
-                                );
-                                SaveData(
-                                    GcCheckpointAssessment,
-                                    "localcheckpointassessment"
-                                );
-                                SaveData(
-                                    GC_checkpointItemAssessment,
-                                    "localcheckpointitemassessment"
-                                );
-                                SaveData(
-                                    GC_checkpointItem_ActionItem,
-                                    "localcheckpointitemactionitem"
-                                );
-                                SaveData(
-                                    GC_checkpointItem_Images,
-                                    "localcheckpointitemimage"
-                                );*/
-                                        /*
-                                         If(
-                                            IsEmpty(GC_checkpointItem_Images),
-                                            ClearCollect(
-                                                GC_checkpointItem_Images,checkpointItem_Images
-                                            );
-                                            SaveData(
-                                                GC_checkpointItem_Images,
-                                                "localcheckpointitemimage"
-                                            );
-                                         ); */
-                            );
+                              );
                             If(
                                 comp = true,
                                 Navigate(ViewAssessmentScreen),
@@ -779,7 +724,7 @@ BankScreen As screen:
                                     ThisItem.bankUnitId.Id
                                 );
                                 
-                                      // Set(varload,false );
+                                      
                             Navigate(SectionScreen);
                                 
                             );
