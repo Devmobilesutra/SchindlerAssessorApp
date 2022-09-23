@@ -23,17 +23,12 @@ ProjectScreen As screen:
             Width: =Parent.Width
             ZIndex: =1
 
-            NetworkIconPS As Component2:
-                X: =lblUsernameHeaderPS.Width+lblUsernameHeaderPS.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderPS As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogoPS As image:
                     DisplayMode: =DisplayMode.View
@@ -84,27 +79,10 @@ ProjectScreen As screen:
                     X: =imgUserHeaderPS.Width+imgUserHeaderPS.X
                     ZIndex: =5
 
-                icoNotificationHeaderPS As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderPS.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderPS.Width/30
+                NetworkIconPS As Component2:
                     X: =lblUsernameHeaderPS.Width+lblUsernameHeaderPS.X
-                    Y: =ctnHeaderPS.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderPS As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =ctnHeaderPS.Height/2.4
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =ctnHeaderPS.Width-(imgLogoPS.Width+lblAssessmentPS.Width+imgUserHeaderPS.Width+lblUsernameHeaderPS.Width+icoNotificationHeaderPS.Width)
-                    X: =icoNotificationHeaderPS.X+icoNotificationHeaderPS.Width
-                    Y: =ctnHeaderPS.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
         ctnMiddlePS As groupContainer.verticalAutoLayoutContainer:
             Height: |-
@@ -535,14 +513,4 @@ ProjectScreen As screen:
                     X: =glryProject.Width/20
                     Y: =lblContactNumber.Y+lblContactNumber.Height+5
                     ZIndex: =34
-
-    TimerPS As timer:
-        AutoStart: =true
-        Duration: =1000
-        OnTimerEnd: =//If(UserLastNavigated < DateAdd(Now(), LogOutTimer, Seconds), Navigate(SafetyHeader))
-        Repeat: =true
-        Visible: =false
-        X: =40
-        Y: =40
-        ZIndex: =2
 
