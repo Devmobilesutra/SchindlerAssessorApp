@@ -839,9 +839,7 @@ FindingScreen As screen:
                             FontWeight: =FontWeight.Bold
                             OnSelect: =Select(Parent)
                             Size: =AllScreensCSS.RLabelFontSize
-                            Text: |-
-                                =//ThisItem.checkpointItemAct
-                                "Annotation"
+                            Text: ="Annotation"
                             Visible: |-
                                 =/*If(CountRows(Filter(
                                     GC_checkpointItemAssessment,
@@ -899,24 +897,12 @@ FindingScreen As screen:
                         "Gallery5_6 As gallery.'BrowseLayout_Flexible_SocialFeed_ver4.0'":
                             Height: =CountRows(Gallery5_6.AllItems)*(Gallery5_6.TemplateHeight)+30
                             Items: |-
-                                =//Filter(GC_checkpointItem_ActionItem,checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID)
-                                
-                                //&& checkpointItem_Id.assessmentStatus="open")
-                                
-                                //Filter(GC_checkpointItem_ActionItem,checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID) 
-                                
-                                //&& bankUnitId.Id=varBankUnitId && assignmentId.startDate<>glryProject.Selected.startDate)
-                                //Filter(GC_checkpointItem_ActionItem,bankUnitId.Id=varBankUnitId&&assignmentId.isCompleted="Completed"&&checkpointItem_Id.assessmentStatus="Check"&&checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID
-                                  //&& checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment))
-                                
+                                =
                                 //get all "Open" status action items for this stored templateCheckpointItem ID "varCheckpointitemID" from GC_checkpointItem_ActionItem for selected bankUnit ID and whose assignment is completed .
                                 //And for parents findings 
                                 Filter(
-                                    GC_checkpointItem_ActionItem,bankUnitId.Id = varBankUnitId  &&
-                                    checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)' 
-                                    //&& Action_status ="Open"
-                                   // checkpointItem_Id.checkpointItemId.checkpointItemId=ThisItem.checkpointItemId
-                                
+                                    GC_checkpointItem_ActionItem,
+                                    bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
                                 )
                             Layout: =Layout.Vertical
                             ShowScrollbar: =false
@@ -936,9 +922,7 @@ FindingScreen As screen:
                                 PaddingRight: =0
                                 PaddingTop: =0
                                 Size: =AllScreensCSS.RLabelFontSize
-                                Text: |-
-                                    =//ThisItem.checkpointItemActionItemsId
-                                    "Action"
+                                Text: ="Action"
                                 VerticalAlign: =VerticalAlign.Top
                                 Width: =Parent.TemplateWidth - 112
                                 X: =1
@@ -949,9 +933,7 @@ FindingScreen As screen:
                                 AutoHeight: =true
                                 Height: =30
                                 OnSelect: =Select(Parent)
-                                Text: |-
-                                    =//ThisItem.MaterialEstimate
-                                    ThisItem.ActionItem_Name
+                                Text: =ThisItem.ActionItem_Name
                                 Width: =Parent.Width-40
                                 X: =1
                                 Y: =Title3_4.Height+Title3_4.Y
@@ -1021,7 +1003,7 @@ FindingScreen As screen:
                                         Font: =AllScreensCSS.RFont
                                         Size: =AllScreensCSS.RLabelFontSize-4
                                         Text: |-
-                                            =//"high"
+                                            =
                                             ThisItem.priority
                                         Width: =120
                                         ZIndex: =1
@@ -1030,7 +1012,7 @@ FindingScreen As screen:
                                         Font: =AllScreensCSS.RFont
                                         Size: =AllScreensCSS.RLabelFontSize-4
                                         Text: |-
-                                            =//"LPD north"
+                                            =
                                             ThisItem.OwnerId
                                         Width: =120
                                         ZIndex: =2
@@ -1039,7 +1021,7 @@ FindingScreen As screen:
                                         Font: =AllScreensCSS.RFont
                                         Size: =AllScreensCSS.RLabelFontSize-4
                                         Text: |-
-                                            =//"3 days"
+                                            =
                                             ThisItem.TimeEstimate
                                         Width: =200
                                         ZIndex: =3
@@ -1048,7 +1030,7 @@ FindingScreen As screen:
                                         Font: =AllScreensCSS.RFont
                                         Size: =AllScreensCSS.RLabelFontSize-4
                                         Text: |-
-                                            =//"Material 1"
+                                            =
                                             ThisItem.MaterialEstimate
                                         Width: =250
                                         ZIndex: =4
@@ -1073,12 +1055,10 @@ FindingScreen As screen:
                                 HoverFill: |-
                                     =//ColorFade(RGBA(56, 96, 178, 1), -20%)
                                     Self.Fill
-                                OnSelect: |-
-                                    =//UpdateIf(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=ThisItem.checkpointItemActionItemsId,{Action_status:"Closed",CIAstatusUpdate:1});
-                                    Set(PopupCloseAction,true);
+                                OnSelect: |+
+                                    =Set(PopupCloseAction,true);
                                     Set(SelectedcheckpointItemActionItemsId,ThisItem.checkpointItemActionItemsId);
                                     
-                                    //UpdateIf(checkpointItem_ActionItem,checkpointItemActionItemsId=ThisItem.checkpointItemActionItemsId,{Action_status:"Closed"});
                                 PressedFill: =Self.Fill
                                 Text: |-
                                     =//If(Btn,true,"closed Action","close Action")

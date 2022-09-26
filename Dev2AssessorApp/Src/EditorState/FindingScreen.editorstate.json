@@ -21395,7 +21395,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"high\"\r\nThisItem.priority",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -22125,7 +22132,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"LPD north\"\r\nThisItem.OwnerId",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -22855,7 +22869,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"3 days\"\r\nThisItem.TimeEstimate",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -23585,7 +23606,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"Material 1\"\r\nThisItem.MaterialEstimate",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
