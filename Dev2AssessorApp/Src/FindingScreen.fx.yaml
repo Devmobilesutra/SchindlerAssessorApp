@@ -1586,7 +1586,7 @@ FindingScreen As screen:
                                             }
                                             );
                                        
-                                    //Set(varActionbutton,true);
+                                    
                                     
                                     
                                 PressedFill: =AllScreensCSS.RActiveColor
@@ -1858,7 +1858,6 @@ FindingScreen As screen:
                                     Set(UP,false);
                                     If(
                                         CountRows(GlryImagesFS.AllItems) < 6,
-                                        //If(CountRows(Filter(GC_checkpointItemAssessment,checkpointItemId.checkpointItemId=varCheckpointitemID  && assignmentId.Id =varAssignentId && bankUnitId.Id=varBankUnitId))>0,
                                         Collect(
                                           GC_checkpointItem_Images,
                                                   {
@@ -1873,10 +1872,6 @@ FindingScreen As screen:
                                                       gcBankunit,
                                                         Id = varBankUnitId),
                                                      section_id: LookUp(DropColumns( GcSectionAssessment,"SstatusUpdate"),'sectionAssessment (quantum_sectionassessment)'=varSA),
-                                                     /*LookUp(
-                                                        GcSectionAssessment,
-                                                         sectionId.sectionId = VarSectionId
-                                                    ),*/
                                                     checkpoint_id: LookUp(DropColumns(
                                                        GcCheckpointAssessment,"CstatusUpdate"), 
                                                         checkpointAssessment_id=GuidId
@@ -1887,11 +1882,10 @@ FindingScreen As screen:
                                                      product_id: LookUp(GC_product,product_Model=glryUnitBS.Selected.productModel
                                                     ),
                                                     
-                                                     //Image:Image14_2.Image,
+                                                    
                                                     image_annotation: ""
                                             }
                                         );
-                                    //);
                                     If(
                                         CountRows(GlryImagesFS.AllItems) >=6,
                                         Notify("You can capture 6 images only."),
@@ -1899,43 +1893,6 @@ FindingScreen As screen:
                                     ));
                                     Set(varImage,true);
                                         
-                                    /*If(
-                                        CountRows(
-                                            Filter(
-                                                GC_templateCheckpointsItem,
-                                                checkpointItemId = varCheckpointitemID
-                                            )
-                                        ) = 1,
-                                        Collect(
-                                            Act2,
-                                            {
-                                                lineNo: MoreImage,
-                                                ID: GUID(),
-                                                 checkpointItemActionItemsId:"",
-                                                checkpointitemID: varCheckpointitemID,
-                                                checkpointID:chglryCheckpointsSS_2.Selected.checkpointId,
-                                                sectionID:VarSectionId,
-                                                productID:LookUp(GC_product,product_Model=CId,'product (quantum_product)'),
-                                                unitID:varBankUnitId,
-                                                    assignmentId:glryProject.Selected.Id,
-                                                        Image: "",
-                                                        //Image14,
-                                                        ImageAnnotation:""
-                                            }
-                                        )
-                                    ));
-                                    If(Connection.Connected=false,
-                                    SaveData(
-                                        Act2,
-                                        "localAct2"
-                                    );
-                                    LoadData(Act2,"LocalAct2"));
-                                    If(
-                                        CountRows(Gallery13_2.AllItems) >=6,
-                                        Notify("You can capture 6 images only."),
-                                        NotificationType.Warning
-                                    );
-                                    Set(varImage,true)*/
                                 PressedFill: =AllScreensCSS.RActiveColor
                                 RadiusBottomLeft: =1
                                 RadiusBottomRight: =1
@@ -1957,31 +1914,19 @@ FindingScreen As screen:
                                 =
                                 Set(VarBlankrow1,false);
                                 Set(VarBlankrow2,false);
-                                //Notify("Save Start ",NotificationType.Information);
+                                
                                 
                                 //for reset ideal timer
                                 Reset(tmr_logout);
                                 Set(UserLastNavigated,Now());
                                 
                                 If(
-                                    /*CountRows(
-                                        Filter(
-                                            GlryActionItemFS.AllItems,
-                                            IsBlank(ComboBox1_2.Selected.actionItemName) && TextInput8.Text = ""
-                                        )
-                                    ) > 0*/
                                     !IsBlank(LookUp(GlryActionItemFS.AllItems,
                                             IsBlank(ComboBox1_2.Selected.actionItemName) && TextInput8.Text = "")),
                                   
                                     Set(VarBlankrow1,true)
                                 );
                                 If(
-                                    /*CountRows(
-                                        Filter(
-                                            GlryImagesFS.AllItems,
-                                            (Image14_2.Image) = Blank()
-                                        )
-                                    ) > 0*/
                                     !IsBlank(LookUp( GlryImagesFS.AllItems,
                                             (Image14_2.Image) = Blank())),
                                     Set(
@@ -1989,9 +1934,6 @@ FindingScreen As screen:
                                         true
                                     )
                                 );
-                                // && VarBlankrow2=true 
-                                       //CountRows(Filter(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=a.chec
-                                
                                 If(
                                     VarBlankrow1 = true,
                                     Notify(
@@ -2013,22 +1955,10 @@ FindingScreen As screen:
                                 If(
                                    glryItmesAS.Selected.checkpointItemImage='checkpointItemImage (templateCheckpointsItems)'.Yes &&
                                         CountRows(GlryImagesFS.AllItems)<1,
-                                      //IsBlank(GlryImagesFS.AllItems),
                                          Notify(
                                                 "Image is mandatory.",
                                                 NotificationType.Error
                                             ),
-                                
-                                     //for updating status of Assignment assessment
-                                        /*If(Connection.Connected,
-                                                UpdateIf(
-                                                  assignments,
-                                                        Id=glryProject.Selected.Id && bankId.Id=VarBankId && isCompleted="Upcomming",
-                                                            {
-                                                                isCompleted: "Inprogress"
-                                                            }
-                                                        );
-                                         );*/
                                         UpdateIf(
                                         gcProjectAssignment,
                                         Id = varAssignmentId && bankId.Id=VarBankId && isCompleted = "Upcomming",
@@ -2058,77 +1988,26 @@ FindingScreen As screen:
                                             UstatusUpdate:0
                                         }
                                     );
-                                //*********************************************************
-                                /*
-                                    // unit assessment status update 0 to 1 for green and grey status update
-                                    UpdateIf(
-                                        GC_unitAssessment,
-                                        assignmentId.Id=varAssignmentId && bankUnitId.Id=varBankUnitId && Assessment_status ="Inprogress",
-                                        {
-                                            UstatusUpdate:0
-                                        }
-                                    );
-                                //section assessment status update 0 to 1 for green and grey status update
-                                    UpdateIf(
-                                        GcSectionAssessment,
-                                        'sectionAssessment (quantum_sectionassessment)'= varSA ,
-                                        {
-                                          SstatusUpdate:0
-                                        }
-                                    );
-                                //checkpoint assessment status update 0 to 1 for green and grey status update
-                                    UpdateIf(
-                                        GcCheckpointAssessment,
-                                        checkpointAssessment_id = GuidId,
-                                        {
-                                            CstatusUpdate: 0
-                                        }
-                                    );
-                                */
-                                 
                                 //for checkpoint  Item annotation - checkpoint Item Assessment
                                        //record exist then update that record using update if function
                                                 UpdateIf(
                                                     GC_checkpointItemAssessment,
                                                 'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,
                                                     {
-                                                      /*  section_Id: LookUp(
-                                                            GcSectionAssessment,
-                                                            'sectionAssessment (quantum_sectionassessment)'=varSA)
-                                                        ,
-                                                        checkpointAssessment_Id: LookUp(
-                                                                GcCheckpointAssessment, 
-                                                             checkpointAssessment_id=GuidId
-                                                        ),*/
                                                         checkpointItem_annotation: txtAnnotationFS.Text,
                                                         assessmentStatus: If(LookUp(GC_checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA,assessmentStatus)="Check","Check","Uncheck"),
                                                         CIstatusUpdate:0
                                                                                     
                                                     }
                                                 );
-                                           // );
                                          
                                 //For checkpointitem action item
                                 ForAll(
                                         GlryActionItemFS.AllItems As a,
-                                                /*If(
-                                                    CountRows(
-                                                        Filter(
-                                                            GC_checkpointItem_ActionItem,
-                                                             checkpointItemActionItemsId = a.checkpointItemActionItemsId
-                                                        )
-                                                    ) = 1,*/
                                                     UpdateIf(
                                                         GC_checkpointItem_ActionItem,
                                                         checkpointItemActionItemsId = a.checkpointItemActionItemsId,
                                                         {
-                                                           /* section_id: LookUp(
-                                                            GcSectionAssessment,
-                                                            'sectionAssessment (quantum_sectionassessment)'=varSA)
-                                                        ,
-                                                            checkpoint_id: LookUp(
-                                                                    GcCheckpointAssessment,
-                                                                         checkpointAssessment_id=GuidId),*/
                                                             ActionItem_Name: If(IsBlank(a.TextInput8.Text),a.ComboBox1_2.Selected.actionItemName,                                                               a.TextInput8.Text),
                                                             priority: a.Dropdown5_11.Selected.Value,
                                                             OwnerId: a.Dropdown5_12.Selected.Value,
@@ -2138,36 +2017,20 @@ FindingScreen As screen:
                                                             CIAstatusUpdate:0
                                                         }
                                                     );
-                                              //  );
                                             );
                                             
                                 //for checkpoint image 
                                 ForAll(
                                                 GlryImagesFS.AllItems As i,
-                                               /* If(
-                                                    CountRows(
-                                                        Filter(
-                                                            GC_checkpointItem_Images,
-                                                            checkpointItemImagesId = i.checkpointItemImagesId
-                                                        )
-                                                    ) =1,*/
                                                     UpdateIf(
                                                         GC_checkpointItem_Images,
                                                         checkpointItemImagesId = i.checkpointItemImagesId,
                                                         {
-                                                          /*  section_id: LookUp(
-                                                            GcSectionAssessment,
-                                                            'sectionAssessment (quantum_sectionassessment)'=varSA)
-                                                        ,
-                                                            checkpoint_id: LookUp(
-                                                            GcCheckpointAssessment,
-                                                                         checkpointAssessment_id=GuidId),*/
                                                             Image: i.Image14_2.Image,
                                                             image_annotation: i.TextInput6_2.Text,
                                                             CIIstatusUpdate:0
                                                         }
                                                     )
-                                                //)
                                             );
                                             Set(
                                                 popupsuccess1,
@@ -2188,7 +2051,7 @@ FindingScreen As screen:
                                 SaveData(GcSectionAssessment,"localsectionassessment");
                                 SaveData(GcCheckpointAssessment,"localcheckpointassessment")
                                 );
-                                //Notify("Save End ",NotificationType.Information)
+                                
                                 
                                 
                                 
@@ -2342,7 +2205,12 @@ FindingScreen As screen:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: =Set(popupsuccess1,false);Navigate(AssessmentScreen);
+            OnSelect: |
+                =Set(
+                    popupsuccess1,
+                    false
+                );
+                Navigate(AssessmentScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
