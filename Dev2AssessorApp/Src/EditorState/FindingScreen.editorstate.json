@@ -3217,7 +3217,14 @@
     "Button3_4": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "///for reset ideal timer\r\nReset(tmr_logout);\r\nSet(UserLastNavigated, Now());\r\n\r\nSet(C,true);\r\n//Set(P,false)",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "AutoDisableOnSelect",
         "Text",
         "Tooltip",
@@ -3598,7 +3605,14 @@
     "Button3_5": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "OnSelect",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//Set(P,true);\r\nSet(C,false)",
+          "InvariantPropertyName": "OnSelect",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "AutoDisableOnSelect",
         "Text",
         "Tooltip",
@@ -27845,7 +27859,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//ThisItem.quantum_projectAssingment_Id.assessment_type_1\r\n//ThisItem.projectAssingment_Id.assessment_type_1\r\n//\"EI turnover\"\r\nThisItem.assignmentId.assessmentType",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -31113,7 +31134,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"5.2\"\r\n//lblProductName_1.Text\r\nThisItem.bankUnitId.unitNumber",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -31478,7 +31506,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//ThisItem.quantum_projectAssingment_Id.assessor_name\r\n//\"John Daniel\"\r\nThisItem.assignmentId.assessorName",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -32952,7 +32987,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"Checkpoint- 1 Unit Inspection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \"  \r\n//ChId&\"    \"&\r\nLookUp(GC_templateCheckpoints,checkpointId=ChId,checkpointName)",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -33317,7 +33359,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//\"Checkpoint- 1 Unit Inspection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  \"  \r\n//\"CheckpointItem  \" & varCheckpointitemID &\"    \"&\r\nLookUp(GC_templateCheckpointsItem,checkpointItemId=varCheckpointitemID,checkpointItemName)",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",

@@ -1,7 +1,13 @@
 TripReportScreen As screen:
-    OnVisible: |-
-        =Set(varReportPopup,false);
-        Trace("just tryout "& First(gcBankunit).unitNumber,TraceSeverity.Information);
+    OnVisible: |
+        =Set(
+            varReportPopup,
+            false
+        );
+        Trace(
+            "just tryout " & First(gcBankunit).unitNumber,
+            TraceSeverity.Information
+        );
 
     ctnMainTRS As groupContainer.manualLayoutContainer:
         Height: =Max(App.Height, App.MinScreenHeight)
@@ -71,29 +77,6 @@ TripReportScreen As screen:
                         Width: =ctnBackTRS.Width/6
                         ZIndex: =1
 
-                ctnOnlineStatusTRS As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =0
-                    Height: =80
-                    LayoutAlignItems: =LayoutAlignItems.End
-                    LayoutDirection: =LayoutDirection.Vertical
-                    LayoutGap: =10
-                    LayoutJustifyContent: =LayoutJustifyContent.Center
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
-                    LayoutMode: =LayoutMode.Auto
-                    LayoutWrap: =true
-                    PaddingLeft: =40
-                    PaddingRight: =40
-                    Width: =Parent.Width/2
-                    Y: =ctnHeaderTRS.Y+ctnHeaderTRS.Height
-                    ZIndex: =2
-
-                    "'CmpOnline/offlineStatusTRS' As Component1_10":
-                        LayoutMinHeight: =640
-                        LayoutMinWidth: =640
-                        Visible: =false
-
             ctnCheckpointTRS As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =0
@@ -113,26 +96,14 @@ TripReportScreen As screen:
                     Height: =ctnCheckpointTRS.Height
                     PaddingLeft: =0
                     Size: =AllScreensCSS.RFontSize
-                    Text: |-
+                    Text: |
                         =glryProject.Selected.clientId.name
-                        //"Orlando InterNational Airport"
                     Width: =ctnCheckpointTRS.Width/1.5
                     ZIndex: =1
 
                 btnCommentTRS As button:
                     DisplayMode: |-
-                        =/*If(
-                            IsBlank(
-                                LookUp(
-                                    BankTripReport,
-                                   // bankId.Id = glryProject.Selected.bankId.Id,
-                                    assignmentId.Id = glryProject.Selected.Id,
-                                    ReviewerComments
-                                )
-                            ),
-                            DisplayMode.Disabled,*/
-                          //  DisplayMode.Edit
-                        //)
+                        =
                         If(
                             IsBlank(
                                First(localBanktripReport).ReviewerComments
@@ -145,7 +116,9 @@ TripReportScreen As screen:
                     Height: =50
                     HoverBorderColor: =Self.BorderColor
                     HoverFill: =AllScreensCSS.RActiveColor
-                    OnSelect: =Set(varBanktripReportComment,true);Set(varComment,true);
+                    OnSelect: |-
+                        =Set(varBanktripReportComment,true);
+                        Set(varComment,true);
                     Size: =AllScreensCSS.RfontsizeInput
                     Text: ="Comment"
                     Visible: =If(comp=true,false,true)
@@ -193,8 +166,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//LookUp(gcProjectAssignment,bankId.goNumber=lblBankName.Text,assessorName)
-                            //"Pratiksha Kale"
+                            =
                             glryProject.Selected.assessorName
                         Width: =ctnMiddleTRS.Width/2
                         X: =lblAssesorTRS.X+lblAssesorTRS.Width
@@ -230,8 +202,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//lblBankName.Text
-                            //"M6480"
+                            =
                             glryProject.Selected.bankId.goNumber
                         Width: =ctnMiddleTRS.Width/6
                         X: =lblBankNumberTRS.X+lblBankNumberTRS.Width
@@ -1111,17 +1082,12 @@ TripReportScreen As screen:
             Width: =Parent.Width
             ZIndex: =3
 
-            cmtNetworkIcon As Component2_8:
-                X: =lblUsernameHeaderTRS.Width+lblUsernameHeaderTRS.X
-                Y: =(ctnHeaderDS.Height-Self.Height)/2
-                ZIndex: =9
-
             GroupHeaderTRS As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
-                ZIndex: =9
+                ZIndex: =10
 
                 imgLogoTRS As image:
                     DisplayMode: =DisplayMode.View
@@ -1173,27 +1139,10 @@ TripReportScreen As screen:
                     X: =imgUserHeaderTRS.Width+imgUserHeaderTRS.X
                     ZIndex: =5
 
-                icoNotificationHeaderTRS As icon.Bell:
-                    Color: =RGBA(255, 191, 0, 1)
-                    Height: =ctnHeaderTRS.Height/2.2
-                    Icon: =Icon.Bell
-                    Visible: =false
-                    Width: =ctnHeaderTRS.Width/30
+                cmtNetworkIcon As Component2_8:
                     X: =lblUsernameHeaderTRS.Width+lblUsernameHeaderTRS.X
-                    Y: =ctnHeaderTRS.Height/4
-                    ZIndex: =7
-
-                iconSignoutHeaderTRS As icon.Bell:
-                    Color: =Header.HeaderColor
-                    Height: =ctnHeaderTRS.Height/2.4
-                    Icon: =Icon.NextArrow
-                    PaddingBottom: =5
-                    Rotation: =90
-                    Visible: =false
-                    Width: =ctnHeaderTRS.Width-(imgLogoTRS.Width+lblAssessmentTRS.Width+imgUserHeaderTRS.Width+lblUsernameHeaderTRS.Width+icoNotificationHeaderTRS.Width)
-                    X: =icoNotificationHeaderTRS.X+icoNotificationHeaderTRS.Width
-                    Y: =ctnHeaderTRS.Height/4
-                    ZIndex: =8
+                    Y: =(ctnHeaderDS.Height-Self.Height)/2
+                    ZIndex: =9
 
     grpSuccessPopupTRS As group:
         Height: =5
@@ -1258,7 +1207,9 @@ TripReportScreen As screen:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: =Set(popupsuccess,false);Navigate(BankScreen);
+            OnSelect: |-
+                =Set(popupsuccess,false);
+                Navigate(BankScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
@@ -1307,9 +1258,11 @@ TripReportScreen As screen:
                 Font: =AllScreensCSS.RFont
                 FontWeight: =FontWeight.Semibold
                 PaddingLeft: =40
-                Text: |
-                    =If(varComment = true,"Reviewer"
-                       ) & " Comment"
+                Text: |-
+                    =If(
+                        varComment = true,
+                        "Reviewer"
+                    ) & " Comment"
                 Width: =Parent.Width-70
                 ZIndex: =1
 
@@ -1352,9 +1305,10 @@ TripReportScreen As screen:
             Font: =AllScreensCSS.RFont
             HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
             OnSelect: |-
-                =Navigate(TripReportScreen);
+                =
                 Reset(txtSectionCommentTRS);
                 Set(varComment, false);
+                Navigate(TripReportScreen);
                   
             PressedColor: =Self.Color
             PressedFill: =Self.Fill
@@ -1369,15 +1323,7 @@ TripReportScreen As screen:
         txtSectionCommentTRS As text:
             BorderThickness: =0
             Default: |-
-                =/*If(
-                    varBanktripReportComment = true,
-                    LookUp(
-                        BankTripReport,
-                       // bankId.Id = glryProject.Selected.bankId.Id,
-                       assignmentId.Id =glryProject.Selected.Id,
-                        ReviewerComments
-                    )
-                )*/
+                =
                 If(
                     varBanktripReportComment = true,
                     First(localBanktripReport).ReviewerComments
