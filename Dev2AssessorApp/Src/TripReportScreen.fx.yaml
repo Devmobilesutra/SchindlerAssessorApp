@@ -238,8 +238,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//LookUp(gcProjectAssignment,bankId.goNumber=lblBankName.Text,assessmentType)
-                            //"6/12 month Assessment"
+                            =
                             glryProject.Selected.assessmentType
                         Width: =ctnMiddleTRS.Width/4
                         X: =lblAssessmentTypeAS_4.X+lblAssessmentTypeAS_4.Width
@@ -309,8 +308,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//lblADate.Text
-                            //"5-03-2022"
+                            =
                             Text(glryProject.Selected.assignedDate,"mm-dd-yyyy")
                         Width: =ctnMiddleTRS.Width/8
                         X: =lblAssessmentDateAS_4.X+lblAssessmentDateAS_4.Width
@@ -372,7 +370,7 @@ TripReportScreen As screen:
                     PaddingLeft: =0
                     Size: =22
                     Text: |-
-                        = //glrySectionSS_2.Selected.sectionname
+                        =
                          "Trip Report"
                     Width: =Parent.Width
                     X: =60
@@ -391,11 +389,7 @@ TripReportScreen As screen:
                 TextInput4 As text:
                     BorderColor: =RGBA(179, 179, 179, 1)
                     Default: |-
-                        =/*LookUp(
-                            BankTripReport,
-                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id,
-                            Summary
-                        )*/
+                        =
                         First(localBanktripReport).Summary
                     DisplayMode: =If(comp=true,DisplayMode.View,Edit)
                     FillPortions: =1
@@ -422,11 +416,7 @@ TripReportScreen As screen:
                 TextInput7 As text:
                     BorderColor: =RGBA(179, 179, 179, 1)
                     Default: |-
-                        =/*LookUp(
-                            BankTripReport,
-                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id,
-                            Background
-                        )*/
+                        =
                         First(localBanktripReport).Background
                     DisplayMode: =If(comp=true,DisplayMode.View,Edit)
                     FillPortions: =1
@@ -479,7 +469,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |
-                            =//LookUp(gcProjectAssignment,bankId.goNumber=lblBankName.Text,assessmentType)
+                            =
                             glryProject.Selected.bankId.goNumber
                         Width: =Parent.Width-420
                         X: =lblAssessmentTypeAS_6.X+lblAssessmentTypeAS_6.Width
@@ -513,8 +503,7 @@ TripReportScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//lblADate.Text
-                            //"7000"
+                            =
                             glryUnitBS.Selected.productModel
                         Width: =Parent.Width-420
                         X: =lblAssessmentDateAS_6.X+lblAssessmentDateAS_6.Width
