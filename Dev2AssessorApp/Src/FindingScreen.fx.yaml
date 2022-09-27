@@ -142,25 +142,33 @@ FindingScreen As screen:
                         Height: =ctnBackPFS_3.Height/1.6
                         HoverColor: =RGBA(0, 0, 0, 1)
                         HoverFill: =
-                        OnSelect: |-
+                        OnSelect: |
                             =//RemoveIf(G
                             Reset(txtAnnotationFS);
-                            
-                            RemoveIf(GC_checkpointItem_ActionItem,
-                                            assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA && ActionItem_Name="");
-                            RemoveIf(GC_checkpointItem_Images,assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA
+                            RemoveIf(
+                                GC_checkpointItem_ActionItem,
+                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA && ActionItem_Name = ""
+                            );
+                            RemoveIf(
+                                GC_checkpointItem_Images,
+                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA 
                              //&& (Image14_2.Image) = Blank()
-                             && IsBlank(Image)
-                             );
-                                   
-                                      
-                            If(glryItmesAS.Selected.checkpointItemImage && 
+                            && IsBlank(Image)
+                            );
+                            If(
+                                glryItmesAS.Selected.checkpointItemImage &&
                                     //(UploadedImage1_2.Image=Blank()
-                                    CountRows(Filter(GC_checkpointItem_Images,checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'=varCItemA))=0,
-                                         glryItmesAS.Selected.cboxItemsAS.Value=false,
-                                          glryItmesAS.Selected.cboxItemsAS.Value=true;
-                                          );
-                                            Navigate(AssessmentScreen);   
+                             CountRows(
+                                    Filter(
+                                        GC_checkpointItem_Images,
+                                        checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = varCItemA
+                                    )
+                                ) = 0,
+                                glryItmesAS.Selected.cboxItemsAS.Value = false,
+                                glryItmesAS.Selected.cboxItemsAS.Value = true;
+                                
+                            );
+                            Navigate(AssessmentScreen);
                         PaddingBottom: =10
                         PaddingLeft: =20
                         PaddingRight: =10
@@ -221,7 +229,7 @@ FindingScreen As screen:
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =//"Jack Daniel"
+                            =
                             LookUp(gcProjectAssignment, Id= varAssignmentId && bankId.goNumber=lblBankName.Text,assessorName)
                         Width: =350
                         X: =lblAssesorNameAS_5.X+lblAssesorNameAS_5.Width
@@ -399,8 +407,7 @@ FindingScreen As screen:
                     PaddingLeft: =0
                     Size: =AllScreensCSS.RLabelFontSize
                     Text: |-
-                        =//"Checkpoint- 1 Unit Inspection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "  
-                        //ChId&"    "&
+                        =
                         LookUp(GC_templateCheckpoints,checkpointId=ChId,checkpointName)
                     Width: =ctnCheckpointIAS_4.Width/25
                     ZIndex: =1
@@ -423,10 +430,7 @@ FindingScreen As screen:
                     Font: =AllScreensCSS.RFont
                     PaddingLeft: =0
                     Size: =AllScreensCSS.RLabelFontSize
-                    Text: |-
-                        =//"Checkpoint- 1 Unit Inspection  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  .  "  
-                        //"CheckpointItem  " & varCheckpointitemID &"    "&
-                        LookUp(GC_templateCheckpointsItem,checkpointItemId=varCheckpointitemID,checkpointItemName)
+                    Text: =LookUp(GC_templateCheckpointsItem,checkpointItemId=varCheckpointitemID,checkpointItemName)
                     VerticalAlign: =VerticalAlign.Top
                     Width: =ctnCheckpointItemAS_3.Width/25
                     ZIndex: =1
@@ -466,13 +470,12 @@ FindingScreen As screen:
                         Height: =35
                         HoverColor: =RGBA(0, 0, 0, 1)
                         HoverFill: =ColorFade(Self.Fill, -20%)
-                        OnSelect: |-
+                        OnSelect: |
                             =///for reset ideal timer
                             Reset(tmr_logout);
                             Set(UserLastNavigated, Now());
                             
                             Set(C,true);
-                            //Set(P,false)
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
                         RadiusBottomLeft: =1
@@ -509,7 +512,7 @@ FindingScreen As screen:
                         HoverColor: =Self.Color
                         HoverFill: =ColorFade(Self.Fill, -20%)
                         OnSelect: |-
-                            =//Set(P,true);
+                            =
                             Set(C,false)
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
@@ -599,18 +602,14 @@ FindingScreen As screen:
                         "Gallery14_2 As gallery.'BrowseLayout_Vertical_TwoTextOneImageTwoColumnVariant_ver4.0'":
                             Height: =CountRows(Gallery14_2.AllItems)*(Gallery14_2.TemplateHeight)
                             Items: |-
-                                =//Filter(GC_checkpointItem_Images,bankUnitId.Id=varBankUnitId&&assignmentId.isCompleted="Completed"&&checkpointItem_Id.assessmentStatus="Check"&&checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID
-                                    //&& checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'=ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)')
-                                //Filter(GC_checkpointItem_Images,bankUnitId.Id = varBankUnitId
-                                //checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID
-                                //)
+                                =
                                 
                                 //get all images for this stored templateCheckpointItem ID "varCheckpointitemID" from GC_checkpointItem_Images for selected bankUnit ID and whose assignment is completed .
                                 //And for parents findings . since there is no open and close status for images therefore all images for the selected findings will be shown.(to be discussed with client)
                                 Filter(
                                     GC_checkpointItem_Images,bankUnitId.Id = varBankUnitId  &&
                                     checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                   // checkpointItem_Id.checkpointItemId.checkpointItemId=ThisItem.checkpointItemId
+                                
                                 
                                 )
                             Layout: =Layout.Vertical
@@ -699,8 +698,7 @@ FindingScreen As screen:
                                     PaddingTop: =0
                                     Size: =AllScreensCSS.RLabelFontSize-2
                                     Text: |-
-                                        =//"5.2"
-                                        //lblProductName_1.Text
+                                        =
                                         ThisItem.bankUnitId.unitNumber
                                     Width: =Parent.Width
                                     ZIndex: =2
@@ -736,9 +734,7 @@ FindingScreen As screen:
                                     PaddingTop: =0
                                     Size: =AllScreensCSS.RLabelFontSize-2
                                     Text: |-
-                                        =//ThisItem.quantum_projectAssingment_Id.assessment_type_1
-                                        //ThisItem.projectAssingment_Id.assessment_type_1
-                                        //"EI turnover"
+                                        =
                                         ThisItem.assignmentId.assessmentType
                                     Width: =Parent.Width
                                     ZIndex: =2
@@ -782,8 +778,7 @@ FindingScreen As screen:
                                 PaddingTop: =0
                                 Size: =AllScreensCSS.RLabelFontSize-2
                                 Text: |-
-                                    =//ThisItem.quantum_projectAssingment_Id.assessor_name
-                                    //"John Daniel"
+                                    =
                                     ThisItem.assignmentId.assessorName
                                 Width: =Parent.Width
                                 ZIndex: =2
@@ -827,9 +822,7 @@ FindingScreen As screen:
                                 PaddingTop: =0
                                 Size: =AllScreensCSS.RLabelFontSize-2
                                 Text: |-
-                                    =//ThisItem.projectAssingment_Id.'Assigned_date '
-                                    //"12/30/2021"
-                                    //Text(ThisItem.assignmentId.assignedDate,"mm-dd-yyyy")
+                                    =
                                     Text(ThisItem.assignmentId.completionDate,"mm-dd-yyyy")
                                 Width: =Parent.Width
                                 ZIndex: =2
@@ -1248,7 +1241,12 @@ FindingScreen As screen:
 
                             TextInput5_10 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
-                                Default: =LookUp(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=ThisItem.checkpointItemActionItemsId,TimeEstimate)
+                                Default: |-
+                                    =LookUp(
+                                        GC_checkpointItem_ActionItem,
+                                        checkpointItemActionItemsId = ThisItem.checkpointItemActionItemsId,
+                                        TimeEstimate
+                                    )
                                 FocusedBorderThickness: =1
                                 Font: =AllScreensCSS.RFont
                                 Format: =TextFormat.Number
@@ -1274,7 +1272,14 @@ FindingScreen As screen:
                             TextInput5_11 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
                                 Default: |-
-                                    =Text(LookUp(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=ThisItem.checkpointItemActionItemsId,MaterialEstimate),"[$-en-US]$ #.00")
+                                    =Text(
+                                        LookUp(
+                                            GC_checkpointItem_ActionItem,
+                                            checkpointItemActionItemsId = ThisItem.checkpointItemActionItemsId,
+                                            MaterialEstimate
+                                        ),
+                                        "[$-en-US]$ #.00"
+                                    )
                                 FocusedBorderThickness: =1
                                 Font: =AllScreensCSS.RFont
                                 Format: =TextFormat.Number
@@ -1433,7 +1438,7 @@ FindingScreen As screen:
                             TextInput8 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
                                 Default: |-
-                                    =//ThisItem.ActionItem_Name
+                                    =
                                     If(ThisItem.ActionItem_Name in Distinct(GC_actionItems,actionItemName).Result,"",ThisItem.ActionItem_Name) 
                                 DisabledBorderColor: =RGBA(0, 0, 0, 1)
                                 DisabledFill: =RGBA(204, 204, 204, 1)
@@ -1664,7 +1669,12 @@ FindingScreen As screen:
 
                             Image9_2 As image:
                                 Height: =Min(Self.Width, Parent.TemplateHeight - 115)
-                                Image: =If(IsBlank(ThisItem.Image),'Sample Image',ThisItem.Image)
+                                Image: |-
+                                    =If(
+                                        IsBlank(ThisItem.Image),
+                                        'Sample Image',
+                                        ThisItem.Image
+                                    )
                                 ImagePosition: =ImagePosition.Fill
                                 OnSelect: |-
                                     =//for reset ideal timer
@@ -1739,49 +1749,54 @@ FindingScreen As screen:
                                 Fill: =AllScreensCSS.RActiveColor
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 Italic: =true
-                                OnSelect: |
+                                OnSelect: |-
                                     =//for reset ideal timer
                                     Reset(tmr_logout);
                                     Set(
                                         UserLastNavigated,
                                         Now()
                                     );
-                                    //RemoveIf(GC_checkpointItem_Images,checkpointItemImagesId=ThisItem.checkpointItemImagesId);
-                                    /*If(
-                                        \
-                                        glryItmesAS.Selected.checkpointItemImage = 'checkpointItemImage (templateCheckpointsItems)'.Yes &&
-                                         CountRows(Filter(
-                                                GC_checkpointItem_Images,
-                                                assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.checkpointItemId.checkpointItemId = varCheckpointitemID
-                                            )) > 1,
-                                        Remove(
-                                            GC_checkpointItem_Images,
-                                            ThisItem
-                                        ),
-                                        Notify("Here,Image is mandatory.So you can't delete it,change the image.")
-                                    );*/
                                     If(
-                                        glryItmesAS.Selected.checkpointItemImage= 'checkpointItemImage (templateCheckpointsItems)'.Yes  &&
-                                         CountRows(Filter(
+                                        glryItmesAS.Selected.checkpointItemImage = 'checkpointItemImage (templateCheckpointsItems)'.Yes && CountRows(
+                                            Filter(
                                                 GC_checkpointItem_Images,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointItem_Id.checkpointItemId.checkpointItemId = varCheckpointitemID
-                                            )) > 1,
-                                            Set(varIsImage,true)
-                                            ,Set(varIsImage,false));
-                                            If(
+                                            )
+                                        ) > 1,
+                                        Set(
+                                            varIsImage,
+                                            true
+                                        ),
+                                        Set(
+                                            varIsImage,
+                                            false
+                                        )
+                                    );
+                                    If(
                                         glryItmesAS.Selected.checkpointItemImage = 'checkpointItemImage (templateCheckpointsItems)'.No,
-                                            Set(varIsImage1,true),
-                                            Set(varIsImage1,false));
-                                    If((varIsImage=true && varIsImage1=false) || (varIsImage1=true && varIsImage=false),
+                                        Set(
+                                            varIsImage1,
+                                            true
+                                        ),
+                                        Set(
+                                            varIsImage1,
+                                            false
+                                        )
+                                    );
+                                    If(
+                                        (varIsImage = true && varIsImage1 = false) || (varIsImage1 = true && varIsImage = false),
                                         Remove(
                                             GC_checkpointItem_Images,
                                             ThisItem
                                         );
-                                        Collect(gcImageDelete,{id:ThisItem.checkpointItemImagesId});
-                                         SaveData(
-                                                gcImageDelete,
-                                                "localgcImageDelete"
-                                            );
+                                        Collect(
+                                            gcImageDelete,
+                                            {id: ThisItem.checkpointItemImagesId}
+                                        );
+                                        SaveData(
+                                            gcImageDelete,
+                                            "localgcImageDelete"
+                                        );
                                         ,
                                         Notify("Here,Image is mandatory.So you can't delete it,change the image.")
                                     )
@@ -1847,7 +1862,7 @@ FindingScreen As screen:
                                                          gcProjectAssignment,"AstatusUpdate"),
                                                          Id = varAssignmentId
                                                      ),
-                                                 //    bankId:LookUp(gcBank,Id=VarBankId),
+                                                 //  bankId:LookUp(gcBank,Id=VarBankId),
                                                      bankUnitId: LookUp(
                                                       gcBankunit,
                                                         Id = varBankUnitId),
@@ -2308,9 +2323,22 @@ FindingScreen As screen:
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
             OnSelect: |
-                =Set(C,false);
-                Set(PopupCloseAction,false);
-                UpdateIf(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=SelectedcheckpointItemActionItemsId,{Action_status:"Close",CIAstatusUpdate:1});
+                =Set(
+                    C,
+                    false
+                );
+                Set(
+                    PopupCloseAction,
+                    false
+                );
+                UpdateIf(
+                    GC_checkpointItem_ActionItem,
+                    checkpointItemActionItemsId = SelectedcheckpointItemActionItemsId,
+                    {
+                        Action_status: "Close",
+                        CIAstatusUpdate: 1
+                    }
+                );
                 Navigate(FindingScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
