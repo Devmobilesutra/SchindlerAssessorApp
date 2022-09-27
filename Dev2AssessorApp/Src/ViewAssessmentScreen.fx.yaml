@@ -53,10 +53,9 @@ ViewAssessmentScreen As screen:
                         FontWeight: =FontWeight.Bold
                         Height: =ctnGonumberVS.Height
                         Size: =AllScreensCSS.RFontSize
-                        Text: |-
+                        Text: |+
                             =lblProjectName.Text
                             
-                            //lblBankName.Text go no
                         Width: =ctnHeaderViewAssessment.Width/1.02
                         X: |
                             =ctnHeaderViewAssessment.X+ctnHeaderViewAssessment.Width
@@ -240,10 +239,9 @@ ViewAssessmentScreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =ctnGoNumberVS.Height
                         Size: =AllScreensCSS.RFontSize
-                        Text: |-
+                        Text: |+
                             =glryUnitBS.Selected.productModel & " Series Section list"
                             
-                            //lblBankName.Text go no
                         Width: =ctnHeaderViewAssessment.Width/1.02
                         X: |
                             =ctnHeaderViewAssessment.X+ctnHeaderViewAssessment.Width
@@ -306,9 +304,11 @@ ViewAssessmentScreen As screen:
                             //If(CountRows(Gallery14_3.AllItems)=1,380,CountRows(Gallery14_3.AllItems)*(Gallery14_3.TemplateHeight)/2)
                             //If(CountRows(glryCheckpointimagesVS.AllItems)/2=1,(CountRows(glryCheckpointimagesVS.AllItems)*(glryCheckpointimagesVS.TemplateHeight))/2+350,(CountRows(glryCheckpointimagesVS.AllItems)*(glryCheckpointimagesVS.TemplateHeight))/2)
                             CountRows(glryCheckpointimagesVS.AllItems)*(glryCheckpointimagesVS.TemplateHeight)
-                        Items: |+
-                            =Filter(checkpointItem_Images,assignmentId.Id=glryUnitBS.Selected.assignmentId.Id && bankUnitId.Id=glryUnitBS.Selected.bankUnitId.Id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'=ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)')
-                            
+                        Items: |-
+                            =Filter(
+                                checkpointItem_Images,
+                                assignmentId.Id = glryUnitBS.Selected.assignmentId.Id && bankUnitId.Id = glryUnitBS.Selected.bankUnitId.Id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
+                            )
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
                         TemplatePadding: =6
@@ -321,7 +321,7 @@ ViewAssessmentScreen As screen:
                             BorderThickness: =2
                             Height: =350
                             Image: |-
-                                =//camera
+                                =
                                 ThisItem.Image
                             OnSelect: =Select(Parent)
                             PaddingBottom: =5
@@ -387,7 +387,7 @@ ViewAssessmentScreen As screen:
                             PaddingTop: =0
                             Size: =AllScreensCSS.RLabelFontSize
                             Text: |-
-                                =//ThisItem.Value
+                                =
                                 "Actions"
                             VerticalAlign: =VerticalAlign.Top
                             Width: =Parent.TemplateWidth - 112
@@ -486,7 +486,7 @@ ViewAssessmentScreen As screen:
                                     Font: =AllScreensCSS.RFont
                                     Size: =AllScreensCSS.RLabelFontSize
                                     Text: |-
-                                        =//"high"
+                                        =
                                         ThisItem.priority
                                     Width: =If(ViewAssessmentScreen.Width>900,Parent.Width/5,120)
                                     ZIndex: =1
@@ -495,7 +495,7 @@ ViewAssessmentScreen As screen:
                                     Font: =AllScreensCSS.RFont
                                     Size: =AllScreensCSS.RLabelFontSize
                                     Text: |-
-                                        =//"LPD north"
+                                        =
                                         ThisItem.OwnerId
                                     Width: =If(ViewAssessmentScreen.Width>900,Parent.Width/5,120)
                                     ZIndex: =2
@@ -504,7 +504,7 @@ ViewAssessmentScreen As screen:
                                     Font: =AllScreensCSS.RFont
                                     Size: =AllScreensCSS.RLabelFontSize
                                     Text: |-
-                                        =//"3 days"
+                                        =
                                         ThisItem.TimeEstimate
                                     Width: =If(ViewAssessmentScreen.Width>900,Parent.Width/5,200)
                                     ZIndex: =3
@@ -513,7 +513,7 @@ ViewAssessmentScreen As screen:
                                     Font: =AllScreensCSS.RFont
                                     Size: =AllScreensCSS.RLabelFontSize
                                     Text: |-
-                                        =//"Material 1"
+                                        =
                                         ThisItem.MaterialEstimate
                                     Width: =If(ViewAssessmentScreen.Width>900,Parent.Width/5,250)
                                     ZIndex: =4
@@ -602,7 +602,7 @@ ViewAssessmentScreen As screen:
                             FillPortions: =1
                             Font: =AllScreensCSS.RFont
                             Size: =AllScreensCSS.RLabelFontSize
-                            Text: =//"AAAAThisItem.checkpointItemName
+                            Text: =//"AAAAThisItem.checkpointItemName"
                             Width: =Parent.Width-400
                             ZIndex: =4
 
@@ -969,8 +969,7 @@ ViewAssessmentScreen As screen:
                 Height: =Parent.Height
                 Size: =Header.HeaderUserFontSize
                 Text: |-
-                    =//"SCHD0023"
-                    //LookUp(ReviewerAD,mail=userdata.userEmail,dis
+                    =
                     username
                 Width: =ctnHeaderViewAssessment.Width/5
                 X: =imgUserVS.X+ imgUserVS.Height
@@ -1030,10 +1029,14 @@ ViewAssessmentScreen As screen:
                 FontWeight: =FontWeight.Semibold
                 PaddingLeft: =40
                 Text: |-
-                    ="Add Comment to "& 
-                    If(varSectionComment = true,"Section",
-                       varCheckpointComment = true,"Checkpoint ",
-                       varItemComment = true,"Item")
+                    ="Add Comment to " & If(
+                        varSectionComment = true,
+                        "Section",
+                        varCheckpointComment = true,
+                        "Checkpoint ",
+                        varItemComment = true,
+                        "Item"
+                    )
                 Width: =Parent.Width-70
                 ZIndex: =1
 
@@ -1080,24 +1083,44 @@ ViewAssessmentScreen As screen:
                 =If(
                     //For Section Comment
                     varSectionComment = true,
-                    UpdateIf(sectionAssessment,'sectionAssessment (quantum_sectionassessment)'=glryCheckpointitemAssessmentVS.Selected.section_Id.'sectionAssessment (quantum_sectionassessment)',{sectionComment:txtCommentVS.Text}),
+                    UpdateIf(
+                        sectionAssessment,
+                        'sectionAssessment (quantum_sectionassessment)' = glryCheckpointitemAssessmentVS.Selected.section_Id.'sectionAssessment (quantum_sectionassessment)',
+                        {sectionComment: txtCommentVS.Text}
+                    ),
                     //For Checkpoint Comment
                     varCheckpointComment = true,
-                    UpdateIf(checkpointAssessment,checkpointAssessment = glryCheckpointitemAssessmentVS.Selected.checkpointAssessment_Id.checkpointAssessment , {checkpointComment: txtCommentVS.Text}),
-                    
+                    UpdateIf(
+                        checkpointAssessment,
+                        checkpointAssessment = glryCheckpointitemAssessmentVS.Selected.checkpointAssessment_Id.checkpointAssessment,
+                        {checkpointComment: txtCommentVS.Text}
+                    ),
                     varItemComment = true,
-                    UpdateIf(checkpointItemAssessment,'checkpointItemAssessment (quantum_checkpointitemassessment)'= glryCheckpointitemAssessmentVS.Selected.'checkpointItemAssessment (quantum_checkpointitemassessment)',{checkpointItemComment:txtCommentVS.Text})
-                
-                
-                
+                    UpdateIf(
+                        checkpointItemAssessment,
+                        'checkpointItemAssessment (quantum_checkpointitemassessment)' = glryCheckpointitemAssessmentVS.Selected.'checkpointItemAssessment (quantum_checkpointitemassessment)',
+                        {checkpointItemComment: txtCommentVS.Text}
+                    )
                 );
                 Concurrent(
-                Reset(txtCommentVS),
-                Set(varComment , false),
-                Set(varSectionComment,false),
-                Set(varCheckpointComment,false),
-                Set(varItemComment,false)
-                  )
+                    Reset(txtCommentVS),
+                    Set(
+                        varComment,
+                        false
+                    ),
+                    Set(
+                        varSectionComment,
+                        false
+                    ),
+                    Set(
+                        varCheckpointComment,
+                        false
+                    ),
+                    Set(
+                        varItemComment,
+                        false
+                    )
+                )
             PressedColor: =Self.Color
             PressedFill: =Self.Fill
             Text: ="Save"

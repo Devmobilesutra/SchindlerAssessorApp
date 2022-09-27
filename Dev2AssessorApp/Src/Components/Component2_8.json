@@ -87,7 +87,7 @@
         "Name": "Image6_1",
         "Parent": "Component2_8",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 751,
+        "PublishOrderIndex": 677,
         "Rules": [
           {
             "Category": "Data",
@@ -376,7 +376,7 @@
         "Name": "Image7_1",
         "Parent": "Component2_8",
         "PersistMetaDataIDKey": false,
-        "PublishOrderIndex": 752,
+        "PublishOrderIndex": 678,
         "Rules": [
           {
             "Category": "Data",
