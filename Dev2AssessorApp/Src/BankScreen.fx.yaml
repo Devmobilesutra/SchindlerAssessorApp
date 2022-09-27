@@ -1504,10 +1504,10 @@ BankScreen As screen:
                 X: =Rectangle5_2.X+20
                 Y: |-
                     =//Container38_2.Y+Container38_2.Height +10
-                    Label41_3.Height+Label41_3.Y
+                    lblPopupUnitBS.Height+lblPopupUnitBS.Y
                 ZIndex: =7
 
-            Icon4_6 As icon.Add:
+            iconPopupLineBS As icon.Add:
                 Color: =RGBA(179, 179, 179, 1)
                 Fill: =RGBA(179, 179, 179, 1)
                 Height: =2
@@ -1519,7 +1519,7 @@ BankScreen As screen:
                 Y: =Rectangle6_2.Y +Rectangle6_2.Height+10
                 ZIndex: =8
 
-            Button11_3 As button:
+            btnPopupcloseBS As button:
                 BorderThickness: =0
                 Fill: =AllScreensCSS.RActiveColor
                 FocusedBorderThickness: =
@@ -1552,10 +1552,10 @@ BankScreen As screen:
                 Visible: |
                     =varComment
                 X: =(Parent.Width-Self.Width)/2
-                Y: =Icon4_6.Y+5
+                Y: =iconPopupLineBS.Y+5
                 ZIndex: =9
 
-            TextInput2_3 As text:
+            txtPopupNoCommentsBS As text:
                 BorderThickness: =0
                 Default: ="No Comments"
                 DisplayMode: =DisplayMode.View
@@ -1573,7 +1573,7 @@ BankScreen As screen:
                 Y: =Rectangle6_2.Y
                 ZIndex: =10
 
-            Label41_3 As label:
+            lblPopupUnitBS As label:
                 Font: =AllScreensCSS.RFont
                 FontWeight: =FontWeight.Semibold
                 PaddingLeft: =42
@@ -1584,14 +1584,14 @@ BankScreen As screen:
                 Y: =Container38_2.Y+Container38_2.Height
                 ZIndex: =12
 
-            Label41_4 As label:
+            lblPopupReviewerBS As label:
                 Font: =AllScreensCSS.RFont
                 FontWeight: =FontWeight.Semibold
                 Text: |-
                     ="Reviewer: " & glryProject.Selected.reviewerName
                 Visible: =varComment
                 Width: =300
-                X: =Label41_3.Width+Label41_3.X
+                X: =lblPopupUnitBS.Width+lblPopupUnitBS.X
                 Y: =Container38_2.Y+Container38_2.Height
                 ZIndex: =13
 
@@ -1609,7 +1609,7 @@ BankScreen As screen:
                 TemplatePadding: =0
                 TemplateSize: =glrySectioncomment.Height+glryCheckpointcomment.Height+glryCheckpointItemComment.Height
                 Visible: =varComment
-                Width: =TextInput2_3.Width
+                Width: =txtPopupNoCommentsBS.Width
                 X: |-
                     =//If(App.Width>1024,Parent.Width/3.8,App.Width>830,Parent.Width/5.8,Parent.Width/9.8)
                     (Parent.Width -Self.Width)/2
@@ -1627,7 +1627,7 @@ BankScreen As screen:
                     ShowScrollbar: =false
                     TemplatePadding: =1
                     TemplateSize: =100
-                    Width: =TextInput2_3.Width
+                    Width: =txtPopupNoCommentsBS.Width
                     X: =10
                     Y: =glryCheckpointcomment.Height+glryCheckpointcomment.Y
                     ZIndex: =6
@@ -1681,7 +1681,7 @@ BankScreen As screen:
                     ShowScrollbar: =false
                     TemplatePadding: =1
                     TemplateSize: =80
-                    Width: =TextInput2_3.Width
+                    Width: =txtPopupNoCommentsBS.Width
                     X: =10
                     Y: =glrySectioncomment.Height+glrySectioncomment.Y
                     ZIndex: =7
@@ -1737,7 +1737,7 @@ BankScreen As screen:
                     ShowScrollbar: =false
                     TemplatePadding: =1
                     TemplateSize: =80
-                    Width: =TextInput2_3.Width
+                    Width: =txtPopupNoCommentsBS.Width
                     X: =10
                     ZIndex: =8
 
@@ -1783,21 +1783,21 @@ BankScreen As screen:
                         Y: =Parent.TemplateHeight - 1
                         ZIndex: =5
 
-    grPatchSuccessAS_1 As group:
+    grPatchSuccessBS As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =9
 
-        Rectangle1_16 As rectangle:
+        iconOuterRectangleBS As rectangle:
             Fill: =RGBA(0, 0, 0, 0.29)
             Height: =Parent.Height
             Visible: =popupSyncSuccess =true
             Width: =Parent.Width
             ZIndex: =3
 
-        Rectangle2_15 As rectangle:
+        iconInnerRectangleBS As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =270
             Visible: =popupSyncSuccess =true
@@ -1806,16 +1806,16 @@ BankScreen As screen:
             Y: =Parent.Height/3
             ZIndex: =4
 
-        Image2_27 As image:
+        imgloaderBS As image:
             Height: =52
             Image: ='ajax-loader 2'
             Visible: =popupSyncSuccess =true
             Width: =52
             X: =(Parent.Width-Self.Width)/2
-            Y: =Rectangle2_15.Y+20
+            Y: =iconInnerRectangleBS.Y+20
             ZIndex: =5
 
-        Label1_24 As label:
+        lblSyncSuccessPatchBS As label:
             Align: =Align.Center
             Color: =RGBA(14, 161, 26, 1)
             Font: =AllScreensCSS.RFont
@@ -1827,10 +1827,10 @@ BankScreen As screen:
             Visible: =popupSyncSuccess =true
             Width: =350
             X: =(Parent.Width-Self.Width)/2
-            Y: =Image2_27.Y+Image2_27.Height
+            Y: =imgloaderBS.Y+imgloaderBS.Height
             ZIndex: =6
 
-        Label2_17 As label:
+        lblsyncSuccessBS As label:
             Align: =Align.Center
             Font: =AllScreensCSS.RFont
             FontWeight: =FontWeight.Semibold
@@ -1842,10 +1842,10 @@ BankScreen As screen:
             Visible: =popupSyncSuccess =true
             Width: =350
             X: =(Parent.Width-Self.Width)/2
-            Y: =Label1_24.Y+Label1_24.Height+20
+            Y: =lblSyncSuccessPatchBS.Y+lblSyncSuccessPatchBS.Height+20
             ZIndex: =7
 
-        btnSuccess_10 As button:
+        btnSuccessBS As button:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
@@ -1860,24 +1860,24 @@ BankScreen As screen:
                 false
             Width: =120
             X: =(Parent.Width-Self.Width)/2
-            Y: =Label2_17.Y+ Label2_17.Height+5
+            Y: =lblsyncSuccessBS.Y+ lblsyncSuccessBS.Height+5
             ZIndex: =8
 
-    grPatchSuccessAS_3 As group:
+    grpTripReportBS As group:
         Height: =5
         Width: =5
         X: =40
         Y: =40
         ZIndex: =15
 
-        Rectangle1_18 As rectangle:
+        iconOuterRectangleTripReportBS As rectangle:
             Fill: =RGBA(0, 0, 0, 0.29)
             Height: =Parent.Height
             Visible: =popupTripReportSuccess
             Width: =Parent.Width
             ZIndex: =9
 
-        Rectangle2_17 As rectangle:
+        iconInnerRectangleTripReportBS As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =270
             Visible: =popupTripReportSuccess
@@ -1886,16 +1886,16 @@ BankScreen As screen:
             Y: =Parent.Height/3
             ZIndex: =10
 
-        Image2_30 As image:
+        imgInfoBS As image:
             Height: =52
             Image: =info
             Visible: =popupTripReportSuccess
             Width: =52
             X: =(Parent.Width-Self.Width)/2
-            Y: =Rectangle2_17.Y+20
+            Y: =iconInnerRectangleTripReportBS.Y+20
             ZIndex: =11
 
-        Label1_25 As label:
+        lblSuccesspopupBS As label:
             Align: =Align.Center
             Color: =RGBA(14, 161, 26, 1)
             Font: =AllScreensCSS.RFont
@@ -1907,10 +1907,10 @@ BankScreen As screen:
             Visible: =popupTripReportSuccess
             Width: =350
             X: =(Parent.Width-Self.Width)/2
-            Y: =Image2_30.Y+Image2_30.Height
+            Y: =imgInfoBS.Y+imgInfoBS.Height
             ZIndex: =12
 
-        Label2_19 As label:
+        lblTripReportSuccessBS As label:
             Align: =Align.Center
             Font: =AllScreensCSS.RFont
             FontWeight: =FontWeight.Semibold
@@ -1922,10 +1922,10 @@ BankScreen As screen:
             Visible: =popupTripReportSuccess
             Width: =350
             X: =(Parent.Width-Self.Width)/2
-            Y: =Label1_25.Y+Label1_25.Height+20
+            Y: =lblSuccesspopupBS.Y+lblSuccesspopupBS.Height+20
             ZIndex: =13
 
-        btnSuccess_12 As button:
+        btnPopupTripReportBS As button:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
@@ -1937,6 +1937,6 @@ BankScreen As screen:
             Visible: =popupTripReportSuccess
             Width: =120
             X: =(Parent.Width-Self.Width)/2
-            Y: =Label2_19.Y+ Label2_19.Height+5
+            Y: =lblTripReportSuccessBS.Y+ lblTripReportSuccessBS.Height+5
             ZIndex: =14
 
