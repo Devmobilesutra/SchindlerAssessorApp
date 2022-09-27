@@ -555,9 +555,9 @@ TripReportScreen As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =50
                         Size: =20
-                        Text: |-
+                        Text: |+
                             ="Unit : " & LookUp(gcBankunit,Id =ThisItem.unit,unitNumber) &"   " & "Section : " & ThisItem.section
-                            //& ThisItem.unit & "  "
+                            
                         Width: =630
                         Y: =3
                         ZIndex: =1
@@ -881,21 +881,7 @@ TripReportScreen As screen:
                     PaddingTop: =30
                     Size: =AllScreensCSS.RfontsizeInput
                     Text: |-
-                        =/*CountRows(Filter(GroupBy(AddColumns(Filter(checkpointItem_ActionItem,priority="Medium" || priority="medium"),
-                        "assign",assignmentId.Id,
-                        "unit",bankUnitId.unitNumber,
-                        "section",section_id.sectionName),
-                        "assign","unit","section","data"),assign=glryProject.Selected.Id))
-                         &
-                        " Medium priority action items and " &
-                        CountRows(Filter(GroupBy(AddColumns(Filter(checkpointItem_ActionItem,priority="Low" || priority="low"),
-                        "assign",assignmentId.Id,
-                        "unit",bankUnitId.unitNumber,
-                        "section",section_id.sectionName),
-                        "assign","unit","section","data"),assign=glryProject.Selected.Id))
-                         &
-                        " Low priority action items."*/
-                        CountRows(
+                        =CountRows(
                             Filter(
                                 GC_checkpointItem_ActionItem,
                                 (assignmentId.Id = varAssignmentId && priority = "Medium") || (assignmentId.Id = varAssignmentId && priority = "medium")
@@ -922,11 +908,7 @@ TripReportScreen As screen:
                 TextInput4_2 As text:
                     BorderColor: =RGBA(179, 179, 179, 1)
                     Default: |-
-                        =/*LookUp(
-                            BankTripReport,
-                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id,
-                            General_Recommendation
-                        )*/
+                        =
                         First(localBanktripReport).General_Recommendation
                     DisplayMode: =DisplayMode.View
                     Height: |
@@ -955,7 +937,7 @@ TripReportScreen As screen:
                           Refresh(BankTripReport);
                          
                           If(CountRows(Filter(BankTripReport,assignmentId.Id=glryProject.Selected.Id 
-                          //&& bankId.Id=glryProject.Selected.bankId.Id
+                         
                           ))<1,
                         
                            // patch data to dataverse
