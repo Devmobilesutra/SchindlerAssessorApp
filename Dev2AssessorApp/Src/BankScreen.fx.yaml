@@ -802,7 +802,7 @@ BankScreen As screen:
                         Y: =30
                         ZIndex: =4
 
-                    Image1_3 As image:
+                    imgUnitsyncstatusBS As image:
                         Height: =30
                         Image: |-
                             =
@@ -849,11 +849,11 @@ BankScreen As screen:
                                 false
                             )
                         Width: =30
-                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-Image2.Width)-100
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-imgUnitSyncBS.Width)-100
                         Y: =38
                         ZIndex: =5
 
-                    Image2 As image:
+                    imgUnitSyncBS As image:
                         Height: =45
                         HoverBorderColor: =//ColorFade(Self.BorderColor, 20%)
                         HoverFill: =//ColorFade(Self.Fill, 20%)
@@ -870,7 +870,7 @@ BankScreen As screen:
                         Y: =30
                         ZIndex: =6
 
-                    Button5 As button:
+                    btnUnitSyncBS As button:
                         BorderThickness: =0
                         DisabledColor: |-
                             =//RGBA(166, 166, 166, 1)

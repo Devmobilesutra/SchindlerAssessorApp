@@ -1,13 +1,7 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |+
-        =//Clear(gcProjectAssignment);
-        //Clear(GC_bankAssessment);
-        //Clear(GC_product);
-        //Clear(GC_templateSections);
-        //Clear(GcSectionAssessment);
-         
-        Set(
+        =Set(
             timerX,
             0
         );
@@ -99,9 +93,7 @@ App As appinfo:
         //**********************************************************************************************************
         //Get LoggedAssessor Details from assessor AzueAAD group and store it into collection
         //powerapp handles authentication of respective user and display apropriate message
-        //If(Connection.Connected,
-        //Notify("Onstart start",NotificationType.Information);
-            
+           
             Clear(LoggedAssessor);
         If(
             Connection.Connected,
@@ -144,9 +136,8 @@ App As appinfo:
                     id
                 )
             );
-                //Notify("AAD not connect.");
         );
-                //**********************************************************************************************************
+        //**********************************************************************************************************
              
            //load  deleted action and image data  from local cache
                LoadData(
@@ -246,13 +237,11 @@ App As appinfo:
                 );
                 ,
                 Notify("Internet connectivity must be available when you start app first time.");
-            );
-            
+            );    
         );
-                //);
-        Concurrent(
-                    //**********Here we load reference data from cache and store it into collection
         
+        Concurrent(
+        //Here we load reference data from cache and store it into collection
             LoadData(
                 gcClient,
                 "localclient"
@@ -287,7 +276,6 @@ App As appinfo:
                 GC_unitAssessment,
                 "localunitassessment"
             )
-            //Notify("transaction data loaded from cache",NotificationType.Information);
             );
                 //check if any unsend findings are available in collection if so do not do anything else clear collect data of assignment related tables (except five transaction tables)
         //If(

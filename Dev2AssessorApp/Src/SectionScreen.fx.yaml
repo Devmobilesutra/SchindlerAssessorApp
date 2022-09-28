@@ -27,26 +27,14 @@ SectionScreen As screen:
             Width: =Parent.Width
             ZIndex: =9
 
-            GroupHeaderBS_1 As group:
+            grpHeaderBS As group:
                 Height: =5
                 Width: =5
                 X: =40
                 Y: =40
                 ZIndex: =10
 
-                imgLogoSS As image:
-                    DisplayMode: =DisplayMode.View
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =ctnHeaderSS.Height
-                    Image: ='schindler-logo'
-                    PaddingBottom: =5
-                    PaddingLeft: =2
-                    PaddingRight: =1
-                    PaddingTop: =5
-                    Width: =ctnHeaderSS.Width/12
-                    ZIndex: =1
-
-                lblAssessmentBS_1 As label:
+                lblAssessmentBS As label:
                     Align: =Align.Center
                     Color: =Header.HeaderColor
                     Font: =Header.HeaderFont
@@ -59,7 +47,7 @@ SectionScreen As screen:
                     X: =imgLogoSS.Width
                     ZIndex: =2
 
-                imgUserHeaderBS_1 As image:
+                imgUserHeaderBS As image:
                     Height: =50
                     Image: =userImg
                     ImagePosition: =ImagePosition.Fill
@@ -68,11 +56,11 @@ SectionScreen As screen:
                     RadiusTopLeft: =ctnHeaderSS.Height/0.10
                     RadiusTopRight: =ctnHeaderSS.Height/0.10
                     Width: =50
-                    X: =lblAssessmentBS_1.X+lblAssessmentBS_1.Width
+                    X: =lblAssessmentBS.X+lblAssessmentBS.Width
                     Y: =(ctnHeaderSS.Height-Self.Height)/2
                     ZIndex: =4
 
-                lblUsernameHeaderBS_1 As label:
+                lblUsernameHeaderBS As label:
                     Color: =RGBA(255, 255, 255, 1)
                     Font: =Header.HeaderFont
                     FontWeight: =FontWeight.Bold
@@ -82,13 +70,8 @@ SectionScreen As screen:
                     Text: |
                         =username
                     Width: =ctnHeaderSS.Width/6
-                    X: =imgUserHeaderBS_1.Width+imgUserHeaderBS_1.X
+                    X: =imgUserHeaderBS.Width+imgUserHeaderBS.X
                     ZIndex: =5
-
-                ComponentNetworkicon As Component2:
-                    X: =lblUsernameHeaderBS_1.Width+lblUsernameHeaderBS_1.X
-                    Y: =(ctnHeaderDS.Height-Self.Height)/2
-                    ZIndex: =9
 
         ctnSectionSS As groupContainer.verticalAutoLayoutContainer:
             Height: |-
@@ -153,7 +136,7 @@ SectionScreen As screen:
                         RadiusTopLeft: =0
                         RadiusTopRight: =0
                         Size: =AllScreensCSS.RLabelFontSize-2
-                        Text: ="Back123456"
+                        Text: ="Back"
                         Width: =ctnBackSS.Width/6
                         ZIndex: =1
 
@@ -347,7 +330,7 @@ SectionScreen As screen:
                     Y: =ctnAssessmentDateSS.Height+ctnAssessmentDateSS.Y
                     ZIndex: =7
 
-                    lblSectionname_2 As label:
+                    lblSeriesnameSS As label:
                         Color: =RGBA(209, 19, 19, 1)
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Bold
@@ -472,7 +455,7 @@ SectionScreen As screen:
                     ShowScrollbar: =false
                     TemplateSize: |-
                         =//100+chglryCheckpointsSS_2.Height
-                        If(locInfoExpanded=false,100,chglryCheckpointsSS_2.Height+100)
+                        If(locInfoExpanded=false,100,chglryCheckpointSS.Height+100)
                     Visible: |-
                         =If(varSafety = true,true, false)
                          /*If(CountRows(
@@ -485,7 +468,7 @@ SectionScreen As screen:
                         ctnSafetyCheckSS.Height +ctnSafetyCheckSS.Y
                     ZIndex: =5
 
-                    lblSectionSS_2 As label:
+                    lblSectionnameSS As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
                         OnSelect: =Select(Parent)
@@ -494,14 +477,14 @@ SectionScreen As screen:
                             =ThisItem.sectionname
                         Width: =If(Parent.Width<1024,glrySectionSS.Width/1.7,glrySectionSS.Width/1.5)
                         X: =Parent.Width/30
-                        Y: =RectanglebroderSS_2.Height/3.5
+                        Y: =iconRectanglebroderSS.Height/3.5
                         ZIndex: =1
 
-                    "chglryCheckpointsSS_2 As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
+                    "chglryCheckpointSS As gallery.'BrowseLayout_Vertical_TwoTextVariant_ver4.0'":
                         Fill: =RGBA(237, 237, 237, 1)
-                        Height: =(CountRows(chglryCheckpointsSS_2.AllItems)*chglryCheckpointsSS_2.TemplateHeight)
+                        Height: =(CountRows(chglryCheckpointSS.AllItems)*chglryCheckpointSS.TemplateHeight)
                         Items: |
-                            =Sort(Filter(GC_templateCheckpoints,seriesName=CId && sectionId.sectionname=lblSectionSS_2.Text,checkpointName),Value(checkpointSequence),Ascending)
+                            =Sort(Filter(GC_templateCheckpoints,seriesName=CId && sectionId.sectionname=lblSectionnameSS.Text,checkpointName),Value(checkpointSequence),Ascending)
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
                         TemplatePadding: =0
@@ -514,10 +497,10 @@ SectionScreen As screen:
                             If(locInfoExpanded=true,ThisItem.IsSelected)
                             
                         Width: =Parent.Width/1.03
-                        Y: =RectanglebroderSS_2.Height+5
+                        Y: =iconRectanglebroderSS.Height+5
                         ZIndex: =1
 
-                        lblCheckpointsSS_2 As label:
+                        lblCheckpointsSS As label:
                             AutoHeight: =true
                             Font: =AllScreensCSS.RFont
                             Height: =80
@@ -536,20 +519,20 @@ SectionScreen As screen:
                                 20
                             ZIndex: =2
 
-                        SepChglryProductSS_2 As rectangle:
+                        SepChglryProductSS As rectangle:
                             Height: =1
                             OnSelect: =Select(Parent)
                             Width: |-
                                 =//Parent.TemplateWidth
-                                chglryCheckpointsSS_2.Width/1.06
+                                chglryCheckpointSS.Width/1.06
                             X: =30
                             Y: =Parent.TemplateHeight - 1
                             ZIndex: =4
 
-                        btnStartAssessmentSS_2 As button:
+                        btnStartAssessmentSS As button:
                             Fill: =AllScreensCSS.RActiveColor
                             Font: =AllScreensCSS.RFont
-                            Height: =chglryCheckpointsSS_2.TemplateHeight/1.8
+                            Height: =chglryCheckpointSS.TemplateHeight/1.8
                             HoverColor: =Self.Color
                             HoverFill: =Self.Fill
                             OnSelect: |
@@ -596,20 +579,20 @@ SectionScreen As screen:
                                        ,"Resume Assessment","Start Assessment"
                                        )
                                 
-                            Width: =chglryCheckpointsSS_2.Width/6
+                            Width: =chglryCheckpointSS.Width/6
                             X: =(Parent.Width-Self.Width)-30
                             Y: |-
                                 =//chglryProduct_1.Height/5
                                 20
                             ZIndex: =5
 
-                        btnCommentSS_2 As button:
+                        btnCheckpointCommentSS As button:
                             Color: =AllScreensCSS.RColorWhite
                             DisplayMode: |
                                 =//If(IsEmpty(ThisItem.checkpointAssessment.checkpointComment)|| IsBlank(ThisItem.checkpointAssessment.checkpointComment),DisplayMode.Disabled,Edit)
                                 If(LookUp(GcCheckpointAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=varBankUnitId && checkpointId.checkpointId=ThisItem.checkpointId,checkpointComment)=Blank(),DisplayMode.Disabled,DisplayMode.Edit)
                             Fill: =AllScreensCSS.RActiveColor
-                            Height: =chglryCheckpointsSS_2.TemplateHeight/2
+                            Height: =chglryCheckpointSS.TemplateHeight/2
                             HoverColor: =AllScreensCSS.RColorWhite
                             HoverFill: =AllScreensCSS.RActiveColor
                             OnSelect: |
@@ -618,11 +601,11 @@ SectionScreen As screen:
                                 Set(varSectionComment,false);
                                 Set(varCheckpointComment,true);
                             Text: ="View Comment"
-                            X: =Parent.Width-btnStartAssessmentSS_2.Width-1.3*Self.Width
+                            X: =Parent.Width-btnStartAssessmentSS.Width-1.3*Self.Width
                             Y: =20
                             ZIndex: =6
 
-                        Image1 As image:
+                        imgCheckpointSS As image:
                             Height: =30
                             Image: |-
                                 =//'Unsentdata (2)'
@@ -664,11 +647,11 @@ SectionScreen As screen:
                                     false
                                 )
                             Width: =30
-                            X: =lblCheckpointsSS_2.Width+lblCheckpointsSS_2.X+25
+                            X: =lblCheckpointsSS.Width+lblCheckpointsSS.X+25
                             Y: =30
                             ZIndex: =7
 
-                    RectanglebroderSS_2 As rectangle:
+                    iconRectanglebroderSS As rectangle:
                         BorderColor: =AllScreensCSS.RActiveColor
                         BorderThickness: =2
                         Fill: =RGBA(0, 0, 0, 0)
@@ -678,7 +661,7 @@ SectionScreen As screen:
                         Y: =2
                         ZIndex: =2
 
-                    imgCollapseSS_2 As image:
+                    imgSectionCollapseSS As image:
                         Height: =40
                         Image: =accordianPlus
                         OnSelect: |-
@@ -715,10 +698,10 @@ SectionScreen As screen:
                             !(ThisItem.IsSelected && locInfoExpanded)
                         Width: =glrySectionSS.Width/18
                         X: =glrySectionSS.Width/1.1
-                        Y: =RectanglebroderSS_2.Height/3.5
+                        Y: =iconRectanglebroderSS.Height/3.5
                         ZIndex: =5
 
-                    imgExpandSS_2 As image:
+                    imgSectionExpandSS As image:
                         Height: =40
                         Image: =accordianMinus
                         OnSelect: |
@@ -733,7 +716,7 @@ SectionScreen As screen:
                             ThisItem.IsSelected && locInfoExpanded
                         Width: =glrySectionSS.Width/18
                         X: =glrySectionSS.Width/1.1
-                        Y: =RectanglebroderSS_2.Height/3.5
+                        Y: =iconRectanglebroderSS.Height/3.5
                         ZIndex: =6
 
                     btncommentSS As button:
@@ -751,11 +734,11 @@ SectionScreen As screen:
                             Set(varCheckpointComment,false);
                         Size: =AllScreensCSS.RfontsizeInput
                         Text: ="View Comment"
-                        X: =Image1_2.Width+Image1_2.X+10
+                        X: =imgsectionstatusSS.Width+imgsectionstatusSS.X+10
                         Y: =20
                         ZIndex: =7
 
-                    Image1_2 As image:
+                    imgsectionstatusSS As image:
                         Height: =30
                         Image: |-
                             =//ForAll(chglryCheckpointsSS_2.AllItems  As i,If(  i.Image1.Image=sentdata,sentdata,'Unsentdata (2)'))
@@ -797,7 +780,7 @@ SectionScreen As screen:
                                 false
                             )
                         Width: =30
-                        X: =lblSectionSS_2.Width+lblSectionSS_2.X+10
+                        X: =lblSectionnameSS.Width+lblSectionnameSS.X+10
                         Y: =30
                         ZIndex: =8
 
