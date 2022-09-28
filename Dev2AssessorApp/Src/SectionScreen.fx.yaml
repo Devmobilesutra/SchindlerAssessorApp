@@ -34,18 +34,6 @@ SectionScreen As screen:
                 Y: =40
                 ZIndex: =10
 
-                imgLogoSS As image:
-                    DisplayMode: =DisplayMode.View
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =ctnHeaderSS.Height
-                    Image: ='schindler-logo'
-                    PaddingBottom: =5
-                    PaddingLeft: =2
-                    PaddingRight: =1
-                    PaddingTop: =5
-                    Width: =ctnHeaderSS.Width/12
-                    ZIndex: =1
-
                 lblAssessmentBS As label:
                     Align: =Align.Center
                     Color: =Header.HeaderColor
@@ -84,11 +72,6 @@ SectionScreen As screen:
                     Width: =ctnHeaderSS.Width/6
                     X: =imgUserHeaderBS.Width+imgUserHeaderBS.X
                     ZIndex: =5
-
-                ComponentNetworkicon As Component2:
-                    X: =lblUsernameHeaderBS.Width+lblUsernameHeaderBS.X
-                    Y: =(ctnHeaderDS.Height-Self.Height)/2
-                    ZIndex: =9
 
         ctnSectionSS As groupContainer.verticalAutoLayoutContainer:
             Height: |-
