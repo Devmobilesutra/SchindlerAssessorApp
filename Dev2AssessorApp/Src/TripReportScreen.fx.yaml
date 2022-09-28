@@ -441,14 +441,14 @@ TripReportScreen As screen:
                     Width: =Parent.Width
                     ZIndex: =6
 
-            Container5 As groupContainer.verticalAutoLayoutContainer:
+            ctnActionsTRS As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderColor: =RGBA(255, 0, 0, 1)
                 BorderThickness: =6
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
-                    Gallery14_1.Height+50
+                    glryActionsTRS.Height+50
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =1000
                 LayoutMinWidth: =250
@@ -460,14 +460,14 @@ TripReportScreen As screen:
                 Y: =ctnTripReportTRS.Height+ctnTripReportTRS.Y
                 ZIndex: =5
 
-                Gallery14_1 As gallery.variableTemplateHeightGallery:
-                    AlignInContainer: =AlignInContainer.Start
+                glryActionsTRS As gallery.variableTemplateHeightGallery:
+                    AlignInContainer: =AlignInContainer.SetByContainer
                     BorderColor: =RGBA(255, 191, 0, 1)
                     BorderThickness: =7
                     FillPortions: =0
                     Height: |
                         =//Parent.Height
-                        CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)*1.8
+                        CountRows(glryActionsTRS.AllItems)*(glryActionsTRS.TemplateHeight)*1.8
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
@@ -479,7 +479,7 @@ TripReportScreen As screen:
                     X: =40
                     Y: |-
                         =//40
-                        Container5.Y
+                        ctnActionsTRS.Y
                     ZIndex: =1
 
                     Label22 As label:
