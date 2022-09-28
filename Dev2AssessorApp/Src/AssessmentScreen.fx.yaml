@@ -1228,7 +1228,9 @@ AssessmentScreen As screen:
                                 UserLastNavigated,
                                 Now()
                             );
+                            
                                 Set(varSpinner, true );
+                            
                                 //for changing (tabs) depending on  assessment status upcomming to inprogress for first time
                                 //if collection contain assessment status upcomming or inprogress1 then we set variable to navigate dashboard screen 
                             If(
@@ -1247,7 +1249,7 @@ AssessmentScreen As screen:
                                         true
                                     );
                             
-                            //Updating assessment status inside collection
+                            //Updating assignment status and sync status inside collection first time for detecting unpatched data
                             UpdateIf(
                                         gcProjectAssignment,
                                         Id = varAssignmentId && bankId.Id = VarBankId && isCompleted = "Inprogress1",
@@ -1263,7 +1265,7 @@ AssessmentScreen As screen:
                                     "Network is not available , please try after sometime ."
                                 );
                              
-                            //for bank assessment status update 0 to 1
+                            //updating bank assessment status from 0 to 1 first time for detecting unpatched data
                             UpdateIf(
                                     GC_bankAssessment,
                                     assignmentId.Id = varAssignmentId && bankId.Id = VarBankId && BstatusUpdate = 0,
@@ -1272,7 +1274,7 @@ AssessmentScreen As screen:
                                     }
                                 );
                             
-                            //for unit assessment status update 0 to 1
+                            //updating unit assessment status from 0 to 1 first time for detecting unpatched data and sync status update
                             UpdateIf(
                                     GC_unitAssessment,
                                     assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && UstatusUpdate = 0
@@ -1281,7 +1283,7 @@ AssessmentScreen As screen:
                                         UstatusUpdate: 1
                                     }
                                 );
-                            //for Section assessment status update 0 to 1
+                            //updating Section assessment status from 0 to 1 for detecting unpatched data and sync status update
                             UpdateIf(
                                     GcSectionAssessment,
                                     'sectionAssessment (quantum_sectionassessment)' = varSA && SstatusUpdate = 0
@@ -1290,7 +1292,7 @@ AssessmentScreen As screen:
                                         SstatusUpdate: 1
                                     }
                                 );
-                            //for checkpoint assessment status update 0 to 1
+                            //forcheckpoint assessment status update 0 to 1 for sync status update
                             UpdateIf(
                                     GcCheckpointAssessment,
                                     checkpointAssessment_id = GuidId && CstatusUpdate = 0
@@ -1299,7 +1301,8 @@ AssessmentScreen As screen:
                                         CstatusUpdate: 1
                                     }
                                 );
-                                //for Checkpoint item assessment status update 0 to 1
+                            
+                            //Checkpoint item assessment status update 0 to 1 for sync status update
                             UpdateIf(
                                     GC_checkpointItemAssessment,
                                     checkpointAssessment_Id.checkpointAssessment_id = GuidId && CIstatusUpdate = 0,
@@ -1307,7 +1310,8 @@ AssessmentScreen As screen:
                                         CIstatusUpdate: 1
                                     }
                                 );
-                            //for checkpoint item action item status update 0 to 1
+                            
+                            //updating checkpointitem action's item status from 0 to 1 for detecting unpatched data
                             UpdateIf(
                                     GC_checkpointItem_ActionItem,
                                     checkpoint_id.checkpointAssessment_id = GuidId && CIAstatusUpdate = 0,
