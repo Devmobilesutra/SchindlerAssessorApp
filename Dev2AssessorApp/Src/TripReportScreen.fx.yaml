@@ -1314,3 +1314,4 @@ TripReportScreen As screen:
             X: =iconRectangleCommentTRS.X
             Y: =iconRectangleCommentTRS.Y
             ZIndex: =20
+
