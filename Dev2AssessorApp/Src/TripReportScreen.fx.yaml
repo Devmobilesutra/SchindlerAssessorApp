@@ -195,7 +195,7 @@ TripReportScreen As screen:
                             350
                         ZIndex: =1
 
-                    lblBankAS_7 As label:
+                    lblBankASTRS As label:
                         FillPortions: =1
                         Font: =AllScreensCSS.RFont
                         Height: =ctnBankASTRS.Height
@@ -208,7 +208,7 @@ TripReportScreen As screen:
                         X: =lblBankNumberTRS.X+lblBankNumberTRS.Width
                         ZIndex: =2
 
-                ctnAssessmntTypeAS_4 As groupContainer.verticalAutoLayoutContainer:
+                ctnAssessmntTypeTRS As groupContainer.verticalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
@@ -219,10 +219,10 @@ TripReportScreen As screen:
                     Width: =ctnMiddleTRS.Width
                     ZIndex: =3
 
-                    lblAssessmentTypeAS_4 As label:
+                    lblAssessmentTypeTRS As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
-                        Height: =ctnAssessmntTypeAS_4.Height
+                        Height: =ctnAssessmntTypeTRS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Assessment type "
@@ -231,20 +231,20 @@ TripReportScreen As screen:
                             350
                         ZIndex: =1
 
-                    lblAtypeAS_4 As label:
+                    lblAtypeTRS As label:
                         FillPortions: =1
                         Font: =AllScreensCSS.RFont
-                        Height: =ctnAssessmntTypeAS_4.Height
+                        Height: =ctnAssessmntTypeTRS.Height
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
                             =
                             glryProject.Selected.assessmentType
                         Width: =ctnMiddleTRS.Width/4
-                        X: =lblAssessmentTypeAS_4.X+lblAssessmentTypeAS_4.Width
+                        X: =lblAssessmentTypeTRS.X+lblAssessmentTypeTRS.Width
                         ZIndex: =2
 
-                ctnProductTypeAS_7 As groupContainer.verticalAutoLayoutContainer:
+                ctnProductTypeTRS As groupContainer.verticalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
@@ -255,10 +255,10 @@ TripReportScreen As screen:
                     Width: =ctnMiddleTRS.Width
                     ZIndex: =4
 
-                    lblAssessmentTypeAS_7 As label:
+                    lblProductTypeTRS As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
-                        Height: =ctnProductTypeAS_7.Height
+                        Height: =ctnProductTypeTRS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Product type "
@@ -267,18 +267,18 @@ TripReportScreen As screen:
                             350
                         ZIndex: =1
 
-                    lblAtypeAS_7 As label:
+                    lblProductTRS As label:
                         FillPortions: =1
                         Font: =AllScreensCSS.RFont
-                        Height: =ctnProductTypeAS_7.Height
+                        Height: =ctnProductTypeTRS.Height
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: =LookUp(gcBank,Id=VarBankId,productId.product_Model)
                         Width: =ctnMiddleTRS.Width/4
-                        X: =lblAssessmentTypeAS_7.X+lblAssessmentTypeAS_7.Width
+                        X: =lblProductTypeTRS.X+lblProductTypeTRS.Width
                         ZIndex: =2
 
-                ctnAssessmentDateAS_4 As groupContainer.verticalAutoLayoutContainer:
+                ctnAssessmentDateTRS As groupContainer.verticalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
@@ -289,10 +289,10 @@ TripReportScreen As screen:
                     Width: =ctnMiddleTRS.Width
                     ZIndex: =5
 
-                    lblAssessmentDateAS_4 As label:
+                    lblAssessmentDateTRS As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
-                        Height: =ctnAssessmentDateAS_4.Height
+                        Height: =ctnAssessmentDateTRS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Assessment date "
@@ -301,20 +301,20 @@ TripReportScreen As screen:
                             350
                         ZIndex: =1
 
-                    lblADateAS_4 As label:
+                    lblADateTRS As label:
                         FillPortions: =1
                         Font: =AllScreensCSS.RFont
-                        Height: =ctnAssessmentDateAS_4.Height
+                        Height: =ctnAssessmentDateTRS.Height
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
                             =
                             Text(glryProject.Selected.assignedDate,"mm-dd-yyyy")
                         Width: =ctnMiddleTRS.Width/8
-                        X: =lblAssessmentDateAS_4.X+lblAssessmentDateAS_4.Width
+                        X: =lblAssessmentDateTRS.X+lblAssessmentDateTRS.Width
                         ZIndex: =2
 
-                ctnUnitAS_2 As groupContainer.verticalAutoLayoutContainer:
+                ctnReviewerTRS As groupContainer.verticalAutoLayoutContainer:
                     AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
@@ -326,10 +326,10 @@ TripReportScreen As screen:
                     Y: =
                     ZIndex: =6
 
-                    lblBankNumberAS_9 As label:
+                    lblReviewverTRS As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
-                        Height: =ctnUnitAS_2.Height
+                        Height: =ctnReviewerTRS.Height
                         PaddingLeft: =40
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Reviewer Name "
@@ -338,18 +338,18 @@ TripReportScreen As screen:
                             350
                         ZIndex: =1
 
-                    lblBankAS_9 As label:
+                    lblReviewverNameTRS As label:
                         FillPortions: =1
                         Font: =AllScreensCSS.RFont
-                        Height: =ctnUnitAS_2.Height
+                        Height: =ctnReviewerTRS.Height
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: =glryProject.Selected.reviewerName
                         Width: =ctnMiddleTRS.Width/6
-                        X: =lblBankNumberAS_9.X+lblBankNumberAS_9.Width
+                        X: =lblReviewverTRS.X+lblReviewverTRS.Width
                         ZIndex: =2
 
-            ctnSectionAS_3 As groupContainer.verticalAutoLayoutContainer:
+            ctnTripReportTRS As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =0
                 Height: =650
@@ -363,7 +363,7 @@ TripReportScreen As screen:
                 Y: =ctnMainassessmentTRS.Height+ctnMainassessmentTRS.Y
                 ZIndex: =4
 
-                lblSectionname_3 As label:
+                lblSectionnameTRS As label:
                     Color: =RGBA(209, 19, 19, 1)
                     FontWeight: =FontWeight.Bold
                     Height: =40//ctnSectionAS_3.Height
@@ -376,7 +376,7 @@ TripReportScreen As screen:
                     X: =60
                     ZIndex: =1
 
-                lblSectionAS_2 As label:
+                lblSummaryTRS As label:
                     Color: =AllScreensCSS.RColorBlack
                     FontWeight: =FontWeight.Semibold
                     Height: =50
@@ -386,7 +386,7 @@ TripReportScreen As screen:
                     Width: =Parent.Width-80
                     ZIndex: =2
 
-                TextInput4 As text:
+                txtSummaryTRS As text:
                     BorderColor: =RGBA(179, 179, 179, 1)
                     Default: |-
                         =
@@ -403,7 +403,7 @@ TripReportScreen As screen:
                     Width: =Parent.Width-80
                     ZIndex: =3
 
-                lblSectionAS_4 As label:
+                lblBackroundTRS As label:
                     Color: =AllScreensCSS.RColorBlack
                     FontWeight: =FontWeight.Semibold
                     Height: =50
@@ -413,7 +413,7 @@ TripReportScreen As screen:
                     Width: =Parent.Width-80
                     ZIndex: =4
 
-                TextInput7 As text:
+                txtBackgroundTRS As text:
                     BorderColor: =RGBA(179, 179, 179, 1)
                     Default: |-
                         =
@@ -430,7 +430,7 @@ TripReportScreen As screen:
                     Width: =Parent.Width-80
                     ZIndex: =5
 
-                lblSectionAS_5 As label:
+                lblConclusionTRS As label:
                     Color: =AllScreensCSS.RColorBlack
                     FontWeight: =FontWeight.Semibold
                     Height: =60
@@ -442,7 +442,7 @@ TripReportScreen As screen:
                     ZIndex: =6
 
                 ctnAssessmntTypeAS_6 As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.Start
+                    AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
                     LayoutMinHeight: =30
@@ -476,7 +476,7 @@ TripReportScreen As screen:
                         ZIndex: =2
 
                 ctnAssessmentDateAS_6 As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.Start
+                    AlignInContainer: =AlignInContainer.SetByContainer
                     FillPortions: =0
                     Height: =30
                     LayoutMinHeight: =30
@@ -525,7 +525,7 @@ TripReportScreen As screen:
                 PaddingRight: =40
                 PaddingTop: =20
                 Width: =Parent.Width
-                Y: =ctnSectionAS_3.Height+ctnSectionAS_3.Y
+                Y: =ctnTripReportTRS.Height+ctnTripReportTRS.Y
                 ZIndex: =5
 
                 Gallery14_1 As gallery.variableTemplateHeightGallery:
@@ -951,7 +951,7 @@ TripReportScreen As screen:
                                 assessor_id:glryProject.Selected.assessorId,
                                 assessor_name:glryProject.Selected.assessorName,
                                 assignmentId:LookUp(assignments,Id=glryProject.Selected.Id),
-                                Background:TextInput7.Text,
+                                Background:txtBackgroundTRS.Text,
                                 bankId:LookUp(schindlerBanks,Id=glryProject.Selected.bankId.Id),
                                 //bankUnitId:
                                 clientid:LookUp(schindlerClients,Id=glryProject.Selected.clientId.Id),
@@ -961,7 +961,7 @@ TripReportScreen As screen:
                                 reviewer_email:glryProject.Selected.reviewerEmail,
                                 reviewer_id:glryProject.Selected.reviewerId,
                                 reviewer_name:glryProject.Selected.reviewerName,
-                                Summary:TextInput4.Text
+                                Summary:txtSummaryTRS.Text
                         
                                }));
                            If(
@@ -995,7 +995,7 @@ TripReportScreen As screen:
                                 assessor_id:glryProject.Selected.assessorId,
                                 assessor_name:glryProject.Selected.assessorName,
                                 assignmentId:LookUp(assignments,Id=glryProject.Selected.Id),
-                                Background:TextInput7.Text,
+                                Background:txtBackgroundTRS.Text,
                                 bankId:LookUp(schindlerBanks,Id=glryProject.Selected.bankId.Id),
                                 //bankUnitId:
                                 clientid:LookUp(schindlerClients,Id=glryProject.Selected.clientId.Id),
@@ -1005,7 +1005,7 @@ TripReportScreen As screen:
                                 reviewer_email:glryProject.Selected.reviewerEmail,
                                 reviewer_id:glryProject.Selected.reviewerId,
                                 reviewer_name:glryProject.Selected.reviewerName,
-                                Summary:TextInput4.Text
+                                Summary:txtSummaryTRS.Text
                             });
                             );
                         
@@ -1197,7 +1197,7 @@ TripReportScreen As screen:
         Y: =40
         ZIndex: =21
 
-        iconBackgorundRectangleSS_1 As rectangle:
+        iconOuterBackgroundRectangleSS As rectangle:
             Fill: =RGBA(0, 0, 0, 0.29)
             Height: =Parent.Height
             Visible: |
@@ -1205,7 +1205,7 @@ TripReportScreen As screen:
             Width: =Parent.Width
             ZIndex: =14
 
-        iconRectanglecmntboxSS_1 As rectangle:
+        iconRectanglecommentboxSS As rectangle:
             Fill: =RGBA(255, 255, 255, 1)
             Height: =405
             Visible: |
@@ -1220,9 +1220,9 @@ TripReportScreen As screen:
             LayoutMode: =LayoutMode.Auto
             Visible: |
                 =varComment
-            Width: =iconRectanglecmntboxSS_1.Width
-            X: =iconRectanglecmntboxSS_1.X
-            Y: =iconRectanglecmntboxSS_1.Y+10
+            Width: =iconRectanglecommentboxSS.Width
+            X: =iconRectanglecommentboxSS.X
+            Y: =iconRectanglecommentboxSS.Y+10
             ZIndex: =16
 
             lblCommentHeaderTRS As label:
@@ -1253,7 +1253,7 @@ TripReportScreen As screen:
             Visible: |
                 =varComment
             Width: =656
-            X: =iconRectanglecmntboxSS_1.X+20
+            X: =iconRectanglecommentboxSS.X+20
             Y: =ctnCommentHeaderTRS.Y+ctnCommentHeaderTRS.Height +10
             ZIndex: =17
 
