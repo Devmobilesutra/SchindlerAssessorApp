@@ -34,45 +34,6 @@ SectionScreen As screen:
                 Y: =40
                 ZIndex: =8
 
-                lblAssessmentBS As label:
-                    Align: =Align.Center
-                    Color: =Header.HeaderColor
-                    Font: =Header.HeaderFont
-                    FontWeight: =FontWeight.Bold
-                    Height: =ctnHeaderSS.Height
-                    Size: =Header.HeaderFontSize
-                    Text: |
-                        =lblProjectName.Text
-                    Width: =ctnHeaderSS.Width/1.65
-                    X: =imgLogoSS.Width
-                    ZIndex: =2
-
-                imgUserHeaderBS As image:
-                    Height: =50
-                    Image: =userImg
-                    ImagePosition: =ImagePosition.Fill
-                    RadiusBottomLeft: =ctnHeaderSS.Height/0.10
-                    RadiusBottomRight: =ctnHeaderSS.Height/0.10
-                    RadiusTopLeft: =ctnHeaderSS.Height/0.10
-                    RadiusTopRight: =ctnHeaderSS.Height/0.10
-                    Width: =50
-                    X: =lblAssessmentBS.X+lblAssessmentBS.Width
-                    Y: =(ctnHeaderSS.Height-Self.Height)/2
-                    ZIndex: =4
-
-                lblUsernameHeaderBS As label:
-                    Color: =RGBA(255, 255, 255, 1)
-                    Font: =Header.HeaderFont
-                    FontWeight: =FontWeight.Bold
-                    Height: =ctnHeaderSS.Height
-                    PaddingLeft: =20
-                    Size: =Header.HeaderUserFontSize-2
-                    Text: |
-                        =username
-                    Width: =ctnHeaderSS.Width/6
-                    X: =imgUserHeaderBS.Width+imgUserHeaderBS.X
-                    ZIndex: =5
-
                 imgLogoSS As image:
                     DisplayMode: =DisplayMode.View
                     Fill: =RGBA(255, 255, 255, 1)
