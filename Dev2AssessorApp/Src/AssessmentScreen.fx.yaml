@@ -1515,6 +1515,16 @@ AssessmentScreen As screen:
                                         GC_unitAssessment,
                                         "localunitassessment"
                                     );
+                            
+                            
+                            If(CountRows(Filter(
+                                                        GcSectionAssessment,
+                                                        assignmentId.Id = varAssignmentId && 
+                                                        bankUnitId.Id = varBankUnitId && SstatusUpdate = 1 
+                                                    ))>0,
+                            
+                            
+                            
                                     //patching status 1 section assessment data to dataverse table
                                          Patch(
                                             sectionAssessment,
@@ -1567,6 +1577,7 @@ AssessmentScreen As screen:
                                             GcSectionAssessment,
                                             "localsectionassessment"
                                         );
+                                        
                             
                                 //updating sectionid lookup for checkpoint assessment collection to get updated unique key from dataverse using temporary collection
                             ForAll(
@@ -1583,7 +1594,32 @@ AssessmentScreen As screen:
                                             );
                                         );
                             
+                                                  
+                            //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
+                            ForAll(
+                                            TempSectionAssessment As i,
+                                           
+                                                UpdateIf(
+                                                    GC_checkpointItemAssessment,
+                                                    section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
+                                                    {
+                                                        section_Id: LookUp(
+                                                            TempSectionAssessment,
+                                                            'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                                        )
+                                                       
+                                                    }
+                                                
+                                            );
+                                        );
+                                        );//if
+                            
                                     
+                            
+                                    If(CountRows(Filter(
+                                                        GcCheckpointAssessment,
+                                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CstatusUpdate = 1
+                                                    ))>0,
                             // inside checkpoint assessment collection => rows contain status 1 => patch that rows to dataverse
                             
                                         Patch(
@@ -1639,18 +1675,19 @@ AssessmentScreen As screen:
                                         );
                                         
                             //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
-                            ForAll(
-                                            TempSectionAssessment As i,
+                            //ForAll(
+                                     //       TempSectionAssessment As i,
                                             ForAll(
                                                 TempCheckpointAssessment As a,
                                                 UpdateIf(
                                                     GC_checkpointItemAssessment,
-                                                    section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpointAssessment_Id.checkpointAssessment_id = a.checkpointAssessment_id,
+                                                    //section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && 
+                                                    checkpointAssessment_Id.checkpointAssessment_id = a.checkpointAssessment_id,
                                                     {
-                                                        section_Id: LookUp(
-                                                            TempSectionAssessment,
-                                                            'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
-                                                        ),
+                                                       // section_Id: LookUp(
+                                                          //  TempSectionAssessment,
+                                                          //  'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
+                                                      //  ),
                                                         checkpointAssessment_Id: LookUp(
                                                             TempCheckpointAssessment,
                                                             checkpointAssessment_id = a.checkpointAssessment_id
@@ -1660,6 +1697,10 @@ AssessmentScreen As screen:
                                             );
                                         );
                                     
+                                    If(CountRows(Filter(
+                                                        GC_checkpointItemAssessment,
+                                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIstatusUpdate = 1
+                                                    ))>0,);
                                 // inside checkpoint item assessment collection => rows contain status 1 => patch that rows to dataverse
                                         Patch(
                                             checkpointItemAssessment,
@@ -1715,24 +1756,25 @@ AssessmentScreen As screen:
                                             "localcheckpointitemassessment"
                                         );
                                  //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
-                            ForAll(
-                                            TempSectionAssessment As i,
-                                            ForAll(
-                                                TempCheckpointAssessment As j,
+                            //ForAll(
+                                       //     TempSectionAssessment As i,
+                                        //    ForAll(
+                                       //         TempCheckpointAssessment As j,
                                                 ForAll(
                                                     TempCheckpointItemAssessment As k,
                                                     UpdateIf(
                                                         GC_checkpointItem_ActionItem,
-                                                        section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
+                                                       // section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id && 
+                                                        checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
                                                         {
-                                                            section_id: LookUp(
+                                                           /* section_id: LookUp(
                                                                 TempSectionAssessment,
                                                                 'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
                                                             ),
                                                             checkpoint_id: LookUp(
                                                                 TempCheckpointAssessment,
                                                                 checkpointAssessment_id = j.checkpointAssessment_id
-                                                            ),
+                                                            ),*/
                                                             checkpointItem_Id: LookUp(
                                                                 TempCheckpointItemAssessment,
                                                                 'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
@@ -1740,10 +1782,10 @@ AssessmentScreen As screen:
                                                         }
                                                     );
                                                 );
-                                            );
-                                        );
+                                            //);
+                                       // );
                                     
-                                    
+                             /*       
                             // inside checkpoint Action item collection => rows contain status 1 => patch that rows to dataverse
                                         Patch(
                                             checkpointItem_ActionItem,
@@ -1861,9 +1903,7 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempCheckpointItem_Images,
                                             Filter(checkpointItem_Images,
-                                              /* RenameColumns(
-                                                   ShowColumns(checkpointItem_Images,"quantum_checkpointitem_imagesid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id")
-                                               ,"checkpointItem_Images","assignmentId","bankUnitId","checkpoint_id"),*/
+                                              
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
@@ -1885,7 +1925,7 @@ AssessmentScreen As screen:
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         );
-                                    
+                                 */   
                                 );//net connected if loop
                                 
                               );
