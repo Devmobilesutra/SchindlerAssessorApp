@@ -1810,18 +1810,18 @@ AssessmentScreen As screen:
                             
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint item collection from temporary collection  
                                          ForAll(
-                                            TempCheckpointItemAssessment As i,
+                                            TempCheckpointItemAssessment As k,
                                             UpdateIf(
                                                 GC_checkpointItemAssessment,
-                                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = i.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIstatusUpdate = 1,
+                                                'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIstatusUpdate = 1,
                                                 {
-                                                    'checkpointItemAssessment (quantum_checkpointitemassessmentid)': i.'checkpointItemAssessment (quantum_checkpointitemassessmentid)',
-                                                    assessmentStatus: i.assessmentStatus,
-                                                    checkpointItemComment: i.checkpointItemComment,
+                                                    'checkpointItemAssessment (quantum_checkpointitemassessmentid)': k.'checkpointItemAssessment (quantum_checkpointitemassessmentid)',
+                                                    assessmentStatus: k.assessmentStatus,
+                                                    checkpointItemComment: k.checkpointItemComment,
                                                     CIstatusUpdate: 2
                                                 }
-                                            )
-                                        );
+                                            );
+                                      //  );
                                 //saving data to local cache
                             SaveData(
                                             GC_checkpointItemAssessment,
@@ -1830,8 +1830,8 @@ AssessmentScreen As screen:
                                         
                                  //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             
-                                                ForAll(
-                                                    TempCheckpointItemAssessment As k,
+                                          //      ForAll(
+                                           //         TempCheckpointItemAssessment As k,
                                                     UpdateIf(
                                                         GC_checkpointItem_ActionItem,
                                                       
@@ -1844,14 +1844,14 @@ AssessmentScreen As screen:
                                                             )
                                                         }
                                                     );
-                                                );
+                                         //       );
                             
                             
                                                 
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             
-                                                ForAll(
-                                                    TempCheckpointItemAssessment As k,
+                                          //      ForAll(
+                                            //        TempCheckpointItemAssessment As k,
                                                     UpdateIf(
                                                         GC_checkpointItem_Images,
                                                         checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
