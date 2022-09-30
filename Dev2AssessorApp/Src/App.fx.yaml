@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |+
+    OnStart: |-
         =Set(
             timerX,
             0
@@ -278,8 +278,6 @@ App As appinfo:
             )
             );
                 //check if any unsend findings are available in collection if so do not do anything else clear collect data of assignment related tables (except five transaction tables)
-        //If(
-           // IsEmpty(gcClient) || IsEmpty(gcBank) || IsEmpty(gcBankunit),
         If(
             Connection.Connected,
              If(
@@ -288,7 +286,7 @@ App As appinfo:
                 IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
             
             Concurrent(
-                        //**************client master data
+                        //client master data
                 ClearCollect(
                     gcClient,
                     schindlerClients
@@ -319,8 +317,7 @@ App As appinfo:
                 );
                 ,
                   //assignment Assignment 
-                
-                ClearCollect(
+                 ClearCollect(
                         gcProjectAssignmentAdd,
                         Filter(
                             assignments,
@@ -335,8 +332,6 @@ App As appinfo:
                             2
                         )
                     );
-               
-                //If isemptyAss
         SaveData(
                     gcProjectAssignment,
                     "localprojectassignment"
@@ -402,6 +397,7 @@ App As appinfo:
             );//conccurent
             );//0/1 If
         );
+        
         //update Inprogress1 status to Inprogress to fix dashboard update issue
           UpdateIf(
                 gcProjectAssignment,
@@ -409,191 +405,7 @@ App As appinfo:
                 {isCompleted: "Inprogress"}
             );
             
-                //*********************************************************************************************************
-                 //here we load transaction data from localcache to collection
-        /*
-        Concurrent(
-            LoadData(
-                GcSectionAssessment,
-                "localsectionassessment"
-            );
-            ,
-            LoadData(
-                GcCheckpointAssessment,
-                "localcheckpointassessment"
-            );
-            ,
-            LoadData(
-                GC_checkpointItemAssessment,
-                "localcheckpointitemassessment"
-            );
-            ,
-            LoadData(
-                GC_checkpointItem_ActionItem,
-                "localcheckpointitemactionitem"
-            );
-            ,
-            LoadData(
-                GC_checkpointItem_Images,
-                "localcheckpointitemimage"
-            );
-            
-        );
-                //Here we check if network is available or not, if available then check collection is empty or not ,if collection is empty then get specific assessor data from dataverse and store it into collection and save collection to cache
-        If(
-            Connection.Connected,
-            Concurrent(
-                //Section assessment transaction data
-                If(
-                    IsEmpty(GcSectionAssessment),
-                    ClearCollect(
-                        GcSectionAssessmentAdd,
-                        Filter(
-                            sectionAssessment,
-                            assignmentId.assessorId = varLoggedAssessor
-                        )
-                    );
-                   //Adding column for status maintain
-        ClearCollect(
-                        GcSectionAssessment,
-                        AddColumns(
-                            GcSectionAssessmentAdd,
-                            "SstatusUpdate",
-                            2
-                        )
-                    );
-                    SaveData(
-                        GcSectionAssessment,
-                        "localsectionassessment"
-                    )
-                );
-                ,
-                //Checkpoint assessment transaction data
-                Clear(GcCheckpointAssessmentAdd);
-                If(
-                    IsEmpty(GcCheckpointAssessment),
-                    ForAll(
-                        assignmentUnits As i,
-                        Collect(
-                            GcCheckpointAssessmentAdd,
-                            Filter(
-                                checkpointAssessment,
-                                bankUnitId.Id = i.bankUnitId.Id
-                            )
-                        )
-                    );
-                        //Adding column for status maintain
-        ClearCollect(
-                        GcCheckpointAssessment,
-                        AddColumns(
-                            GcCheckpointAssessmentAdd,
-                            "CstatusUpdate",
-                            2
-                        )
-                    );
-                    SaveData(
-                        GcCheckpointAssessment,
-                        "localcheckpointassessment"
-                    )
-                );
-                ,
-                    //Item assessment transaction data
-                Clear(GC_checkpointItemAssessmentAdd);
-                If(
-                    IsEmpty(GC_checkpointItemAssessment),
-                    ForAll(
-                        assignmentUnits As i,
-                        Collect(
-                            GC_checkpointItemAssessmentAdd,
-                            Filter(
-                                checkpointItemAssessment,
-                                bankUnitId.Id = i.bankUnitId.Id
-                            )
-                        )
-                    );
-                    ClearCollect(
-                        GC_checkpointItemAssessment,
-                        AddColumns(
-                            GC_checkpointItemAssessmentAdd,
-                            "CIstatusUpdate",
-                            2
-                        )
-                    );
-                    SaveData(
-                        GC_checkpointItemAssessment,
-                        "localcheckpointitemassessment"
-                    );
-                );
-                ,
-               //checkpoint Action Items assessment transaction data
-                Clear(GC_checkpointItem_ActionItemAdd);
-                If(
-                    IsEmpty(GC_checkpointItem_ActionItem),
-                    ForAll(
-                        assignmentUnits As i,
-                        Collect(
-                            GC_checkpointItem_ActionItemAdd,
-                            Filter(
-                                checkpointItem_ActionItem,
-                                bankUnitId.Id = i.bankUnitId.Id
-                            )
-                        )
-                    );
-                    ClearCollect(
-                        GC_checkpointItem_ActionItem,
-                        AddColumns(
-                            GC_checkpointItem_ActionItemAdd,
-                            "CIAstatusUpdate",
-                            2
-                        )
-                    );
-                    SaveData(
-                        GC_checkpointItem_ActionItem,
-                        "localcheckpointitemactionitem"
-                    );
-                );
-                ,
-                //checkpoint Action Items assessment transaction data
-                Clear(GC_checkpointItem_ImagesAdd);
-                If(
-                    IsEmpty(GC_checkpointItem_Images),
-                    ForAll(
-                        assignmentUnits As i,
-                        Collect(
-                            GC_checkpointItem_ImagesAdd,
-                            Filter(
-                                checkpointItem_Images,
-                                bankUnitId.Id = i.bankUnitId.Id
-                            )
-                        )
-                    );
-                    ClearCollect(
-                        GC_checkpointItem_Images,
-                        AddColumns(
-                            GC_checkpointItem_ImagesAdd,
-                            "CIIstatusUpdate",
-                            2
-                        )
-                    );
-                    SaveData(
-                        GC_checkpointItem_Images,
-                        "localcheckpointitemimage"
-                    );
-                );*/
-                    /* If(
-                        IsEmpty(GC_checkpointItem_Images),
-                        ClearCollect(
-                            GC_checkpointItem_Images,checkpointItem_Images
-                        );
-                        SaveData(
-                            GC_checkpointItem_Images,
-                            "localcheckpointitemimage"
-                        );
-                     ); */
-          //  );
-                  // Set(varload,false );
-        //);
-        //Notify("Onstart end",NotificationType.Information);
+                
         //Extra collection for add column
         Clear(gcProjectAssignmentAdd);
         Clear(GC_bankAssessmentAdd);
@@ -603,11 +415,5 @@ App As appinfo:
         Clear(GC_checkpointItemAssessmentAdd);
         Clear(GC_checkpointItem_ActionItemAdd);
         Clear(GC_checkpointItem_ImagesAdd);
-        
-        //temporary collection for update/patch specific row
-        /*Clear(ProjectAssignmentTemp);
-        Clear(bankAssessmentTemp);
-        Clear(unitAssessmentTemp);*/
-        
     SizeBreakpoints: =[600,700, 900, 1200,1500,1800]
 
