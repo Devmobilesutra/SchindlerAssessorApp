@@ -105,8 +105,11 @@ DashboardScreen As screen:
                     OnSelect: |-
                         =//get new assignment and completed assignment updates
                         If(
+                            //here we check network is available or not
                             Connection.Connected,
                             If(
+                                //here we check assignment,bankassessment,unitassessment collection have any unsend data or not,if yes then gives message "Assessement records saved in your device has not yet submitted to server .Please submit and try again." otherwise get new assignment related data
+                        
                                 IsBlank(LookUp(gcProjectAssignment,AstatusUpdate = 0 || AstatusUpdate = 1))            &&
                                 IsBlank(LookUp(GC_bankAssessment,BstatusUpdate = 0 || BstatusUpdate = 1))              &&
                                 IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
@@ -115,7 +118,7 @@ DashboardScreen As screen:
                              Set(popupDashSyncText,"Getting new assignment assigned to you. ");
                              Set(popupDashSyncSuccess,true);
                             Concurrent(
-                        //**************client master data
+                        //client master data
                                 ClearCollect(
                                     gcClient,
                                     schindlerClients
@@ -145,7 +148,7 @@ DashboardScreen As screen:
                                     "localgcbankunit"
                                 );
                                 ,
-                            //assignment Assignment 
+                            //assignment data 
                                 
                                 ClearCollect(
                                         gcProjectAssignmentAdd,
@@ -212,7 +215,7 @@ DashboardScreen As screen:
                                     );
                                 );//concurrent close
                             
-                        
+                        //delete completed assignment data from localcache 
                         ForAll(
                                 Filter(
                                     gcProjectAssignment,
@@ -247,7 +250,7 @@ DashboardScreen As screen:
                                     assignmentId.Id = i.Id
                                 );
                             );
-                        
+                        //save data to localcache
                             SaveData(
                                     gcProjectAssignment,
                                     "localprojectassignment"
@@ -285,15 +288,14 @@ DashboardScreen As screen:
                             ,
                              
                              Set(popupDashSyncText,"Assessement records saved in your device has not yet submitted to server .Please submit and try again.");
-                             Set(popupDashSyncSuccess,true);
-                           // Notify("Your Local Data has not Synced yet",NotificationType.Information);    
+                             Set(popupDashSyncSuccess,true);    
                             );  
                             ,
                            
                              Set(popupDashSyncText,"Network not available,Please check your network connection.");
                                Set(popupDashSyncSuccess,true);
-                            //Notify("Network not available,Please check your network connection.")
                         );
+                        //update Inprogress1 status to Inprogress to fix dashboard update issue
                         UpdateIf(
                             gcProjectAssignment,
                             isCompleted = "Inprogress1",

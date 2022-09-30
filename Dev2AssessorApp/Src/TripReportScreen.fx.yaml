@@ -512,7 +512,6 @@ TripReportScreen As screen:
             Container5 As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =6
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
@@ -531,7 +530,6 @@ TripReportScreen As screen:
                 Gallery14_1 As gallery.variableTemplateHeightGallery:
                     AlignInContainer: =AlignInContainer.Start
                     BorderColor: =RGBA(255, 191, 0, 1)
-                    BorderThickness: =7
                     FillPortions: =0
                     Height: |
                         =//Parent.Height
