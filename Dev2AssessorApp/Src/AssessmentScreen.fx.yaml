@@ -1261,86 +1261,89 @@ AssessmentScreen As screen:
                                 );
                                 
                             );
-                                //network not available to patch then set message
+                            Concurrent(
+                            //network not available to patch then set message
                             Set(
                                 VarPopupText,
                                 "Network is not available , please try after sometime ."
-                            );
+                            );,
+                            
                             //updating bank assessment status from 0 to 1 first time for detecting unpatched data
                             UpdateIf(
                                 GC_bankAssessment,
                                 assignmentId.Id = varAssignmentId && bankId.Id = VarBankId && BstatusUpdate = 0,
                                 {BstatusUpdate: 1}
-                            );
+                            );,
                             //updating unit assessment status from 0 to 1 first time for detecting unpatched data and sync status update
                             UpdateIf(
                                 GC_unitAssessment,
                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && UstatusUpdate = 0,
                                 {UstatusUpdate: 1}
-                            );
+                            );,
                             //updating Section assessment status from 0 to 1 for detecting unpatched data and sync status update
                             UpdateIf(
                                 GcSectionAssessment,
                                 'sectionAssessment (quantum_sectionassessment)' = varSA && SstatusUpdate = 0,
                                 {SstatusUpdate: 1}
-                            );
+                            );,
                             //updating checkpoint assessment status from 0 to 1 for detecting unpatched data and sync status update
                             UpdateIf(
                                 GcCheckpointAssessment,
                                 checkpointAssessment_id = GuidId && CstatusUpdate = 0,
                                 {CstatusUpdate: 1}
-                            );
+                            );,
                             //updating Checkpoint item assessment status from 0 to 1 for detecting unpatched data and sync status update
                             UpdateIf(
                                 GC_checkpointItemAssessment,
                                 checkpointAssessment_Id.checkpointAssessment_id = GuidId && CIstatusUpdate = 0,
                                 {CIstatusUpdate: 1}
-                            );
+                            );,
                             //updating checkpointitem action's item status from 0 to 1 for detecting unpatched data
                             UpdateIf(
                                 GC_checkpointItem_ActionItem,
                                 checkpoint_id.checkpointAssessment_id = GuidId && CIAstatusUpdate = 0,
                                 {CIAstatusUpdate: 1}
-                            );
+                            );,
                                //updating checkpoint images status from 0 to 1 for detecting unpatched data
                             UpdateIf(
                                 GC_checkpointItem_Images,
                                 checkpoint_id.checkpointAssessment_id = GuidId && CIIstatusUpdate = 0,
                                 {CIIstatusUpdate: 1}
-                            );
+                            ););
+                            Concurrent(
                             //saving data to local cache
                             SaveData(
                                 gcProjectAssignment,
                                 "localprojectassignment"
-                            );
+                            );,
                             SaveData(
                                 GC_bankAssessment,
                                 "localbankassessment"
-                            );
+                            );,
                             SaveData(
                                 GC_unitAssessment,
                                 "localunitassessment"
-                            );
+                            );,
                             SaveData(
                                 GcSectionAssessment,
                                 "localsectionassessment"
-                            );
+                            );,
                             SaveData(
                                 GcCheckpointAssessment,
                                 "localcheckpointassessment"
-                            );
+                            );,
                             SaveData(
                                 GC_checkpointItemAssessment,
                                 "localcheckpointitemassessment"
-                            );
+                            );,
                             SaveData(
                                 GC_checkpointItem_ActionItem,
                                 "localcheckpointitemactionitem"
-                            );
+                            );,
                             SaveData(
                                 GC_checkpointItem_Images,
                                 "localcheckpointitemimage"
-                            );
+                            ););
                             //here we check new records are available(checkpointItemAssessment ,checkpointAction And checkpointImages) for patch or not .If not available then set message "No new assessment records found for submission." 
                             //otherwise we check status 2 record is  available in unit ,section and checkpoint table if available then update status 2 to status 1 (for show green and gray tick)
                             If(
@@ -1366,33 +1369,35 @@ AssessmentScreen As screen:
                                     "No new assessment records found for submission. "
                                 );
                                 ,
+                                Concurrent(
                                     //if we update existing unit then do status 2 to 1 for show green and grey tick
                                 UpdateIf(
                                     GC_unitAssessment,
                                     assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && UstatusUpdate = 2,
                                     {UstatusUpdate: 1}
-                                );
+                                );,
                                     //if we update existing section then do status 2 to 1 for show green and grey tick
                             UpdateIf(
                                     GcSectionAssessment,
                                     'sectionAssessment (quantum_sectionassessment)' = varSA && SstatusUpdate = 2,
                                     {SstatusUpdate: 1}
-                                );
+                                );,
                                 //if we update existing checkpoint then do status 2 to 1 for show green and grey tick
                             UpdateIf(
                                     GcCheckpointAssessment,
                                     checkpointAssessment_id = GuidId && CstatusUpdate = 2,
                                     {CstatusUpdate: 1}
-                                );
+                                ););
                                 
                             //if network available then patch 1 status data to dataverse
                             If(
                                     Connection.Connected,
+                                    Concurrent(
                                 //Data available to patch then set message    
                                     Set(
                                         VarPopupText,
                                         "Assessment records submitted successfully."
-                                    );
+                                    );,
                                 //to delete deleted actions from dataverse
                             ForAll(
                                         gcActionItemDelete As i,
@@ -1405,7 +1410,7 @@ AssessmentScreen As screen:
                                     SaveData(
                                         gcActionItemDelete,
                                         "localgcActionItemDelete"
-                                    );
+                                    );,
                                     //to delete deleted images from dataverse
                             ForAll(
                                         gcImageDelete As i,
@@ -1418,7 +1423,7 @@ AssessmentScreen As screen:
                                     SaveData(
                                         gcImageDelete,
                                         "localgcImageDelete"
-                                    );
+                                    );,
                                     //update dataverse table instead using patch
                                     //updating isCompleted status of assignment into assigment table only for the first time when submit button is clicked
                             UpdateIf(
@@ -1438,7 +1443,7 @@ AssessmentScreen As screen:
                             SaveData(
                                         gcProjectAssignment,
                                         "localprojectassignment"
-                                    );
+                                    );,
                               //update dataverse table instead using patch
                               //updating Assessment_Status of assignment and bank into bank Assessment table only for the first time when submit button is clicked
                             UpdateIf(
@@ -1457,7 +1462,7 @@ AssessmentScreen As screen:
                             SaveData(
                                         GC_bankAssessment,
                                         "localbankassessment"
-                                    );
+                                    );,
                                 //update dataverse table instead using patch
                                 //updating Assessment_Status of assignment unit into unit Assessment table only for the first time when submit button is clicked
                             UpdateIf(
@@ -1476,7 +1481,7 @@ AssessmentScreen As screen:
                             SaveData(
                                         GC_unitAssessment,
                                         "localunitassessment"
-                                    );
+                                    ););
                                     If(
                                         CountRows(
                                             Filter(
@@ -1519,6 +1524,7 @@ AssessmentScreen As screen:
                                //updating unique identifier ,comment ,assignment status and patch status to section collection from temporary collection         
                             ForAll(
                                             TempSectionAssessment As i,
+                                            Concurrent(
                                             UpdateIf(
                                                 GcSectionAssessment,
                                                 'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)' && SstatusUpdate = 1,
@@ -1528,7 +1534,7 @@ AssessmentScreen As screen:
                                                     AssessmentStatus: i.AssessmentStatus,
                                                     SstatusUpdate: 2
                                                 }
-                                            );
+                                            );,
                                 //updating sectionid lookup for checkpoint assessment collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GcCheckpointAssessment,
@@ -1539,7 +1545,7 @@ AssessmentScreen As screen:
                                                         'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
                                                     )
                                                 }
-                                            );
+                                            );,
                                             
                             //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
@@ -1551,7 +1557,7 @@ AssessmentScreen As screen:
                                                         'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
                                                     )
                                                 }
-                                            );
+                                            );,
                               //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
@@ -1562,10 +1568,10 @@ AssessmentScreen As screen:
                                                         'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)'
                                                     )
                                                 }
-                                            );
+                                            );,
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
-                                                GC_checkpointItem_Images,
+                                         GC_checkpointItem_Images,
                                                 section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
                                                 {
                                                     section_id: LookUp(
@@ -1574,29 +1580,32 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
+                                            );
                                         );
                                         
                             //saving data to local cache
+                            Concurrent(
                             SaveData(
                                             GcSectionAssessment,
                                             "localsectionassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GcCheckpointAssessment,
                                             "localcheckpointassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItemAssessment,
                                             "localcheckpointitemassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         );
+                             );
                                     );
                                     //if
                             If(
@@ -1642,7 +1651,8 @@ AssessmentScreen As screen:
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint collection from temporary collection  
                             ForAll(
                                             TempCheckpointAssessment As j,
-                                            UpdateIf(
+                                            Concurrent(
+                                             UpdateIf(
                                                 GcCheckpointAssessment,
                                                 checkpointAssessment_id = j.checkpointAssessment_id && CstatusUpdate = 1,
                                                 {
@@ -1651,7 +1661,7 @@ AssessmentScreen As screen:
                                                     AssessmentStatus: j.AssessmentStatus,
                                                     CstatusUpdate: 2
                                                 }
-                                            );
+                                            );,
                                             
                             //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
@@ -1663,7 +1673,7 @@ AssessmentScreen As screen:
                                                         checkpointAssessment_id = j.checkpointAssessment_id
                                                     )
                                                 }
-                                            );
+                                            );,
                               //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
@@ -1674,7 +1684,7 @@ AssessmentScreen As screen:
                                                         checkpointAssessment_id = j.checkpointAssessment_id
                                                     )
                                                 }
-                                            );
+                                            );,
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GC_checkpointItem_Images,
@@ -1686,25 +1696,27 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
+                                            );
                                         );
                                         
                             //saving data to local cache
-                            SaveData(
+                            Concurrent(
+                                SaveData(
                                             GcCheckpointAssessment,
                                             "localcheckpointassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItemAssessment,
                                             "localcheckpointitemassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
-                                        );
+                                        ););
                                     );
                                     If(
                                         CountRows(
@@ -1750,7 +1762,8 @@ AssessmentScreen As screen:
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint item collection from temporary collection  
                             ForAll(
                                             TempCheckpointItemAssessment As k,
-                                            UpdateIf(
+                                            Concurrent(
+                                             UpdateIf(
                                                 GC_checkpointItemAssessment,
                                                 'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)' && CIstatusUpdate = 1,
                                                 {
@@ -1759,7 +1772,7 @@ AssessmentScreen As screen:
                                                     checkpointItemComment: k.checkpointItemComment,
                                                     CIstatusUpdate: 2
                                                 }
-                                            );
+                                            );,
                                  //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
@@ -1770,7 +1783,7 @@ AssessmentScreen As screen:
                                                         'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)'
                                                     )
                                                 }
-                                            );
+                                            );,
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GC_checkpointItem_Images,
@@ -1782,21 +1795,26 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
+                                            );
                                         );
                                 //saving data to local cache
+                                Concurrent(
                             SaveData(
                                             GC_checkpointItemAssessment,
                                             "localcheckpointitemassessment"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
-                                        );
+                                        );,
                                         SaveData(
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         );
+                                );
                                     );
+                            
+                                    Concurrent(
                                     If(
                                         CountRows(
                                             Filter(
@@ -1860,7 +1878,7 @@ AssessmentScreen As screen:
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
                                         );
-                                    );
+                                    );,
                                     If(
                                         CountRows(
                                             Filter(
@@ -1917,6 +1935,7 @@ AssessmentScreen As screen:
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         );
+                                    );
                                     );
                                 );
                                 //net connected if loop
