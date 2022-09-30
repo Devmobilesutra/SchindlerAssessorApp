@@ -1529,10 +1529,7 @@ AssessmentScreen As screen:
                                                     SstatusUpdate: 2
                                                 }
                                             );
-                                      //  );
                                 //updating sectionid lookup for checkpoint assessment collection to get updated unique key from dataverse using temporary collection
-                            //ForAll(
-                                         //   TempSectionAssessment As i,
                             UpdateIf(
                                                 GcCheckpointAssessment,
                                                 sectionId.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
@@ -1543,10 +1540,8 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                   //     );
+                                            
                             //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
-                            //ForAll(
-                                    //        TempSectionAssessment As i,
                             UpdateIf(
                                                 GC_checkpointItemAssessment,
                                                 section_Id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
@@ -1557,10 +1552,7 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                       // );
                               //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
-                            //ForAll(
-                                       //     TempSectionAssessment As i,
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
                                                 section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
@@ -1571,10 +1563,7 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                              //  );
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
-                            //ForAll(
-                                          //  TempSectionAssessment As i,
                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 section_id.'sectionAssessment (quantum_sectionassessment)' = i.'sectionAssessment (quantum_sectionassessment)',
@@ -1586,10 +1575,27 @@ AssessmentScreen As screen:
                                                 }
                                             );
                                         );
-                                       //saving data to local cache
+                                        
+                            //saving data to local cache
                             SaveData(
                                             GcSectionAssessment,
                                             "localsectionassessment"
+                                        );
+                                        SaveData(
+                                            GcCheckpointAssessment,
+                                            "localcheckpointassessment"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItemAssessment,
+                                            "localcheckpointitemassessment"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_ActionItem,
+                                            "localcheckpointitemactionitem"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_Images,
+                                            "localcheckpointitemimage"
                                         );
                                     );
                                     //if
@@ -1646,16 +1652,8 @@ AssessmentScreen As screen:
                                                     CstatusUpdate: 2
                                                 }
                                             );
-                                      //  );
-                              //saving data to local cache
-                            SaveData(
-                                                GcCheckpointAssessment,
-                                                "localcheckpointassessment"
-                                            );
                                             
                             //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
-                                        //    ForAll(
-                                           //     TempCheckpointAssessment As a,
                             UpdateIf(
                                                 GC_checkpointItemAssessment,
                                                 checkpointAssessment_Id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1666,10 +1664,7 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                         //   );
                               //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
-                                         //  ForAll(
-                                             //   TempCheckpointAssessment As j,
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
                                                 checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1680,10 +1675,7 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                         //       );
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
-                                           // ForAll(
-                                             //   TempCheckpointAssessment As j,
                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1694,6 +1686,24 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
+                                        );
+                                        
+                            //saving data to local cache
+                            SaveData(
+                                            GcCheckpointAssessment,
+                                            "localcheckpointassessment"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItemAssessment,
+                                            "localcheckpointitemassessment"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_ActionItem,
+                                            "localcheckpointitemactionitem"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_Images,
+                                            "localcheckpointitemimage"
                                         );
                                     );
                                     If(
@@ -1750,15 +1760,7 @@ AssessmentScreen As screen:
                                                     CIstatusUpdate: 2
                                                 }
                                             );
-                                      //  );
-                                //saving data to local cache
-                            SaveData(
-                                                GC_checkpointItemAssessment,
-                                                "localcheckpointitemassessment"
-                                            );
                                  //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
-                                          //      ForAll(
-                                           //         TempCheckpointItemAssessment As k,
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
                                                 checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
@@ -1769,10 +1771,7 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
-                                         //       );
                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
-                                          //      ForAll(
-                                            //        TempCheckpointItemAssessment As k,
                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
@@ -1783,6 +1782,19 @@ AssessmentScreen As screen:
                                                     )
                                                 }
                                             );
+                                        );
+                                //saving data to local cache
+                            SaveData(
+                                            GC_checkpointItemAssessment,
+                                            "localcheckpointitemassessment"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_ActionItem,
+                                            "localcheckpointitemactionitem"
+                                        );
+                                        SaveData(
+                                            GC_checkpointItem_Images,
+                                            "localcheckpointitemimage"
                                         );
                                     );
                                     If(
