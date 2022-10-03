@@ -101,7 +101,7 @@ DashboardScreen As screen:
                     DisabledColor: =RGBA(230, 230, 230, 1)
                     Height: =40
                     Icon: =Icon.Sync
-                    OnSelect: |-
+                    OnSelect: |
                         =//get new assignment and completed assignment updates
                         If(
                             //here we check network is available or not
@@ -300,7 +300,6 @@ DashboardScreen As screen:
                             isCompleted = "Inprogress1",
                             {isCompleted: "Inprogress"}
                         );
-                        //Set(popupDashSyncSuccess,false);
                     Width: =40
                     X: =NetworkIconDS.X+NetworkIconDS.Width+50
                     Y: =(ctnHeaderDS.Height-Self.Height)/2
@@ -355,10 +354,13 @@ DashboardScreen As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =88
                     Size: =If(App.Height<800,Dashboard.DCountSize,30)
-                    Text: |
-                        =CountRows((Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Completed")))
-                        
-                        //LookUp(projectAggregationCollection,assessorId.email=User().Email,completedProjects)
+                    Text: |-
+                        =CountRows(
+                            (Filter(
+                                gcProjectAssignment,
+                                assessorId = varLoggedAssessor && isCompleted = "Completed"
+                            ))
+                        )
                     X: =Parent.Width/21
                     Y: =lblCompletedproject.Y+lblCompletedproject.Height+10
                     ZIndex: =2
@@ -402,7 +404,6 @@ DashboardScreen As screen:
                         =Set(upcomp,false);
                         Set(inpro,false);
                         Set(comp,true);
-                        //Set(varPatchTimer,true);
                         Navigate(ProjectScreen);
                     PressedBorderColor: |-
                         =//Self.Fill
@@ -516,7 +517,6 @@ DashboardScreen As screen:
                         =Set(comp,false);
                         Set(upcomp,false);
                         Set(inpro,true);
-                        //Set(varPatchTimer,true);
                         Navigate(ProjectScreen);
                     PressedBorderColor: |-
                         =//Self.Fill
