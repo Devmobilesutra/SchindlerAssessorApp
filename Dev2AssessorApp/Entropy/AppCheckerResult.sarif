@@ -394,1896 +394,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconOuterRectangleTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconOuterRectangleTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconInnerRectangleTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconInnerRectangleTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconBackgorundRectangleSS_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconBackgorundRectangleSS_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconRectanglecmntboxSS_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.iconRectanglecmntboxSS_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.imgGroupTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.imgGroupTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.lblSuccessTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.lblSuccessTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.txtSectionCommentTRS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.txtSectionCommentTRS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.txtSectionCommentTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.lblotificationTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.lblotificationTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ViewAssessmentScreen.ctnMainViewAssessment.ctnMiddleVS.ctnAssessmentVS.glryCheckpointitemAssessmentVS.AccessibleLabel"
                 }
               ],
@@ -4684,6 +2794,126 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4.AccessibleLabel"
                 }
               ],
@@ -5014,126 +3244,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "BankScreen.iconOuterRectangleBS.AccessibleLabel"
                 }
               ],
@@ -5194,66 +3304,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "BankScreen",
-                "type": "BankScreen.iconInnerRectangleBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "BankScreen",
-                "type": "BankScreen.iconInnerRectangleBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "BankScreen.iconOuterRectangleTripReportBS.AccessibleLabel"
                 }
               ],
@@ -5297,6 +3347,66 @@
                 "member": "TabIndex",
                 "module": "BankScreen",
                 "type": "BankScreen.iconOuterRectangleTripReportBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BankScreen",
+                "type": "BankScreen.iconInnerRectangleBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.iconInnerRectangleBS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "BankScreen",
+                "type": "BankScreen.iconInnerRectangleBS"
               }
             }
           ],
@@ -6814,66 +4924,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "SectionScreen",
-                "type": "SectionScreen.iconRectangleSafetyPopup"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "SectionScreen",
-                "type": "SectionScreen.iconRectangleSafetyPopup"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SectionScreen.ctnCommentHeaderSS.iconcommentCancel.AccessibleLabel"
                 }
               ],
@@ -6917,6 +4967,96 @@
                 "member": "TabIndex",
                 "module": "SectionScreen",
                 "type": "SectionScreen.ctnCommentHeaderSS.iconcommentCancel"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SectionScreen.txtSectionCommentSS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SectionScreen.txtSectionCommentSS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SectionScreen",
+                "type": "SectionScreen.txtSectionCommentSS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "SectionScreen",
+                "type": "SectionScreen.iconRectangleSafetyPopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SectionScreen.iconRectangleSafetyPopup.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "SectionScreen",
+                "type": "SectionScreen.iconRectangleSafetyPopup"
               }
             }
           ],
@@ -6994,36 +5134,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SectionScreen.txtSectionCommentSS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.txtSectionCommentSS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "SectionScreen",
-                "type": "SectionScreen.txtSectionCommentSS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "SectionScreen.lblNoticsSS.FocusedBorderThickness"
                 }
               ],
@@ -7067,6 +5177,1896 @@
                 "member": "TabIndex",
                 "module": "SectionScreen",
                 "type": "SectionScreen.lblNoticsSS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAssessmentTypeAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAssessmentTypeAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnProductTypeAS_7.lblAtypeAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblAssessmentDateAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankNumberAS_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionname_3"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.TextInput7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.lblSectionAS_5"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAssessmentTypeAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblAssessmentDateAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Label22"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.DatePicker3_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.Container5.Gallery14_1.Gallery15.Rectanglebroder_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnitemsAS_1.TextInput4_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconOuterRectangleTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconOuterRectangleTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconOuterRectangleTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconInnerRectangleTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconInnerRectangleTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconInnerRectangleTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconBackgorundRectangleSS_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconBackgorundRectangleSS_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconBackgorundRectangleSS_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconRectanglecmntboxSS_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.iconRectanglecmntboxSS_1.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.iconRectanglecmntboxSS_1"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnCommentHeaderTRS.iconcommentCancelTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.imgGroupTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.imgGroupTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.imgGroupTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.lblSuccessTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.lblSuccessTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.lblSuccessTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.txtSectionCommentTRS.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.txtSectionCommentTRS.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.txtSectionCommentTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.FocusedBorderThickness"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.FocusedBorderThickness",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "FocusedBorderThickness",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.lblotificationTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-FocusBorderShouldBeVisible",
+          "ruleIndex": 3
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.lblotificationTRS.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.lblotificationTRS"
               }
             }
           ],
@@ -10234,66 +10234,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle2_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle2_12"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "FindingScreen.Rectangle1_9.AccessibleLabel"
                 }
               ],
@@ -10354,66 +10294,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle2_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle2_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "FindingScreen.iconRectanglePopup.AccessibleLabel"
                 }
               ],
@@ -10457,6 +10337,66 @@
                 "member": "TabIndex",
                 "module": "FindingScreen",
                 "type": "FindingScreen.iconRectanglePopup"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "FindingScreen",
+                "type": "FindingScreen.Rectangle1_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "FindingScreen",
+                "type": "FindingScreen.Rectangle1_10"
               }
             }
           ],
@@ -10654,19 +10594,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.AccessibleLabel"
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.AccessibleLabel",
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle1_10"
+                "type": "FindingScreen.Rectangle2_9"
               }
             }
           ],
@@ -10684,19 +10624,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.TabIndex"
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.TabIndex"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "FindingScreen.Rectangle1_10.TabIndex",
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_9.TabIndex",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "TabIndex",
                 "module": "FindingScreen",
-                "type": "FindingScreen.Rectangle1_10"
+                "type": "FindingScreen.Rectangle2_9"
               }
             }
           ],
@@ -10757,6 +10697,66 @@
                 "member": "TabIndex",
                 "module": "FindingScreen",
                 "type": "FindingScreen.Rectangle2_10"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
+          "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "FindingScreen",
+                "type": "FindingScreen.Rectangle2_12"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.TabIndex"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "FindingScreen.Rectangle2_12.TabIndex",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "TabIndex",
+                "module": "FindingScreen",
+                "type": "FindingScreen.Rectangle2_12"
               }
             }
           ],
@@ -12663,305 +12663,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "TripReportScreen"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "module": "TripReportScreen",
-                "type": "TripReportScreen"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-ScreenHasManyControls",
-          "ruleIndex": 8
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon.Y"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon.Y",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Y",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "TripReportScreen",
-                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "ViewAssessmentScreen"
                 }
               ],
@@ -13710,36 +13411,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.lblPopupReviewerBS.Text"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.lblPopupReviewerBS.Text",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Text",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.lblPopupReviewerBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnHeaderBS.lblAssessmentBS_2.Text"
                 }
               ],
@@ -13980,6 +13651,66 @@
             {
               "logicalLocations": [
                 {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.lblPopupReviewerBS.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.lblPopupReviewerBS.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.lblPopupReviewerBS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2.Width"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2.Width",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Width",
+                "module": "SectionScreen",
+                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
                   "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.lblAssessmentBS_4.Text"
                 }
               ],
@@ -14040,19 +13771,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2.Width"
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4.Width"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2.Width",
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4.Width",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "Width",
                 "module": "SectionScreen",
-                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.imgLogo_2"
+                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4"
               }
             }
           ],
@@ -14203,6 +13934,36 @@
                 "member": "RadiusBottomRight",
                 "module": "SectionScreen",
                 "type": "SectionScreen.ctnMainSection.ctnHeaderSS.imgUserHeaderBS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "SectionScreen",
+                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1"
               }
             }
           ],
@@ -14713,6 +14474,305 @@
                 "member": "Width",
                 "module": "SectionScreen",
                 "type": "SectionScreen.ctnMainSection.ctnSectionSS.ctnAssessmentdetailsSS.ctnproductSS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "module": "TripReportScreen",
+                "type": "TripReportScreen"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-ScreenHasManyControls",
+          "ruleIndex": 8
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon.Y"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon.Y",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Y",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnHeaderTRS.cmtNetworkIcon"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnCheckpointTRS.lblCheckpointTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessorTRS.lblAssessorTRS"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnBankASTRS.lblBankAS_7"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmntTypeAS_4.lblAtypeAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnAssessmentDateAS_4.lblADateAS_4"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnMainassessmentTRS.ctnUnitAS_2.lblBankAS_9"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmntTypeAS_6.lblAtypeAS_6"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-InefficientDelayLoading",
+          "ruleIndex": 9
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.Text"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6.Text",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "Text",
+                "module": "TripReportScreen",
+                "type": "TripReportScreen.ctnMainTRS.ctnMiddleTRS.ctnSectionAS_3.ctnAssessmentDateAS_6.lblADateAS_6"
               }
             }
           ],
@@ -15623,66 +15683,6 @@
           },
           "ruleId": "app-InefficientDelayLoading",
           "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4.Width"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4.Width",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Width",
-                "module": "SectionScreen",
-                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.lblUsernameHeaderBS_4"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1.Y"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1.Y",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "Y",
-                "module": "SectionScreen",
-                "type": "SectionScreen.ctnMainSection.ctnHeaderSS.NetworkIconBS_1"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-InefficientDelayLoading",
-          "ruleIndex": 9
         }
       ],
       "tool": {
@@ -15846,7 +15846,7 @@
                 ],
                 "level": "Medium",
                 "primaryCategory": "performance",
-                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"TripReportScreen\" is 536, which exceeds the maximum threshold recommended (300)."
+                "whyFix": "Each control consumes resources, and an app may become slow or unresponsive if a screen has too many controls. The estimated complexity of \"ViewAssessmentScreen\" is 659, which exceeds the maximum threshold recommended (300)."
               }
             },
             {

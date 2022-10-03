@@ -1,6 +1,6 @@
 App As appinfo:
     BackEnabled: =false
-    OnStart: |-
+    OnStart: |
         =Set(
             timerX,
             0
@@ -9,7 +9,7 @@ App As appinfo:
             timerStart,
             false
         );
-                //Set(varload,true);
+        //Set(varload,true);
         
         // Global CSS
         Set(
@@ -94,7 +94,7 @@ App As appinfo:
         //Get LoggedAssessor Details from assessor AzueAAD group and store it into collection
         //powerapp handles authentication of respective user and display apropriate message
            
-            Clear(LoggedAssessor);
+        Clear(LoggedAssessor);
         If(
             Connection.Connected,
             ClearCollect(
@@ -117,18 +117,18 @@ App As appinfo:
         );
         If(
             !IsBlank(LoggedAssessor),
-                //Store Logged user image to Variable
+            //Store Logged user image to Variable
             Set(
                 userImg,
                 User().Image
             );
-                //store Logged user name to Variable
-        Set(
+            //store Logged user name to Variable
+            Set(
                 username,
                 User().FullName
             );
                 //Store Azure AssessorId to variable
-        Set(
+            Set(
                 varLoggedAssessor,
                 LookUp(
                     LoggedAssessor,
@@ -152,7 +152,7 @@ App As appinfo:
         
         //collections and offline collection
         Concurrent(
-                //**********Here we load template master data from cache and store it into collection
+            //**********Here we load template master data from cache and store it into collection
             LoadData(
                 GC_templateSections,
                 "localtemplatesections"
@@ -277,7 +277,8 @@ App As appinfo:
                 "localunitassessment"
             )
             );
-                //check if any unsend findings are available in collection if so do not do anything else clear collect data of assignment related tables (except five transaction tables)
+                
+            //check if any unsend findings are available in collection if so do not do anything else clear collect data of assignment related tables (except five transaction tables)
         If(
             Connection.Connected,
              If(
@@ -286,7 +287,7 @@ App As appinfo:
                 IsBlank(LookUp(GC_unitAssessment,UstatusUpdate = 0 || UstatusUpdate = 1)) ,
             
             Concurrent(
-                        //client master data
+                //client master data
                 ClearCollect(
                     gcClient,
                     schindlerClients
@@ -296,7 +297,7 @@ App As appinfo:
                     "localclient"
                 );
                 ,
-                  //Banks master data
+                //Banks master data
                 ClearCollect(
                     gcBank,
                     schindlerBanks
@@ -306,7 +307,7 @@ App As appinfo:
                     "localbank"
                 );
                 ,
-             //master units data
+                //master units data
                 ClearCollect(
                     gcBankunit,
                     bankUnits
@@ -316,7 +317,7 @@ App As appinfo:
                     "localgcbankunit"
                 );
                 ,
-                  //assignment Assignment 
+                //assignment Assignment 
                  ClearCollect(
                         gcProjectAssignmentAdd,
                         Filter(
@@ -332,7 +333,7 @@ App As appinfo:
                             2
                         )
                     );
-        SaveData(
+                SaveData(
                     gcProjectAssignment,
                     "localprojectassignment"
                 );
@@ -351,45 +352,42 @@ App As appinfo:
                 );
                 ,
                 //bank Assessment
-               
-                    ClearCollect(
-                        GC_bankAssessmentAdd,
+                ClearCollect(
+                    GC_bankAssessmentAdd,
                         Filter(
                             bankAssessment,
                             assignmentId.assessorId = varLoggedAssessor
                         )
-                    );
-                    ClearCollect(
-                        GC_bankAssessment,
+                );
+                ClearCollect(
+                    GC_bankAssessment,
                         AddColumns(
                             GC_bankAssessmentAdd,
                             "BstatusUpdate",
                             2
                         )
                     );
-                    SaveData(
+                SaveData(
                     GC_bankAssessment,
                     "localbankassessment"
                 );
                 ,
                 //unit assessment
-               
-                    ClearCollect(
-                        GC_unitAssessmentAdd,
+                ClearCollect(
+                    GC_unitAssessmentAdd,
                         Filter(
                             unitAssessment,
                             assignmentId.assessorId = varLoggedAssessor
                         )
-                    );
-                    ClearCollect(
+                );
+                ClearCollect(
                         GC_unitAssessment,
                         AddColumns(
                             GC_unitAssessmentAdd,
                             "UstatusUpdate",
                             2
                         )
-                    );
-                   
+                );
                 SaveData(
                     GC_unitAssessment,
                     "localunitassessment"
