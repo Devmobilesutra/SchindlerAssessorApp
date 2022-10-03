@@ -355,7 +355,8 @@ DashboardScreen As screen:
                     Height: =88
                     Size: =If(App.Height<800,Dashboard.DCountSize,30)
                     Text: |-
-                        =CountRows(
+                        =//To display Completed assignment count of Specific assessor 
+                        CountRows(
                             (Filter(
                                 gcProjectAssignment,
                                 assessorId = varLoggedAssessor && isCompleted = "Completed"
@@ -457,15 +458,14 @@ DashboardScreen As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =88
                     Size: =If(App.Height<800,Dashboard.DCountSize,32)
-                    Text: |+
-                        =CountRows((Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Inprogress")))
-                        
-                        //LookUp(projectAggregationCollection,assessorId.email=User().Email,inProgressProjects)
-                        
-                        
-                        //LookUp(GC_projectAggregation,assessor_id=LoggedAssessor,inProgress_Projects)
-                        
-                        
+                    Text: |-
+                        =//To display Inprogress assignment count of Specific assessor 
+                        CountRows(
+                            (Filter(
+                                gcProjectAssignment,
+                                assessorId = varLoggedAssessor && isCompleted = "Inprogress"
+                            ))
+                        )
                     X: =Parent.Width/21
                     Y: =lblProgressProjects.Y+lblProgressProjects.Height+10
                     ZIndex: =2
@@ -537,7 +537,14 @@ DashboardScreen As screen:
                 BorderColor: =RGBA(230,230,230,1)
                 BorderThickness: =3
                 FillPortions: =0
-                Height: =If(App.Width<1000,Parent.Height/2.3,App.Width>1000 && App.Width<1200,Parent.Height/2.3,Parent.Height/1.6)
+                Height: |-
+                    =If(
+                        App.Width < 1000,
+                        Parent.Height / 2.3,
+                        App.Width > 1000 && App.Width < 1200,
+                        Parent.Height / 2.3,
+                        Parent.Height / 1.6
+                    )
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 Width: =Parent.Width/2.15
