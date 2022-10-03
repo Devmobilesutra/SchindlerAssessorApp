@@ -152,8 +152,15 @@ BankScreen As screen:
                         Height: =Parent.Height
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
-                            =If(comp=true,"Assessment by                     :   " & glryProject.Selected.assessorName ,"   "&LookUp(gcBank,Id=VarBankId,productId.product_Model)
-                             &" series"
+                            =//If selected assignment is completed assignment then display assessor name in completed tab
+                            If(
+                                comp = true,
+                                "Assessment by                     :   " & glryProject.Selected.assessorName,
+                                "   " & LookUp(
+                                    gcBank,
+                                    Id = VarBankId,
+                                    productId.product_Model
+                                ) & " series"
                             )
                         Width: =If(Parent.Width>800,Parent.Width/1.9,Parent.Width/2.3)
                         ZIndex: =3
@@ -167,7 +174,7 @@ BankScreen As screen:
                         HoverFill: |-
                             =//ColorFade(RGBA(56, 96, 178, 1), -20%)
                             Self.Fill
-                        OnSelect: =//Select(Parent)
+                        OnSelect: =
                         Text: =btnprojecttype.Text
                         Width: =260
                         X: =
@@ -1598,7 +1605,8 @@ BankScreen As screen:
             "GlrycmntsBS As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                 Height: =Rectangle6_2.Height
                 Items: |-
-                    =If(
+                    =//Display unit wise comments parent gallery
+                    If(
                         varComment = true,
                         Filter(
                             GC_unitAssessment,
@@ -1619,9 +1627,12 @@ BankScreen As screen:
                 "glryCheckpointItemComment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =CountRows(glryCheckpointItemComment.AllItems)*(glryCheckpointItemComment.TemplateHeight+glryCheckpointItemComment.TemplatePadding)
                     Items: |-
-                        =Filter(
+                        =//Display checkpoint item wise comment
+                        Filter(
                             GC_checkpointItemAssessment,
-                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointItemComment <> Blank()
+                            assignmentId.Id = varAssignmentId && 
+                            bankUnitId.Id = ThisItem.bankUnitId.Id && 
+                            checkpointItemComment <> Blank()
                         )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
@@ -1673,9 +1684,12 @@ BankScreen As screen:
                 "glryCheckpointcomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =CountRows(glryCheckpointcomment.AllItems)*(glryCheckpointcomment.TemplateHeight+glryCheckpointcomment.TemplatePadding)
                     Items: |-
-                        =Filter(
+                        =//Display checkpoint wise comment
+                        Filter(
                             GcCheckpointAssessment,
-                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && checkpointComment <> Blank()
+                            assignmentId.Id = varAssignmentId && 
+                            bankUnitId.Id = ThisItem.bankUnitId.Id && 
+                            checkpointComment <> Blank()
                         )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
@@ -1729,9 +1743,12 @@ BankScreen As screen:
                 "glrySectioncomment As gallery.'BrowseLayout_Vertical_TwoTextOneImageVariant_ver4.0'":
                     Height: =CountRows(glrySectioncomment.AllItems)*(glrySectioncomment.TemplateHeight+glrySectioncomment.TemplatePadding)
                     Items: |-
-                        =Filter(
+                        =//display section wise comments
+                        Filter(
                             GcSectionAssessment,
-                            assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && sectionComment <> Blank()
+                            assignmentId.Id = varAssignmentId && 
+                            bankUnitId.Id = ThisItem.bankUnitId.Id && 
+                            sectionComment <> Blank()
                         )
                     Layout: =Layout.Vertical
                     ShowScrollbar: =false
