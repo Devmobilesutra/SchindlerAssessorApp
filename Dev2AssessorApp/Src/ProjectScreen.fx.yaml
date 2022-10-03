@@ -1,6 +1,7 @@
 ProjectScreen As screen:
     OnVisible: |-
         =Set(Q,false);
+        
         Trace(
             First(gcProjectAssignment).clientId.name & First(gcProjectAssignment).dueDate,
             TraceSeverity.Information
