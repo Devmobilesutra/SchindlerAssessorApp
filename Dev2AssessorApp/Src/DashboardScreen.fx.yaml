@@ -29,7 +29,6 @@ DashboardScreen As screen:
             Height: =80
             LayoutMinHeight: =100
             LayoutMinWidth: =250
-            PaddingRight: =10
             Width: =Parent.Width
             Y: =10
             ZIndex: =1
