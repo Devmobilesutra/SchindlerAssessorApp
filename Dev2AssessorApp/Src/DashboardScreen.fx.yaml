@@ -59,7 +59,7 @@ DashboardScreen As screen:
                     FontWeight: =FontWeight.Bold
                     Height: =ctnHeaderDS.Height
                     Size: |-
-                        =//ctnHeaderDS.Width/50
+                        =
                         Header.HeaderFontSize
                     Text: ="Dashboard"
                     Width: =ctnHeaderDS.Width/1.8
@@ -327,7 +327,14 @@ DashboardScreen As screen:
                 BorderColor: =RGBA(230,230,230,1)
                 BorderThickness: =3
                 FillPortions: =0
-                Height: =If(App.Width<1000,Parent.Height/3,App.Width>1000 && App.Width<1200,Parent.Height/2.3,Parent.Height/1.6)
+                Height: |-
+                    =If(
+                        App.Width < 1000,
+                        Parent.Height / 3,
+                        App.Width > 1000 && App.Width < 1200,
+                        Parent.Height / 2.3,
+                        Parent.Height / 1.6
+                    )
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 Visible: =false
@@ -368,53 +375,29 @@ DashboardScreen As screen:
 
                 btnCompletedproject As button:
                     BorderColor: |
-                        =//ColorFade(Self.Fill, -15%)
-                    BorderThickness: =//2
+                        =
+                    BorderThickness: =
                     Color: |+
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
+                        =RGBA(0,0,0,0)
                         
-                    DisabledBorderColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledFill: |-
-                        =//RGBA(244, 244, 244, 1)
-                        
-                        RGBA(0,0,0,0)
+                    DisabledBorderColor: =RGBA(0,0,0,0)
+                    DisabledColor: =RGBA(0,0,0,0)
+                    DisabledFill: =RGBA(0,0,0,0)
                     Fill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderColor: |-
-                        =//Self.BorderColor
-                        RGBA(0,0,0,0)
-                    FocusedBorderThickness: =//4
+                    FocusedBorderColor: =RGBA(0,0,0,0)
+                    FocusedBorderThickness: =
                     Height: =ctnCompletedProjects.Height
-                    HoverBorderColor: |-
-                        =//ColorFade(Self.BorderColor, 20%)
-                        RGBA(0,0,0,0)
-                    HoverColor: |-
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
-                    HoverFill: |-
-                        =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                        ColorFade(RGBA(0,0,0,0),-20%)
+                    HoverBorderColor: =RGBA(0,0,0,0)
+                    HoverColor: =RGBA(0,0,0,0)
+                    HoverFill: =ColorFade(RGBA(0,0,0,0),-20%)
                     OnSelect: |-
                         =Set(upcomp,false);
                         Set(inpro,false);
                         Set(comp,true);
                         Navigate(ProjectScreen);
-                    PressedBorderColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedFill: |-
-                        =//Self.Color
-                        RGBA(0,0,0,0)
+                    PressedBorderColor: =RGBA(0,0,0,0)
+                    PressedColor: =RGBA(0,0,0,0)
+                    PressedFill: =RGBA(0,0,0,0)
                     Text: =
                     Width: =ctnCompletedProjects.Width
                     ZIndex: =4
@@ -432,7 +415,14 @@ DashboardScreen As screen:
                 BorderColor: =RGBA(230,230,230,1)
                 BorderThickness: =3
                 FillPortions: =0
-                Height: =If(App.Width<1000,Parent.Height/2.3,App.Width>1000 && App.Width<1200,Parent.Height/2.3,Parent.Height/1.6)
+                Height: |-
+                    =If(
+                        App.Width < 1000,
+                        Parent.Height / 2.3,
+                        App.Width > 1000 && App.Width < 1200,
+                        Parent.Height / 2.3,
+                        Parent.Height / 1.6
+                    )
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 Width: =Parent.Width/2.15
@@ -479,54 +469,29 @@ DashboardScreen As screen:
                     ZIndex: =4
 
                 btnInprogressproject As button:
-                    BorderColor: |
-                        =//ColorFade(Self.Fill, -15%)
-                    BorderThickness: =//2
+                    BorderColor: =
+                    BorderThickness: =
                     Color: |+
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
+                        =RGBA(0,0,0,0)
                         
-                    DisabledBorderColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledFill: |-
-                        =//RGBA(244, 244, 244, 1)
-                        
-                        RGBA(0,0,0,0)
+                    DisabledBorderColor: =RGBA(0,0,0,0)
+                    DisabledColor: =RGBA(0,0,0,0)
+                    DisabledFill: =RGBA(0,0,0,0)
                     Fill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderColor: |-
-                        =//Self.BorderColor
-                        RGBA(0,0,0,0)
-                    FocusedBorderThickness: =//4
+                    FocusedBorderColor: =RGBA(0,0,0,0)
+                    FocusedBorderThickness: =
                     Height: =ctnCompletedProjects.Height
-                    HoverBorderColor: |-
-                        =//ColorFade(Self.BorderColor, 20%)
-                        RGBA(0,0,0,0)
-                    HoverColor: |-
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
-                    HoverFill: |-
-                        =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                        ColorFade(RGBA(0,0,0,0),-20%)
+                    HoverBorderColor: =RGBA(0,0,0,0)
+                    HoverColor: =RGBA(0,0,0,0)
+                    HoverFill: =ColorFade(RGBA(0,0,0,0),-20%)
                     OnSelect: |-
                         =Set(comp,false);
                         Set(upcomp,false);
                         Set(inpro,true);
                         Navigate(ProjectScreen);
-                    PressedBorderColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedFill: |-
-                        =//Self.Color
-                        RGBA(0,0,0,0)
+                    PressedBorderColor: =RGBA(0,0,0,0)
+                    PressedColor: =RGBA(0,0,0,0)
+                    PressedFill: =RGBA(0,0,0,0)
                     Text: =
                     Width: =ctnProgressProjects.Width
                     X: =0.34920634920632665
@@ -571,7 +536,7 @@ DashboardScreen As screen:
                     Height: =88
                     Size: =If(App.Height<800,Dashboard.DCountSize,32)
                     Text: |-
-                        =
+                        =//To display Upcomming assignment count of Specific assessor 
                         CountRows(
                             (Filter(
                                 gcProjectAssignment,
@@ -592,53 +557,29 @@ DashboardScreen As screen:
 
                 btnUpcomingProjects As button:
                     BorderColor: |
-                        =//ColorFade(Self.Fill, -15%)
-                    BorderThickness: =//2
+                        =
+                    BorderThickness: =
                     Color: |+
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
+                        =RGBA(0,0,0,0)
                         
-                    DisabledBorderColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledColor: |-
-                        =//RGBA(166, 166, 166, 1)
-                        
-                        RGBA(0,0,0,0)
-                    DisabledFill: |-
-                        =//RGBA(244, 244, 244, 1)
-                        
-                        RGBA(0,0,0,0)
+                    DisabledBorderColor: =RGBA(0,0,0,0)
+                    DisabledColor: =RGBA(0,0,0,0)
+                    DisabledFill: =RGBA(0,0,0,0)
                     Fill: =RGBA(0, 0, 0, 0)
-                    FocusedBorderColor: |-
-                        =//Self.BorderColor
-                        RGBA(0,0,0,0)
-                    FocusedBorderThickness: =//4
+                    FocusedBorderColor: =RGBA(0,0,0,0)
+                    FocusedBorderThickness: =
                     Height: =ctnCompletedProjects.Height
-                    HoverBorderColor: |-
-                        =//ColorFade(Self.BorderColor, 20%)
-                        RGBA(0,0,0,0)
-                    HoverColor: |-
-                        =//RGBA(255, 255, 255, 1)
-                        RGBA(0,0,0,0)
-                    HoverFill: |-
-                        =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                        ColorFade(RGBA(0,0,0,0),-20%)
+                    HoverBorderColor: =RGBA(0,0,0,0)
+                    HoverColor: =RGBA(0,0,0,0)
+                    HoverFill: =ColorFade(RGBA(0,0,0,0),-20%)
                     OnSelect: |-
                         =Set(comp,false);
                         Set(inpro,false);
                         Set(upcomp,true);
                         Navigate(ProjectScreen);
-                    PressedBorderColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedColor: |-
-                        =//Self.Fill
-                        RGBA(0,0,0,0)
-                    PressedFill: |-
-                        =//Self.Color
-                        RGBA(0,0,0,0)
+                    PressedBorderColor: =RGBA(0,0,0,0)
+                    PressedColor: =RGBA(0,0,0,0)
+                    PressedFill: =RGBA(0,0,0,0)
                     Text: =
                     Width: =ctnUpcomingProjects.Width
                     X: =0.34920634920632665
@@ -657,7 +598,12 @@ DashboardScreen As screen:
         ctnlpdimg As groupContainer.horizontalAutoLayoutContainer:
             AlignInContainer: =AlignInContainer.SetByContainer
             FillPortions: =0
-            Height: =If(App.Height<900, Parent.Height ,Parent.Height/3)
+            Height: |-
+                =If(
+                    App.Height < 900,
+                    Parent.Height,
+                    Parent.Height / 3
+                )
             LayoutAlignItems: =LayoutAlignItems.End
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
@@ -706,9 +652,7 @@ DashboardScreen As screen:
     tmr_logout As timer:
         AutoStart: =true
         Duration: =30000
-        OnTimerEnd: |-
-            =//Exit(true);
-            //Navigate(SafetyHeaderScreen)
+        OnTimerEnd: =
         OnTimerStart: =true
         Visible: =false
         X: =20
