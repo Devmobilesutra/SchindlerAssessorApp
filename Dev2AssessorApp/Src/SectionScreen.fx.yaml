@@ -23,33 +23,63 @@ SectionScreen As screen:
         ctnHeaderSS As groupContainer.manualLayoutContainer:
             Fill: =Header.HeaderFill
             Height: =80
-            PaddingRight: =10
             Width: =Parent.Width
             ZIndex: =9
 
-            grpHeaderSS As group:
-                Height: =5
-                Width: =5
-                X: =40
-                Y: =40
-                ZIndex: =8
+            imgLogo_2 As image:
+                DisplayMode: =DisplayMode.View
+                Fill: =RGBA(255, 255, 255, 1)
+                Height: =80
+                Image: ='schindler-logo'
+                PaddingBottom: =5
+                PaddingLeft: =2
+                PaddingRight: =1
+                PaddingTop: =5
+                Width: =ctnHeaderBS.Width/12
+                ZIndex: =1
 
-                imgLogoSS As image:
-                    DisplayMode: =DisplayMode.View
-                    Fill: =RGBA(255, 255, 255, 1)
-                    Height: =80
-                    Image: ='schindler-logo'
-                    PaddingBottom: =5
-                    PaddingLeft: =2
-                    PaddingRight: =1
-                    PaddingTop: =5
-                    Width: =ctnHeaderFS.Width/12
-                    ZIndex: =6
+            lblAssessmentBS_4 As label:
+                Align: =Align.Center
+                Color: =Header.HeaderColor
+                Font: =Header.HeaderFont
+                FontWeight: =FontWeight.Bold
+                Height: =80
+                Size: =Header.HeaderFontSize
+                Text: |
+                    =lblProjectName.Text
+                Width: =ctnHeaderBS.Width/1.65
+                X: =imgLogo_2.Width
+                ZIndex: =2
 
-                NetworkIconSS As Component2:
-                    X: =lblUsernameHeaderBS_2.Width+lblUsernameHeaderBS_2.X
-                    Y: =(ctnHeaderDS.Height-Self.Height)/2
-                    ZIndex: =7
+            imgUserHeaderBS_4 As image:
+                Height: =50
+                Image: =userImg
+                ImagePosition: =ImagePosition.Fill
+                RadiusBottomLeft: =ctnHeaderBS.Height/0.10
+                RadiusBottomRight: =ctnHeaderBS.Height/0.10
+                RadiusTopLeft: =ctnHeaderBS.Height/0.10
+                RadiusTopRight: =ctnHeaderBS.Height/0.10
+                Width: =50
+                X: =lblAssessmentBS_4.Width+lblAssessmentBS_4.X
+                Y: =(ctnHeaderBS.Height-Self.Height)/2
+                ZIndex: =3
+
+            lblUsernameHeaderBS_4 As label:
+                Color: =RGBA(255, 255, 255, 1)
+                Font: =Header.HeaderFont
+                FontWeight: =FontWeight.Bold
+                Height: =80
+                PaddingLeft: =20
+                Size: =Header.HeaderUserFontSize-2
+                Text: =username
+                Width: =ctnHeaderBS.Width/6
+                X: =imgUserHeaderBS_4.Width+imgUserHeaderBS_4.X
+                ZIndex: =4
+
+            NetworkIconBS_1 As Component2:
+                X: =lblUsernameHeaderBS_4.Width+lblUsernameHeaderBS_4.X
+                Y: =(ctnHeaderDS.Height-Self.Height)/2
+                ZIndex: =5
 
         ctnSectionSS As groupContainer.verticalAutoLayoutContainer:
             Height: |-
@@ -778,6 +808,13 @@ SectionScreen As screen:
         Repeat: =true
         Visible: =false
         ZIndex: =3
+
+    GroupHeaderBS_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =6
 
     groupSafetyPopupSS As group:
         Height: =5
