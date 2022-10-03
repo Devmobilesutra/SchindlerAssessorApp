@@ -62,7 +62,7 @@ DashboardScreen As screen:
                         =//ctnHeaderDS.Width/50
                         Header.HeaderFontSize
                     Text: ="Dashboard"
-                    Width: =ctnHeaderDS.Width/2.2
+                    Width: =ctnHeaderDS.Width/1.8
                     X: =imgLogoDS.Width
                     ZIndex: =2
 
