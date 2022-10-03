@@ -64,7 +64,7 @@
                 },
                 "region": {
                   "charLength": 11,
-                  "charOffset": 92,
+                  "charOffset": 377,
                   "snippet": {
                     "text": ".unitNumber"
                   }
@@ -2794,36 +2794,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "AccessibleLabel",
-                "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-AccessibleLabelNeeded",
-          "ruleIndex": 1
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.TabIndex"
                 }
               ],
@@ -2854,19 +2824,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS"
               }
             }
           ],
@@ -2914,19 +2884,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4"
+                "type": "BankScreen.ctnMainBankBS.ctnMiddleBS.ctnunitAssessmentBS.glryUnitBS.imgUnitSyncBS"
               }
             }
           ],
@@ -2974,19 +2944,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS"
+                "type": "BankScreen.ctnMainBankBS.Container38_2.Icon2_4"
               }
             }
           ],
@@ -3004,19 +2974,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS"
+                "type": "BankScreen.ctnMainBankBS.txtPopupNoCommentsBS"
               }
             }
           ],
@@ -3064,19 +3034,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment"
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS"
               }
             }
           ],
@@ -3124,19 +3094,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment"
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointItemComment"
               }
             }
           ],
@@ -3184,19 +3154,19 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment.AccessibleLabel"
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment.AccessibleLabel"
                 }
               ],
               "physicalLocation": {
                 "address": {
-                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment.AccessibleLabel",
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment.AccessibleLabel",
                   "relativeAddress": 0
                 }
               },
               "properties": {
                 "member": "AccessibleLabel",
                 "module": "BankScreen",
-                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment"
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glryCheckpointcomment"
               }
             }
           ],
@@ -3238,6 +3208,36 @@
           },
           "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
           "ruleIndex": 2
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment.AccessibleLabel"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment.AccessibleLabel",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "AccessibleLabel",
+                "module": "BankScreen",
+                "type": "BankScreen.ctnMainBankBS.GlrycmntsBS.glrySectioncomment"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "acc-AccessibleLabelNeeded",
+          "ruleIndex": 1
         },
         {
           "locations": [
@@ -11297,66 +11297,6 @@
                 "member": "TabIndex",
                 "module": "SafetyHeaderScreen",
                 "type": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblHeadingSafetyAdvice"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-TabIndexShouldBeDefinedForInteractiveControl",
-          "ruleIndex": 2
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice.FocusedBorderThickness"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice.FocusedBorderThickness",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "FocusedBorderThickness",
-                "module": "SafetyHeaderScreen",
-                "type": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "acc-FocusBorderShouldBeVisible",
-          "ruleIndex": 3
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice.TabIndex"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice.TabIndex",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "TabIndex",
-                "module": "SafetyHeaderScreen",
-                "type": "SafetyHeaderScreen.ctnSafetyHeader.ctnMiddleSafetyHeader.ctnSafetyAdvice.ctnsMainafetyAdvice.lblsafetyAdvice"
               }
             }
           ],

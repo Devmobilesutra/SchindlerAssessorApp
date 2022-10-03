@@ -1,19 +1,12 @@
 BankScreen As screen:
     Fill: =
-    OnVisible: |-
+    OnVisible: |
         =Set(varComment,false);
-        /*Clear(colNumberedInvoices);
-        ForAll(product,Collect(colNumberedInvoices,Last(FirstN(AddColumns(product,"RowNumber",CountRows(colNumberedInvoices)+1),CountRows(colNumberedInvoices)+1))));*/
-        //ClearCollect(projectAggregationCollection,Filter(projectAggregations,assessorId.email=User().Email));
-        
-        //ClearCollect(LC_product,product);
-        //ClearCollect(LC_bank,bank);
-        //ClearCollect(LC_bankAssessment,bankAssessment);
-        //ClearCollect(LC_clientInstallation,clientInstallation)
-        
-        //ClearCollect(LC_bank,Filter(bank,clientId.client=Gallery2.Selected.clientId.client,Go_Number);
-        Trace(First(gcBank).productId.product_Model ,TraceSeverity.Information);
-         Set(popupSyncSuccess,false);
+        Set(popupSyncSuccess,false);
+        Trace(
+            First(gcBank).productId.product_Model,
+            TraceSeverity.Information
+        );
 
     ctnMainBankBS As groupContainer.manualLayoutContainer:
         Height: =Parent.Height
@@ -31,16 +24,12 @@ BankScreen As screen:
             Width: =Parent.Width
             Y: |+
                 =ctnHeaderBS.Height
-                //'ctnBack&onlinestatusBS1'.Height+'ctnBack&onlinestatusBS1'.Y
+                
                 
             ZIndex: =1
 
             ctnBackBS As groupContainer.verticalAutoLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
-                FillPortions: =0
                 Height: =ctnHeaderBS.Height
-                LayoutMinHeight: =100
-                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 PaddingBottom: =5
                 Width: =Parent.Width
@@ -48,14 +37,10 @@ BankScreen As screen:
                 ZIndex: =1
 
                 ctnBackButtonBS As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =0
                     Height: =80
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutGap: =10
                     LayoutJustifyContent: =LayoutJustifyContent.Center
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     LayoutWrap: =true
                     PaddingLeft: =40
@@ -95,26 +80,17 @@ BankScreen As screen:
                         ZIndex: =2
 
             ctnClintNameBS As groupContainer.horizontalAutoLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
-                FillPortions: =0
                 Height: =Parent.Height/6.5
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: =100
-                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 Width: =Parent.Width
-                Y: |-
+                Y: |
                     =ctnHeaderBS.Height
-                    //'ctnBack&onlinestatusBS1'.Height+'ctnBack&onlinestatusBS1'.Y
                 ZIndex: =2
 
                 ctnGonumberBS As groupContainer.verticalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =0
                     Height: =Parent.Height/2.8
                     LayoutDirection: =LayoutDirection.Vertical
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     Width: =Parent.Width
                     ZIndex: =1
@@ -127,21 +103,15 @@ BankScreen As screen:
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: |-
                             ="G.O./Commission number :   " & lblBankName.Text
-                        Width: |-
-                            =//ctnHeaderBS_1.Width/3.5
-                            Parent.Width/2
+                        Width: =Parent.Width/2
                         X: |
                             =lblAssessmentBS_2.X+lblAssessmentBS_2.Width
                         ZIndex: =1
 
                 ctnbankBS As groupContainer.horizontalAutoLayoutContainer:
-                    AlignInContainer: =AlignInContainer.SetByContainer
-                    FillPortions: =0
                     Height: =Parent.Height/1.8
                     LayoutAlignItems: =LayoutAlignItems.Center
                     LayoutGap: =10
-                    LayoutMinHeight: =100
-                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     Width: =Parent.Width
                     ZIndex: =2
@@ -171,9 +141,7 @@ BankScreen As screen:
                         DisplayMode: =DisplayMode.View
                         Fill: =RGBA(252, 165, 50, 1)
                         Height: =50
-                        HoverFill: |-
-                            =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                            Self.Fill
+                        HoverFill: =Self.Fill
                         OnSelect: =
                         Text: =btnprojecttype.Text
                         Width: =260
@@ -184,7 +152,7 @@ BankScreen As screen:
                     btnTripReportBS As button:
                         BorderColor: =Self.Fill
                         DisplayMode: |-
-                            =//If(CountRows(Filter(GcCheckpointAssessment,assignmentId.Id=varAssignmentId && AssessmentStatus="Inprogress"))>0,DisplayMode.Edit,DisplayMode.Disabled)
+                            =//if assesment status is Inprogress or completed then we click generate/edit/view trip report else assessment status is upcomming then button is disable (network required) 
                             If(Connection.Connected,
                             If(
                                 CountRows(
@@ -217,7 +185,7 @@ BankScreen As screen:
                             
                             Refresh(BankTripReport);
                             
-                            //ClearCollect(gcBankunit,bankUnits);
+                            //check checkpointItem ActionItem collection is empty or not if empty then load data from cache (only first time load )
                             If(
                                 IsEmpty(GC_checkpointItem_ActionItem),
                                 LoadData(
@@ -227,6 +195,7 @@ BankScreen As screen:
                                 );
                                 
                             );
+                            
                             Clear(tempdata);
                             ForAll(
                                 Filter(
@@ -310,9 +279,7 @@ BankScreen As screen:
                         PaddingRight: =0
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
-                        Size: |-
-                            =//btnTripReportBS.Width/13
-                            AllScreensCSS.RfontsizeInput
+                        Size: =AllScreensCSS.RfontsizeInput
                         Text: |-
                             =If(Connection.Connected,
                             If(comp=true,
@@ -336,10 +303,30 @@ BankScreen As screen:
                 glryUnitBS As gallery.variableTemplateHeightGallery:
                     Fill: =RGBA(237, 237, 237, 1)
                     Height: =CountRows(glryUnitBS.AllItems)*glryUnitBS.TemplateHeight
-                    Items: |
-                        =If(comp=true,Sort(Filter(assignmentUnits,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending),
-                        If(inpro=true || upcomp =true,Sort(Filter(gcAssignmentunit,assignmentId.Id=glryProject.Selected.Id),bankUnitId.unitNumber,Ascending)
-                        ))
+                    Items: |-
+                        =//check comp variable is true or false if true then dislay data from assignmentUnit Dataverse table else check inpro or upcomp variable is true if one of them is true then display data from gcAssignmentunit collection
+                        If(
+                            comp = true,
+                            Sort(
+                                Filter(
+                                    assignmentUnits,
+                                    assignmentId.Id = glryProject.Selected.Id
+                                ),
+                                bankUnitId.unitNumber,
+                                Ascending
+                            ),
+                            If(
+                                inpro = true || upcomp = true,
+                                Sort(
+                                    Filter(
+                                        gcAssignmentunit,
+                                        assignmentId.Id = glryProject.Selected.Id
+                                    ),
+                                    bankUnitId.unitNumber,
+                                    Ascending
+                                )
+                            )
+                        )
                     Layout: =Layout.Vertical
                     LoadingSpinner: =LoadingSpinner.Controls
                     ShowScrollbar: =false
@@ -374,12 +361,8 @@ BankScreen As screen:
                         Fill: =AllScreensCSS.RActiveColor
                         Font: =AllScreensCSS.RFont
                         Height: =50
-                        HoverColor: |-
-                            =//RGBA(255, 255, 255, 1)
-                            Self.Color
-                        HoverFill: |-
-                            =//RGBA(255, 0, 0, 1)
-                            Self.Fill
+                        HoverColor: =Self.Color
+                        HoverFill: =Self.Fill
                         OnSelect: |
                             =//for safety check to show default selected
                             If(
@@ -736,11 +719,8 @@ BankScreen As screen:
                                 
                             );
                         PressedColor: |
-                            =//RGBA(255, 255, 255, 1)
-                            Self.Color
-                        PressedFill: |-
-                            =//RGBA(255, 0, 0, 1)
-                            Self.Fill
+                            =Self.Color
+                        PressedFill: =Self.Fill
                         Size: =AllScreensCSS.RfontsizeInput
                         Text: |-
                             =//"Start assessment"
@@ -788,9 +768,7 @@ BankScreen As screen:
                         Fill: =AllScreensCSS.RActiveColor
                         Font: =AllScreensCSS.RFont
                         Height: =50
-                        HoverFill: |-
-                            =//ColorFade(RGBA(56, 96, 178, 1), -20%)
-                            Self.Fill
+                        HoverFill: =Self.Fill
                         OnSelect: |
                             =Set(varComment,true);
                             Set(varUnitId,ThisItem.bankUnitId);
@@ -803,16 +781,14 @@ BankScreen As screen:
                             =
                             If(comp= true , false , true )
                         Width: =120
-                        X: |-
-                            =//lblProductName_1.X+lblProductName_1.Width
-                            (Parent.Width-Self.Width-btnStartAssessmentBS.Width)-60
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width)-60
                         Y: =30
                         ZIndex: =4
 
                     imgUnitsyncstatusBS As image:
                         Height: =30
                         Image: |-
-                            =
+                            =//To display sync status - if ustatusUpdate is 2 then display green tik otherwise if ustatusUpdate is 1 then  display gray tik
                             If(
                                 CountRows(
                                     Filter(
@@ -832,24 +808,14 @@ BankScreen As screen:
                             )
                         OnSelect: =Select(Parent)
                         Visible: |-
-                            =/*If(
-                                CountRows(
-                                    Filter(
-                                        GC_unitAssessment,
-                                        assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 2 || UstatusUpdate = 1 || UstatusUpdate = 0
-                                    )
-                                ) > 0,
-                                true,
-                                false
-                            )*/
-                            
+                            =//To display sync status - if ustatusUpdate is 2 or 1 then  display sync status
                             If(
                                 CountRows(
                                     Filter(
                                         GC_unitAssessment,
                                         (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 2)  || 
                                         (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" && UstatusUpdate = 1) 
-                                        // ||(assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && Assessment_status = "Inprogress" &&  UstatusUpdate = 0)
+                                       
                                     )
                                 ) > 0,
                                 true,
@@ -862,9 +828,14 @@ BankScreen As screen:
 
                     imgUnitSyncBS As image:
                         Height: =45
-                        HoverBorderColor: =//ColorFade(Self.BorderColor, 20%)
-                        HoverFill: =//ColorFade(Self.Fill, 20%)
-                        Image: =If(Connection.Connected=true,SYNC,'SYNC Copy')
+                        HoverBorderColor: =
+                        HoverFill: =
+                        Image: |-
+                            =If(
+                                Connection.Connected = true,
+                                SYNC,
+                                'SYNC Copy'
+                            )
                         ImagePosition: =ImagePosition.Fill
                         OnSelect: =true
                         RadiusBottomLeft: =90
@@ -879,16 +850,12 @@ BankScreen As screen:
 
                     btnUnitSyncBS As button:
                         BorderThickness: =0
-                        DisabledColor: |-
-                            =//RGBA(166, 166, 166, 1)
-                            AllScreensCSS.RActiveColor
-                        DisabledFill: |-
-                            =//RGBA(244, 244, 244, 1)
-                            AllScreensCSS.RActiveColor
+                        DisabledColor: =AllScreensCSS.RActiveColor
+                        DisabledFill: =AllScreensCSS.RActiveColor
                         Fill: =If(Connection.Connected, RGBA(0, 0, 0, 0),RGBA(204, 204, 204, 0.40))
                         Height: =45
                         HoverColor: =RGBA(0, 0, 0, 0)
-                        HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                        HoverFill: =
                         OnSelect: |
                             =//if network available then patch 1 status data to dataverse
                             
@@ -1509,9 +1476,7 @@ BankScreen As screen:
                     =varComment
                 Width: =656
                 X: =Rectangle5_2.X+20
-                Y: |-
-                    =//Container38_2.Y+Container38_2.Height +10
-                    lblPopupUnitBS.Height+lblPopupUnitBS.Y
+                Y: =lblPopupUnitBS.Height+lblPopupUnitBS.Y
                 ZIndex: =7
 
             iconPopupLineBS As icon.Add:
@@ -1531,7 +1496,7 @@ BankScreen As screen:
                 Fill: =AllScreensCSS.RActiveColor
                 FocusedBorderThickness: =
                 Font: =AllScreensCSS.RFont
-                HoverFill: =//ColorFade(RGBA(56, 96, 178, 1), -20%)
+                HoverFill: =
                 OnSelect: |
                     =Concurrent(
                         Set(
@@ -1618,9 +1583,7 @@ BankScreen As screen:
                 TemplateSize: =glrySectioncomment.Height+glryCheckpointcomment.Height+glryCheckpointItemComment.Height
                 Visible: =varComment
                 Width: =txtPopupNoCommentsBS.Width
-                X: |-
-                    =//If(App.Width>1024,Parent.Width/3.8,App.Width>830,Parent.Width/5.8,Parent.Width/9.8)
-                    (Parent.Width -Self.Width)/2
+                X: =(Parent.Width -Self.Width)/2
                 Y: =Rectangle6_2.Y
                 ZIndex: =16
 
@@ -1872,9 +1835,7 @@ BankScreen As screen:
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
-            Visible: |-
-                =//popupSyncSuccess =true
-                false
+            Visible: =false
             Width: =120
             X: =(Parent.Width-Self.Width)/2
             Y: =lblsyncSuccessBS.Y+ lblsyncSuccessBS.Height+5
