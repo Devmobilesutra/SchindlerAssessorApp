@@ -1,9 +1,10 @@
 ProjectScreen As screen:
     OnVisible: |-
         =Set(Q,false);
-        Trace(First(gcProjectAssignment).clientId.name &First(gcProjectAssignment).dueDate,TraceSeverity.Information)
-        //Reset(tmr_logout);
-        //Set(UserLastNavigated, Now());
+        Trace(
+            First(gcProjectAssignment).clientId.name & First(gcProjectAssignment).dueDate,
+            TraceSeverity.Information
+        )
 
     ctnMainPS As groupContainer.verticalAutoLayoutContainer:
         Height: =Parent.Height
@@ -85,9 +86,7 @@ ProjectScreen As screen:
                     ZIndex: =9
 
         ctnMiddlePS As groupContainer.verticalAutoLayoutContainer:
-            Height: |-
-                =//Parent.Height
-                glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
+            Height: =glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -158,16 +157,44 @@ ProjectScreen As screen:
 
             "glryProject As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
                 FillPortions: =0
-                Height: |-
-                    =//ctnMiddlePS.Height
-                    CountRows(glryProject.AllItems)*glryProject.TemplateHeight+glryProject.TemplatePadding+50
-                Items: |
-                    =//Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming"),startDate,Ascending)
-                    If(comp=true,Sort(Filter(assignments,assessorId=varLoggedAssessor && isCompleted="Completed"),startDate,Ascending),
-                    If(inpro=true,Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Inprogress"),startDate,Ascending),
-                    If(upcomp=true,Sort(Filter(gcProjectAssignment,assessorId=varLoggedAssessor && isCompleted="Upcomming" 
-                    || isCompleted="Inprogress1"
-                    ),startDate,Ascending))))
+                Height: =CountRows(glryProject.AllItems) * glryProject.TemplateHeight + glryProject.TemplatePadding + 50
+                Items: |-
+                    =//If comp variable is true then display completed assignment in gallery else
+                    // check inpro variable is true then display inprogress assignment in gallery otherwise 
+                    // check upcomp variable is true then display upcomming assignment in gallery 
+                    If(
+                        comp = true,
+                        Sort(
+                            Filter(
+                                assignments,
+                                assessorId = varLoggedAssessor && isCompleted = "Completed"
+                            ),
+                            startDate,
+                            Ascending
+                        ),
+                        If(
+                            inpro = true,
+                            Sort(
+                                Filter(
+                                    gcProjectAssignment,
+                                    assessorId = varLoggedAssessor && isCompleted = "Inprogress"
+                                ),
+                                startDate,
+                                Ascending
+                            ),
+                            If(
+                                upcomp = true,
+                                Sort(
+                                    Filter(
+                                        gcProjectAssignment,
+                                        assessorId = varLoggedAssessor && isCompleted = "Upcomming" || isCompleted = "Inprogress1"
+                                    ),
+                                    startDate,
+                                    Ascending
+                                )
+                            )
+                        )
+                    )
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320
@@ -188,10 +215,12 @@ ProjectScreen As screen:
                     PaddingRight: =0
                     PaddingTop: =0
                     Size: =If(App.Width<700,AllScreensCSS.RFontSize,20)
-                    Text: |+
-                        =LookUp(gcClient,Id=ThisItem.clientId.Id,name)
-                        //ThisItem.clientId.name
-                        
+                    Text: |-
+                        =LookUp(
+                            gcClient,
+                            Id = ThisItem.clientId.Id,
+                            name
+                        )
                     VerticalAlign: =VerticalAlign.Top
                     Width: =Parent.Width/1.8
                     X: =glryProject.Width/22
@@ -207,9 +236,12 @@ ProjectScreen As screen:
                         =LookUp(gcClient,Id=ThisItem.clientId.Id,contactNumber)
                     Width: =300
                     X: =lblAddress.Width+lblAddress.X
-                    Y: |
-                        =//lblAddressdetails.Height+lblAddressdetails.Y
-                        If(lblAddressdetails.Height<40,lblAddress.Height+lblAddress.Y,lblAddressdetails.Height+lblAddressdetails.Y)
+                    Y: |-
+                        =If(
+                            lblAddressdetails.Height < 40,
+                            lblAddress.Height + lblAddress.Y,
+                            lblAddressdetails.Height + lblAddressdetails.Y
+                        )
                     ZIndex: =3
 
                 SepGlryProject As rectangle:
@@ -303,8 +335,18 @@ ProjectScreen As screen:
                     Size: =AllScreensCSS.RLabelFontSize
                     Text: ="Completed date"
                     Visible: |-
-                        =//true
-                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                        =If(
+                            comp = true,
+                            true,
+                            If(
+                                inpro = true,
+                                false,
+                                If(
+                                    upcomp = true,
+                                    false
+                                )
+                            )
+                        )
                     Width: =300
                     X: =Parent.Width/13
                     Y: =lblDueDate.Y+lblDueDate.Height
@@ -332,8 +374,11 @@ ProjectScreen As screen:
                     Width: =300
                     X: =Parent.Width/13
                     Y: |-
-                        =If(lblAddressdetails.Height<40,lblAddress.Height+lblAddress.Y,lblAddressdetails.Height+lblAddressdetails.Y)
-                        //(lblAddressdetails.Height+lblAddressdetails.Y)
+                        =If(
+                            lblAddressdetails.Height < 40,
+                            lblAddress.Height + lblAddress.Y,
+                            lblAddressdetails.Height + lblAddressdetails.Y
+                        )
                     ZIndex: =20
 
                 lblDDate As label:
@@ -354,8 +399,18 @@ ProjectScreen As screen:
                     Size: =AllScreensCSS.RLabelFontSize
                     Text: =Text(ThisItem.completionDate,"mm-dd-yyyy")
                     Visible: |-
-                        =//true
-                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                        =If(
+                            comp = true,
+                            true,
+                            If(
+                                inpro = true,
+                                false,
+                                If(
+                                    upcomp = true,
+                                    false
+                                )
+                            )
+                        )
                     Width: =300
                     X: =lblAddress.Width+lblAddress.X
                     Y: =lblDueDate.Y+lblDueDate.Height
@@ -372,17 +427,18 @@ ProjectScreen As screen:
                     Text: =ThisItem.assessmentType
                     Width: =If(App.Width<770,200,260)
                     X: |-
-                        =//lblADate.Width+lblADate.X
-                        If(ProjectScreen.Width<850,Parent.Width-Self.Width*1.35,Parent.Width-Self.Width*2)
+                        =If(
+                            ProjectScreen.Width < 850,
+                            Parent.Width - Self.Width*1.35,
+                            Parent.Width - Self.Width*2
+                        )
                     Y: =lblProjectName.Y
                     ZIndex: =23
 
                 imglogo As image:
                     Image: =completed
                     OnSelect: =Select(Parent)
-                    X: |-
-                        =//glryProject.Width/1.
-                        Parent.Width-Self.Width*2
+                    X: =Parent.Width-Self.Width*2
                     Y: =glryProject.TemplateHeight/1.5
                     ZIndex: =24
 
@@ -412,21 +468,20 @@ ProjectScreen As screen:
                     HoverFill: =
                     OnSelect: |
                         =//for updating status of selected bank
-                        
                         Set(VarBankId,ThisItem.bankId.Id);
-                        //Set(VarproductId,ThisItem.bankId.productId);
+                        
                         // set variable for selected assignmentId
                         Set(varAssignmentId,ThisItem.Id);
-                        /*
-                        UpdateIf(
-                            GC_bankAssessment,
-                                bankId.Id=VarBankId && assignmentId.Id=glryProject.Selected.Id,
-                            {Assessment_Status: "Inprogress"}
-                        );*/
+                        
                         Navigate(BankScreen);
                     PressedBorderColor: =RGBA(230, 230, 230, 1)
                     Text: =""
-                    Width: =If(ProjectScreen.Width<850,Parent.Width/1.12,Parent.Width/1.08)
+                    Width: |-
+                        =If(
+                            ProjectScreen.Width < 850,
+                            Parent.Width / 1.12,
+                            Parent.Width / 1.08
+                        )
                     X: =Parent.Width/35
                     Y: =30
                     ZIndex: =26
@@ -463,8 +518,18 @@ ProjectScreen As screen:
                     Image: =calendar
                     OnSelect: =Select(Parent)
                     Visible: |-
-                        =//true
-                        If(comp=true,true,If(inpro=true,false,If(upcomp=true,false)))
+                        =If(
+                            comp = true,
+                            true,
+                            If(
+                                inpro = true,
+                                false,
+                                If(
+                                    upcomp = true,
+                                    false
+                                )
+                            )
+                        )
                     Width: =20
                     X: =glryProject.Width/20
                     Y: =lblDueDate.Y+lblDueDate.Height+10
@@ -475,9 +540,7 @@ ProjectScreen As screen:
                     Image: =location
                     OnSelect: =Select(Parent)
                     Width: =20
-                    X: |-
-                        =//lblProjectName.X
-                        glryProject.Width/20
+                    X: =glryProject.Width/20
                     Y: |
                         =(lblProjectName.Y+lblProjectName.Height)+10
                     ZIndex: =31
@@ -488,10 +551,9 @@ ProjectScreen As screen:
                     OnSelect: =Select(Parent)
                     Width: =20
                     X: =glryProject.Width/20
-                    Y: |
-                        =//lblAddressdetails.Y+lblAddressdetails.Height
-                        lblContact.Y+10
-                        //If(lblAddressdetails.Height<40,lblContact.Y+10,lblAddressdetails.Height+lblAddressdetails.Y)
+                    Y: |+
+                        =lblContact.Y+10
+                        
                     ZIndex: =32
 
                 lblBankName As label:
