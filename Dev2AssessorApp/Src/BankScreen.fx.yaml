@@ -29,7 +29,11 @@ BankScreen As screen:
             ZIndex: =1
 
             ctnBackBS As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
                 Height: =ctnHeaderBS.Height
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 PaddingBottom: =5
                 Width: =Parent.Width
@@ -37,10 +41,13 @@ BankScreen As screen:
                 ZIndex: =1
 
                 ctnBackButtonBS As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
                     Height: =80
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutGap: =10
                     LayoutJustifyContent: =LayoutJustifyContent.Center
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     LayoutWrap: =true
                     PaddingLeft: =40
@@ -80,8 +87,12 @@ BankScreen As screen:
                         ZIndex: =2
 
             ctnClintNameBS As groupContainer.horizontalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
                 Height: =Parent.Height/6.5
                 LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 Width: =Parent.Width
                 Y: |
@@ -89,8 +100,12 @@ BankScreen As screen:
                 ZIndex: =2
 
                 ctnGonumberBS As groupContainer.verticalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
                     Height: =Parent.Height/2.8
                     LayoutDirection: =LayoutDirection.Vertical
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     Width: =Parent.Width
                     ZIndex: =1
@@ -109,9 +124,13 @@ BankScreen As screen:
                         ZIndex: =1
 
                 ctnbankBS As groupContainer.horizontalAutoLayoutContainer:
+                    AlignInContainer: =AlignInContainer.SetByContainer
+                    FillPortions: =0
                     Height: =Parent.Height/1.8
                     LayoutAlignItems: =LayoutAlignItems.Center
                     LayoutGap: =10
+                    LayoutMinHeight: =100
+                    LayoutMinWidth: =250
                     LayoutMode: =LayoutMode.Auto
                     Width: =Parent.Width
                     ZIndex: =2
@@ -293,14 +312,19 @@ BankScreen As screen:
                         ZIndex: =6
 
             ctnunitAssessmentBS As groupContainer.verticalAutoLayoutContainer:
+                AlignInContainer: =AlignInContainer.SetByContainer
+                FillPortions: =0
                 Height: =Parent.Height
                 LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 Width: =Parent.Width
                 Y: =ctnClintNameBS.Height
                 ZIndex: =3
 
                 glryUnitBS As gallery.variableTemplateHeightGallery:
+                    AlignInContainer: =AlignInContainer.SetByContainer
                     Fill: =RGBA(237, 237, 237, 1)
                     Height: =CountRows(glryUnitBS.AllItems)*glryUnitBS.TemplateHeight
                     Items: |-
@@ -328,6 +352,8 @@ BankScreen As screen:
                             )
                         )
                     Layout: =Layout.Vertical
+                    LayoutMinHeight: =287
+                    LayoutMinWidth: =320
                     LoadingSpinner: =LoadingSpinner.Controls
                     ShowScrollbar: =false
                     TemplateSize: =600

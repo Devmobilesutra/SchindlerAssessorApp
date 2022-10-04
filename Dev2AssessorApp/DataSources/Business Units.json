@@ -84,6 +84,7 @@
       "business_unit_constraint_based_groups": "Resource Groups",
       "business_unit_contacts": "Contacts",
       "business_unit_conversationtranscript": "ConversationTranscripts",
+      "business_unit_cr074_testdata": "testData",
       "business_unit_customapi": "Custom APIs",
       "business_unit_customapirequestparameter": "Custom API Request Parameters",
       "business_unit_customapiresponseproperty": "Custom API Response Properties",
