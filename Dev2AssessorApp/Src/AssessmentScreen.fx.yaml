@@ -1517,7 +1517,8 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempSectionAssessment,
                                             Filter(
-                                                RenameColumns(ShowColumns(sectionAssessment,"quantum_sectionassessmentid","quantum_sectionassessment","shlaf_assignmentId","shlaf_bankUnitId","quantum_assessmentstatus","shlaf_sectioncomment"),"quantum_sectionassessmentid","sectionAssessment (quantum_sectionassessmentid)","quantum_sectionassessment","sectionAssessment (quantum_sectionassessment)","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","quantum_assessmentstatus"," AssessmentStatus","shlaf_sectioncomment","sectionComment"),
+                                                //RenameColumns(ShowColumns(sectionAssessment,"quantum_sectionassessmentid","quantum_sectionassessment","shlaf_assignmentId","shlaf_bankUnitId","quantum_assessmentstatus","shlaf_sectioncomment"),"quantum_sectionassessmentid","sectionAssessment (quantum_sectionassessmentid)","quantum_sectionassessment","sectionAssessment (quantum_sectionassessment)","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","quantum_assessmentstatus"," AssessmentStatus","shlaf_sectioncomment","sectionComment"),
+                                                sectionAssessment,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && 'sectionAssessment (quantum_sectionassessment)' = varSA
                                             )
                                         );
