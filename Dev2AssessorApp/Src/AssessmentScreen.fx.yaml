@@ -1517,7 +1517,7 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempSectionAssessment,
                                             Filter(
-                                                sectionAssessment,
+                                                RenameColumns(ShowColumns(sectionAssessment,"quantum_sectionassessmentid","quantum_sectionassessment","shlaf_assignmentId","shlaf_bankUnitId","quantum_assessmentstatus","shlaf_sectioncomment"),"quantum_sectionassessmentid","sectionAssessment (quantum_sectionassessmentid)","quantum_sectionassessment","sectionAssessment (quantum_sectionassessment)","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","quantum_assessmentstatus"," AssessmentStatus","shlaf_sectioncomment","sectionComment"),
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && 'sectionAssessment (quantum_sectionassessment)' = varSA
                                             )
                                         );
@@ -1644,7 +1644,7 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempCheckpointAssessment,
                                             Filter(
-                                                checkpointAssessment,
+                                                RenameColumns(ShowColumns(checkpointAssessment,"quantum_checkpointassessmentid","shlaf_assignmentId","quantum_checkpointassessment","shlaf_bankUnitId","quantum_assessmentstatus","shlaf_checkpointcomment"),"quantum_checkpointassessmentid","checkpointAssessment","shlaf_assignmentId","assignmentId","quantum_checkpointassessment","checkpointAssessment_id","shlaf_bankUnitId","bankUnitId","quantum_assessmentstatus","AssessmentStatus","shlaf_checkpointcomment","checkpointComment"),
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_id = GuidId
                                             )
                                         );
@@ -1755,7 +1755,7 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempCheckpointItemAssessment,
                                             Filter(
-                                                checkpointItemAssessment,
+                                                RenameColumns(ShowColumns(checkpointItemAssessment,"quantum_checkpointitemassessmentid","quantum_checkpointitemassessment","shlaf_assignmentId","shlaf_bankUnitId","quantum_checkpointAssessment_Id","quantum_assessmentstatus","shlaf_checkpointitemcomment"),"quantum_checkpointitemassessmentid","checkpointItemAssessment (quantum_checkpointitemassessmentid)","quantum_checkpointitemassessment","checkpointItemAssessment (quantum_checkpointitemassessment)","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","quantum_checkpointAssessment_Id","checkpointAssessment_Id","quantum_assessmentstatus","assessmentStatus","shlaf_checkpointitemcomment","checkpointItemComment"),
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_Id.checkpointAssessment_id = GuidId
                                             )
                                         );
