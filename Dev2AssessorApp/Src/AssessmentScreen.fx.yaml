@@ -1856,7 +1856,7 @@ AssessmentScreen As screen:
                             ClearCollect(
                                             TempcheckpointItem_ActionItem,
                                             Filter(
-                                                checkpointItem_ActionItem,
+                                               RenameColumns(ShowColumns(checkpointItem_ActionItem,"quantum_checkpointitem_actionitemsid","quantum_checkpointitemactionitemsid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id","cr28a_action_status"),"quantum_checkpointitem_actionitemsid","checkpointItem_ActionItems","quantum_checkpointitemactionitemsid","checkpointItemActionItemsId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id","cr28a_action_status","Action_status"),
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
@@ -1867,7 +1867,7 @@ AssessmentScreen As screen:
                                                 GC_checkpointItem_ActionItem,
                                                 checkpointItemActionItemsId = i.checkpointItemActionItemsId && CIAstatusUpdate = 1,
                                                 {
-                                                    checkpointItem_ActionItems: i.checkpointItem_ActionItems,
+                                                    checkpointItem_ActionItems: i.checkpointItem_ActionItems,//unique key
                                                     Action_status: i.Action_status,
                                                     CIAstatusUpdate: 2
                                                 }
