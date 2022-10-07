@@ -1858,15 +1858,15 @@ AssessmentScreen As screen:
                             //getting specific unit wise checkpoint Action item data from dataverse to collection beacause we need unique indetifier from dataverse
                             ClearCollect(
                                             TempcheckpointItem_ActionItem,
-                                            Filter(
-                                               RenameColumns(ShowColumns(checkpointItem_ActionItem,"quantum_checkpointitem_actionitemsid","quantum_checkpointitemactionitemsid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id","cr28a_action_status"),"quantum_checkpointitem_actionitemsid","checkpointItem_ActionItems","quantum_checkpointitemactionitemsid","checkpointItemActionItemsId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id","cr28a_action_status","Action_status"),
+                                            Filter(checkpointItem_ActionItem
+                                             /*  RenameColumns(ShowColumns(checkpointItem_ActionItem,"quantum_checkpointitem_actionitemsid","quantum_checkpointitemactionitemsid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id","cr28a_action_status"),"quantum_checkpointitem_actionitemsid","checkpointItem_ActionItems","quantum_checkpointitemactionitemsid","checkpointItemActionItemsId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id","cr28a_action_status","Action_status")*/,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
                              //updating unique identifire ,comment ,assignment status and patch status to Checkpoint action collection from temporary collection  
                             ForAll(
                                             TempcheckpointItem_ActionItem As i,
-                                            UpdateIf(
+                                            UpdateIf( 
                                                 GC_checkpointItem_ActionItem,
                                                 checkpointItemActionItemsId = i.checkpointItemActionItemsId && CIAstatusUpdate = 1,
                                                 {
@@ -1916,8 +1916,8 @@ AssessmentScreen As screen:
                             //getting specific checkpoint wise checkpoint images  data from dataverse to collection beacause we need unique indetifier from dataverse
                             ClearCollect(
                                             TempCheckpointItem_Images,
-                                            Filter(
-                                                RenameColumns(ShowColumns(checkpointItem_Images,"quantum_checkpointitem_imagesid","quantum_checkpointitemimagesid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id"),"quantum_checkpointitem_imagesid","checkpointItem_Images","quantum_checkpointitemimagesid","checkpointItemImagesId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id"),
+                                            Filter(checkpointItem_Images
+                                                /*RenameColumns(ShowColumns(checkpointItem_Images,"quantum_checkpointitem_imagesid","quantum_checkpointitemimagesid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id"),"quantum_checkpointitem_imagesid","checkpointItem_Images","quantum_checkpointitemimagesid","checkpointItemImagesId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id")*/,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
