@@ -892,8 +892,8 @@ BankScreen As screen:
                                         Filter(
                                             GC_unitAssessment,
                                              assignmentId.Id = varAssignmentId && 
-                                             bankUnitId.Id = ThisItem.bankUnitId.Id //&&
-                                           //  UstatusUpdate = 1
+                                             bankUnitId.Id = ThisItem.bankUnitId.Id &&
+                                             UstatusUpdate = 1
                                         )
                                     ) > 0,
                                     Set(
@@ -1005,13 +1005,13 @@ BankScreen As screen:
                                 );
                             
                             //checking status 1 data is available in section Assessment collection if available then patch
-                             If(
+                            /* If(
                                         CountRows(
                                             Filter(
                                                 GcSectionAssessment,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && SstatusUpdate = 1
                                             )
-                                        ) > 0,
+                                        ) > 0,*/
                                     //patching status 1 section assessment data to dataverse table
                                         Patch(
                                             sectionAssessment,
@@ -1042,7 +1042,7 @@ BankScreen As screen:
                                             Filter(
                             
                                                 sectionAssessment,
-                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && 'sectionAssessment (quantum_sectionassessment)' = varSA
+                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId //&& 'sectionAssessment (quantum_sectionassessment)' = varSA
                                             )
                                         );
                                //updating unique identifier ,comment ,assignment status and patch status to section collection from temporary collection         
@@ -1130,16 +1130,16 @@ BankScreen As screen:
                                             "localcheckpointitemimage"
                                         );
                              );
-                                    );
+                                //    );
                                     //if
                             //checking status 1 data is available in checkpoint Assessment collection if available then patch
-                            If(
+                            /*If(
                                         CountRows(
                                             Filter(
                                                 GcCheckpointAssessment,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CstatusUpdate = 1
                                             )
-                                        ) > 0,
+                                        ) > 0,*/
                                     //patching status 1 checkpoint assessment data to dataverse table
                                         Patch(
                                             checkpointAssessment,
@@ -1170,7 +1170,7 @@ BankScreen As screen:
                                             TempCheckpointAssessment,
                                             Filter(
                                                 checkpointAssessment,
-                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_id = GuidId
+                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId // && checkpointAssessment_id = GuidId
                                             )
                                         );
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint collection from temporary collection  
@@ -1242,15 +1242,15 @@ BankScreen As screen:
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         ););
-                                    );
+                                   // );
                                     //checking status 1 data is available in Checkpoint Item Assessment collection if available then patch
-                             If(
+                             /*If(
                                         CountRows(
                                             Filter(
                                                 GC_checkpointItemAssessment,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIstatusUpdate = 1
                                             )
-                                        ) > 0,
+                                        ) > 0,*/
                                     //patching status 1 checkpointItemAssessment data to dataverse table
                                         Patch(
                                             checkpointItemAssessment,
@@ -1282,7 +1282,7 @@ BankScreen As screen:
                                             TempCheckpointItemAssessment,
                                             Filter(
                                                 checkpointItemAssessment,
-                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_Id.checkpointAssessment_id = GuidId
+                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId //&& checkpointAssessment_Id.checkpointAssessment_id = GuidId
                                             )
                                         );
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint item collection from temporary collection  
@@ -1338,17 +1338,17 @@ BankScreen As screen:
                                             "localcheckpointitemimage"
                                         );
                                 );
-                                    );
+                                   // );
                             
                                 Concurrent(
                                 //checking status 1 data is available in checkpoint Assessment collection if available then patch
-                                    If(
+                                 /*   If(
                                         CountRows(
                                             Filter(
                                                 GC_checkpointItem_ActionItem,
                                                 (assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIAstatusUpdate = 1) || (bankUnitId.Id = varBankUnitId && Action_status = "Close" && CIAstatusUpdate = 1)
                                             )
-                                        ) > 0,
+                                        ) > 0,*/
                               //patching status 1 checkpointActionItemAssessment data to dataverse table
                                          Patch(
                                             checkpointItem_ActionItem,
@@ -1384,7 +1384,7 @@ BankScreen As screen:
                                             TempcheckpointItem_ActionItem,
                                             Filter(
                                                 checkpointItem_ActionItem,
-                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
+                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId //&& checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
                              //updating unique identifire ,comment ,assignment status and patch status to Checkpoint action collection from temporary collection  
@@ -1404,16 +1404,16 @@ BankScreen As screen:
                                     SaveData(
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
-                                        );
+                                      //  );
                                     );,
                                     //checking status 1 data is available in checkpoint images collection if available then patch
-                                    If(
+                                  /*  If(
                                         CountRows(
                                             Filter(
                                                 GC_checkpointItem_Images,
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIIstatusUpdate = 1
                                             )
-                                        ) > 0,
+                                        ) > 0,*/
                                      //patching status 1 checkpointItem Images data to dataverse table
                                         Patch(
                                             checkpointItem_Images,
@@ -1442,7 +1442,7 @@ BankScreen As screen:
                             ClearCollect(
                                             TempCheckpointItem_Images,
                                             Filter(checkpointItem_Images,
-                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
+                                                assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId //&& checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
                                  //updating unique identifire ,comment ,assignment status and patch status to checkpoint images collection from temporary collection  
@@ -1462,8 +1462,8 @@ BankScreen As screen:
                                             GC_checkpointItem_Images,
                                             "localcheckpointitemimage"
                                         );
-                                    );
-                                    );
+                                  //  );
+                                    );//concu
                             
                              
                                  Set(popupSyncSuccess,false);
