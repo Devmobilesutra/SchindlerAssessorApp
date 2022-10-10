@@ -999,7 +999,7 @@ BankScreen As screen:
                                     gcImageDelete,
                                     "localgcImageDelete"
                                 );
-                            
+                            //wertyu
                               
                             // //inside section assessment collection => rows contain status 1 => patch that rows to dataverse
                             Patch(
