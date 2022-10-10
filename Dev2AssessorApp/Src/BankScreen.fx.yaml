@@ -884,7 +884,7 @@ BankScreen As screen:
                         HoverFill: =
                         OnSelect: |
                             =//if network available then patch 1 status data to dataverse
-                            
+                            Notify("111111111111111111",NotificationType.Information);
                             If(
                                 Connection.Connected,
                                 If(
@@ -918,7 +918,7 @@ BankScreen As screen:
                                         gcProjectAssignment,
                                         "localprojectassignment"
                                     );
-                            
+                            Notify("222222222222111111111111111111",NotificationType.Information);
                                 //update dataverse table instead using patch
                                     UpdateIf(
                                         bankAssessment,
