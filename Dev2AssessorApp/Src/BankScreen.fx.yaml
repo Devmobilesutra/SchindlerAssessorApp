@@ -884,7 +884,7 @@ BankScreen As screen:
                         HoverFill: =
                         OnSelect: |
                             =//if network available then patch 1 status data to dataverse
-                            Notify("111111111111111111",NotificationType.Information);
+                            //Notify("111111111111111111",NotificationType.Information);
                             If(
                                 Connection.Connected,
                                 If(
@@ -892,15 +892,15 @@ BankScreen As screen:
                                         Filter(
                                             GC_unitAssessment,
                                              assignmentId.Id = varAssignmentId && 
-                                             bankUnitId.Id = ThisItem.bankUnitId.Id &&
-                                             UstatusUpdate = 1
+                                             bankUnitId.Id = ThisItem.bankUnitId.Id //&&
+                                           //  UstatusUpdate = 1
                                         )
                                     ) > 0,
                                     Set(
                                         VarPopupSyncText,
                                         "Syncing Assessment findings and getting reviewer's comments. It may take sometime."
                                     );
-                            
+                                   //Notify("222222222222111111111111111111",NotificationType.Information);
                                     Set(popupSyncSuccess,true);
                             
                                     //update dataverse table instead using patch
@@ -918,7 +918,7 @@ BankScreen As screen:
                                         gcProjectAssignment,
                                         "localprojectassignment"
                                     );
-                            Notify("222222222222111111111111111111",NotificationType.Information);
+                            
                                 //update dataverse table instead using patch
                                     UpdateIf(
                                         bankAssessment,
@@ -966,6 +966,7 @@ BankScreen As screen:
                                             (assignmentId.Id = varAssignmentId && bankUnitId.Id = ThisItem.bankUnitId.Id && UstatusUpdate = 2)
                                         )
                                     ) > 0,
+                                   // Notify("@######222222222222111111111111111111",NotificationType.Information);
                                     Set(
                                         VarPopupSyncText,
                                         "No new assessment records found for submission. Getting reviewer’s comments for submitted Assessment findings."
