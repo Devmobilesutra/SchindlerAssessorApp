@@ -1168,7 +1168,6 @@ BankScreen As screen:
                             ClearCollect(
                                             TempCheckpointAssessment,
                                             Filter(
-                                                //RenameColumns(ShowColumns(checkpointAssessment,"quantum_checkpointassessmentid","shlaf_assignmentId","quantum_checkpointassessment","shlaf_bankUnitId","quantum_assessmentstatus","shlaf_checkpointcomment"),"quantum_checkpointassessmentid","checkpointAssessment","shlaf_assignmentId","assignmentId","quantum_checkpointassessment","checkpointAssessment_id","shlaf_bankUnitId","bankUnitId","quantum_assessmentstatus","AssessmentStatus","shlaf_checkpointcomment","checkpointComment"),
                                                 checkpointAssessment,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_id = GuidId
                                             )
@@ -1188,7 +1187,7 @@ BankScreen As screen:
                                                 }
                                             );,
                                             
-                            //updating sectionId & checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
+                            //updating checkpointAssessmentId lookup for checkpoint item assessment collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GC_checkpointItemAssessment,
                                                 checkpointAssessment_Id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1199,7 +1198,7 @@ BankScreen As screen:
                                                     )
                                                 }
                                             );,
-                              //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
+                              //updating checkpointId  lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
                                                 checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1210,7 +1209,7 @@ BankScreen As screen:
                                                     )
                                                 }
                                             );,
-                                //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
+                                //updatig checkpointId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 checkpoint_id.checkpointAssessment_id = j.checkpointAssessment_id,
@@ -1243,7 +1242,7 @@ BankScreen As screen:
                                             "localcheckpointitemimage"
                                         ););
                                     );
-                                // inside checkpoint item assessment collection => rows contain status 1 => patch that rows to dataverse
+                                    //checking status 1 data is available in Checkpoint Item Assessment collection if available then patch
                              If(
                                         CountRows(
                                             Filter(
@@ -1251,7 +1250,7 @@ BankScreen As screen:
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIstatusUpdate = 1
                                             )
                                         ) > 0,
-                                // inside checkpoint item assessment collection => rows contain status 1 => patch that rows to dataverse
+                                    //patching status 1 checkpointItemAssessment data to dataverse table
                                         Patch(
                                             checkpointItemAssessment,
                                             ShowColumns(
@@ -1281,7 +1280,6 @@ BankScreen As screen:
                             ClearCollect(
                                             TempCheckpointItemAssessment,
                                             Filter(
-                                                //RenameColumns(ShowColumns(checkpointItemAssessment,"quantum_checkpointitemassessmentid","quantum_checkpointitemassessment","shlaf_assignmentId","shlaf_bankUnitId","quantum_checkpointAssessment_Id","quantum_assessmentstatus","shlaf_checkpointitemcomment"),"quantum_checkpointitemassessmentid","checkpointItemAssessment (quantum_checkpointitemassessmentid)","quantum_checkpointitemassessment","checkpointItemAssessment (quantum_checkpointitemassessment)","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","quantum_checkpointAssessment_Id","checkpointAssessment_Id","quantum_assessmentstatus","assessmentStatus","shlaf_checkpointitemcomment","checkpointItemComment"),
                                                 checkpointItemAssessment,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpointAssessment_Id.checkpointAssessment_id = GuidId
                                             )
@@ -1300,7 +1298,7 @@ BankScreen As screen:
                                                     CIstatusUpdate: 2
                                                 }
                                             );,
-                                 //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
+                                 //updating checkpointItemId lookup for checkpoint Action item collection to get updated unique key from dataverse  using temporary collection      
                             UpdateIf(
                                                 GC_checkpointItem_ActionItem,
                                                 checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
@@ -1311,7 +1309,7 @@ BankScreen As screen:
                                                     )
                                                 }
                                             );,
-                                //updating sectionId  ,checkpointId & checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
+                                //updating checkpointItemId lookup for checkpoint images collection to get updated unique key from dataverse using temporary collection
                             UpdateIf(
                                                 GC_checkpointItem_Images,
                                                 checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = k.'checkpointItemAssessment (quantum_checkpointitemassessment)',
@@ -1341,8 +1339,8 @@ BankScreen As screen:
                                 );
                                     );
                             
-                                    Concurrent(
-                                // inside checkpoint Action item collection => rows contain status 1 => patch that rows to dataverse
+                                Concurrent(
+                                //checking status 1 data is available in checkpoint Assessment collection if available then patch
                                     If(
                                         CountRows(
                                             Filter(
@@ -1350,8 +1348,8 @@ BankScreen As screen:
                                                 (assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIAstatusUpdate = 1) || (bankUnitId.Id = varBankUnitId && Action_status = "Close" && CIAstatusUpdate = 1)
                                             )
                                         ) > 0,
-                            // inside checkpoint Action item collection => rows contain status 1 => patch that rows to dataverse
-                                        Patch(
+                              //patching status 1 checkpointActionItemAssessment data to dataverse table
+                                         Patch(
                                             checkpointItem_ActionItem,
                                             ShowColumns(
                                                 DropColumns(
@@ -1383,8 +1381,8 @@ BankScreen As screen:
                             //getting specific unit wise checkpoint Action item data from dataverse to collection beacause we need unique indetifier from dataverse
                             ClearCollect(
                                             TempcheckpointItem_ActionItem,
-                                            Filter(checkpointItem_ActionItem
-                                             /*  RenameColumns(ShowColumns(checkpointItem_ActionItem,"quantum_checkpointitem_actionitemsid","quantum_checkpointitemactionitemsid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id","cr28a_action_status"),"quantum_checkpointitem_actionitemsid","checkpointItem_ActionItems","quantum_checkpointitemactionitemsid","checkpointItemActionItemsId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id","cr28a_action_status","Action_status")*/,
+                                            Filter(
+                                                checkpointItem_ActionItem,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
@@ -1402,12 +1400,12 @@ BankScreen As screen:
                                             )
                                         );
                                     //saving data to local cache
-                            SaveData(
+                                    SaveData(
                                             GC_checkpointItem_ActionItem,
                                             "localcheckpointitemactionitem"
                                         );
                                     );,
-                                    // inside checkpoint images collection => rows contain status 1 => patch that rows to dataverse
+                                    //checking status 1 data is available in checkpoint images collection if available then patch
                                     If(
                                         CountRows(
                                             Filter(
@@ -1415,7 +1413,7 @@ BankScreen As screen:
                                                 assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && CIIstatusUpdate = 1
                                             )
                                         ) > 0,
-                            // inside checkpoint images collection => rows contain status 1 => patch that rows to dataverse
+                                     //patching status 1 checkpointItem Images data to dataverse table
                                         Patch(
                                             checkpointItem_Images,
                                             ShowColumns(
@@ -1442,8 +1440,7 @@ BankScreen As screen:
                             //getting specific checkpoint wise checkpoint images  data from dataverse to collection beacause we need unique indetifier from dataverse
                             ClearCollect(
                                             TempCheckpointItem_Images,
-                                            Filter(checkpointItem_Images
-                                                /*RenameColumns(ShowColumns(checkpointItem_Images,"quantum_checkpointitem_imagesid","quantum_checkpointitemimagesid","shlaf_assignmentId","shlaf_bankUnitId","shlaf_checkpoint_id"),"quantum_checkpointitem_imagesid","checkpointItem_Images","quantum_checkpointitemimagesid","checkpointItemImagesId","shlaf_assignmentId","assignmentId","shlaf_bankUnitId","bankUnitId","shlaf_checkpoint_id","checkpoint_id")*/,
+                                            Filter(checkpointItem_Images,
                                                 assignmentId.assessorId = varLoggedAssessor && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId && checkpoint_id.checkpointAssessment_id = GuidId
                                             )
                                         );
