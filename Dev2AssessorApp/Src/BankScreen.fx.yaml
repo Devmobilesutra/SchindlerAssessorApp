@@ -1001,7 +1001,7 @@ BankScreen As screen:
                                 );
                             
                               
-                            // inside section assessment collection => rows contain status 1 => patch that rows to dataverse
+                            // //inside section assessment collection => rows contain status 1 => patch that rows to dataverse
                             Patch(
                                     sectionAssessment,
                                     ShowColumns(
