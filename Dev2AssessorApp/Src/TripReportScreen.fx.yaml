@@ -516,7 +516,7 @@ TripReportScreen As screen:
                 Height: |-
                     =//Parent.Height
                     //Gallery14_1.Height+10
-                    Gallery15.Height+Label22.Height
+                    Gallery15.Height+Label22.Height+20
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =1000
                 LayoutMinWidth: =250
