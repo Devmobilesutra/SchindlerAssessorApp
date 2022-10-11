@@ -6423,7 +6423,14 @@
         "Default",
         "WrapCount",
         "Selectable",
-        "TemplateSize",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "Gallery15.Height+Label22.Height",
+          "InvariantPropertyName": "TemplateSize",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "TemplateMaximumWidth",
         "TemplatePadding",
         "Layout",
@@ -7747,7 +7754,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconInnerRectangleTRS",
-      "ParentIndex": 5,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8559,7 +8566,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconRectangleCommentTRS",
-      "ParentIndex": 7,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8712,7 +8719,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "imgGroupTRS",
-      "ParentIndex": 6,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25949,7 +25956,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txtSectionCommentTRS",
-      "ParentIndex": 8,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

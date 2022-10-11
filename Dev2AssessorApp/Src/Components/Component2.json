@@ -598,7 +598,7 @@
       "Y",
       "ZIndex"
     ],
-    "LastModifiedTimestamp": "638010716721906325",
+    "LastModifiedTimestamp": "638010895139804943",
     "Name": "Component2",
     "Rules": [
       {
@@ -657,7 +657,7 @@
   "IsPcfControl": false,
   "IsPremiumPcfControl": false,
   "IsWidgetTemplate": false,
-  "LastModifiedTimestamp": "638010716721906325",
+  "LastModifiedTimestamp": "638010895139804943",
   "Name": "149a947c1cff46bba9a2fde84298511b",
   "OverridableProperties": {},
   "Version": "637840492858966228"

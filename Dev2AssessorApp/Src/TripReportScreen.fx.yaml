@@ -512,7 +512,6 @@ TripReportScreen As screen:
             Container5 As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.Start
                 BorderColor: =RGBA(255, 0, 0, 1)
-                BorderThickness: =1
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
@@ -534,19 +533,19 @@ TripReportScreen As screen:
                 Gallery14_1 As gallery.variableTemplateHeightGallery:
                     AlignInContainer: =AlignInContainer.Start
                     BorderColor: =RGBA(255, 191, 0, 1)
-                    BorderThickness: =5
                     FillPortions: =0
                     Height: |-
                         =//Parent.Height
-                        //CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)
-                        CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)
+                        //CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)+(CountRows(Gallery14_1.AllItems)*Label22.Height)
+                        //CountRows(Gallery14_1.AllItems)*(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)*Label22.Height
+                        CountRows(Gallery14_1.AllItems)*(Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight))*1.34
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
                     LayoutMinWidth: =320
                     ShowScrollbar: =false
                     TemplatePadding: =1
-                    TemplateSize: =Gallery15.Height+Label22.Height
+                    TemplateSize: =Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)
                     Width: =Parent.Width-40
                     X: =40
                     Y: |-
@@ -579,7 +578,9 @@ TripReportScreen As screen:
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
                         TemplatePadding: =1
-                        TemplateSize: =250
+                        TemplateSize: |-
+                            =250
+                            //txtTimeEstimateValueAR.Height+lblActionReqValueAR.Height+Rectanglebroder_2.Height+lblItemValueAR.Height+lblCheckpointValueAR.Height+lblPriorityValueAR.Height
                         Width: =Parent.Width-20
                         Y: |-
                             =Label22.Y+ Label22.Height
