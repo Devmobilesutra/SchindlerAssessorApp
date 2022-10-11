@@ -4485,7 +4485,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "ctnCommentHeaderTRS",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -6535,7 +6535,14 @@
           "PropertyName": "LayoutMinWidth"
         },
         {
-          "ControlPropertyState": "LayoutMinHeight",
+          "ControlPropertyState": {
+            "AFDDataSourceName": "",
+            "AutoRuleBindingEnabled": false,
+            "AutoRuleBindingString": "",
+            "InvariantPropertyName": "LayoutMinHeight",
+            "IsLockable": false,
+            "NameMapSourceSchema": "?"
+          },
           "Property": {
             "Category": "Design",
             "PropertyName": "LayoutMinHeight",
@@ -7775,7 +7782,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconInnerRectangleTRS",
-      "ParentIndex": 3,
+      "ParentIndex": 7,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8364,7 +8371,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconRectanglecmntboxSS_1",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8587,7 +8594,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconRectangleCommentTRS",
-      "ParentIndex": 8,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8740,7 +8747,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "imgGroupTRS",
-      "ParentIndex": 6,
+      "ParentIndex": 8,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -23103,7 +23110,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblSuccessTRS",
-      "ParentIndex": 7,
+      "ParentIndex": 9,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -25977,7 +25984,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "txtSectionCommentTRS",
-      "ParentIndex": 9,
+      "ParentIndex": 6,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {

@@ -519,7 +519,7 @@ TripReportScreen As screen:
                     //(CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight))+20
                     Gallery14_1.Height
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: =500
+                LayoutMinHeight: =800
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 PaddingLeft: =40
@@ -541,7 +541,7 @@ TripReportScreen As screen:
                         (CountRows(Gallery14_1.AllItems)*Gallery14_1.TemplateHeight+Gallery15.Height)
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
-                    LayoutMinHeight: =287
+                    LayoutMinHeight: =500
                     LayoutMinWidth: =320
                     ShowScrollbar: =false
                     TemplatePadding: =1
@@ -572,8 +572,8 @@ TripReportScreen As screen:
                         BorderThickness: =3
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: |-
-                            =CountRows(ThisItem.data)*Gallery15.TemplateHeight
-                            //(CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight))
+                            =//CountRows(ThisItem.data)*Gallery15.TemplateHeight
+                            CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight)
                         Items: |-
                             =Sort(Sort(ThisItem.data,checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence)
                             //Filter(checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id&& //bankUnitId.Id=glryBankGo_1.Selected.bankUnitId.Id)
@@ -582,7 +582,7 @@ TripReportScreen As screen:
                         TemplatePadding: =1
                         TemplateSize: |-
                             =//280
-                            txtTimeEstimateValueAR.Height+lblActionReqValueAR.Height+lblItemValueAR.Height+lblCheckpointValueAR.Height+lblPriorityValueAR.Height+320
+                            320
                         Width: =Parent.Width-20
                         Y: |-
                             =Label22.Y+ Label22.Height
