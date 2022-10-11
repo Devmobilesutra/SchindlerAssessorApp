@@ -3,6 +3,7 @@ BankScreen As screen:
     OnVisible: |
         =Set(varComment,false);
         Set(popupSyncSuccess,false);
+        Refresh(unitAssessment);
         Trace(
             First(gcBank).productId.product_Model,
             TraceSeverity.Information
