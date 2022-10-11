@@ -512,6 +512,7 @@ TripReportScreen As screen:
             Container5 As groupContainer.verticalAutoLayoutContainer:
                 AlignInContainer: =AlignInContainer.Start
                 BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
