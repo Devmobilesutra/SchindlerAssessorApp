@@ -515,7 +515,7 @@ TripReportScreen As screen:
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
-                    Gallery14_1.Height+50
+                    Gallery14_1.Height
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =1000
                 LayoutMinWidth: =250
@@ -533,7 +533,7 @@ TripReportScreen As screen:
                     FillPortions: =0
                     Height: |
                         =//Parent.Height
-                        CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)*1.8
+                        CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)*1.02
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
@@ -566,7 +566,7 @@ TripReportScreen As screen:
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: |-
                             =//CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight
-                            CountRows(ThisItem.data)*250
+                            CountRows(ThisItem.data)*(Gallery15.TemplateHeight)
                         Items: |-
                             =Sort(Sort(ThisItem.data,checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence)
                             //Filter(checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id&& //bankUnitId.Id=glryBankGo_1.Selected.bankUnitId.Id)
