@@ -510,7 +510,6 @@ TripReportScreen As screen:
                         ZIndex: =2
 
             Container5 As groupContainer.verticalAutoLayoutContainer:
-                AlignInContainer: =AlignInContainer.Start
                 BorderColor: =RGBA(255, 0, 0, 1)
                 BorderThickness: =1
                 FillPortions: =0
@@ -520,7 +519,6 @@ TripReportScreen As screen:
                     //(CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight))+20
                     Gallery14_1.Height
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
                 LayoutMinHeight: =500
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
@@ -539,14 +537,17 @@ TripReportScreen As screen:
                         =//Parent.Height
                         //CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)+(CountRows(Gallery14_1.AllItems)*Label22.Height)
                         //CountRows(Gallery14_1.AllItems)*(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)*Label22.Height
-                        CountRows(Gallery14_1.AllItems)*(Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight))*1.34
+                        //CountRows(Gallery14_1.AllItems)*(Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight))*1.34
+                        (CountRows(Gallery14_1.AllItems)*Gallery14_1.TemplateHeight+Gallery15.Height)
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
                     LayoutMinWidth: =320
                     ShowScrollbar: =false
                     TemplatePadding: =1
-                    TemplateSize: =Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)
+                    TemplateSize: |-
+                        =//Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)
+                        300
                     Width: =Parent.Width-40
                     X: =40
                     Y: |-
@@ -571,8 +572,8 @@ TripReportScreen As screen:
                         BorderThickness: =3
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: |-
-                            =//CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight
-                            CountRows(ThisItem.data)*(Gallery15.TemplateHeight)
+                            =CountRows(ThisItem.data)*Gallery15.TemplateHeight
+                            //(CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight))
                         Items: |-
                             =Sort(Sort(ThisItem.data,checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence)
                             //Filter(checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id&& //bankUnitId.Id=glryBankGo_1.Selected.bankUnitId.Id)
@@ -580,8 +581,8 @@ TripReportScreen As screen:
                         ShowScrollbar: =false
                         TemplatePadding: =1
                         TemplateSize: |-
-                            =250
-                            //txtTimeEstimateValueAR.Height+lblActionReqValueAR.Height+Rectanglebroder_2.Height+lblItemValueAR.Height+lblCheckpointValueAR.Height+lblPriorityValueAR.Height
+                            =//280
+                            txtTimeEstimateValueAR.Height+lblActionReqValueAR.Height+lblItemValueAR.Height+lblCheckpointValueAR.Height+lblPriorityValueAR.Height+320
                         Width: =Parent.Width-20
                         Y: |-
                             =Label22.Y+ Label22.Height
