@@ -510,15 +510,18 @@ TripReportScreen As screen:
                         ZIndex: =2
 
             Container5 As groupContainer.verticalAutoLayoutContainer:
-                AlignInContainer: =AlignInContainer.SetByContainer
+                AlignInContainer: =AlignInContainer.Start
                 BorderColor: =RGBA(255, 0, 0, 1)
+                BorderThickness: =1
                 FillPortions: =0
                 Height: |-
                     =//Parent.Height
                     //Gallery14_1.Height+10
-                    Gallery15.Height+Label22.Height+20
+                    //(CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight))+20
+                    Gallery14_1.Height
                 LayoutDirection: =LayoutDirection.Vertical
-                LayoutMinHeight: =1000
+                LayoutJustifyContent: =LayoutJustifyContent.SpaceBetween
+                LayoutMinHeight: =500
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
                 PaddingLeft: =40
@@ -531,6 +534,7 @@ TripReportScreen As screen:
                 Gallery14_1 As gallery.variableTemplateHeightGallery:
                     AlignInContainer: =AlignInContainer.Start
                     BorderColor: =RGBA(255, 191, 0, 1)
+                    BorderThickness: =5
                     FillPortions: =0
                     Height: |-
                         =//Parent.Height
