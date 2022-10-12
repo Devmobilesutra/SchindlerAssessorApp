@@ -109,6 +109,7 @@
       "business_unit_flowmachinegroup": "Flow Machine Groups",
       "business_unit_flowmachineimage": "Flow Machine Images",
       "business_unit_flowmachineimageversion": "Flow Machine Image Versions",
+      "business_unit_flowmachinenetwork": "Flow Machine Networks",
       "business_unit_flowsession": "Flow Sessions",
       "business_unit_goal": "Goals",
       "business_unit_goalrollupquery": "Rollup Queries",
