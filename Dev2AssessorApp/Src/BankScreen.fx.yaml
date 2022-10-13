@@ -254,7 +254,7 @@ BankScreen As screen:
                                         ));
                                     Set(
                                         VarTripReportNotification,
-                                        "Trip report Update successfully."
+                                        "Trip report Updated successfully."
                                     )
                                 );
                                 ClearCollect(localCollectionAction,

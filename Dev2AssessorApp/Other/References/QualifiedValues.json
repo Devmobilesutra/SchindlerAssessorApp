@@ -22,13 +22,6 @@
       }
     },
     {
-      "Kind": "default.cds_quantum_bank_forms",
-      "Namespace": "bank (Forms)",
-      "Values": {
-        "Information": "0c94d496-3e40-487f-ae08-8b509afda9d2"
-      }
-    },
-    {
       "Kind": "default.cds_quantum_bankassessment_forms",
       "Namespace": "bankAssessment (Forms)",
       "Values": {
@@ -85,13 +78,6 @@
       }
     },
     {
-      "Kind": "default.cds_quantum_client_forms",
-      "Namespace": "Client (Forms)",
-      "Values": {
-        "Information": "66612ec4-0460-4127-a611-7388337ac690"
-      }
-    },
-    {
       "Kind": "default.cds_fileattachment_forms",
       "Namespace": "FileAttachments (Forms)",
       "Values": {}
@@ -108,13 +94,6 @@
       "Namespace": "product (Forms)",
       "Values": {
         "Information": "be20c0a8-83d6-4208-b016-d7cd9df2adc4"
-      }
-    },
-    {
-      "Kind": "default.cds_quantum_projectassignment_forms",
-      "Namespace": "projectAssignment (Forms)",
-      "Values": {
-        "Information": "5b92673d-8085-40e6-85e1-c0fe5d109cc4"
       }
     },
     {
@@ -184,6 +163,27 @@
         "User": "c2cd9e55-d4b4-4b55-9951-16ead79643e5",
         "User form – Business": "c2413504-7eb2-4c59-a087-95d819866114",
         "User Hierarchy Tile Form": "c68d6c09-d7a7-4959-8d0f-44b8cff9b452"
+      }
+    },
+    {
+      "Kind": "default.cds_quantum_bank_forms",
+      "Namespace": "bank (Forms)",
+      "Values": {
+        "Information": "0c94d496-3e40-487f-ae08-8b509afda9d2"
+      }
+    },
+    {
+      "Kind": "default.cds_quantum_client_forms",
+      "Namespace": "Client (Forms)",
+      "Values": {
+        "Information": "66612ec4-0460-4127-a611-7388337ac690"
+      }
+    },
+    {
+      "Kind": "default.cds_quantum_projectassignment_forms",
+      "Namespace": "projectAssignment (Forms)",
+      "Values": {
+        "Information": "5b92673d-8085-40e6-85e1-c0fe5d109cc4"
       }
     },
     {

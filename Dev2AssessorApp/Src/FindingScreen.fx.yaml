@@ -1425,7 +1425,7 @@ FindingScreen As screen:
                                 SearchFields: =["shlaf_actionitemname"]
                                 SearchItems: =[]
                                 SelectionColor: =RGBA(0, 0, 0, 1)
-                                SelectionFill: =RGBA(0, 0, 0, 1)
+                                SelectionFill: =RGBA(204, 204, 204, 1)
                                 SelectMultiple: =false
                                 Size: =AllScreensCSS.RLabelFontSize-2
                                 Width: |-
