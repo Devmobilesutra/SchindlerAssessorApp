@@ -251,7 +251,8 @@ BankScreen As screen:
                                     ),
                                     ClearCollect(localBanktripReport, LookUp(
                                             BankTripReport,
-                                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id
+                                            assignmentId.Id = glryProject.Selected.Id 
+                                            //&& bankId.Id = glryProject.Selected.bankId.Id
                                         ));
                                     Set(
                                         VarTripReportNotification,
