@@ -241,7 +241,8 @@ BankScreen As screen:
                                     IsBlank(
                                         LookUp(
                                             BankTripReport,
-                                            assignmentId.Id = glryProject.Selected.Id && bankId.Id = glryProject.Selected.bankId.Id
+                                            assignmentId.Id = glryProject.Selected.Id 
+                                            //&& bankId.Id = glryProject.Selected.bankId.Id
                                         )
                                     ),
                                     Set(
