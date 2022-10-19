@@ -24064,7 +24064,14 @@
         "DisplayMode",
         "TabIndex",
         "X",
-        "Y",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "txtTimeEstimateValueAR.Height+txtTimeEstimateValueAR.Y+30",
+          "InvariantPropertyName": "Y",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Width",
         "Height",
         "OnSelect",

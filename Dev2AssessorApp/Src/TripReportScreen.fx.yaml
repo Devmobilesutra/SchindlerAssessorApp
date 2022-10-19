@@ -571,7 +571,10 @@ TripReportScreen As screen:
                         BorderThickness: =3
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: |-
-                            =Parent.Height
+                            =If(CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight)<Parent.Height,CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight),Parent.Height)
+                            
+                            
+                            //Parent.Height
                             
                             
                             //CountRows(ThisItem.data)*Gallery15.TemplateHeight
@@ -838,7 +841,10 @@ TripReportScreen As screen:
                             Height: =1
                             Width: =Parent.Width
                             X: =1
-                            Y: =txtTimeEstimateValueAR.Height+txtTimeEstimateValueAR.Y+30
+                            Y: |-
+                                =Gallery15.TemplateHeight
+                                
+                                //txtTimeEstimateValueAR.Height+txtTimeEstimateValueAR.Y+30
                             ZIndex: =19
 
                         txtMaterialValueAR As label:
