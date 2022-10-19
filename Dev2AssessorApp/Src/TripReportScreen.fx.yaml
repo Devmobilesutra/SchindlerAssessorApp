@@ -514,10 +514,10 @@ TripReportScreen As screen:
                 BorderThickness: =1
                 FillPortions: =0
                 Height: |-
-                    =//Parent.Height
+                    =Parent.Height
                     //Gallery14_1.Height+10
                     //(CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight))+20
-                    Gallery14_1.Height
+                    //Gallery14_1.Height
                 LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =800
                 LayoutMinWidth: =250
@@ -534,16 +534,15 @@ TripReportScreen As screen:
                     BorderColor: =RGBA(255, 191, 0, 1)
                     FillPortions: =0
                     Height: |-
-                        =//Parent.Height
+                        =Parent.Height
                         //CountRows(Gallery14_1.AllItems)*(Gallery14_1.TemplateHeight)+(CountRows(Gallery14_1.AllItems)*Label22.Height)
                         //CountRows(Gallery14_1.AllItems)*(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)*Label22.Height
                         //CountRows(Gallery14_1.AllItems)*(Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight))*1.34
-                        (CountRows(Gallery14_1.AllItems)*Gallery14_1.TemplateHeight+Gallery15.Height)
+                        //(CountRows(Gallery14_1.AllItems)*Gallery14_1.TemplateHeight+Gallery15.Height)
                     Items: =localCollectionAction
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =500
                     LayoutMinWidth: =320
-                    ShowScrollbar: =false
                     TemplatePadding: =1
                     TemplateSize: |-
                         =//Label22.Height+(CountRows(Gallery15.AllItems)*Gallery15.TemplateHeight)
@@ -572,13 +571,15 @@ TripReportScreen As screen:
                         BorderThickness: =3
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: |-
-                            =//CountRows(ThisItem.data)*Gallery15.TemplateHeight
-                            CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight)
+                            =Parent.Height
+                            
+                            
+                            //CountRows(ThisItem.data)*Gallery15.TemplateHeight
+                            //CountRows(Gallery15.AllItems)*(Gallery15.TemplateHeight)
                         Items: |-
                             =Sort(Sort(ThisItem.data,checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence)
                             //Filter(checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id&& //bankUnitId.Id=glryBankGo_1.Selected.bankUnitId.Id)
                         Layout: =Layout.Vertical
-                        ShowScrollbar: =false
                         TemplatePadding: =1
                         TemplateSize: |-
                             =//280

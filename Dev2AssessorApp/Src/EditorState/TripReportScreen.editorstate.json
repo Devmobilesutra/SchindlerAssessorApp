@@ -6451,7 +6451,14 @@
         "Transition",
         "ShowNavigation",
         "NavigationStep",
-        "ShowScrollbar",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "ShowScrollbar",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionTracksMove",
         "Reset",
         "AutoHeight",
@@ -6849,7 +6856,14 @@
         "Transition",
         "ShowNavigation",
         "NavigationStep",
-        "ShowScrollbar",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "ShowScrollbar",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "SelectionTracksMove",
         "Reset",
         "AutoHeight",
