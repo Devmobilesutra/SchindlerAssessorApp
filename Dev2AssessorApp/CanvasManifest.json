@@ -117,6 +117,7 @@
     "AssessmentScreen",
     "FindingScreen",
     "TripReportScreen",
-    "ViewAssessmentScreen"
+    "ViewAssessmentScreen",
+    "Screen1"
   ]
 }
