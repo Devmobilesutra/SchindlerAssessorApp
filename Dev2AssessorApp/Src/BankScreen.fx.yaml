@@ -259,6 +259,7 @@ BankScreen As screen:
                                         "Trip report Updated successfully."
                                     )
                                 );
+                                /*
                                 ClearCollect(localCollectionAction,
                                 Sort(
                                 Sort(
@@ -289,8 +290,8 @@ BankScreen As screen:
                                     unitNumber
                                 ),
                                 Ascending
-                            ););
-                                Navigate(TripReportScreen);
+                            ););*/
+                                Navigate(Screen1);
                                 ,
                                 Set(VarPopupSyncText,"Assessment records are not found in your local device . please click each unit to get assessment records from server .");
                                 Set(popupTripReportSuccess,true);

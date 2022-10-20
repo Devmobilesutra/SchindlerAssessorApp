@@ -876,6 +876,7 @@ Screen1 As screen:
                         ZIndex: =24
 
                     Label22_6 As label:
+                        AutoHeight: =true
                         BorderColor: =RGBA(179, 179, 179, 1)
                         Font: =AllScreensCSS.RFont
                         Size: =16
@@ -884,7 +885,7 @@ Screen1 As screen:
                             //"Section : " & 
                             //ThisItem.section_id.sectionName
                             LookUp(GcSectionAssessment,'sectionAssessment (quantum_sectionassessment)'=ThisItem.section_id.'sectionAssessment (quantum_sectionassessment)',sectionName)
-                        Width: =Parent.Width/6
+                        Width: =Parent.Width/4
                         X: =Label22_3.Width+Label22_3.X
                         ZIndex: =25
 
@@ -1311,7 +1312,7 @@ Screen1 As screen:
                 =
                 Reset(txtSectionCommentTRS_1);
                 Set(varComment, false);
-                Navigate(TripReportScreen_1);
+                Navigate(Screen1);
                   
             PressedColor: =Self.Color
             PressedFill: =Self.Fill
