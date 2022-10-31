@@ -100,7 +100,8 @@ App As appinfo:
             ClearCollect(
                 LoggedAssessor,
                 LookUp(
-                    AzureAD.GetGroupMembers("9ae78503-6ff0-4f1a-b15f-9e0b76c01b44").value,
+                    //AzureAD.GetGroupMembers("9ae78503-6ff0-4f1a-b15f-9e0b76c01b44").value,
+                    Office365Groups.ListGroupMembers("9ae78503-6ff0-4f1a-b15f-9e0b76c01b44").value,
                     userPrincipalName = User().Email
                 )
             );
