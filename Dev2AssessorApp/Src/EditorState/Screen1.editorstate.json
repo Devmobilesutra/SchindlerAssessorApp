@@ -6549,7 +6549,14 @@
     "Gallery15_1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Items",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//Sort(Sort(Sort(Filter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = \"High\"),checkpoint_id.CheckpointSequence),section_id.sectionSequence),bankUnitId.unitNumber)\r\n\r\nFilter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = \"High\")\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n//Sort(Sort(ThisItem.data,checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence)\r\n//Filter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id )\r\n//&& bankId.Id=glryProject.Selected.bankId.Id)\r\n//localCollectionAction\r\n",
+          "InvariantPropertyName": "Items",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Default",
         "WrapCount",
         "Selectable",

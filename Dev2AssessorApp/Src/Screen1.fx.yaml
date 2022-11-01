@@ -543,7 +543,7 @@ Screen1 As screen:
                     Items: |
                         =//Sort(Sort(Sort(Filter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = "High"),checkpoint_id.CheckpointSequence),section_id.sectionSequence),bankUnitId.unitNumber)
                         
-                        Filter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = "High")
+                        Sort(Sort(Sort(Sort(Filter(GC_checkpointItem_ActionItem,assignmentId.Id=glryProject.Selected.Id && CIAstatusUpdate = 2 && priority = "High"),checkpointItem_Id.checkpointitemSequence),checkpoint_id.CheckpointSequence),section_id.sectionSequence),bankUnitId.unitNumber)
                         
                         
                         
