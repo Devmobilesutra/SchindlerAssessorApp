@@ -882,7 +882,7 @@ Screen1 As screen:
                              LookUp(gcBankunit,Id=ThisItem.bankUnitId.Id,unitNumber) 
                             //&"                 " & "Section : " & ThisItem.section_id.sectionName
                         Width: =Parent.Width/2
-                        X: =Label22_2.X+Label22_2.Width
+                        X: =Label22_2.Width
                         ZIndex: =24
 
                     Label22_6 As label:
