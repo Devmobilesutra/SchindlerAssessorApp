@@ -573,6 +573,7 @@ Screen1 As screen:
                     lblCheckpointAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =15
@@ -583,12 +584,13 @@ Screen1 As screen:
                         VerticalAlign: =VerticalAlign.Top
                         Width: =230
                         X: =1
-                        Y: =Label22_2.Height
+                        Y: =Label22_6.Height+Label22_6.Y
                         ZIndex: =1
 
                     lblItemAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =15
@@ -608,6 +610,7 @@ Screen1 As screen:
                     lblActionReqAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =15
@@ -658,6 +661,7 @@ Screen1 As screen:
                     lblPriorityAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =15
@@ -676,6 +680,7 @@ Screen1 As screen:
                     lblOwnerIdAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -692,6 +697,7 @@ Screen1 As screen:
                     LblMaterialEstimateAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =15
@@ -708,6 +714,7 @@ Screen1 As screen:
 
                     lblPriorityValueAR_1 As label:
                         Font: =AllScreensCSS.RFont
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -723,6 +730,7 @@ Screen1 As screen:
 
                     lblOwnerIdValueAR_1 As label:
                         Font: =AllScreensCSS.RFont
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -739,6 +747,7 @@ Screen1 As screen:
                     lblTimeestimateAR_1 As label:
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         OnSelect: =Select(Parent)
                         PaddingBottom: =0
                         PaddingLeft: =0
@@ -767,7 +776,7 @@ Screen1 As screen:
                         VerticalAlign: =VerticalAlign.Top
                         Width: =Parent.Width -230
                         X: =lblCheckpointAR.X+lblCheckpointAR.Width
-                        Y: =Label22_2.Height
+                        Y: =Label22_6.Height+Label22_6.Y
                         ZIndex: =14
 
                     lblItemValueAR_1 As label:
@@ -843,6 +852,7 @@ Screen1 As screen:
                         BorderColor: =RGBA(179, 179, 179, 1)
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         Size: =16
                         Text: ="Unit "
                         Width: =230
@@ -853,25 +863,25 @@ Screen1 As screen:
                         BorderColor: =RGBA(179, 179, 179, 1)
                         Font: =AllScreensCSS.RFont
                         FontWeight: =FontWeight.Semibold
+                        Height: =30
                         Size: =16
-                        Text: |
-                            =//ThisItem.ActionItem_Name
-                            "Section : " 
-                            //& ThisItem.section_id.sectionName
-                        Width: =140
-                        X: =Label22_4.Width+Label22_4.X
+                        Text: ="Section "
+                        Width: =230
+                        X: =10
+                        Y: =Label22_4.Height+Label22_4.Y
                         ZIndex: =23
 
                     Label22_4 As label:
                         BorderColor: =RGBA(179, 179, 179, 1)
                         Font: =AllScreensCSS.RFont
+                        Height: =30
                         Size: =16
                         Text: |
                             =//ThisItem.ActionItem_Name
                             //"Unit : "  &
                              LookUp(gcBankunit,Id=ThisItem.bankUnitId.Id,unitNumber) 
                             //&"                 " & "Section : " & ThisItem.section_id.sectionName
-                        Width: =Parent.Width/7.2
+                        Width: =Parent.Width/2
                         X: =Label22_2.X+Label22_2.Width
                         ZIndex: =24
 
@@ -879,14 +889,16 @@ Screen1 As screen:
                         AutoHeight: =true
                         BorderColor: =RGBA(179, 179, 179, 1)
                         Font: =AllScreensCSS.RFont
+                        Height: =30
                         Size: =16
                         Text: |
                             =//ThisItem.ActionItem_Name
                             //"Section : " & 
                             //ThisItem.section_id.sectionName
                             LookUp(GcSectionAssessment,'sectionAssessment (quantum_sectionassessment)'=ThisItem.section_id.'sectionAssessment (quantum_sectionassessment)',sectionName)
-                        Width: =Parent.Width/4
-                        X: =Label22_3.Width+Label22_3.X
+                        Width: =Parent.Width/2
+                        X: =Label22_3.Width
+                        Y: =Label22_3.Height
                         ZIndex: =25
 
             ctnitemsAS_2 As groupContainer.horizontalAutoLayoutContainer:
