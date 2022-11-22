@@ -2129,17 +2129,17 @@ AssessmentScreen As screen:
                     ZIndex: =9
 
     Timer2_3 As timer:
-        AutoStart: =If(varSafety=true,true,false)
-        Duration: =1000
+        AutoStart: =//If(varSafety=true,true,false)
+        Duration: =//1000
         OnTimerEnd: |-
-            =If(
+            =/*If(
                 UserLastNavigated < DateAdd(
                     Now(),
                     LogOutTimer,
                     Seconds
                 ),
                 Set(safetyPopup,true);
-            )
+            )*/
         Repeat: =true
         Visible: =false
         ZIndex: =2

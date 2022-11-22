@@ -2419,17 +2419,17 @@ FindingScreen As screen:
                             ZIndex: =8
 
     TimerFS As timer:
-        AutoStart: =If(varSafety=true,true,false)
-        Duration: =1000
+        AutoStart: =//If(varSafety=true,true,false)
+        Duration: =//1000
         OnTimerEnd: |-
-            =If( P = false &&
+            =/*If( P = false &&
                 UserLastNavigated < DateAdd(
                     Now(),
                     LogOutTimer,
                     Seconds
                 ),
                 Set(safetyPopup,true);
-            )
+            )*/
         Repeat: =true
         Visible: =false
         X: =20

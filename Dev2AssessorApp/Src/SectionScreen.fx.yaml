@@ -869,8 +869,8 @@ SectionScreen As screen:
                         ZIndex: =8
 
     TimerSS As timer:
-        AutoStart: =If(varSafety =true,true,false)
-        Duration: =30000
+        AutoStart: =//If(varSafety =true,true,false)
+        Duration: =//30000
         OnTimerEnd: |-
             =/*If(
                 UserLastNavigated < DateAdd(
