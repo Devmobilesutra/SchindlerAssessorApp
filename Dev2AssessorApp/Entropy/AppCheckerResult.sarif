@@ -63,10 +63,10 @@
                   "relativeAddress": 0
                 },
                 "region": {
-                  "charLength": 28,
-                  "charOffset": 375,
+                  "charLength": 11,
+                  "charOffset": 385,
                   "snippet": {
-                    "text": "Value(bankUnitId.unitNumber)"
+                    "text": ".unitNumber"
                   }
                 }
               },

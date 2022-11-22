@@ -340,7 +340,7 @@ BankScreen As screen:
                                     assignmentUnits,
                                     assignmentId.Id = glryProject.Selected.Id
                                 ),
-                                Value(bankUnitId.unitNumber),
+                                bankUnitId.unitNumber,
                                 Ascending
                             ),
                             If(
@@ -350,7 +350,7 @@ BankScreen As screen:
                                         gcAssignmentunit,
                                         assignmentId.Id = glryProject.Selected.Id
                                     ),
-                                    Value(bankUnitId.unitNumber),
+                                    bankUnitId.unitNumber,
                                     Ascending
                                 )
                             )
