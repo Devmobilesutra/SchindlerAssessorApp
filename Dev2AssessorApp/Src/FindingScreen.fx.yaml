@@ -1,9 +1,29 @@
 FindingScreen As screen:
     OnVisible: |-
-        =//for reset ideal timer
-        Set(popup1,false);
+        =/*//for reset ideal timer
         Reset(tmr_logout);
-        Set(UserLastNavigated, Now());
+        Set(UserLastNavigated, Now());*/
+        
+        //for safety check
+        If(
+            DateDiff(
+                UserLastNavigatedTime,
+                Now(),
+                Seconds
+            ) > 600,
+            Set(
+                safetyPopup,
+                true
+            );
+            ,
+            Set(
+                UserLastNavigatedTime,
+                Now()
+            );
+            
+        );
+        
+        Set(popup1,false);
         Set(varRequired,false);
         Set(VarBlankrow1,false);
         Set(VarBlankrow2,false);
@@ -471,9 +491,28 @@ FindingScreen As screen:
                         HoverColor: =RGBA(0, 0, 0, 1)
                         HoverFill: =ColorFade(Self.Fill, -20%)
                         OnSelect: |
-                            =///for reset ideal timer
+                            =/*//for reset ideal timer
                             Reset(tmr_logout);
-                            Set(UserLastNavigated, Now());
+                            Set(UserLastNavigated, Now());*/
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
+                            );
                             
                             Set(C,true);
                         PressedColor: =Self.Color
@@ -1136,10 +1175,28 @@ FindingScreen As screen:
                             Mode: =TextMode.MultiLine
                             OnChange: |+
                                 =//for reset ideal timer
-                                Reset(tmr_logout);
+                                /*Reset(tmr_logout);
                                 Set(
                                     UserLastNavigated,
                                     Now()
+                                );*/
+                                //for safety check
+                                If(
+                                    DateDiff(
+                                        UserLastNavigatedTime,
+                                        Now(),
+                                        Seconds
+                                    ) > 600,
+                                    Set(
+                                        safetyPopup,
+                                        true
+                                    );
+                                    ,
+                                    Set(
+                                        UserLastNavigatedTime,
+                                        Now()
+                                    );
+                                    
                                 );
                                 /*
                                 If(CountRows(Filter(GC_checkpointItemAssessment,bankUnitId.Id=varBankUnitId && checkpointItemId.checkpointItemId=varCheckpointitemID))<1,
@@ -1254,9 +1311,28 @@ FindingScreen As screen:
                                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                                 HoverFill: =RGBA(255, 255, 255, 1)
                                 OnChange: |+
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                 OnSelect: =Select(Parent)
                                 RadiusBottomLeft: =1
@@ -1287,9 +1363,28 @@ FindingScreen As screen:
                                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                                 HoverFill: =RGBA(255, 255, 255, 1)
                                 OnChange: |
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                 OnSelect: =Select(Parent)
                                 RadiusBottomLeft: =1
                                 RadiusBottomRight: =1
@@ -1325,9 +1420,28 @@ FindingScreen As screen:
                                 HoverFill: =RGBA(255, 255, 255, 1)
                                 Items: =["High","Medium","Low"]
                                 OnChange: |+
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                 OnSelect: =Select(Parent)
                                 PressedFill: =RGBA(255, 255, 255, 1)
@@ -1353,9 +1467,28 @@ FindingScreen As screen:
                                 HoverFill: =RGBA(255, 255, 255, 1)
                                 Items: =["LPD North","LPD South","LPD East","LPD HQ","General Contractor"]
                                 OnChange: |+
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     
                                     
@@ -1377,9 +1510,28 @@ FindingScreen As screen:
                                 Fill: =AllScreensCSS.RActiveColor
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 OnSelect: |-
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Remove(GC_checkpointItem_ActionItem,ThisItem);
                                     
@@ -1417,8 +1569,28 @@ FindingScreen As screen:
                                 IsSearchable: =false
                                 Items: =Filter(GC_actionItems, sectionId.sectionId = VarSectionId, actionItemName)
                                 OnChange: |
-                                    =//for reset ideal timer
-                                    Reset(tmr_logout);Set(UserLastNavigated,Now());
+                                    =/*//for reset ideal timer
+                                    Reset(tmr_logout);
+                                    Set(UserLastNavigated,Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                 OnSelect: =Select(Parent)
                                 PressedColor: =RGBA(0, 0, 0, 1)
                                 PressedFill: =RGBA(0, 0, 0, 0)
@@ -1539,9 +1711,28 @@ FindingScreen As screen:
                                 Fill: =AllScreensCSS.RActiveColor
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 OnSelect: |+
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Collect(GC_checkpointItem_ActionItem,{
                                             // checkpointItemActionItemsId: GUID(),
@@ -1618,9 +1809,28 @@ FindingScreen As screen:
                                         UploadedImage1_2
                                     )
                                 OnSelect: |-
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Set(popup,true)
                                 Visible: =Q
@@ -1645,15 +1855,53 @@ FindingScreen As screen:
                                 HoverFill: =RGBA(255, 255, 255, 1)
                                 Mode: =TextMode.MultiLine
                                 OnChange: |
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     //UpdateIf(GC_checkpointItem_Images,checkpointItemImagesId=ThisItem.checkpointItemImagesId,{image_annotation:TextInput6_2.Text});
                                 OnSelect: |-
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Select(Parent)
                                 PaddingLeft: =5
@@ -1677,9 +1925,28 @@ FindingScreen As screen:
                                     )
                                 ImagePosition: =ImagePosition.Fill
                                 OnSelect: |-
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Select(Parent)
                                 Visible: =If(UP,false)
@@ -1706,9 +1973,28 @@ FindingScreen As screen:
                                         )
                                     ImagePosition: =ImagePosition.Fill
                                     OnSelect: |
-                                        =//for reset ideal timer
+                                        =/*//for reset ideal timer
                                         Reset(tmr_logout);
-                                        Set(UserLastNavigated, Now());
+                                        Set(UserLastNavigated, Now());*/
+                                        
+                                        //for safety check
+                                        If(
+                                            DateDiff(
+                                                UserLastNavigatedTime,
+                                                Now(),
+                                                Seconds
+                                            ) > 600,
+                                            Set(
+                                                safetyPopup,
+                                                true
+                                            );
+                                            ,
+                                            Set(
+                                                UserLastNavigatedTime,
+                                                Now()
+                                            );
+                                            
+                                        );
                                         
                                         //UpdateIf(GC_checkpointItem_Images,checkpointItemImagesId=ThisItem.checkpointItemImagesId,{Image:ThisItem.Image});
                                     Visible: =If(UP,false)
@@ -1732,9 +2018,28 @@ FindingScreen As screen:
                                                                 }
                                                             );*/
                                     OnSelect: |
-                                        =//for reset ideal timer
+                                        =/*//for reset ideal timer
                                         Reset(tmr_logout);
-                                        Set(UserLastNavigated, Now());
+                                        Set(UserLastNavigated, Now());*/
+                                        
+                                        //for safety check
+                                        If(
+                                            DateDiff(
+                                                UserLastNavigatedTime,
+                                                Now(),
+                                                Seconds
+                                            ) > 600,
+                                            Set(
+                                                safetyPopup,
+                                                true
+                                            );
+                                            ,
+                                            Set(
+                                                UserLastNavigatedTime,
+                                                Now()
+                                            );
+                                            
+                                        );
                                         
                                         Set(UP,true);
                                         //UpdateIf(GC_checkpointItem_Images,checkpointItemImagesId=ThisItem.checkpointItemImagesId,{Image:UploadedImage1_2});
@@ -1750,12 +2055,32 @@ FindingScreen As screen:
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 Italic: =true
                                 OnSelect: |-
-                                    =//for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
                                     Set(
                                         UserLastNavigated,
                                         Now()
+                                    );*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
                                     );
+                                    
                                     If(
                                         glryItmesAS.Selected.checkpointItemImage = 'checkpointItemImage (templateCheckpointsItems)'.Yes && CountRows(
                                             Filter(
@@ -1846,9 +2171,28 @@ FindingScreen As screen:
                                 Fill: =AllScreensCSS.RActiveColor
                                 HoverFill: =AllScreensCSS.RActiveColor
                                 OnSelect: |
-                                    =///for reset ideal timer
+                                    =/*//for reset ideal timer
                                     Reset(tmr_logout);
-                                    Set(UserLastNavigated, Now());
+                                    Set(UserLastNavigated, Now());*/
+                                    
+                                    //for safety check
+                                    If(
+                                        DateDiff(
+                                            UserLastNavigatedTime,
+                                            Now(),
+                                            Seconds
+                                        ) > 600,
+                                        Set(
+                                            safetyPopup,
+                                            true
+                                        );
+                                        ,
+                                        Set(
+                                            UserLastNavigatedTime,
+                                            Now()
+                                        );
+                                        
+                                    );
                                     
                                     Set(UP,false);
                                     If(
@@ -1909,11 +2253,29 @@ FindingScreen As screen:
                                 =
                                 Set(VarBlankrow1,false);
                                 Set(VarBlankrow2,false);
-                                
-                                
+                                /*
                                 //for reset ideal timer
                                 Reset(tmr_logout);
-                                Set(UserLastNavigated,Now());
+                                Set(UserLastNavigated,Now());*/
+                                
+                                //for safety check
+                                If(
+                                    DateDiff(
+                                        UserLastNavigatedTime,
+                                        Now(),
+                                        Seconds
+                                    ) > 600,
+                                    Set(
+                                        safetyPopup,
+                                        true
+                                    );
+                                    ,
+                                    Set(
+                                        UserLastNavigatedTime,
+                                        Now()
+                                    );
+                                    
+                                );
                                 
                                 If(
                                     !IsBlank(LookUp(GlryActionItemFS.AllItems,

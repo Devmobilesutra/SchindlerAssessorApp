@@ -5,10 +5,24 @@ SectionScreen As screen:
         Reset(tmr_logout);
         Set(UserLastNavigated, Now());*/
         
-        
+        //for safety check
+        If(
+            DateDiff(
+                UserLastNavigatedTime,
+                Now(),
+                Seconds
+            ) > 600,
+            Set(
+                safetyPopup,
+                true
+            );
+            ,
+            Set(
+                UserLastNavigatedTime,
+                Now()
+            );
             
-           
-           
+        );
         
         Set(varComment,false);
         
@@ -549,9 +563,28 @@ SectionScreen As screen:
                             HoverColor: =Self.Color
                             HoverFill: =Self.Fill
                             OnSelect: |
-                                =//for reset ideal timer
+                                =/*//for reset ideal timer
                                 Reset(tmr_logout);
                                 Set(UserLastNavigated, Now());
+                                */
+                                //for safety check
+                                If(
+                                    DateDiff(
+                                        UserLastNavigatedTime,
+                                        Now(),
+                                        Seconds
+                                    ) > 600,
+                                    Set(
+                                        safetyPopup,
+                                        true
+                                    );
+                                    ,
+                                    Set(
+                                        UserLastNavigatedTime,
+                                        Now()
+                                    );
+                                    
+                                );
                                 
                                 Set(
                                     ChId,
@@ -679,17 +712,28 @@ SectionScreen As screen:
                         Image: =accordianPlus
                         OnSelect: |-
                             =//this code is executed when user clicks on + symbol for each section
-                            
                             /*
                             //for reset ideal timer
                             Reset(tmr_logout);
                             Set(UserLastNavigated, Now());
                             */
-                            
+                            //for safety check
                             If(
-                                DateDiff(UserLastNavigatedTime,Now(),Minutes) > 1 ,
-                                Set(safetyPopup,true);,
-                                Set(UserLastNavigatedTime,Now());
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
                             );
                             
                             Set(VarSectionId,ThisItem.sectionId);
@@ -725,11 +769,31 @@ SectionScreen As screen:
                         Height: =40
                         Image: =accordianMinus
                         OnSelect: |
-                            =//for reset ideal timer
+                            =/*//for reset ideal timer
                             Reset(tmr_logout);
                             Set(UserLastNavigated, Now());
+                            */
                             Set(VarSectionId,ThisItem.sectionId);
                             UpdateContext({locInfoExpanded:false});
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
+                            );
                         Visible: |-
                             =//!(ThisItem.IsSelected &&
                             //If(B,true))

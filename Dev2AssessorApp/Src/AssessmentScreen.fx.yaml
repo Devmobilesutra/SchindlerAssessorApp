@@ -1,9 +1,29 @@
 AssessmentScreen As screen:
     OnHidden: =Set(IsResetCboxItemsAS, false);Set(IsResetCboxItemsAS, true) ;
     OnVisible: |
-        =//for reset ideal timer
+        =/*//for reset ideal timer
         Reset(tmr_logout);
-        Set(UserLastNavigated, Now());
+        Set(UserLastNavigated, Now());*/
+        
+        //for safety check
+        If(
+            DateDiff(
+                UserLastNavigatedTime,
+                Now(),
+                Seconds
+            ) > 600,
+            Set(
+                safetyPopup,
+                true
+            );
+            ,
+            Set(
+                UserLastNavigatedTime,
+                Now()
+            );
+            
+        );
+        
         Set(varComment,false);
         Set(safetyPopup,false);
         Set(varSpinner,false);
@@ -439,9 +459,28 @@ AssessmentScreen As screen:
                         OnSelect: |+
                             =//Notify("finding start",NotificationType.Information);
                             
-                            //for reset ideal timer
+                            /*//for reset ideal timer
                             Reset(tmr_logout);
-                            Set(UserLastNavigated, Now());
+                            Set(UserLastNavigated, Now());*/
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
+                            );
                             
                             Set(varCheckpointitemID,ThisItem.checkpointItemId);
                             
@@ -690,12 +729,32 @@ AssessmentScreen As screen:
                         HoverColor: =RGBA(0, 0, 0, 1)
                         OnCheck: |-
                             =//Notify("Oncheck start",NotificationType.Information);
-                            ///for reset ideal timer
+                            /*//for reset ideal timer
                             Reset(tmr_logout);
                             Set(
                                 UserLastNavigated,
                                 Now()
+                            );*/
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
                             );
+                            
                             //set the Id of selected checkpointitemId
                             Set(
                                 varCheckpointitemID,
@@ -1065,9 +1124,29 @@ AssessmentScreen As screen:
                             CountRows(Filter(GC_checkpointItem_Images,assignmentId.Id=varAssignmentId&&bankUnitId.Id=varBankUnitId&&checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)'=varCItemA))<1,Set(IsResetCboxItemsAS, false );glryItmesAS.Selected.cboxItemsAS.Value= false ,glryItmesAS.Selected.cboxItemsAS.Value= true ;Set(IsResetCboxItemsAS, true ))*/
                             Set(IsResetCboxItemsAS,false);Set(IsResetCboxItemsAS,true);
                         OnUncheck: |
-                            =///for reset ideal timer
+                            =/*//for reset ideal timer
                             Reset(tmr_logout);
-                            Set(UserLastNavigated, Now());
+                            Set(UserLastNavigated, Now());*/
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
+                            );
+                            
                             Set(varCheckpointitemID,ThisItem.checkpointItemId);
                             //RemoveIf(GC_checkpointItemAssessment,checkpointItemId.checkpointItemId=ThisItem.checkpointItemId && bankUnitId.Id=varBankUnitId)
                               /*
@@ -1222,12 +1301,32 @@ AssessmentScreen As screen:
                             =///ColorFade(RGBA(56, 96, 178, 1), -20%)
                             Self.Fill
                         OnSelect: |
-                            =//for reset ideal timer
+                            =/*//for reset ideal timer
                             Reset(tmr_logout);
                             Set(
                                 UserLastNavigated,
                                 Now()
+                            );*/
+                            
+                            //for safety check
+                            If(
+                                DateDiff(
+                                    UserLastNavigatedTime,
+                                    Now(),
+                                    Seconds
+                                ) > 600,
+                                Set(
+                                    safetyPopup,
+                                    true
+                                );
+                                ,
+                                Set(
+                                    UserLastNavigatedTime,
+                                    Now()
+                                );
+                                
                             );
+                            
                             Set(
                                 varSpinner,
                                 true
