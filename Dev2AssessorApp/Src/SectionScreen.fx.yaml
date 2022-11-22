@@ -11,7 +11,7 @@ SectionScreen As screen:
                 UserLastNavigatedTime,
                 Now(),
                 Seconds
-            ) > 600,
+            ) > SafetyCheckTime,
             Set(
                 safetyPopup,
                 true
@@ -573,7 +573,7 @@ SectionScreen As screen:
                                         UserLastNavigatedTime,
                                         Now(),
                                         Seconds
-                                    ) > 600,
+                                    ) > SafetyCheckTime,
                                     Set(
                                         safetyPopup,
                                         true
@@ -723,7 +723,7 @@ SectionScreen As screen:
                                     UserLastNavigatedTime,
                                     Now(),
                                     Seconds
-                                ) > 600,
+                                ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
                                     true
@@ -782,7 +782,7 @@ SectionScreen As screen:
                                     UserLastNavigatedTime,
                                     Now(),
                                     Seconds
-                                ) > 600,
+                                ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
                                     true

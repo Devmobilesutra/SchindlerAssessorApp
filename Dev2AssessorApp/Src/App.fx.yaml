@@ -1,7 +1,10 @@
 App As appinfo:
     BackEnabled: =false
     OnStart: |
-        =Set(
+        =//safety timer
+        Set(SafetyCheckTime,300);
+        
+        Set(
             timerX,
             0
         );

@@ -10,7 +10,7 @@ FindingScreen As screen:
                 UserLastNavigatedTime,
                 Now(),
                 Seconds
-            ) > 600,
+            ) > SafetyCheckTime,
             Set(
                 safetyPopup,
                 true
@@ -501,7 +501,7 @@ FindingScreen As screen:
                                     UserLastNavigatedTime,
                                     Now(),
                                     Seconds
-                                ) > 600,
+                                ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
                                     true
@@ -1186,7 +1186,7 @@ FindingScreen As screen:
                                         UserLastNavigatedTime,
                                         Now(),
                                         Seconds
-                                    ) > 600,
+                                    ) > SafetyCheckTime,
                                     Set(
                                         safetyPopup,
                                         true
@@ -1321,7 +1321,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1373,7 +1373,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1430,7 +1430,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1477,7 +1477,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1520,7 +1520,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1579,7 +1579,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1721,7 +1721,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1819,7 +1819,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1865,7 +1865,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1890,7 +1890,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1935,7 +1935,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -1983,7 +1983,7 @@ FindingScreen As screen:
                                                 UserLastNavigatedTime,
                                                 Now(),
                                                 Seconds
-                                            ) > 600,
+                                            ) > SafetyCheckTime,
                                             Set(
                                                 safetyPopup,
                                                 true
@@ -2028,7 +2028,7 @@ FindingScreen As screen:
                                                 UserLastNavigatedTime,
                                                 Now(),
                                                 Seconds
-                                            ) > 600,
+                                            ) > SafetyCheckTime,
                                             Set(
                                                 safetyPopup,
                                                 true
@@ -2068,7 +2068,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -2181,7 +2181,7 @@ FindingScreen As screen:
                                             UserLastNavigatedTime,
                                             Now(),
                                             Seconds
-                                        ) > 600,
+                                        ) > SafetyCheckTime,
                                         Set(
                                             safetyPopup,
                                             true
@@ -2264,7 +2264,7 @@ FindingScreen As screen:
                                         UserLastNavigatedTime,
                                         Now(),
                                         Seconds
-                                    ) > 600,
+                                    ) > SafetyCheckTime,
                                     Set(
                                         safetyPopup,
                                         true
