@@ -1149,7 +1149,7 @@ FindingScreen As screen:
                         lblAnnotationFS As label:
                             FontWeight: =FontWeight.Bold
                             Size: =AllScreensCSS.RLabelFontSize
-                            Text: ="Add annotation"
+                            Text: ="Add annotation" 
                             Width: =Parent.Width
                             ZIndex: =1
 
@@ -1172,6 +1172,7 @@ FindingScreen As screen:
                             HintText: ="Add annotations"
                             HoverBorderColor: =RGBA(0, 0, 0, 1)
                             HoverFill: =RGBA(255, 255, 255, 1)
+                            MaxLength: =500
                             Mode: =TextMode.MultiLine
                             OnChange: |+
                                 =//for reset ideal timer
@@ -1198,6 +1199,8 @@ FindingScreen As screen:
                                     );
                                     
                                 );
+                                
+                                If(Len(txtAnnotationFS.Text)=500,Notify("Annotation should be less than 500 characters",NotificationType.Warning));
                                 /*
                                 If(CountRows(Filter(GC_checkpointItemAssessment,bankUnitId.Id=varBankUnitId && checkpointItemId.checkpointItemId=varCheckpointitemID))<1,
                                   Set(varCItemA,Text(GUID()));
@@ -2551,7 +2554,8 @@ FindingScreen As screen:
             FontWeight: =FontWeight.Bold
             Height: =100
             Size: =15
-            Text: ="Assessment findings saved locally. It will be submitted for review once submit button is clicked."
+            Text: |
+                ="Assessment findings saved locally. It will be submitted for review once submit button is clicked."
             Visible: =popupsuccess1=true
             Width: =350
             X: =(Parent.Width-Self.Width)/2
