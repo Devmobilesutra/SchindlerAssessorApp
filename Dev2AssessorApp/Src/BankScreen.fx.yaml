@@ -350,7 +350,7 @@ BankScreen As screen:
                                         gcAssignmentunit,
                                         assignmentId.Id = glryProject.Selected.Id
                                     ),
-                                    bankUnitId.unitNumber,
+                                    Value(nkUnitId.unitNumber),
                                     Ascending
                                 )
                             )
