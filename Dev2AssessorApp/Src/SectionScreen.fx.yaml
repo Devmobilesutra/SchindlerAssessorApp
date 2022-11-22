@@ -1,10 +1,15 @@
 SectionScreen As screen:
     Fill: =
     OnVisible: |+
-        =//for reset ideal timer
-        
+        =/*//for reset ideal timer
         Reset(tmr_logout);
-        Set(UserLastNavigated, Now());
+        Set(UserLastNavigated, Now());*/
+        
+        
+            
+           
+           
+        
         Set(varComment,false);
         
         Set(safetyPopup,false);
@@ -675,10 +680,17 @@ SectionScreen As screen:
                         OnSelect: |-
                             =//this code is executed when user clicks on + symbol for each section
                             
-                            
+                            /*
                             //for reset ideal timer
                             Reset(tmr_logout);
                             Set(UserLastNavigated, Now());
+                            */
+                            
+                            If(
+                                DateDiff(UserLastNavigatedTime,Now(),Minutes) > 1 ,
+                                Set(safetyPopup,true);,
+                                Set(UserLastNavigatedTime,Now());
+                            );
                             
                             Set(VarSectionId,ThisItem.sectionId);
                             UpdateContext({locInfoExpanded:true});
@@ -796,7 +808,7 @@ SectionScreen As screen:
         AutoStart: =If(varSafety =true,true,false)
         Duration: =30000
         OnTimerEnd: |-
-            =If(
+            =/*If(
                 UserLastNavigated < DateAdd(
                     Now(),
                     LogOutTimer,
@@ -804,7 +816,7 @@ SectionScreen As screen:
                 ),
                 Set(safetyPopup,true);
                
-            )
+            )*/
         Repeat: =true
         Visible: =false
         ZIndex: =3

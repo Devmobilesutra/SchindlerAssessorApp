@@ -356,6 +356,9 @@ SafetyHeaderScreen As screen:
                                 //for safety check to show default selected
                                 Set(varSafety,true);
                             
+                                //To store user last navigated time use for safety check without timer
+                                Set(UserLastNavigatedTime, Now());
+                            
                                 Navigate(SectionScreen),
                                 Notify(
                                     "Check boxes required for each item and you cannot proceed without checking each box.",

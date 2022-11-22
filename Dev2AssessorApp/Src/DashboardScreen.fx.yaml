@@ -651,7 +651,7 @@ DashboardScreen As screen:
 
     tmr_logout As timer:
         AutoStart: =true
-        Duration: =30000
+        Duration: =//30000
         OnTimerEnd: =
         OnTimerStart: =true
         Visible: =false
