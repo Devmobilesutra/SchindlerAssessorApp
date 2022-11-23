@@ -654,6 +654,7 @@ DashboardScreen As screen:
         Duration: =//30000
         OnTimerEnd: =
         OnTimerStart: =true
+        Visible: =false
         X: =20
         Y: =20
         ZIndex: =14
