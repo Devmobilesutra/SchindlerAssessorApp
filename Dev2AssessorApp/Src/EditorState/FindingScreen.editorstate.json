@@ -41354,7 +41354,14 @@
       "ControlPropertyState": [
         "Image",
         "Transparency",
-        "ImagePosition",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "ImagePosition",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "CalculateOriginalDimensions",
         "ImageRotation",
         "FlipHorizontal",

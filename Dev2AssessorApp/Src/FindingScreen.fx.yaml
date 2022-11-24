@@ -1974,7 +1974,6 @@ FindingScreen As screen:
                                             SampleImage,
                                             AddMediaButton1_2.Media
                                         )
-                                    ImagePosition: =ImagePosition.Fill
                                     OnSelect: |
                                         =/*//for reset ideal timer
                                         Reset(tmr_logout);
