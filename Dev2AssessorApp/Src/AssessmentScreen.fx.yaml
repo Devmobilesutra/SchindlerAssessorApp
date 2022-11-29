@@ -692,7 +692,10 @@ AssessmentScreen As screen:
                                         GC_checkpointItem_Images,
                                         checkpointItem_Id.checkpointItemId.checkpointItemId = ThisItem.checkpointItemId && assignmentId.Id = varAssignmentId && bankUnitId.Id = varBankUnitId
                                     )
-                                ) <> 0,
+                                ) <> 0
+                                || CountRows(Filter(
+                                    GC_checkpointItemAssessment,
+                                    checkpointItemId.checkpointItemId = varCheckpointitemID && bankUnitId.Id = varBankUnitId && assignmentId.isCompleted = "Completed"))>0,
                                 true,
                                 false
                             )
