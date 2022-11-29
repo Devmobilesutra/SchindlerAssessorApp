@@ -1513,7 +1513,7 @@ AssessmentScreen As screen:
                                          Collect(gcActionItemDelete1,{id:i.id});
                                         );
                                     );
-                                     If(!IsEmpty(gcActionItemDelete),
+                                     If(!IsEmpty(gcActionItemDelete1),
                                      Notify("All locally deleted action are not removed from server."));
                             
                             
