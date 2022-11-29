@@ -1502,7 +1502,8 @@ AssessmentScreen As screen:
                                     );,
                                 //to delete deleted actions from dataverse
                                 Clear(gcActionItemDelete1);
-                            ForAll(
+                                 Notify("Action delete start");
+                                 ForAll(
                                         gcActionItemDelete As i,
                                         RemoveIf(
                                             checkpointItem_ActionItem,
@@ -1514,9 +1515,10 @@ AssessmentScreen As screen:
                                     );
                                      If(!IsEmpty(gcActionItemDelete),
                                      Notify("All locally deleted action are not removed from server."));
-                                     
+                            
                             
                                     ClearCollect(gcActionItemDelete,gcActionItemDelete1);
+                                     Notify("Action delete end");
                                     SaveData(
                                         gcActionItemDelete,
                                         "localgcActionItemDelete"
