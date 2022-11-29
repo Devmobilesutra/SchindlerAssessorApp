@@ -1502,7 +1502,7 @@ AssessmentScreen As screen:
                                     );,
                                 //to delete deleted actions from dataverse
                                 Clear(gcActionItemDelete1);
-                                 Notify("Action delete start");
+                                // Notify("Action delete start");
                                  ForAll(
                                         gcActionItemDelete As i,
                                         RemoveIf(
@@ -1518,7 +1518,7 @@ AssessmentScreen As screen:
                             
                             
                                     ClearCollect(gcActionItemDelete,gcActionItemDelete1);
-                                     Notify("Action delete end");
+                                    // Notify("Action delete end");
                                     SaveData(
                                         gcActionItemDelete,
                                         "localgcActionItemDelete"
