@@ -1501,14 +1501,22 @@ AssessmentScreen As screen:
                                         "Assessment records submitted successfully."
                                     );,
                                 //to delete deleted actions from dataverse
+                                Clear(gcActionItemDelete1);
                             ForAll(
                                         gcActionItemDelete As i,
                                         RemoveIf(
                                             checkpointItem_ActionItem,
                                             checkpointItemActionItemsId = i.id
-                                        )
+                                        );
+                                        If(!IsBlank(LookUp(checkpointItem_ActionItem,checkpointItemActionItemsId = i.id)),
+                                         Collect(gcActionItemDelete1,{id:i.id});
+                                        );
                                     );
-                                    Clear(gcActionItemDelete);
+                                     If(!IsEmpty(gcActionItemDelete),
+                                     Notify("All locally deleted action are not removed from server."));
+                                     
+                            
+                                    ClearCollect(gcActionItemDelete,gcActionItemDelete1);
                                     SaveData(
                                         gcActionItemDelete,
                                         "localgcActionItemDelete"
