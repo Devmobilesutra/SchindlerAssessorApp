@@ -1313,11 +1313,13 @@ FindingScreen As screen:
                                 HintText: ="Time Estimate in Hrs"
                                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                                 HoverFill: =RGBA(255, 255, 255, 1)
+                                MaxLength: =5
                                 OnChange: |+
                                     =/*//for reset ideal timer
                                     Reset(tmr_logout);
                                     Set(UserLastNavigated, Now());*/
                                     
+                                    If(Len(TextInput5_10.Text)=5,Notify("Time Estimate should be less than 5 digits.",NotificationType.Warning));
                                     //for safety check
                                     If(
                                         DateDiff(
@@ -1365,11 +1367,14 @@ FindingScreen As screen:
                                 HintText: ="Material Estimate"
                                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                                 HoverFill: =RGBA(255, 255, 255, 1)
+                                MaxLength: =5
                                 OnChange: |
                                     =/*//for reset ideal timer
                                     Reset(tmr_logout);
                                     Set(UserLastNavigated, Now());*/
                                     
+                                    
+                                    If(Len(TextInput5_11.Text)=5,Notify("Material Estimate should be less than 5 digits.",NotificationType.Warning));
                                     //for safety check
                                     If(
                                         DateDiff(
@@ -1621,8 +1626,10 @@ FindingScreen As screen:
                                 HintText: ="Write Action"
                                 HoverBorderColor: =RGBA(0, 0, 0, 1)
                                 HoverFill: =RGBA(255, 255, 255, 1)
+                                MaxLength: =256
                                 OnChange: |-
                                     =/*UpdateIf(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=ThisItem.checkpointItemActionItemsId,{ActionItem_Name:GlryActionItemFS.Selected.TextInput8.Text})*/
+                                    If(Len(TextInput8.Text)=256,Notify("Action should be less than 256 characters",NotificationType.Warning))
                                 OnSelect: =Select(Parent)
                                 RadiusBottomLeft: =1
                                 RadiusBottomRight: =1
