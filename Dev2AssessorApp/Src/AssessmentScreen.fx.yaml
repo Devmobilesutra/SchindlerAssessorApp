@@ -665,8 +665,11 @@ AssessmentScreen As screen:
                             Navigate(FindingScreen);
                             
                         PressedFill: =Self.Fill
+                        Size: =If(App.Width<830,AllScreensCSS.RLabelFontSize,App.Width<770,AllScreensCSS.RLabelFontSize,(AllScreensCSS.RfontsizeInput-2))
                         Text: ="Findings"
-                        Width: =If(App.Width<830,Parent.Width/5.8,App.Width<770,Parent.Width/5.8,Parent.Width/9.2)
+                        Width: |-
+                            =//If(App.Width<830,Parent.Width/5.8,App.Width<770,Parent.Width/5.8,Parent.Width/9.2)
+                            If(App.Width<830,Parent.Width/6,App.Width<770,Parent.Width/6,Parent.Width/11)
                         X: =Button18_2.X+Button18_2.Width+10
                         Y: =40
                         ZIndex: =5
@@ -700,7 +703,9 @@ AssessmentScreen As screen:
                                 false
                             )
                         Width: =10
-                        X: =Button18_2.X-Self.Width-15
+                        X: |-
+                            =//Button18_2.X-Self.Width-15
+                            Image1_1.X+Image1_1.Width+10
                         Y: =Parent.TemplateHeight/2.3
                         ZIndex: =6
 
@@ -1215,12 +1220,18 @@ AssessmentScreen As screen:
                             =Set(varComment,true);
                             Set(varItemComment,true);
                             Set(varCheckpointitemID,ThisItem.checkpointItemId);
-                        Size: =AllScreensCSS.RfontsizeInput
+                        Size: |-
+                            =//AllScreensCSS.RfontsizeInput
+                            If(App.Width<830,AllScreensCSS.RLabelFontSize,App.Width<770,AllScreensCSS.RLabelFontSize,(AllScreensCSS.RfontsizeInput-2))
                         Text: |-
                             ="Comment"
                             //cboxItemsAS.Value
-                        Width: =If(App.Width<830,Parent.Width/5.8,App.Width<770,Parent.Width/6.2,Parent.Width/9.2)
-                        X: =cboxItemsAS.X+cboxItemsAS.Width+30
+                        Width: |-
+                            =//If(App.Width<830,Parent.Width/5.6,App.Width<770,Parent.Width/6.4,Parent.Width/10)
+                            If(App.Width<830,Parent.Width/6,App.Width<770,Parent.Width/6,Parent.Width/11)
+                        X: |-
+                            =//cboxItemsAS.X+cboxItemsAS.Width+30
+                            Circle1.X+Circle1.Width+10
                         Y: =40
                         ZIndex: =8
 
@@ -1270,7 +1281,9 @@ AssessmentScreen As screen:
                                 false
                             )
                         Width: =25
-                        X: =Circle1.X-Circle1.Width-Self.Width
+                        X: |-
+                            =//Circle1.X-Circle1.Width-Self.Width
+                            cboxItemsAS.X+cboxItemsAS.Width+10
                         Y: =glryItmesAS.TemplateHeight/2.5
                         ZIndex: =9
 
