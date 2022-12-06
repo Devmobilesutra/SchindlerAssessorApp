@@ -2696,8 +2696,8 @@ FindingScreen As screen:
             HoverFill: =RGBA(75, 125, 6, 1)
             OnSelect: |
                 =Set(
-                    C,
-                    false
+                    P,
+                    true
                 );
                 Set(
                     PopupCloseAction,
@@ -2728,7 +2728,7 @@ FindingScreen As screen:
             HoverBorderColor: =RGBA(75, 125, 6, 1)
             HoverFill: =RGBA(75, 125, 6, 1)
             OnSelect: |
-                =Set(C,false);
+                =Set(P,true);
                 Set(PopupCloseAction,false);
                 Navigate(FindingScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
