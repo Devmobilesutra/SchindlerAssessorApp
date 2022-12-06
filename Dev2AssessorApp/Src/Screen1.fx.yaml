@@ -565,7 +565,7 @@ Screen1 As screen:
                     TemplatePadding: =0
                     TemplateSize: |-
                         =//280
-                        txtTimeEstimateValueAR_1.Height+txtMaterialValueAR_1.Height+lblActionReqValueAR_1.Height+lblItemValueAR_1.Height+lblCheckpointValueAR_1.Height+lblOwnerIdValueAR_1.Height+lblPriorityValueAR_1.Height+50
+                        txtTimeEstimateValueAR_1.Height+lblActionReqValueAR_1.Height+lblItemValueAR_1.Height+lblCheckpointValueAR_1.Height+lblPriorityValueAR_1.Height+Label22_6.Height+Label22_4.Height+50
                     Width: =Parent.Width-20
                     Y: |-
                         =Label22_2.Y+ Label22_2.Height
