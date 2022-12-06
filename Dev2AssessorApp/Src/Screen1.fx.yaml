@@ -826,8 +826,8 @@ Screen1 As screen:
                         Width: =Parent.Width
                         X: =1
                         Y: |
-                            =//txtTimeEstimateValueAR_1.Height+txtTimeEstimateValueAR_1.Y+30
-                            Gallery15_1.TemplateHeight
+                            =txtTimeEstimateValueAR_1.Height+txtTimeEstimateValueAR_1.Y+30
+                            //Gallery15_1.TemplateHeight+10
                         ZIndex: =19
 
                     txtMaterialValueAR_1 As label:
