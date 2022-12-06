@@ -564,8 +564,8 @@ Screen1 As screen:
                     LayoutMinWidth: =320
                     TemplatePadding: =0
                     TemplateSize: |-
-                        =//280
-                        txtTimeEstimateValueAR_1.Height+lblActionReqValueAR_1.Height+lblItemValueAR_1.Height+lblCheckpointValueAR_1.Height+lblPriorityValueAR_1.Height+Label22_6.Height+Label22_4.Height+50
+                        =300
+                        //txtTimeEstimateValueAR_1.Height+lblActionReqValueAR_1.Height+lblItemValueAR_1.Height+lblCheckpointValueAR_1.Height+lblPriorityValueAR_1.Height+Label22_6.Height+Label22_4.Height+50
                     Width: =Parent.Width-20
                     Y: |-
                         =Label22_2.Y+ Label22_2.Height
@@ -827,7 +827,7 @@ Screen1 As screen:
                         X: =1
                         Y: |
                             =//txtTimeEstimateValueAR_1.Height+txtTimeEstimateValueAR_1.Y+30
-                            Gallery15_1.TemplateHeight-5
+                            Gallery15_1.TemplateHeight
                         ZIndex: =19
 
                     txtMaterialValueAR_1 As label:
@@ -859,6 +859,7 @@ Screen1 As screen:
                         Text: ="Unit "
                         Width: =230
                         X: =10
+                        Y: =10
                         ZIndex: =22
 
                     Label22_3 As label:
@@ -885,6 +886,7 @@ Screen1 As screen:
                             //&"                 " & "Section : " & ThisItem.section_id.sectionName
                         Width: =Parent.Width/2
                         X: =Label22_2.Width
+                        Y: =10
                         ZIndex: =24
 
                     Label22_6 As label:
