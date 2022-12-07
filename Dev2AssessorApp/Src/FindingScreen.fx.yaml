@@ -565,7 +565,7 @@ FindingScreen As screen:
                             =//If(CountRows(Filter(GC_checkpointItemAssessment,checkpointItemId.checkpointItemId=varCheckpointitemID&&bankUnitId.Id=varBankUnitId&&assignmentId.isCompleted="Completed"&&assessmentStatus="Check"&&!IsBlank(checkpointItem_annotation))), true , false )
                             If(CountRows(Filter(
                                     GC_checkpointItemAssessment,
-                                    checkpointItemId.checkpointItemId = varCheckpointitemID && bankUnitId.Id = varBankUnitId && assignmentId.isCompleted = "Completed"))>0,true,false)
+                                    checkpointItemId.checkpointItemId = varCheckpointitemID && bankUnitId.Id = varBankUnitId && assignmentId.isCompleted = "Completed" &&  !IsBlank(checkpointItem_annotation)))>0,true,false)
                         Width: =200//Parent.Width/1.02
                         ZIndex: =2
 
