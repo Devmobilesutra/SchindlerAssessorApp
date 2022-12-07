@@ -618,7 +618,7 @@ FindingScreen As screen:
                                     GC_checkpointItemAssessment,
                                     checkpointItemId.checkpointItemId = varCheckpointitemID && bankUnitId.Id = varBankUnitId && assignmentId.isCompleted = "Completed"
                                  //&& assessmentStatus = "Check"
-                                 // && !IsBlank(checkpointItem_annotation)
+                                 && !IsBlank(checkpointItem_annotation)
                                 ),
                                 assignmentId.completionDate
                             )
