@@ -27,14 +27,14 @@ FindingScreen As screen:
         Set(varRequired,false);
         Set(VarBlankrow1,false);
         Set(VarBlankrow2,false);
-        Set(
+        /*Set(
             C,
             true
         );
         Set(
             P,
             false
-        );
+        );*/
         Set(varActionbutton,false);
         Set(varImage,false);
         //Set(UP,false);
