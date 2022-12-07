@@ -14433,66 +14433,6 @@
             {
               "logicalLocations": [
                 {
-                  "fullyQualifiedName": "App.varActionbutton"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.varActionbutton",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "varActionbutton",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
-                  "fullyQualifiedName": "App.P"
-                }
-              ],
-              "physicalLocation": {
-                "address": {
-                  "fullyQualifiedName": "App.P",
-                  "relativeAddress": 0
-                }
-              },
-              "properties": {
-                "member": "P",
-                "module": "App",
-                "type": "App"
-              }
-            }
-          ],
-          "message": {
-            "id": "issue"
-          },
-          "properties": {
-            "level": "Medium"
-          },
-          "ruleId": "app-UnusedVariables",
-          "ruleIndex": 5
-        },
-        {
-          "locations": [
-            {
-              "logicalLocations": [
-                {
                   "fullyQualifiedName": "App.varRequired"
                 }
               ],
@@ -14504,6 +14444,36 @@
               },
               "properties": {
                 "member": "varRequired",
+                "module": "App",
+                "type": "App"
+              }
+            }
+          ],
+          "message": {
+            "id": "issue"
+          },
+          "properties": {
+            "level": "Medium"
+          },
+          "ruleId": "app-UnusedVariables",
+          "ruleIndex": 5
+        },
+        {
+          "locations": [
+            {
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "App.varActionbutton"
+                }
+              ],
+              "physicalLocation": {
+                "address": {
+                  "fullyQualifiedName": "App.varActionbutton",
+                  "relativeAddress": 0
+                }
+              },
+              "properties": {
+                "member": "varActionbutton",
                 "module": "App",
                 "type": "App"
               }

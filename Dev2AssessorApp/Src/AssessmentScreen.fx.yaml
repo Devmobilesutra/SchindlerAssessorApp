@@ -657,14 +657,15 @@ AssessmentScreen As screen:
                                  );
                             
                             
-                            // For navigation from Previous finding 
-                                 Set(VarPrevNav,true);
+                            
                                  /*,
                                  Notify(
                                      "checkpointItemAssessment Patch sucssessfully.",
                                      NotificationType.Error
                                  )*/
                              );  
+                             // For navigation from Previous finding 
+                                 Set(VarPrevNav,true);
                             //Notify("finding endd",NotificationType.Information);
                             Navigate(FindingScreen);
                             

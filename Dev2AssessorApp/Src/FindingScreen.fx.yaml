@@ -3,7 +3,23 @@ FindingScreen As screen:
         =/*//for reset ideal timer
         Reset(tmr_logout);
         Set(UserLastNavigated, Now());*/
-        
+        If(VarPrevNav=true,
+        Set(
+            C,
+            true
+        );
+        Set(
+            P,
+            false
+        );,
+        Set(
+            C,
+            false
+        );
+        Set(
+            P,
+            true
+        ));
         //for safety check
         If(
             DateDiff(
@@ -27,23 +43,7 @@ FindingScreen As screen:
         Set(varRequired,false);
         Set(VarBlankrow1,false);
         Set(VarBlankrow2,false);
-        If(VarPrevNav=true,
-        Set(
-            C,
-            true
-        );
-        Set(
-            P,
-            false
-        );,
-        Set(
-            C,
-            false
-        );
-        Set(
-            P,
-            true
-        ));
+        
         Set(varActionbutton,false);
         Set(varImage,false);
         //Set(UP,false);
@@ -523,7 +523,7 @@ FindingScreen As screen:
                                 
                             );
                             
-                            Set(C,true);
+                            Set(C,true);Set(P,false);
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
                         RadiusBottomLeft: =1
@@ -532,6 +532,8 @@ FindingScreen As screen:
                         RadiusTopRight: =1
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Findings"
+                        Visible: |
+                            =true
                         Width: =150//Parent.Width
                         X: =0//(Parent.Width -Self.Width)/2
                         ZIndex: =2
@@ -561,7 +563,7 @@ FindingScreen As screen:
                         HoverFill: =ColorFade(Self.Fill, -20%)
                         OnSelect: |-
                             =
-                            Set(C,false)
+                            Set(P,true);Set(C,false);
                         PressedColor: =Self.Color
                         PressedFill: =Self.Fill
                         RadiusBottomLeft: =1
@@ -570,11 +572,13 @@ FindingScreen As screen:
                         RadiusTopRight: =1
                         Size: =AllScreensCSS.RLabelFontSize
                         Text: ="Previous findings"
-                        Visible: |
+                        Visible: |+
                             =//If(CountRows(Filter(GC_checkpointItemAssessment,checkpointItemId.checkpointItemId=varCheckpointitemID&&bankUnitId.Id=varBankUnitId&&assignmentId.isCompleted="Completed"&&assessmentStatus="Check"&&!IsBlank(checkpointItem_annotation))), true , false )
                             If(CountRows(Filter(
                                     GC_checkpointItemAssessment,
                                     checkpointItemId.checkpointItemId = varCheckpointitemID && bankUnitId.Id = varBankUnitId && assignmentId.isCompleted = "Completed" &&  !IsBlank(checkpointItem_annotation)))>0,true,false)
+                                  
+                            
                         Width: =200//Parent.Width/1.02
                         ZIndex: =2
 
@@ -600,7 +604,8 @@ FindingScreen As screen:
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMode: =LayoutMode.Auto
                     Visible: |+
-                        =If(CountRows(glryPreviousFS.AllItems)>0,true,false)
+                        =//If(CountRows(glryPreviousFS.AllItems)>0,true,false)
+                        P
                         
                     Width: =Parent.Width
                     ZIndex: =1
