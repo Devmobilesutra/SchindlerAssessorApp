@@ -648,8 +648,6 @@ FindingScreen As screen:
                                 Filter(
                                     GC_checkpointItem_Images,bankUnitId.Id = varBankUnitId  &&
                                     checkpointItem_Id.'checkpointItemAssessment (quantum_checkpointitemassessment)' = ThisItem.'checkpointItemAssessment (quantum_checkpointitemassessment)'
-                                
-                                
                                 )
                             Layout: =Layout.Vertical
                             ShowScrollbar: =false
