@@ -654,7 +654,11 @@ AssessmentScreen As screen:
                                   Notify(
                                      Concat(Errors(GC_checkpointItemAssessment), Column&": "&Message),
                                      NotificationType.Error
-                                 )
+                                 );
+                            
+                            
+                            // For navigation from Previous finding 
+                                 Set(VarPrevNav,true);
                                  /*,
                                  Notify(
                                      "checkpointItemAssessment Patch sucssessfully.",

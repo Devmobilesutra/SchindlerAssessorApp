@@ -27,14 +27,23 @@ FindingScreen As screen:
         Set(varRequired,false);
         Set(VarBlankrow1,false);
         Set(VarBlankrow2,false);
-        /*Set(
+        If(VarPrevNav=true,
+        Set(
             C,
             true
         );
         Set(
             P,
             false
-        );*/
+        );,
+        Set(
+            C,
+            false
+        );
+        Set(
+            P,
+            true
+        ));
         Set(varActionbutton,false);
         Set(varImage,false);
         //Set(UP,false);
@@ -2692,30 +2701,12 @@ FindingScreen As screen:
             Fill: =RGBA(54, 176, 75, 1)
             Font: =AllScreensCSS.RFont
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: |
-                =Set(
-                    C,
-                    false
-                    );
-                
-                Set(
-                    P,
-                    true
-                );
-                
-                Set(
-                    PopupCloseAction,
-                    false
-                );
-                UpdateIf(
-                    GC_checkpointItem_ActionItem,
-                    checkpointItemActionItemsId = SelectedcheckpointItemActionItemsId,
-                    {
-                        Action_status: "Close",
-                        CIAstatusUpdate: 1
-                    }
-                );
-                Navigate(FindingScreen);
+            OnSelect: |-
+                =//Set(C, false );
+                //Set(P, true );
+                Set(VarPrevNav,false);
+                Set(PopupCloseAction, false );
+                UpdateIf(GC_checkpointItem_ActionItem,checkpointItemActionItemsId=SelectedcheckpointItemActionItemsId,{Action_status:"Close",CIAstatusUpdate:1});Navigate(FindingScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
             Text: ="Ok"
@@ -2731,9 +2722,11 @@ FindingScreen As screen:
             Font: =AllScreensCSS.RFont
             HoverBorderColor: =RGBA(75, 125, 6, 1)
             HoverFill: =RGBA(75, 125, 6, 1)
-            OnSelect: |
-                =Set(P,true);Set(C,false);
-                Set(PopupCloseAction,false);
+            OnSelect: |-
+                =//Set(C, false );
+                Set(PopupCloseAction, false );
+                //Set(P, true );
+                Set(VarPrevNav, false );
                 Navigate(FindingScreen);
             PressedBorderColor: =RGBA(1, 43, 1, 0)
             PressedFill: =Self.Fill
