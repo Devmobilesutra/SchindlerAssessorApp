@@ -5,7 +5,7 @@ SectionScreen As screen:
         Reset(tmr_logout);
         Set(UserLastNavigated, Now());*/
         
-        //for safety check
+        //for safety check popup
         If(
             DateDiff(
                 UserLastNavigatedTime,
