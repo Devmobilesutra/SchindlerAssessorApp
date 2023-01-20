@@ -670,7 +670,11 @@ FindingScreen As screen:
                             Width: =Parent.Width/1.08
                             WrapCount: =2
                             X: =20
-                            Y: =Gallery5_6.Height+Gallery5_6.Y
+                            Y: |-
+                                =If(CountRows(Gallery5_6.AllItems)>0,Gallery5_6.Height+Gallery5_6.Y,Label22_5.Height+Label22_5.Y)
+                                
+                                
+                                //Gallery5_6.Height+Gallery5_6.Y
                             ZIndex: =1
 
                             Image16_2 As image:
@@ -1106,7 +1110,7 @@ FindingScreen As screen:
                                 PressedFill: =Self.Fill
                                 Text: |-
                                     =//If(Btn,true,"closed Action","close Action")
-                                    If(ThisItem.Action_status="Open","Open","Close")
+                                    If(ThisItem.Action_status="Open","Close","Close")
                                     //"Close Action"
                                 X: =Parent.Width-5*(Self.Width)
                                 Y: =(Self.Height / 2)
