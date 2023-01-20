@@ -56,7 +56,7 @@ LoadingScreen As screen:
     lblappVersion As label:
         FontWeight: =FontWeight.Bold
         Height: =47
-        Text: ="   UAT 1.03"
+        Text: ="   UAT 1.0"
         Width: =120
         X: =(Parent.Width-Self.Width)/2
         Y: =Parent.Height/1.5
