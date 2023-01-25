@@ -463,7 +463,7 @@ ProjectScreen As screen:
                     DisabledBorderColor: =RGBA(230, 230, 230, 1)
                     Fill: =RGBA(0, 0, 0, 0)
                     FocusedBorderThickness: =10
-                    Height: =391
+                    Height: =400
                     HoverBorderColor: =RGBA(230, 230, 230, 1)
                     HoverColor: =RGBA(0, 0, 0, 1)
                     HoverFill: =
