@@ -350,7 +350,7 @@ ProjectScreen As screen:
                         )
                     Width: =300
                     X: =Parent.Width/13
-                    Y: =lblDueDate.Y+lblDueDate.Height
+                    Y: =lblRName.Height+lblRName.Y
                     ZIndex: =16
 
                 lblAddress As label:
@@ -414,7 +414,7 @@ ProjectScreen As screen:
                         )
                     Width: =300
                     X: =lblAddress.Width+lblAddress.X
-                    Y: =lblDueDate.Y+lblDueDate.Height
+                    Y: =lblRName.Height+lblRName.Y
                     ZIndex: =22
 
                 btnprojecttype As button:
@@ -533,7 +533,7 @@ ProjectScreen As screen:
                         )
                     Width: =20
                     X: =glryProject.Width/20
-                    Y: =lblDueDate.Y+lblDueDate.Height+10
+                    Y: =lblRName.Height+lblRName.Y
                     ZIndex: =30
 
                 imgAddress As image:
@@ -576,4 +576,36 @@ ProjectScreen As screen:
                     X: =glryProject.Width/20
                     Y: =lblContactNumber.Y+lblContactNumber.Height+5
                     ZIndex: =34
+
+                lblRName As label:
+                    Font: =AllScreensCSS.RFont
+                    OnSelect: =Select(Parent)
+                    PaddingLeft: =10
+                    PaddingRight: =10
+                    Size: =AllScreensCSS.RLabelFontSize
+                    Text: ="Reviewer Name"
+                    Width: =210
+                    X: =Parent.Width/13
+                    Y: =lblDueDate.Y+lblDueDate.Height
+                    ZIndex: =35
+
+                lblReviewerName As label:
+                    Font: =AllScreensCSS.RLabelFontSize
+                    Height: =lblRName.Height
+                    OnSelect: =Select(Parent)
+                    Size: =AllScreensCSS.RfontsizeInput
+                    Text: =ThisItem.reviewerName
+                    Width: =300
+                    X: =lblAddress.Width+lblAddress.X
+                    Y: =lblDueDate.Y+lblDueDate.Height
+                    ZIndex: =36
+
+                imgReviewer As image:
+                    Height: =23
+                    Image: =Sample_User_Icon
+                    OnSelect: =Select(Parent)
+                    Width: =23
+                    X: =glryProject.Width/20
+                    Y: =lblDueDate.Y+lblDueDate.Height+10
+                    ZIndex: =37
 
