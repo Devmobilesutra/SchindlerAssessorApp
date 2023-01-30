@@ -590,7 +590,7 @@ ProjectScreen As screen:
                     ZIndex: =35
 
                 lblReviewerName As label:
-                    Font: =AllScreensCSS.RLabelFontSize
+                    Font: =AllScreensCSS.RFont
                     Height: =lblRName.Height
                     OnSelect: =Select(Parent)
                     Size: =AllScreensCSS.RfontsizeInput

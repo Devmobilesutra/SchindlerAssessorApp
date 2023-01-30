@@ -9775,14 +9775,7 @@
         "DisabledFill",
         "PressedFill",
         "HoverFill",
-        {
-          "AFDDataSourceName": "",
-          "AutoRuleBindingEnabled": false,
-          "AutoRuleBindingString": "AllScreensCSS.RFont",
-          "InvariantPropertyName": "Font",
-          "IsLockable": false,
-          "NameMapSourceSchema": "?"
-        },
+        "Font",
         "FontWeight",
         "Align",
         "VerticalAlign",
