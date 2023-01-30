@@ -586,7 +586,12 @@ FindingScreen As screen:
                 ContentLanguage: =" "
                 FillPortions: =0
                 Height: |-
-                    =If(C,Container6_4.Height ,ctnPrevious.Height)
+                    =If(
+                        C,
+                        Container6_4.Height,
+                        //ctnPrevious.Height
+                        Parent.Height
+                    )
                     //glryPreviousFS.Height
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
@@ -600,7 +605,9 @@ FindingScreen As screen:
                     Fill: |-
                         =//RGBA(0, 0, 0, 0)
                         WhiteSmoke
-                    Height: =glryPreviousFS.Height+100
+                    Height: |-
+                        =Parent.Height
+                        //PreviousFS.Height+100
                     LayoutDirection: =LayoutDirection.Vertical
                     LayoutMode: =LayoutMode.Auto
                     Visible: |+
@@ -619,7 +626,8 @@ FindingScreen As screen:
                         FillPortions: =0
                         Height: |-
                             =//+Label22_5.Height+Label21_4.Height+Icon3_13.Height+Icon3_15.Height+ctnDatePFS_5.Height
-                            CountRows(Gallery5_6.AllItems)*(Gallery5_6.TemplateHeight)+CountRows(Gallery14_2.AllItems)*(Gallery14_2.TemplateHeight)+CountRows(glryPreviousFS.AllItems)*(glryPreviousFS.TemplateHeight)
+                            /*CountRows(Gallery5_6.AllItems)*(Gallery5_6.TemplateHeight)+CountRows(Gallery14_2.AllItems)*(Gallery14_2.TemplateHeight)+CountRows(glryPreviousFS.AllItems)*(glryPreviousFS.TemplateHeight)*/
+                            Parent.Height
                         Items: |
                             =//Filter(checkpointItem_ActionItem, 'checkpointItem_ActionItem (Views)'.previousFindings)
                             //Filter(GC_checkpointItem_ActionItem,checkpointItem_Id.checkpointItemId.checkpointItemId=varCheckpointitemID)
