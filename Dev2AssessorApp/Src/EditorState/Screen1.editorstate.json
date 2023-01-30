@@ -25448,7 +25448,14 @@
     "TextInput4_1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//check summary is available for assignment if available then display summary\r\n//If(IsBlank(First(localBanktripReport).Summary),\" \",First(localBanktripReport).Summary)",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Mode",
         "Format",
         "VirtualKeyboardMode",
@@ -26274,7 +26281,14 @@
     "TextInput7_1": {
       "AllowAccessToGlobals": true,
       "ControlPropertyState": [
-        "Default",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "//check background is available for assignment if available then display background\r\n//If(IsBlank(First(localBanktripReport).Background),\" \",First(localBanktripReport).Background)",
+          "InvariantPropertyName": "Default",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Mode",
         "Format",
         "VirtualKeyboardMode",
