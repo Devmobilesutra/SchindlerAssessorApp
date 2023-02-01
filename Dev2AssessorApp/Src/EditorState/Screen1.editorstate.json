@@ -13272,7 +13272,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "\"Product Type\"",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -13637,7 +13644,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",
@@ -16154,7 +16168,14 @@
         "AutoHeight",
         "Wrap",
         "IsErrorMessage",
-        "Text",
+        {
+          "AFDDataSourceName": "",
+          "AutoRuleBindingEnabled": false,
+          "AutoRuleBindingString": "LookUp(gcBank,Id=VarBankId,productId.product_Model)",
+          "InvariantPropertyName": "Text",
+          "IsLockable": false,
+          "NameMapSourceSchema": "?"
+        },
         "Tooltip",
         "Role",
         "ContentLanguage",

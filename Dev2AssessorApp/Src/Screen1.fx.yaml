@@ -274,7 +274,7 @@ Screen1 As screen:
                         Height: =ctnProductTypeAS_8.Height
                         PaddingLeft: =2
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: =LookUp(gcBank,Id=VarBankId,productId.product_Model)
+                        Text: =LookUp(gcBank,Id=VarBankId,productId.product_Type)
                         Width: =ctnMiddleTRS_1.Width/4
                         X: =lblAssessmentTypeAS_9.X+lblAssessmentTypeAS_9.Width
                         ZIndex: =2
@@ -492,7 +492,7 @@ Screen1 As screen:
                         FontWeight: =FontWeight.Semibold
                         Height: =ctnAssessmentDateAS_8.Height
                         Size: =AllScreensCSS.RLabelFontSize
-                        Text: ="Product Type"
+                        Text: ="Product Name"
                         Width: |-
                             =//ctnMiddleAS.Width/4.5
                             350
@@ -1128,7 +1128,7 @@ Screen1 As screen:
                 FontWeight: =FontWeight.Bold
                 Height: =ctnHeaderTRS_1.Height
                 Size: =Header.HeaderFontSize
-                Text: ="Report"
+                Text: ="Trip Report"
                 Width: =ctnHeaderTRS_1.Width/1.65
                 X: =imgLogoTRS_1.Width
                 ZIndex: =2
