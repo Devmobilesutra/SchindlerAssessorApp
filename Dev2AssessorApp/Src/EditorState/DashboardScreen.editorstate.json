@@ -3598,7 +3598,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconInnerRectsngleDS",
-      "ParentIndex": 4,
+      "ParentIndex": 3,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -3997,7 +3997,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "iconUpcomingprojectindicator",
-      "ParentIndex": 2,
+      "ParentIndex": 1,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -4636,7 +4636,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "imgInfoDS",
-      "ParentIndex": 5,
+      "ParentIndex": 4,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -8867,7 +8867,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "lblUpcomingProjects",
-      "ParentIndex": 1,
+      "ParentIndex": 2,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
@@ -9860,7 +9860,7 @@
       "LayoutName": "",
       "MetaDataIDKey": "",
       "Name": "tmr_logout",
-      "ParentIndex": 3,
+      "ParentIndex": 5,
       "PersistMetaDataIDKey": false,
       "Properties": [
         {
