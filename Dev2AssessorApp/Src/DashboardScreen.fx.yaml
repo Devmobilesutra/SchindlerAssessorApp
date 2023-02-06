@@ -300,6 +300,7 @@ DashboardScreen As screen:
                             isCompleted = "Inprogress1",
                             {isCompleted: "Inprogress"}
                         );
+                    Visible: =If(DashboardScreen.Orientation="horizontal",true,false)
                     Width: =40
                     X: =NetworkIconDS.X+NetworkIconDS.Width+50
                     Y: =(ctnHeaderDS.Height-Self.Height)/2
