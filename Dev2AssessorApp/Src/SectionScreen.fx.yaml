@@ -558,7 +558,6 @@ SectionScreen As screen:
 
                         btnStartAssessmentSS As button:
                             Fill: =AllScreensCSS.RActiveColor
-                            Font: =AllScreensCSS.RFont
                             Height: =chglryCheckpointSS.TemplateHeight/1.8
                             HoverColor: =Self.Color
                             HoverFill: =Self.Fill
