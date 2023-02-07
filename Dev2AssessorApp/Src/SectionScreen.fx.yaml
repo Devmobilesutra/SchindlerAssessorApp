@@ -622,7 +622,7 @@ SectionScreen As screen:
                                       checkpointId.checkpointId=ThisItem.checkpointId,
                                        AssessmentStatus)="Inprogress"
                                        //||LookUp(GcCheckpointAssessment,assignmentId.Id=varAssignmentId && bankUnitId.Id=varBankUnitId &&   checkpointId.checkpointId=ChId,AssessmentStatus)="Completed")
-                                       ,"Resume Assessment","Start Assessment"
+                                       ,"Resume Checkpoint","Start Checkpoint"
                                        )
                                 
                             Width: =chglryCheckpointSS.Width/6
