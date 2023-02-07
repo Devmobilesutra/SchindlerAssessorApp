@@ -62,7 +62,7 @@ DashboardScreen As screen:
                         =
                         Header.HeaderFontSize
                     Text: ="Dashboard"
-                    Width: =ctnHeaderDS.Width/1.8
+                    Width: =ctnHeaderDS.Width/1.9
                     X: =imgLogoDS.Width
                     ZIndex: =2
 
@@ -87,7 +87,7 @@ DashboardScreen As screen:
                     PaddingLeft: =20
                     Size: =Header.HeaderUserFontSize-2
                     Text: =username
-                    Width: =ctnHeaderDS.Width/6
+                    Width: =ctnHeaderDS.Width/6.5
                     X: =imgUserHeaderDS.Width+imgUserHeaderDS.X
                     ZIndex: =5
 
@@ -300,9 +300,8 @@ DashboardScreen As screen:
                             isCompleted = "Inprogress1",
                             {isCompleted: "Inprogress"}
                         );
-                    Visible: =If(DashboardScreen.Orientation="horizontal",true,false)
                     Width: =40
-                    X: =NetworkIconDS.X+NetworkIconDS.Width+50
+                    X: =NetworkIconDS.X+NetworkIconDS.Width+20
                     Y: =(ctnHeaderDS.Height-Self.Height)/2
                     ZIndex: =10
 
