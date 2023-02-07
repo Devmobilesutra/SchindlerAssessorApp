@@ -62,7 +62,7 @@ DashboardScreen As screen:
                         =
                         Header.HeaderFontSize
                     Text: ="Dashboard"
-                    Width: =ctnHeaderDS.Width/1.9
+                    Width: =ctnHeaderDS.Width/1.95
                     X: =imgLogoDS.Width
                     ZIndex: =2
 
@@ -301,7 +301,7 @@ DashboardScreen As screen:
                             {isCompleted: "Inprogress"}
                         );
                     Width: =40
-                    X: =NetworkIconDS.X+NetworkIconDS.Width+20
+                    X: =NetworkIconDS.X+NetworkIconDS.Width+10
                     Y: =(ctnHeaderDS.Height-Self.Height)/2
                     ZIndex: =10
 
