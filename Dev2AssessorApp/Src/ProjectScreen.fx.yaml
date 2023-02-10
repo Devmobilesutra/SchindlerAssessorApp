@@ -87,7 +87,7 @@ ProjectScreen As screen:
                     ZIndex: =9
 
         ctnMiddlePS As groupContainer.verticalAutoLayoutContainer:
-            Height: =glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
+            Height: =Parent.Height //glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -158,7 +158,7 @@ ProjectScreen As screen:
 
             "glryProject As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
                 FillPortions: =0
-                Height: =CountRows(glryProject.AllItems) * glryProject.TemplateHeight + glryProject.TemplatePadding + 50
+                Height: =Parent.Height //CountRows(glryProject.AllItems) * glryProject.TemplateHeight + glryProject.TemplatePadding + 50
                 Items: |-
                     =//If comp variable is true then display completed assignment in gallery else
                     // check inpro variable is true then display inprogress assignment in gallery otherwise 
