@@ -1511,6 +1511,7 @@ BankScreen As screen:
                             Set(VarExportPDF,true);
                             UnitPDF.Run(glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits,glryProject.Selected.assignments);
                         Text: ="Export PDF"
+                        Visible: =If(inpro=true,true,false)
                         Width: =140
                         X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-imgUnitSyncBS.Width)-150
                         Y: =32
