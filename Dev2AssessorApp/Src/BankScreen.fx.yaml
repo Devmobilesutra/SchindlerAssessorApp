@@ -319,7 +319,6 @@ BankScreen As screen:
                 AlignInContainer: =AlignInContainer.SetByContainer
                 FillPortions: =0
                 Height: =Parent.Height
-                LayoutDirection: =LayoutDirection.Vertical
                 LayoutMinHeight: =100
                 LayoutMinWidth: =250
                 LayoutMode: =LayoutMode.Auto
@@ -769,7 +768,7 @@ BankScreen As screen:
                                 )
                             )
                         Width: =ctnunitAssessmentBS.Width/4
-                        X: =(Parent.Width-Self.Width)-40
+                        X: =(Parent.Width-Self.Width)-50
                         Y: =30
                         ZIndex: =3
 
@@ -1502,6 +1501,17 @@ BankScreen As screen:
                         Y: =30
                         ZIndex: =7
 
+                    Button1 As button:
+                        Fill: =AllScreensCSS.RActiveColor
+                        HoverFill: =Self.Fill
+                        OnSelect: |-
+                            =Set(VarPDFLable,"Unit " & ThisItem.bankUnitId.unitNumber & " Assessment PDF will be sent to your Email Id");
+                            Set(VarExportPDF,true);
+                        Text: ="Export PDF"
+                        X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-imgUnitSyncBS.Width)-150
+                        Y: =32
+                        ZIndex: =8
+
         ctnHeaderBS As groupContainer.manualLayoutContainer:
             Fill: =Header.HeaderFill
             Height: =80
@@ -1971,9 +1981,7 @@ BankScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =100
             Size: =15
-            Text: |-
-                =
-                    VarPopupSyncText 
+            Text: =VarPopupSyncText 
             Visible: =popupSyncSuccess =true
             Width: =350
             X: =(Parent.Width-Self.Width)/2
@@ -2049,9 +2057,7 @@ BankScreen As screen:
             FontWeight: =FontWeight.Semibold
             Height: =100
             Size: =15
-            Text: |-
-                =
-                    VarPopupSyncText 
+            Text: =VarPopupSyncText 
             Visible: =popupTripReportSuccess
             Width: =350
             X: =(Parent.Width-Self.Width)/2
@@ -2072,4 +2078,79 @@ BankScreen As screen:
             X: =(Parent.Width-Self.Width)/2
             Y: =lblTripReportSuccessBS.Y+ lblTripReportSuccessBS.Height+5
             ZIndex: =14
+
+    grpTripReportBS_1 As group:
+        Height: =5
+        Width: =5
+        X: =40
+        Y: =40
+        ZIndex: =21
+
+        iconOuterRectangleTripReportBS_1 As rectangle:
+            Fill: =RGBA(0, 0, 0, 0.29)
+            Height: =Parent.Height
+            Visible: =VarExportPDF
+            Width: =Parent.Width
+            ZIndex: =15
+
+        iconInnerRectangleTripReportBS_1 As rectangle:
+            Fill: =RGBA(255, 255, 255, 1)
+            Height: =270
+            Visible: =VarExportPDF
+            Width: =400
+            X: =(Parent.Width-Self.Width)/2
+            Y: =Parent.Height/3
+            ZIndex: =16
+
+        imgInfoBS_1 As image:
+            Height: =52
+            Image: =info
+            Visible: =VarExportPDF
+            Width: =52
+            X: =(Parent.Width-Self.Width)/2
+            Y: =iconInnerRectangleTripReportBS_1.Y+20
+            ZIndex: =17
+
+        lblSuccesspopupBS_1 As label:
+            Align: =Align.Center
+            Color: =RGBA(14, 161, 26, 1)
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Bold
+            Height: =0
+            PaddingBottom: =0
+            Size: =18
+            Text: ="Success"
+            Visible: =VarExportPDF
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =imgInfoBS_1.Y+imgInfoBS_1.Height
+            ZIndex: =18
+
+        lblTripReportSuccessBS_1 As label:
+            Align: =Align.Center
+            Font: =AllScreensCSS.RFont
+            FontWeight: =FontWeight.Semibold
+            Height: =100
+            Size: =15
+            Text: =VarPDFLable
+            Visible: =VarExportPDF
+            Width: =350
+            X: =(Parent.Width-Self.Width)/2
+            Y: =lblSuccesspopupBS_1.Y+lblSuccesspopupBS_1.Height
+            ZIndex: =19
+
+        btnPopupTripReportBS_1 As button:
+            Fill: =RGBA(54, 176, 75, 1)
+            Font: =AllScreensCSS.RFont
+            HoverFill: =RGBA(75, 125, 6, 1)
+            OnSelect: |
+                =Set(VarExportPDF,false);
+            PressedBorderColor: =RGBA(1, 43, 1, 0)
+            PressedFill: =Self.Fill
+            Text: ="Ok"
+            Visible: =VarExportPDF
+            Width: =120
+            X: =(Parent.Width-Self.Width)/2
+            Y: =lblTripReportSuccessBS_1.Y+ lblTripReportSuccessBS_1.Height+5
+            ZIndex: =20
 
