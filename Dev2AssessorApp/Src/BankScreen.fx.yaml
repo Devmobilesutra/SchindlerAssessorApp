@@ -1507,7 +1507,9 @@ BankScreen As screen:
                         OnSelect: |-
                             =Set(VarPDFLable,"Unit " & ThisItem.bankUnitId.unitNumber & " Assessment PDF will be sent to your Email Id");
                             Set(VarExportPDF,true);
+                            UnitPDF.Run(glryProject.Selected.assignments,glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits);
                         Text: ="Export PDF"
+                        Width: =140
                         X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-imgUnitSyncBS.Width)-150
                         Y: =32
                         ZIndex: =8
