@@ -3,6 +3,8 @@ BankScreen As screen:
     OnVisible: |
         =Set(varComment,false);
         Set(popupSyncSuccess,false);
+        Set(VarExportPDF,false);
+        
         Refresh(unitAssessment);
         Trace(
             First(gcBank).productId.product_Model,
@@ -1507,7 +1509,7 @@ BankScreen As screen:
                         OnSelect: |-
                             =Set(VarPDFLable,"Unit " & ThisItem.bankUnitId.unitNumber & " Assessment PDF will be sent to your Email Id");
                             Set(VarExportPDF,true);
-                            UnitPDF.Run(glryProject.Selected.assignments,glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits);
+                            UnitPDF.Run(glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits,glryProject.Selected.assignments);
                         Text: ="Export PDF"
                         Width: =140
                         X: =(Parent.Width-Self.Width-btnStartAssessmentBS.Width-btnCommentBS.Width-imgUnitSyncBS.Width)-150

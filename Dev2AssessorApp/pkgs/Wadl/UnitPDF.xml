@@ -4,9 +4,11 @@
     <jsonTypes targetNamespace="https://unitedstates-002.azure-apim.net/apim/logicflows" xmlns="http://schemas.microsoft.com/MicrosoftProjectSiena/WADL/2014/11">
       <string name="ManualTriggerInput_Sendanemail_ux28_V2_ux29__To_def" />
       <string name="ManualTriggerInput_Listrows2_Filterrows_def" />
+      <string name="ManualTriggerInput_Listrows_Filterrows_def" />
       <object name="ManualTriggerInput">
         <property name="Sendanemail(V2)_To" type="string" />
         <property name="Listrows2_Filterrows" type="string" />
+        <property name="Listrows_Filterrows" type="string" />
       </object>
     </jsonTypes>
   </grammars>
@@ -22,6 +24,7 @@
           <representation mediaType="application/json">
             <param style="plain" name="Sendanemail(V2)_To" path="/Sendanemail(V2)_To" type="xs:string" required="true" />
             <param style="plain" name="Listrows2_Filterrows" path="/Listrows2_Filterrows" type="xs:string" required="true" />
+            <param style="plain" name="Listrows_Filterrows" path="/Listrows_Filterrows" type="xs:string" required="true" />
           </representation>
         </request>
       </method>

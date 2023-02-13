@@ -1,23 +1,22 @@
 {
-  "175444f3-06c6-484b-bcd0-6ed44abea0b0": {
+  "1ad54661-b544-4718-b96f-4dfc0d355736": {
     "connectionParameters": {
-      "sku": "Enterprise",
-      "token:grantType": "code"
+      "sku": "Enterprise"
     },
     "connectionRef": {
-      "displayName": "Microsoft Dataverse",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/commondataserviceforapps/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+      "displayName": "OneDrive for Business",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2665/onedriveforbusiness/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
     },
     "datasets": {},
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "27e4ddac-84f4-47b4-aebd-1a5cd4f4eeab"
+      "6c17324f-bcf0-4621-9edc-87eca0536b28"
     ],
-    "id": "175444f3-06c6-484b-bcd0-6ed44abea0b0"
+    "id": "1ad54661-b544-4718-b96f-4dfc0d355736"
   },
-  "27e4ddac-84f4-47b4-aebd-1a5cd4f4eeab": {
+  "6c17324f-bcf0-4621-9edc-87eca0536b28": {
     "connectionParameters": {
       "workFlowCallbackUri": "https://prod-02.westus.logic.azure.com:443/workflows/073cd5a71153407dad26af7a7b569df1/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=3cRJcD4I3TBVk16F6s_h62k71BS0BOtmdxVDosMZ6ig",
       "workflowEndpoint": "/subscriptions/2e6e5a0a-b35f-4167-82de-61b3afa7d1ec/resourceGroups/125c265eb1f0494da8a1bbce16d90b90-7c3abeda63c240e3a91ff97eb9ce26b9-env/providers/Microsoft.Logic/workflows/35fb302a-5b2b-639a-a059-cd1c0507d665",
@@ -30,15 +29,6 @@
       "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1615/1.0.1615.3163/logicflows/icon.png",
       "id": "/providers/microsoft.powerapps/apis/shared_logicflows",
       "parameterHints": {
-        "175444f3-06c6-484b-bcd0-6ed44abea0b0": {
-          "value": "shared_commondataserviceforapps"
-        },
-        "8cbeca2f-b52a-41f9-8850-1603b150012a": {
-          "value": "shared_onedriveforbusiness"
-        },
-        "9f7e1a33-766b-4be6-84f7-cdb78f6b3a65": {
-          "value": "shared_office365"
-        },
         "workflowEntityId": {
           "value": "dc303963-33f1-ec11-bb3d-000d3a1c674f"
         },
@@ -47,15 +37,6 @@
         }
       },
       "parameterHintsV2": {
-        "shared_commondataserviceforapps": {
-          "value": "175444f3-06c6-484b-bcd0-6ed44abea0b0"
-        },
-        "shared_office365": {
-          "value": "9f7e1a33-766b-4be6-84f7-cdb78f6b3a65"
-        },
-        "shared_onedriveforbusiness": {
-          "value": "8cbeca2f-b52a-41f9-8850-1603b150012a"
-        },
         "workflowEntityId": {
           "value": "dc303963-33f1-ec11-bb3d-000d3a1c674f"
         },
@@ -69,31 +50,14 @@
       "UnitPDF"
     ],
     "dependencies": {
-      "shared_commondataserviceforapps": "175444f3-06c6-484b-bcd0-6ed44abea0b0",
-      "shared_office365": "9f7e1a33-766b-4be6-84f7-cdb78f6b3a65",
-      "shared_onedriveforbusiness": "8cbeca2f-b52a-41f9-8850-1603b150012a"
+      "shared_commondataserviceforapps": "faea72ba-8b55-44ae-83bd-3cbae8fd3594",
+      "shared_office365": "8244ac83-c13c-4945-a49d-8e43c1de0026",
+      "shared_onedriveforbusiness": "1ad54661-b544-4718-b96f-4dfc0d355736"
     },
     "dependents": [],
-    "id": "27e4ddac-84f4-47b4-aebd-1a5cd4f4eeab"
+    "id": "6c17324f-bcf0-4621-9edc-87eca0536b28"
   },
-  "8cbeca2f-b52a-41f9-8850-1603b150012a": {
-    "connectionParameters": {
-      "sku": "Enterprise"
-    },
-    "connectionRef": {
-      "displayName": "OneDrive for Business",
-      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1546/1.0.1546.2665/onedriveforbusiness/icon.png",
-      "id": "/providers/microsoft.powerapps/apis/shared_onedriveforbusiness"
-    },
-    "datasets": {},
-    "dataSources": [],
-    "dependencies": {},
-    "dependents": [
-      "27e4ddac-84f4-47b4-aebd-1a5cd4f4eeab"
-    ],
-    "id": "8cbeca2f-b52a-41f9-8850-1603b150012a"
-  },
-  "9f7e1a33-766b-4be6-84f7-cdb78f6b3a65": {
+  "8244ac83-c13c-4945-a49d-8e43c1de0026": {
     "connectionParameters": {
       "sku": "Enterprise"
     },
@@ -106,9 +70,27 @@
     "dataSources": [],
     "dependencies": {},
     "dependents": [
-      "27e4ddac-84f4-47b4-aebd-1a5cd4f4eeab"
+      "6c17324f-bcf0-4621-9edc-87eca0536b28"
     ],
-    "id": "9f7e1a33-766b-4be6-84f7-cdb78f6b3a65"
+    "id": "8244ac83-c13c-4945-a49d-8e43c1de0026"
+  },
+  "faea72ba-8b55-44ae-83bd-3cbae8fd3594": {
+    "connectionParameters": {
+      "sku": "Enterprise",
+      "token:grantType": "code"
+    },
+    "connectionRef": {
+      "displayName": "Microsoft Dataverse",
+      "iconUri": "https://connectoricons-prod.azureedge.net/releases/v1.0.1618/1.0.1618.3179/commondataserviceforapps/icon.png",
+      "id": "/providers/microsoft.powerapps/apis/shared_commondataserviceforapps"
+    },
+    "datasets": {},
+    "dataSources": [],
+    "dependencies": {},
+    "dependents": [
+      "6c17324f-bcf0-4621-9edc-87eca0536b28"
+    ],
+    "id": "faea72ba-8b55-44ae-83bd-3cbae8fd3594"
   },
   "fc1672ff-a847-406d-b62f-8258a2b051f8": {
     "connectionParameters": {
