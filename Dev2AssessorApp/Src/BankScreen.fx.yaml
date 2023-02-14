@@ -1506,10 +1506,9 @@ BankScreen As screen:
                     Button1 As button:
                         Fill: =AllScreensCSS.RActiveColor
                         HoverFill: =Self.Fill
-                        OnSelect: |-
+                        OnSelect: |
                             =Set(VarPDFLable,"Unit " & ThisItem.bankUnitId.unitNumber & " Assessment PDF will be sent to your Email Id");
-                            Set(VarExportPDF,true);
-                            UnitPDF.Run(glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits,glryProject.Selected.assignments);
+                            Set(VarExportPDF,UnitPDF.Run(glryProject.Selected.assessorEmail,ThisItem.bankUnitId.bankUnits,glryProject.Selected.assignments));
                         Text: ="Export PDF"
                         Visible: =If(inpro=true,true,false)
                         Width: =140
