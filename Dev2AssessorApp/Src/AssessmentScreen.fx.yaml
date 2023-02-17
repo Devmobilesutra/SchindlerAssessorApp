@@ -1982,7 +1982,9 @@ AssessmentScreen As screen:
                                                 "quantum_timeestimate",
                                                 "quantum_duedate",
                                                 "quantum_ownerid",
-                                                "cr28a_action_status"
+                                                "cr28a_action_status",
+                                                "shlaf_actionsortsequence"
+                            
                                             )
                                         );
                                         
@@ -2040,7 +2042,8 @@ AssessmentScreen As screen:
                                                 "quantum_checkpointItem_Id",
                                                 "quantum_checkpointitemimagesid",
                                                 "shlaf_image_annotation",
-                                                "quantum_image"
+                                                "quantum_image",
+                                                "shlaf_imagesortsequence"
                                             )
                                         );
                                         
