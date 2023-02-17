@@ -2261,9 +2261,8 @@ FindingScreen As screen:
                                                     ),
                                                      product_id: LookUp(GC_product,product_Model=glryUnitBS.Selected.productModel
                                                     ),
-                                                    
-                                                    
-                                                    image_annotation: ""
+                                                    image_annotation: "",
+                                                    ImageSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
                                             }
                                         );
                                     If(
