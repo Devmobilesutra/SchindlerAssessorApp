@@ -1797,7 +1797,9 @@ FindingScreen As screen:
                                                     priority:"",
                                                     OwnerId:"",
                                                     TimeEstimate:"",
-                                                    MaterialEstimate:""
+                                                    MaterialEstimate:"",
+                                                    ActionSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
+                                    
                                     
                                             }
                                             );
