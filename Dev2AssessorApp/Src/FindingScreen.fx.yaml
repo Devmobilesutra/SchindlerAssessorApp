@@ -2411,7 +2411,8 @@ FindingScreen As screen:
                                                             TimeEstimate: a.TextInput5_10.Text,
                                                             MaterialEstimate: a.TextInput5_11.Text,
                                                             Action_status: "Open",
-                                                            CIAstatusUpdate:0
+                                                            CIAstatusUpdate:0,
+                                                            ActionSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
                                                         }
                                                     );
                                             );
@@ -2425,7 +2426,8 @@ FindingScreen As screen:
                                                         {
                                                             Image: i.Image14_2.Image,
                                                             image_annotation: i.TextInput6_2.Text,
-                                                            CIIstatusUpdate:0
+                                                            CIIstatusUpdate:0,
+                                                            ImageSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
                                                         }
                                                     )
                                             );
