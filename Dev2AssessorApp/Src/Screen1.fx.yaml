@@ -392,7 +392,7 @@ Screen1 As screen:
                     Default: |-
                         =//check summary is available for assignment if available then display summary
                         If(IsBlank(First(localBanktripReport).Summary)," ",First(localBanktripReport).Summary)
-                    DisplayMode: =If(comp=true,DisplayMode.View,Edit)
+                    DisplayMode: =If(comp=true,DisplayMode.View,DisplayMode.Edit)
                     FillPortions: =1
                     HintText: ="Enter here"
                     HoverBorderColor: =RGBA(179, 179, 179, 1)
@@ -419,7 +419,7 @@ Screen1 As screen:
                     Default: |-
                         =//check background is available for assignment if available then display background
                         If(IsBlank(First(localBanktripReport).Background)," ",First(localBanktripReport).Background)
-                    DisplayMode: =If(comp=true,DisplayMode.View,Edit)
+                    DisplayMode: =If(comp=true,DisplayMode.View,DisplayMode.Edit)
                     FillPortions: =1
                     HintText: ="Enter here"
                     HoverBorderColor: =RGBA(179, 179, 179, 1)
@@ -1241,6 +1241,15 @@ Screen1 As screen:
             Y: =lblotificationTRS_1.Y+ lblotificationTRS_1.Height+10
             ZIndex: =7
 
+    Icon1 As icon.DocumentPDF:
+        Height: =49
+        Icon: =Icon.DocumentPDF
+        OnSelect: =Set(varPDF,PDF(Gallery15_1));
+        Width: =59
+        X: =1285
+        Y: =16
+        ZIndex: =21
+
     groupcommentTRS_1 As group:
         Height: =5
         Width: =5
@@ -1369,4 +1378,14 @@ Screen1 As screen:
             X: =iconRectangleCommentTRS_1.X
             Y: =iconRectangleCommentTRS_1.Y
             ZIndex: =20
+
+    PdfViewer1 As pdfViewer:
+        BorderColor: =RGBA(0, 0, 0, 1)
+        Document: =varPDF
+        Fill: =RGBA(0, 0, 0, 0.5)
+        Height: =345
+        Width: =532
+        X: =726
+        Y: =288
+        ZIndex: =22
 

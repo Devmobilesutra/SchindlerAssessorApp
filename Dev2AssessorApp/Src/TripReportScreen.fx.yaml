@@ -391,7 +391,7 @@ TripReportScreen As screen:
                     Default: |-
                         =
                         First(localBanktripReport).Summary
-                    DisplayMode: =If(comp=true,DisplayMode.View,Edit)
+                    DisplayMode: =If(comp=true,DisplayMode.View,DisplayMode.Edit)
                     FillPortions: =1
                     HintText: ="Enter here"
                     HoverBorderColor: =RGBA(179, 179, 179, 1)
@@ -418,7 +418,7 @@ TripReportScreen As screen:
                     Default: |-
                         =
                         First(localBanktripReport).Background
-                    DisplayMode: =If(comp=true,DisplayMode.View,Edit)
+                    DisplayMode: =If(comp=true,DisplayMode.View,DisplayMode.Edit)
                     FillPortions: =1
                     HintText: ="Enter here"
                     HoverBorderColor: =RGBA(179, 179, 179, 1)

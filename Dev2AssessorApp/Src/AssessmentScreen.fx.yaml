@@ -10,7 +10,7 @@ AssessmentScreen As screen:
             DateDiff(
                 UserLastNavigatedTime,
                 Now(),
-                Seconds
+                TimeUnit.Seconds
             ) > SafetyCheckTime,
             Set(
                 safetyPopup,
@@ -468,7 +468,7 @@ AssessmentScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
@@ -755,7 +755,7 @@ AssessmentScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
@@ -1147,7 +1147,7 @@ AssessmentScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
@@ -1335,7 +1335,7 @@ AssessmentScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,

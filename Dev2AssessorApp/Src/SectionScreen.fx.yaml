@@ -10,7 +10,7 @@ SectionScreen As screen:
             DateDiff(
                 UserLastNavigatedTime,
                 Now(),
-                Seconds
+                TimeUnit.Seconds
             ) > SafetyCheckTime,
             Set(
                 safetyPopup,
@@ -475,7 +475,7 @@ SectionScreen As screen:
                         =(CountRows(glrySectionSS.AllItems)*glrySectionSS.TemplateHeight)+70
                         //If(locInfoExpanded=false,500,(CountRows(glrySectionSS_2.AllItems)*glrySectionSS_2.TemplateHeight)+70)
                         //Parent.Height
-                    Items: =Sort(Filter(GC_templateSections,seriesName=CId,sectionname),Value(sectionSequence),Ascending)
+                    Items: =Sort(Filter(GC_templateSections,seriesName=CId,sectionname),Value(sectionSequence),SortOrder.Ascending)
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =287
                     LayoutMinWidth: =320
@@ -511,7 +511,7 @@ SectionScreen As screen:
                         Fill: =RGBA(237, 237, 237, 1)
                         Height: =(CountRows(chglryCheckpointSS.AllItems)*chglryCheckpointSS.TemplateHeight)
                         Items: |
-                            =Sort(Filter(GC_templateCheckpoints,seriesName=CId && sectionId.sectionname=lblSectionnameSS.Text,checkpointName),Value(checkpointSequence),Ascending)
+                            =Sort(Filter(GC_templateCheckpoints,seriesName=CId && sectionId.sectionname=lblSectionnameSS.Text,checkpointName),Value(checkpointSequence),SortOrder.Ascending)
                         Layout: =Layout.Vertical
                         ShowScrollbar: =false
                         TemplatePadding: =0
@@ -571,7 +571,7 @@ SectionScreen As screen:
                                     DateDiff(
                                         UserLastNavigatedTime,
                                         Now(),
-                                        Seconds
+                                        TimeUnit.Seconds
                                     ) > SafetyCheckTime,
                                     Set(
                                         safetyPopup,
@@ -721,7 +721,7 @@ SectionScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,
@@ -780,7 +780,7 @@ SectionScreen As screen:
                                 DateDiff(
                                     UserLastNavigatedTime,
                                     Now(),
-                                    Seconds
+                                    TimeUnit.Seconds
                                 ) > SafetyCheckTime,
                                 Set(
                                     safetyPopup,

@@ -281,7 +281,7 @@ ViewAssessmentScreen As screen:
                                    //ckpointitemSequence, Ascending),
                                 //checkpointAssessment_Id.CheckpointSequence,Ascending),
                             section_Id.sectionSequence,
-                            Ascending
+                            SortOrder.Ascending
                         )
                     Layout: =Layout.Vertical
                     LayoutMinHeight: =100
