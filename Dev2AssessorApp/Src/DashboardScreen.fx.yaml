@@ -610,16 +610,31 @@ DashboardScreen As screen:
             LayoutMinWidth: =250
             LayoutMode: =LayoutMode.Auto
             PaddingBottom: =200
-            PaddingLeft: =400
             Width: =Parent.Width
             ZIndex: =3
+
+            Container2 As groupContainer.verticalAutoLayoutContainer:
+                Height: =60
+                LayoutDirection: =LayoutDirection.Vertical
+                LayoutMinHeight: =100
+                LayoutMinWidth: =250
+                LayoutMode: =LayoutMode.Auto
+                Width: =Parent.Width
+                X: =Parent.X
+                Y: =Parent.Y
+                ZIndex: =1
+
+                Button2 As button:
+                    Fill: =AllScreensCSS.RActiveColor
+                    Text: ="Report Issue"
+                    ZIndex: =1
 
             imgGraphicDS As image:
                 AlignInContainer: =AlignInContainer.End
                 Height: =Parent.Height
                 Image: =graphic
                 Width: =Parent.Width-500
-                ZIndex: =1
+                ZIndex: =3
 
         ctnlpdname As groupContainer.verticalAutoLayoutContainer:
             Height: =250
