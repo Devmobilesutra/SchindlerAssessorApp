@@ -1884,7 +1884,7 @@ FindingScreen As screen:
 
                             TextInput6_2 As text:
                                 BorderColor: =RGBA(0, 0, 0, 1)
-                                Default: |-
+                                Default: |
                                     =LookUp(
                                         GC_checkpointItem_Images,
                                         bankUnitId.Id = varBankUnitId &&
@@ -2059,6 +2059,9 @@ FindingScreen As screen:
                                                                     //image_annotation: TextInput6_2.Text
                                                                 }
                                                             );*/
+                                                            Notify("Size : "& RoundUp(((Len(JSON(UploadedImage1_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB" & "Size of Image14" & RoundUp(((Len(JSON(Image14_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB");
+                                        
+                                          
                                     OnSelect: |
                                         =/*//for reset ideal timer
                                         Reset(tmr_logout);

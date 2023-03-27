@@ -68,6 +68,7 @@
       "shlaf_revieweremail": "reviewerEmail",
       "shlaf_reviewerid": "reviewerId",
       "shlaf_reviewername": "reviewerName",
+      "shlaf_shlaf_reportissueassessment_AssignmentId_": "ReportIssueAssessments",
       "shlaf_startdate": "startDate",
       "statecode": "Status",
       "statuscode": "Status Reason",
