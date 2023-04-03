@@ -2,6 +2,26 @@ ProjectScreen As screen:
     OnVisible: |-
         =Set(Q,false);
         
+         If(
+                inpro = true,Set(VarInprogress,
+                   Sort( Filter(
+                        gcProjectAssignment,
+                                    isCompleted = "Inprogress"
+                    ),startDate,SortOrder.Ascending)
+                ),
+                If(
+                    upcomp = true,
+                    Set(VarUpcoming,Sort(
+                        Filter(
+                            gcProjectAssignment,
+                                 isCompleted = "Upcomming" || isCompleted = "Inprogress1"
+                        ),startDate,SortOrder.Ascending)
+                    )
+                )
+            );
+        
+        
+        
         Trace(
             First(gcProjectAssignment).clientId.name & First(gcProjectAssignment).dueDate,
             TraceSeverity.Information
@@ -87,7 +107,9 @@ ProjectScreen As screen:
                     ZIndex: =9
 
         ctnMiddlePS As groupContainer.verticalAutoLayoutContainer:
-            Height: =Parent.Height //glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
+            Height: |-
+                =Parent.Height 
+                //glryProject.Height+50+'ctnBack&onlinestatusPS'.Height
             LayoutDirection: =LayoutDirection.Vertical
             LayoutMinHeight: =100
             LayoutMinWidth: =250
@@ -160,8 +182,10 @@ ProjectScreen As screen:
 
             "glryProject As gallery.'BrowseLayout_Vertical_ThreeTextVariant_ver4.0'":
                 FillPortions: =0
-                Height: =Parent.Height //CountRows(glryProject.AllItems) * glryProject.TemplateHeight + glryProject.TemplatePadding + 50
-                Items: |-
+                Height: |-
+                    =Parent.Height
+                     //CountRows(glryProject.AllItems) * glryProject.TemplateHeight + glryProject.TemplatePadding + 50
+                Items: |+
                     =//If comp variable is true then display completed assignment in gallery else
                     // check inpro variable is true then display inprogress assignment in gallery otherwise 
                     // check upcomp variable is true then display upcomming assignment in gallery 
@@ -174,7 +198,7 @@ ProjectScreen As screen:
                             ),
                             startDate,
                             SortOrder.Ascending
-                        ),*/
+                        ),
                         If(
                             inpro = true,
                             Sort(
@@ -197,7 +221,28 @@ ProjectScreen As screen:
                                 )
                             )
                         )
-                    //)
+                    )*/
+                    
+                    
+                    If(
+                        inpro = true,
+                             VarInprogress,
+                             VarUpcoming
+                        )
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320
