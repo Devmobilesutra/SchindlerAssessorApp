@@ -151,7 +151,9 @@ ProjectScreen As screen:
 
                     TimerglryProject As timer:
                         AutoStart: =true
-                        Duration: =100
+                        Duration: |-
+                            =//100
+                            0
                         OnTimerEnd: =Set(Q,true)
                         Visible: =false
                         ZIndex: =2
@@ -163,8 +165,8 @@ ProjectScreen As screen:
                     =//If comp variable is true then display completed assignment in gallery else
                     // check inpro variable is true then display inprogress assignment in gallery otherwise 
                     // check upcomp variable is true then display upcomming assignment in gallery 
-                    If(
-                        comp = true,
+                    /* If(
+                       comp = true,
                         Sort(
                             Filter(
                                 assignments,
@@ -172,13 +174,13 @@ ProjectScreen As screen:
                             ),
                             startDate,
                             SortOrder.Ascending
-                        ),
+                        ),*/
                         If(
                             inpro = true,
                             Sort(
                                 Filter(
                                     gcProjectAssignment,
-                                    assessorId = varLoggedAssessor && isCompleted = "Inprogress"
+                                                isCompleted = "Inprogress"
                                 ),
                                 startDate,
                                 SortOrder.Ascending
@@ -188,21 +190,23 @@ ProjectScreen As screen:
                                 Sort(
                                     Filter(
                                         gcProjectAssignment,
-                                        assessorId = varLoggedAssessor && isCompleted = "Upcomming" || isCompleted = "Inprogress1"
+                                             isCompleted = "Upcomming" || isCompleted = "Inprogress1"
                                     ),
                                     startDate,
                                     SortOrder.Ascending
                                 )
                             )
                         )
-                    )
+                    //)
                 Layout: =Layout.Vertical
                 LayoutMinHeight: =287
                 LayoutMinWidth: =320
                 ShowScrollbar: =false
                 TemplatePadding: =10
                 TemplateSize: =425
-                Visible: =Q
+                Visible: |-
+                    =//Q
+                    true
                 Width: =Parent.Width
                 Y: ='ctnBack&onlinestatusPS'.Height+'ctnBack&onlinestatusPS'.Y
                 ZIndex: =2

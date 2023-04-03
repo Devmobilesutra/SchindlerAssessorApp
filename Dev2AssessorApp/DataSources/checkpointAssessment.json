@@ -61,6 +61,7 @@
       "shlaf_quantum_checkpointItem_ActionItems_checkp": "checkpointItem_ActionItem",
       "shlaf_quantum_checkpointItem_Images_checkpoint_": "checkpointItem_Images",
       "shlaf_quantum_sectionassessmentid": "sectionAssessmentid",
+      "shlaf_secid": "secId",
       "statecode": "Status",
       "statuscode": "Status Reason",
       "timezoneruleversionnumber": "Time Zone Rule Version Number",
