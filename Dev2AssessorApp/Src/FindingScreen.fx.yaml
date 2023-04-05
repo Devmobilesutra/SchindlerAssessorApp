@@ -1848,7 +1848,7 @@ FindingScreen As screen:
                                 Image: |-
                                     =If(
                                         IsBlank(UploadedImage1_2),
-                                        ThisItem.Image,
+                                        ThisItem.Image.Value,
                                         UploadedImage1_2
                                     )
                                 OnSelect: |-
@@ -2059,8 +2059,9 @@ FindingScreen As screen:
                                                                     //image_annotation: TextInput6_2.Text
                                                                 }
                                                             );*/
-                                                            Notify("Size : "& RoundUp(((Len(JSON(UploadedImage1_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB" & "Size of Image14" & RoundUp(((Len(JSON(Image14_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB");
+                                                      //      Notify("Size : "& RoundUp(((Len(JSON(UploadedImage1_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB" & "Size of Image14" & RoundUp(((Len(JSON(Image14_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & " KB");
                                         
+                                        Set(VarImageSize,RoundUp(((Len(JSON(UploadedImage1_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0 &"KB"))
                                           
                                     OnSelect: |
                                         =/*//for reset ideal timer
@@ -2267,6 +2268,7 @@ FindingScreen As screen:
                                                     ),
                                                     image_annotation: "",
                                                     ImageSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
+                                                    
                                             }
                                         );
                                     If(
@@ -2431,6 +2433,12 @@ FindingScreen As screen:
                                                             Image: i.Image14_2.Image,
                                                             image_annotation: i.TextInput6_2.Text,
                                                             CIIstatusUpdate:0,
+                                                            ImageSize:
+                                                                  If(
+                                                                         IsBlank(i.Image14_2.Image),
+                                                                     Text( RoundUp(((Len(JSON(i.UploadedImage1_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & "KB"),
+                                                                      Text( RoundUp(((Len(JSON(i.Image14_2.Image,JSONFormat.IncludeBinaryData))-814)/1.37)/1000,0) & "KB")
+                                                                    ),
                                                             ImageSortSequence:LookUp(GC_templateSections,sectionId=VarSectionId,sectionSequence) & LookUp(GC_templateCheckpoints,checkpointId= ChId,checkpointSequence) & LookUp(GC_templateCheckpointsItem,checkpointItemId = varCheckpointitemID,checkpointItemSequence)
                                                         }
                                                     )

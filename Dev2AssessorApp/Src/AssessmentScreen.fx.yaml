@@ -2043,7 +2043,8 @@ AssessmentScreen As screen:
                                                 "quantum_checkpointitemimagesid",
                                                 "shlaf_image_annotation",
                                                 "quantum_image",
-                                                "shlaf_imagesortsequence"
+                                                "shlaf_imagesortsequence",
+                                                "cr074_imagesize"
                                             )
                                         );
                                         

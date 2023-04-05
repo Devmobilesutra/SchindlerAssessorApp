@@ -24,6 +24,7 @@
     "Name": "checkpointItem_Images",
     "NativeCDSDataSourceInfoNameMapping": {
       "_ownerid_value": "Owner",
+      "cr074_imagesize": "ImageSize",
       "createdby": "Created By",
       "createdon": "Created On",
       "createdonbehalfby": "Created By (Delegate)",
